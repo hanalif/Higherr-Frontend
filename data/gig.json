@@ -1,0 +1,41 @@
+[
+    {
+        "_id": "10006546",
+        "title": "Garden Design",
+        "imgUrls": [
+            "mainImg.jpg",
+            "otherImg.jpg"
+        ],
+        "price": 80.00,
+        "delivery":30,
+        "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
+        "catagory": "House",
+        "tags": [
+            "TV",
+            "Wifi",
+            "Kitchen",
+            "Pets allowed",
+            "Cooking basics"
+        ],
+        "seller": {
+            "_id": "51399391",
+            "fullName": "Davit Pok",
+            "imgUrl": "https://x.com/pic.jpg",
+            "area": "north"
+        },
+        "reviews": [
+            {
+                "id": "madeId",
+                "txt": "Very helpful hosts. Cooked traditional...",
+                "rate": 4,
+                "by": {
+                    "_id": "u102",
+                    "fullName": "user2",
+                    "imgUrl": "/img/img2.jpg"
+                }
+         
+            }
+        ]
+    }    
+]
+   

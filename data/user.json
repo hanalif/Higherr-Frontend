@@ -1,0 +1,18 @@
+[
+  { 
+"_id": "u101",
+"fullName": "Orly Amdadi",
+"userName": "orly@amdadi.com",
+"password": "1234",
+"isAdmin": true,
+"imgUrl": "http://some-img"
+},
+{ 
+    "_id": "u102",
+    "fullName": "Daniel Sharon",
+    "userName": "dan@sharon.com",
+    "password": "1234",
+    "isAdmin": false,
+    "imgUrl": "http://some-img"
+    }
+]
