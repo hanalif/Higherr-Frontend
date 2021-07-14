@@ -1,16 +1,13 @@
 <template>
   <section>
     <nav class="main-layout">
-      <router-link to="/">
-          logo
-      </router-link>
+      <router-link to="/"> logo </router-link>
       <router-link to="/explore">Explore</router-link>|
-      <div class="sign-btns-container">
-        <button @click="join">Signup</button>
-        <button @click="join">Join</button>
+      <div v-if="!loggedInUser" class="sign-btns-container">
+        <button @click="signIn">Sign In</button>
+        <button @click="signUp">Join</button>
       </div>
-      <div class="user-menu">
-       <button @click="goToUser">user-details</button> 
+      <div v-else class="user-menu">
         <img src="" alt="" />
       </div>
     </nav>
@@ -19,15 +16,17 @@
 
 <script>
 export default {
-    data() {
+  data() {
     return {
       isSign: false,
-      loggedInUser: this.$store.getters.loggedinUser,
     };
   },
   methods: {
-    join() {
-      this.isSign = true;
+    signIn() {
+      this.$emit('signIn');
+    },
+    signUp() {
+      this.$emit('signUp');
     },
     isSignModal() {
       this.isSign = false;
@@ -35,19 +34,19 @@ export default {
     logout() {
       this.$store
         .dispatch({ type: "logout" })
-        .then(() => (this.loggedInUser = this.$store.getters.loggedinUser ));
+        .then(() => (this.loggedInUser = this.$store.getters.loggedinUser));
     },
     goToUser(){
       this.$router.push('/user/u101')
     }
   },
-  components: {
-    
+  computed: {
+    loggedInUser() {
+      return this.$store.getters.loggedinUser; 
+    }
   },
-  created () {
-
-  },
-  
+  components: {},
+  created() {},
 };
 </script>
 

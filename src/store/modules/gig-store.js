@@ -9,7 +9,7 @@ export default {
         gigsToShow(state) {
             let gigsToShow = state.gigs;
             return gigsToShow;
-        }
+        },
     },
     mutations: {
         removeGig(state, { gigId }) {
@@ -62,9 +62,10 @@ export default {
                 throw err;
             }
         },
-        async getGigById(context, payload) {
+        async getGigById(context, { id }) {
             try {
-                let gig = await gigService.getById(payload.gigId)
+                // const gigId = JSON.stringify(id)
+                let gig = await gigService.getById(id)
                 return gig
             } catch (err) {
                 console.log('Cannot load gig', err);
