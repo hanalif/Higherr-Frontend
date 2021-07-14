@@ -4,7 +4,7 @@ import { userService } from '../../services/user-service.js'
 // var localLoggedinUser = null;
 // if (sessionStorage.user) localLoggedinUser = JSON.parse(sessionStorage.user || null);
 
-export const userStore = {
+export default {
     state: {
         loggedinUser: userService.getLoggedinUser(),
         users: [],

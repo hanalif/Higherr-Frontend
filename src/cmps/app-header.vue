@@ -2,7 +2,7 @@
   <section>
      
     <nav class="main-layout">
-       <div class="logo">
+       <div class="logo" @click="goHome">
           logo
       </div>
       <router-link to="/explore">Explore</router-link>|
@@ -36,6 +36,11 @@
 
 <script>
 export default {
+  nethods: {
+    goHome() {
+      this.$router.push('/')
+    }
+  }
 
 };
 </script>
