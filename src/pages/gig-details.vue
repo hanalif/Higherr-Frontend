@@ -8,12 +8,12 @@
       <a href="#about-seller">About the seller</a>
       <a href="#gig-eview">Reviews</a>
     </nav>
-    <div class="gig-overview-contanier">
+    <div class="gig-overview-contanier" v-if="gig">
       <div class="gig-info">
         <gig-overview id="gig-overview" :gig="gig" />
-        <gig-description id="gig-description" />
+        <!-- <gig-description id="gig-description" />
         <about-seller id="about-seller" />
-        <gig-review id="gig-review" />
+        <gig-review id="gig-review" /> -->
       </div>
       <order-details />
     </div>
@@ -27,12 +27,15 @@ import aboutSeller from "../cmps/about-seller.vue";
 import gigReview from "../cmps/gig-review.vue";
 import orderDetails from "../cmps/order-details.vue";
 export default {
-  computed: {
-    gig() {
-       this.$store.dispatch({ type: "getGigById", id: this.$route.params.gigId,})
-       .then(gig => 
-       console.log(gig))
+    data() {
+        return {
+            gig: null
+        }
     },
+  created() {
+       this.$store.dispatch({ type: "getGigById", id: this.$route.params.gigId})
+       .then(gig => this.gig = gig)
+
   },
 
   components: {

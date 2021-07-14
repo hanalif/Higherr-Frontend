@@ -22,5 +22,7 @@ export default {
   props: {
     gig: Object,
   },
+  created() {
+  }
 };
 </script>
