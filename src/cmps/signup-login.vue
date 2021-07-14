@@ -15,7 +15,6 @@
         <button>Login</button>
 
       </form>
-      <div class="sign-up">
         <h2>Signup</h2>
         <form @submit.prevent="signup">
           <input
@@ -36,6 +35,7 @@
           <button>Signup</button>
         </form>
     </div>
+    
 </template>
 
 <script>
@@ -47,45 +47,42 @@ export default {
         username: "",
         password: "",
         fullname: "",
-        isAdmin: false,
       },
-
       loggedInUser: this.$store.getters.loggedinUser,
     }
   },
    methods: {
     login() {
-
-            
-
-
-
       this.$store
         .dispatch({ type: "login", userCred: this.credencials })
         .then((user) => {
           this.loggedInUser = user;
           this.credencials = { username: "", password: "" };
-          this.$router.push(`/user/${user._id}`);
+          this.isSignModal()
+          this.$router.push(`/user/${this.loggedInUser.id}`);
+          
         });
+    },
+    isSignModal(){
+        this.$emit('isSignModal')
     },
     signup() {
       this.$store
         .dispatch({ type: "signup", userCred: this.signUpCredencials })
         .then((user) => {
+          console.log(user)
           this.loggedInUser = user;
           this.signUpCredencials = {
             username: "",
             password: "",
-            fullname: "",
-            isAdmin: false,
+            fullname: ""
           };
-          this.$router.push("/toy-app");
-        });
-    },
-    logout() {
-      this.$store
-        .dispatch({ type: "logout" })
-        .then(() => (this.loggedInUser = null));
+
+            this.isSignModal()
+         this.loggedInUser = this.$store.getters.loggedinUser;
+        }).then(()=>{
+             this.$router.push(`/user/${this.loggedInUser.id}`);
+        })
     },
   },
 };

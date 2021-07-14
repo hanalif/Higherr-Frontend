@@ -1,6 +1,6 @@
 import { gigService } from "../../services/gig-service.js";
 
-export const gigsStore = {
+export default {
     state: {
         gigs: [],
         filterBy: {},
@@ -62,7 +62,7 @@ export const gigsStore = {
                     throw err;
                 }
         },
-        getGigById(context, payload) {
+        async getGigById(context, payload) {
             try{
                 let gig = await gigService.getById(payload.gigId) 
                 return gig
