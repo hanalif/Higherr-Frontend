@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "u101",
+        "fullName": "Orly Amdadi",
+        "username": "orly@amdadi.com",
+        "password": "1234",
+        "imgUrl": "http://some-img",
+        "reviews": [
+            {
+                "id": "madeId",
+                "txt": "Very helpful hosts. Cooked traditional...",
+                "rate": 4,
+                "by": {
+                    "_id": "u102",
+                    "fullName": "user2",
+                    "imgUrl": "/img/img2.jpg"
+                }
+         
+            }
+        ]
+    },
+    {
+        "_id": "u102",
+        "fullname": "Daniel Sharon",
+        "userName": "dan@sharon.com",
+        "password": "1234",
+        "imgUrl": "http://some-img",
+        "reviews": [
+            {
+                "id": "madeId",
+                "txt": "Very helpful hosts. Cooked traditional...",
+                "rate": 4,
+                "by": {
+                    "_id": "u102",
+                    "fullName": "user2",
+                    "imgUrl": "/img/img2.jpg"
+                }
+         
+            }
+        ]
+    }
+]
+
+
