@@ -4,7 +4,6 @@
     <router-view />
     <app-footer />
 
-    
     <register-modal ref="registerModal"></register-modal>
   </div>
 </template>
