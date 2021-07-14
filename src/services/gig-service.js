@@ -1,6 +1,5 @@
-
 // import axios from 'axios'
-import {storageService} from '../services/async-storage-service.js'
+import { storageService } from '../services/async-storage-service.js'
 // import { httpService } from './http.service'
 // const KEY = 'toyDB';
 // const SERVER_PATH = 'http://localhost:3030'
@@ -18,9 +17,10 @@ export const gigService = {
 function query(filterBy) {
     // return axios.get('http://localhost:3030/api/toy', { params: filterBy }).then(res => res.data);
     // return httpService.get(`gig`, filterBy )
-    
-    var gigs = storageService.query(GIG_KEY) 
-    if(!gigs || !gigs.length) gigs = gGigs
+
+    var gigs = storageService.query(GIG_KEY)
+    if (!gigs || !gigs.length) gigs = gGigs
+    localStorage.setItem(GIG_KEY, JSON.stringify(gigs))
     return gigs
 }
 
@@ -52,26 +52,24 @@ function getEmptyGig() {
     return {
         _id: '',
         title: '',
-        imgUrls:[],
+        imgUrls: [],
         price: 0,
         delivery: '',
-        jobDescription:'',
+        jobDescription: '',
         tags: '',
         reviews: [],
-        seller:{}
+        seller: {}
     }
 }
 
-const gGigs =[
-    {
-        "_id": "10006546",
+const gGigs = [{
+        "_id": "10006547",
         "title": "I will create music with unlimited instruments in any style",
         "imgUrls": [
-            "mainImg.jpg",
-            "otherImg.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
         "price": 80.00,
-        "delivery":30,
+        "delivery": 30,
         "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
         "tags": [
             "TV",
@@ -90,11 +88,10 @@ const gGigs =[
         "_id": "10006546",
         "title": "Garden Design",
         "imgUrls": [
-            "mainImg.jpg",
-            "otherImg.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
         "price": 80.00,
-        "delivery":30,
+        "delivery": 30,
         "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
         "tags": [
             "TV",
@@ -113,11 +110,10 @@ const gGigs =[
         "_id": "1000666",
         "title": "Garden Design",
         "imgUrls": [
-            "mainImg.jpg",
-            "otherImg.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
         "price": 80.00,
-        "delivery":30,
+        "delivery": 30,
         "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
         "tags": [
             "TV",
@@ -136,11 +132,10 @@ const gGigs =[
         "_id": "1000344",
         "title": "Garden Design",
         "imgUrls": [
-            "mainImg.jpg",
-            "otherImg.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
         "price": 80.00,
-        "delivery":30,
+        "delivery": 30,
         "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
         "tags": [
             "TV",
@@ -151,7 +146,7 @@ const gGigs =[
         ],
         "seller": {
             "_id": "5139899",
-            "fullName": "Davit Pok",
+            "fullname": "Davit Pok",
             "imgUrl": "https://x.com/pic.jpg"
         },
     },
@@ -159,11 +154,10 @@ const gGigs =[
         "_id": "1000rree3",
         "title": "Garden Design",
         "imgUrls": [
-            "mainImg.jpg",
-            "otherImg.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
         "price": 80.00,
-        "delivery":30,
+        "delivery": 30,
         "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
         "tags": [
             "TV",
@@ -174,7 +168,7 @@ const gGigs =[
         ],
         "seller": {
             "_id": "5139445",
-            "fullName": "Davit Pok",
+            "fullname": "Davit Pok",
             "imgUrl": "https://x.com/pic.jpg"
         },
     },
@@ -182,11 +176,10 @@ const gGigs =[
         "_id": "1002336",
         "title": "Garden Design",
         "imgUrls": [
-            "mainImg.jpg",
-            "otherImg.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
         "price": 80.00,
-        "delivery":30,
+        "delivery": 30,
         "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
         "tags": [
             "TV",
@@ -197,13 +190,9 @@ const gGigs =[
         ],
         "seller": {
             "_id": "5112331",
-            "fullName": "Davit Pok",
+            "fullname": "Davit Pok",
             "imgUrl": "https://x.com/pic.jpg"
         },
     }
-        
+
 ]
-
-
-
-
