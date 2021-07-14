@@ -1,6 +1,6 @@
 import { gigService } from "../../services/gig-service.js";
 
-export default  {
+export default {
     state: {
         gigs: [],
         filterBy: {},

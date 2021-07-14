@@ -1,9 +1,27 @@
 <template>
-  <div>
+  <section>
     <h1>explore</h1>
-  </div>
+    <gig-list :gigs="gigs"/>
+  </section>
 </template>
 
 <script>
-export default {};
+import gigList from '../cmps/gig-list.vue'
+export default {
+  data(){
+    return{
+    }
+  },
+  created(){
+    this.$store.dispatch('loadGigs')
+  },
+  computed:{
+    gigs(){
+      return this.$store.getters.gigsToShow
+    }
+  },
+  components:{
+    gigList
+  }
+};
 </script>
