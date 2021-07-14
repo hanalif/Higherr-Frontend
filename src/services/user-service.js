@@ -19,7 +19,7 @@ export const userService = {
 }
 
 // window.userService = userService
-
+getUsers()
 
 function getUsers() {
     // return storageService.query('user')

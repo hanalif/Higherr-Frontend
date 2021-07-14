@@ -5,42 +5,46 @@
           logo
       </router-link>
       <router-link to="/explore">Explore</router-link>|
-      <button>Sign In</button>
-      <button>Join</button>
-
+      <div class="sign-btns-container">
+        <button @click="join">Signup</button>
+        <button @click="join">Join</button>
+      </div>
       <div class="user-menu">
-          loggedinUser
-          <img src="" alt="">
+        loggedinUser
+        <img src="" alt="" />
       </div>
     </nav>
-
-
-    <div class="register-modal" hidden>
-      <form>
-        <h2>Login</h2>
-        <input type="text" placeholder="username" />
-        <input type="password" placeholder="password" />
-        <button>Login</button>
-      </form>
-      <h2>Signup</h2>
-      <form>
-        <input type="text" placeholder="username" />
-        <input type="text" placeholder="Your full name" />
-        <input type="password" placeholder="password" />
-        <button>Signup</button>
-      </form>
-    </div>
   </section>
 </template>
 
 <script>
 export default {
-  nethods: {
-    goHome() {
-      this.$router.push('/')
-    }
-  }
+    data() {
+    return {
+      isSign: false,
+      loggedInUser: this.$store.getters.loggedinUser,
+    };
+  },
+  methods: {
+    join() {
+      this.isSign = true;
+    },
+    isSignModal() {
+      this.isSign = false;
+    },
+    logout() {
+      this.$store
+        .dispatch({ type: "logout" })
+        .then(() => (this.loggedInUser = this.$store.getters.loggedinUser ));
+    },
+  },
+  components: {
+    
+  },
+  created () {
 
+  },
+  
 };
 </script>
 
