@@ -1,17 +1,24 @@
 <template>
-  <section v-if="user" class="user-details">
-    <div>
+  <section class="main-layout">
+    <div class="user-details">
     <div class="profile-details">
-      <h2>hana</h2>
-      
-      <img src="" alt="">
+       <div class="online-tag">online</div>
+      <div class="top-details"> 
+      <img class="profile-img" src="https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png" alt="">
+      <h2 class="profile-name-title">hana</h2>
+      </div>
+      <div class="buttom-details">
+
+      </div>
     </div>
     <div class="gigs-container">
       <div class="user-details-bar">
-        
+        <button>create new gig</button>
       </div>
       <div class="gigs-container">
-
+        <div class="user-gig-card">
+          <img src="" alt="">
+        </div>
       </div>
     </div>
     </div>

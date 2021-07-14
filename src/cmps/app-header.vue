@@ -10,7 +10,7 @@
         <button @click="join">Join</button>
       </div>
       <div class="user-menu">
-        loggedinUser
+       <button @click="goToUser">user-details</button> 
         <img src="" alt="" />
       </div>
     </nav>
@@ -37,6 +37,9 @@ export default {
         .dispatch({ type: "logout" })
         .then(() => (this.loggedInUser = this.$store.getters.loggedinUser ));
     },
+    goToUser(){
+      this.$router.push('/user/u101')
+    }
   },
   components: {
     
