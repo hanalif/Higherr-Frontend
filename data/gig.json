@@ -7,21 +7,19 @@
             "otherImg.jpg"
         ],
         "price": 80.00,
-        "delivery":30,
+        "deliveryDays":30,
         "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
-        "catagory": "House",
         "tags": [
-            "TV",
-            "Wifi",
-            "Kitchen",
-            "Pets allowed",
-            "Cooking basics"
+            "graphic",
+            "marketing",
+            "web-development",
+            "communication",
+            "media"
         ],
         "seller": {
             "_id": "51399391",
-            "fullName": "Davit Pok",
-            "imgUrl": "https://x.com/pic.jpg",
-            "area": "north"
+            "fullname": "Davit Pok",
+            "imgUrl": "https://x.com/pic.jpg"
         },
         "reviews": [
             {
@@ -30,12 +28,13 @@
                 "rate": 4,
                 "by": {
                     "_id": "u102",
-                    "fullName": "user2",
+                    "fullname": "user2",
                     "imgUrl": "/img/img2.jpg"
                 }
          
             }
         ]
-    }    
+    }
+        
 ]
    

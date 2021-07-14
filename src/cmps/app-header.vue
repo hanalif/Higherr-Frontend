@@ -1,9 +1,10 @@
 <template>
   <section>
-      <div class="logo">
+     
+    <nav class="main-layout">
+       <div class="logo">
           logo
       </div>
-    <nav>
       <router-link to="/explore">Explore</router-link>|
       <button>Sign In</button>
       <button>Join</button>

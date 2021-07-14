@@ -1,3 +1,5 @@
+
+
 <template>
     <div>
 <h1>gig-details</h1>
@@ -6,7 +8,7 @@
 
 <script>
     export default {
-        
+      
     }
 </script>
 
