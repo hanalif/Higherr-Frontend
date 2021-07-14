@@ -1,8 +1,9 @@
 <template>
   <section>
-    <div class="app-header main-layout">
-      
-    <nav class="header-nav">
+    <nav class="main-layout">
+      <router-link to="/">
+          logo
+      </router-link>
       <router-link to="/explore">Explore</router-link>|
       <div class="sign-btns-container">
         <button @click="join">Signup</button>
@@ -13,13 +14,12 @@
         <img src="" alt="" />
       </div>
     </nav>
-    </div>
   </section>
 </template>
 
 <script>
 export default {
-  data() {
+    data() {
     return {
       isSign: false,
       loggedInUser: this.$store.getters.loggedinUser,
@@ -44,6 +44,7 @@ export default {
   created () {
 
   },
+  
 };
 </script>
 

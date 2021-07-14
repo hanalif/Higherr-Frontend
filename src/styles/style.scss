@@ -3,16 +3,12 @@
 @import './setup/variables';
 @import './setup/mixins';
 @import './setup/functions';
-
 // BASICS
 @import './basics/helpers';
 @import './basics/base';
 @import './basics/layout';
-
-
-
 // COMPONENTS
 @import './cmps/app-header.scss';
-@import './cmps/user-details.scss'
-
-
+@import './cmps/user-details.scss';
+@import './cmps/gig-preview.scss';
+@import './cmps/gig-list.scss';

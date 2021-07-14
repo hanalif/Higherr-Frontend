@@ -1,5 +1,4 @@
-[
-    {
+[{
         "_id": "10006546",
         "title": "Garden Design",
         "imgUrls": [
@@ -7,7 +6,7 @@
             "otherImg.jpg"
         ],
         "price": 80.00,
-        "deliveryDays":30,
+        "deliveryDays": 30,
         "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
         "tags": [
             "graphic",
@@ -21,20 +20,17 @@
             "fullname": "Davit Pok",
             "imgUrl": "https://x.com/pic.jpg"
         },
-        "reviews": [
-            {
-                "id": "madeId",
-                "txt": "Very helpful hosts. Cooked traditional...",
-                "rate": 4,
-                "by": {
-                    "_id": "u102",
-                    "fullname": "user2",
-                    "imgUrl": "/img/img2.jpg"
-                }
-         
+        "reviews": [{
+            "id": "madeId",
+            "txt": "Very helpful hosts. Cooked traditional...",
+            "rate": 4,
+            "by": {
+                "_id": "u102",
+                "fullname": "user2",
+                "imgUrl": "/img/img2.jpg"
             }
-        ]
+
+        }]
     }
-        
+
 ]
-   
