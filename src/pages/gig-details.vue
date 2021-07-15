@@ -15,7 +15,7 @@
         <about-seller id="about-seller" :gig="gig" />
         <gig-review id="gig-review" />
       </div>
-      <!-- <order-details /> -->
+      <order-details />
     </div>
   </div>
 </template>
