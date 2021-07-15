@@ -16,7 +16,7 @@
     </select>
     <input type="number" placeholder="Min Price"  v-model="filterBy.price.min">
     <input type="number" placeholder="Max Price"  v-model="filterBy.price.max">
-    <button @click="filter">save</button>
+    <button @click="filter" class="btn-primary">Save</button>
 </section>
 </template>
 
