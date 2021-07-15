@@ -1,9 +1,53 @@
 <template>
-  
+  <div>
+    <div class="reviews-header">
+      <section>
+      <h2 class="reviews-title">{{ user.reviews.length }} Reviews</h2>
+      <img class="review-star-img" src="@/assets/star.jpg" />
+      <img class="review-star-img" src="@/assets/star.jpg" />
+      <img class="review-star-img" src="@/assets/star.jpg" />
+      <img class="review-star-img" src="@/assets/star.jpg" />
+      <img class="review-star-img" src="@/assets/star.jpg" />
+      <h3 class="reviews-title review-rate">4.8</h3>
+      </section>
+      <section>
+      <select>
+        <option value="recent">Most recent</option>
+        <option value="high">High to low</option>
+        <option value="low">Low to high</option>
+      </select>
+      </section>
+      <button @click="toggleAdd">Add Review</button>
+    </div>
+    <review-add v-if="isAddReview" />
+    <ul class="review-list">
+    <review-list :reviews="user.reviews" />
+    </ul>
+  </div>
 </template>
 
 <script>
-export default {
+import reviewList from './review-list.vue'
+import reviewAdd from './review-add.vue'
 
-}
+export default {
+  props: {
+    gig: Object,
+    user: Object,
+  },
+  data() {
+    return {
+      isAddReview: false
+    }
+  },
+  methods: {
+    toggleAdd() {
+      this.isAddReview = !this.isAddReview
+    }
+  },
+  components: {
+    reviewList,
+    reviewAdd
+  }
+};
 </script>

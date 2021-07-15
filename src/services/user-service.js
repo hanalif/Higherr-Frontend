@@ -4,6 +4,210 @@ import { storageService } from '../services/async-storage-service.js'
 // const SCORE_FOR_REVIEW = 10
 const USER_KEY = 'user_db'
 
+const gUsers =
+    [
+        {
+            _id: "u101",
+            fullname: "Orly Amdadi",
+            username: "orly@amdadi.com",
+            password: "1234",
+            imgUrl: "http://some-img",
+            reviews: [
+                {
+                    id: "madeId",
+                    txt: "Very helpful hosts. Cooked traditional...",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "user2",
+                        imgUrl: "/img/img2.jpg"
+                    }
+
+                }
+            ]
+        },
+        {
+            _id: "u102",
+            fullname: "Daniel Sharon",
+            username: "daniel@sharon.com",
+            password: "1234",
+            imgUrl: "http://some-img",
+            reviews: [
+                {
+                    id: "madeId",
+                    txt: "Very helpful hosts. Cooked traditional...",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "user2",
+                        imgUrl: "/img/img2.jpg"
+                    }
+
+                }
+            ]
+        },
+
+        {
+
+            _id: "51399391",
+            username: "ronit",
+            password: "1234",
+            fullname: "Ronit Rozen",
+            imgUrl: "https://x.com/pic.jpg",
+            reviews: [
+                {
+                    id: "madeId",
+                    txt: "Very helpful hosts. Cooked traditional...",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "user2",
+                        imgUrl: "/img/img2.jpg"
+                    }
+
+                }
+            ]
+
+        },
+        {
+            _id: "51399391",
+            username: "david",
+            password: "1234",
+            fullname: "David Pok",
+            imgUrl: "https://x.com/pic.jpg",
+            reviews: [
+                {
+                    id: "madeId",
+                    txt: "Very helpful hosts. Cooked traditional...",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "user2",
+                        imgUrl: "/img/img2.jpg"
+                    }
+
+                }
+            ]
+        },
+
+        {
+            _id: "51395444",
+            username: "matan",
+            password: "1234",
+            fullname: "Matan Pok",
+            imgUrl: "https://x.com/pic.jpg",
+            reviews: [
+                {
+                    id: "madeId",
+                    txt: "Very helpful hosts. Cooked traditional...",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "user2",
+                        imgUrl: "/img/img2.jpg"
+                    }
+
+                }
+            ]
+        },
+        {
+            _id: "5139899",
+            userName: "bob",
+            password: "1234",
+            fullname: "Bob Pok",
+            imgUrl: "https://x.com/pic.jpg",
+            reviews: [
+                {
+                    id: "madeId",
+                    txt: "The service was so good, I had a lot of fun using this service. Thank you very much I really aprecciate it. Just one thing, he took a little bit more time than garunteed but other than that the whole experience was nice. ",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "Puki Ben-David",
+                        imgUrl: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg"
+                    }
+
+                },
+                {
+                    id: "madeId",
+                    txt: "The service was so good, I had a lot of fun using this service. Thank you very much I really aprecciate it. Just one thing, he took a little bit more time than garunteed but other than that the whole experience was nice. ",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "Puki Ben-David",
+                        imgUrl: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg"
+                    }
+
+                },
+                {
+                    id: "madeId",
+                    txt: "The service was so good, I had a lot of fun using this service. Thank you very much I really aprecciate it. Just one thing, he took a little bit more time than garunteed but other than that the whole experience was nice. ",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "Puki Ben-David",
+                        imgUrl: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg"
+                    }
+
+                },
+                {
+                    id: "madeId",
+                    txt: "The service was so good, I had a lot of fun using this service. Thank you very much I really aprecciate it. Just one thing, he took a little bit more time than garunteed but other than that the whole experience was nice. ",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "Puki Ben-David",
+                        imgUrl: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg"
+                    }
+
+                }
+            ]
+        },
+
+        {
+            _id: "5139445",
+            userName: "puki",
+            password: "1234",
+            fullname: "Puki Pok",
+            imgUrl: "https://x.com/pic.jpg",
+            reviews: [
+                {
+                    id: "madeId",
+                    txt: "Very helpful hosts. Cooked traditional...",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "user2",
+                        imgUrl: "/img/img2.jpg"
+                    }
+
+                }
+            ]
+        },
+
+        {
+            _id: "5112331",
+            userName: "dana",
+            password: "1234",
+            fullname: "Dana Pok",
+            imgUrl: "https://x.com/pic.jpg",
+            reviews: [
+                {
+                    id: "madeId",
+                    txt: "Very helpful hosts. Cooked traditional...",
+                    rate: 4,
+                    by: {
+                        _id: "u102",
+                        fullname: "user2",
+                        imgUrl: "/img/img2.jpg"
+                    }
+
+                }
+            ]
+        }
+
+    ]
+
 
 export const userService = {
     login,
@@ -26,6 +230,7 @@ function getUsers() {
     // return httpService.get(`user`)
     var users = storageService.query(USER_KEY)
     if (!users || !users.length) users = gUsers
+    localStorage.setItem(USER_KEY, JSON.stringify(users))
     return users
 }
 
@@ -84,173 +289,3 @@ function getLoggedinUser() {
 }
 
 
-const gUsers =
-    [
-        {
-            "_id": "u101",
-            "fullname": "Orly Amdadi",
-            "username": "orly@amdadi.com",
-            "password": "1234",
-            "imgUrl": "http://some-img",
-            "reviews": [
-                {
-                    "id": "madeId",
-                    "txt": "Very helpful hosts. Cooked traditional...",
-                    "rate": 4,
-                    "by": {
-                        "_id": "u102",
-                        "fullName": "user2",
-                        "imgUrl": "/img/img2.jpg"
-                    }
-             
-                }
-            ]
-        },
-        {
-            "_id": "u102",
-            "fullname": "Daniel Sharon",
-            "username": "daniel@sharon.com",
-            "password": "1234",
-            "imgUrl": "http://some-img",
-            "reviews": [
-                {
-                    "id": "madeId",
-                    "txt": "Very helpful hosts. Cooked traditional...",
-                    "rate": 4,
-                    "by": {
-                        "_id": "u102",
-                        "fullName": "user2",
-                        "imgUrl": "/img/img2.jpg"
-                    }
-             
-                }
-            ]
-        },
-
-        {
-
-            "_id": "51399391",
-            "username": "ronit",
-            "password": "1234",
-            "fullname": "Ronit Rozen",
-            "imgUrl": "https://x.com/pic.jpg",
-            "reviews": [
-                {
-                    "id": "madeId",
-                    "txt": "Very helpful hosts. Cooked traditional...",
-                    "rate": 4,
-                    "by": {
-                        "_id": "u102",
-                        "fullName": "user2",
-                        "imgUrl": "/img/img2.jpg"
-                    }
-             
-                }
-            ]
-
-        },
-        {
-            "_id": "51399391",
-            "username": "david",
-            "password": "1234",
-            "fullname": "David Pok",
-            "imgUrl": "https://x.com/pic.jpg",
-            "reviews": [
-                {
-                    "id": "madeId",
-                    "txt": "Very helpful hosts. Cooked traditional...",
-                    "rate": 4,
-                    "by": {
-                        "_id": "u102",
-                        "fullName": "user2",
-                        "imgUrl": "/img/img2.jpg"
-                    }
-             
-                }
-            ]
-        },
-
-        {
-            "_id": "51395444",
-            "username": "matan",
-            "password": "1234",
-            "fullname": "Matan Pok",
-            "imgUrl": "https://x.com/pic.jpg",
-            "reviews": [
-                {
-                    "id": "madeId",
-                    "txt": "Very helpful hosts. Cooked traditional...",
-                    "rate": 4,
-                    "by": {
-                        "_id": "u102",
-                        "fullName": "user2",
-                        "imgUrl": "/img/img2.jpg"
-                    }
-             
-                }
-            ]
-        },
-        {
-            "_id": "5139899",
-            "userName": "bob",
-            "password": "1234",
-            "fullname": "Bob Pok",
-            "imgUrl": "https://x.com/pic.jpg",
-            "reviews": [
-                {
-                    "id": "madeId",
-                    "txt": "Very helpful hosts. Cooked traditional...",
-                    "rate": 4,
-                    "by": {
-                        "_id": "u102",
-                        "fullName": "user2",
-                        "imgUrl": "/img/img2.jpg"
-                    }
-             
-                }
-            ]
-        },
-
-        {
-            "_id": "5139445",
-            "userName": "puki",
-            "password": "1234",
-            "fullname": "Puki Pok",
-            "imgUrl": "https://x.com/pic.jpg",
-            "reviews": [
-                {
-                    "id": "madeId",
-                    "txt": "Very helpful hosts. Cooked traditional...",
-                    "rate": 4,
-                    "by": {
-                        "_id": "u102",
-                        "fullName": "user2",
-                        "imgUrl": "/img/img2.jpg"
-                    }
-             
-                }
-            ]
-        },
-
-        {
-            "_id": "5112331",
-            "userName": "dana",
-            "password": "1234",
-            "fullname": "Dana Pok",
-            "imgUrl": "https://x.com/pic.jpg",
-            "reviews": [
-                {
-                    "id": "madeId",
-                    "txt": "Very helpful hosts. Cooked traditional...",
-                    "rate": 4,
-                    "by": {
-                        "_id": "u102",
-                        "fullName": "user2",
-                        "imgUrl": "/img/img2.jpg"
-                    }
-             
-                }
-            ]
-        }
-
-    ]
