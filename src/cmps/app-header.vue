@@ -4,10 +4,8 @@
       <router-link class="logo" to="/">fiverr</router-link>
       <div class="menu-items">
         <router-link to="/explore">Explore</router-link>|
-        <div v-if="!loggedInUser" class="sign-btns-container">
-          <button @click="signIn">Sign In</button>
-          <button @click="signUp">Join</button>
-        </div>
+        <a @click="signIn" v-if="!loggedInUser">Sign In</a>
+        <a @click="signUp" v-if="!loggedInUser">Join</a>
         <div v-else class="user-menu">
           <div class="user-menu-icon" @click="onUserMenuClick">
             <i class="fas fa-user"></i>
