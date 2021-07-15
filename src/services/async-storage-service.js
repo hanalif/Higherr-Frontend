@@ -1,5 +1,3 @@
-
-
 export const storageService = {
     query,
     get,
@@ -55,7 +53,7 @@ function remove(entityType, entityId) {
     // const removedEntity = entities.splice(idx, 1)
     // _save(entityType, entities)
     // return removedEntity}
-    
+
     return query(entityType)
         .then(entities => {
             const idx = entities.findIndex(entity => entity.id === entityId);

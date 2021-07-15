@@ -27,6 +27,7 @@ function query(filterBy) {
 function getById(id) {
     // return axios.get(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
     // return httpService.get(`gig/${id}`)
+    storageService.get(GIG_KEY, id).then(gig => console.log(gig))
     return storageService.get(GIG_KEY, id)
 }
 

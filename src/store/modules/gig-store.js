@@ -4,11 +4,15 @@ export default {
     state: {
         gigs: [],
         filterBy: {},
+        currGig: {}
     },
     getters: {
         gigsToShow(state) {
             let gigsToShow = state.gigs;
             return gigsToShow;
+        },
+        gigToShow(state) {
+            return state.gig
         }
     },
     mutations: {
@@ -28,6 +32,10 @@ export default {
         },
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
+        },
+        setCurrGig(state, { gig }) {
+            console.log('~ gig', gig)
+            state.currGig = gig
         }
     },
     actions: {
@@ -64,15 +72,15 @@ export default {
         },
         async getGigById(context, payload) {
             try {
-                let gig = await gigService.getById(payload.gigId)
+                let gig = await gigService.getById(JSON.stringify(payload.id))
+                console.log('~ gig', gig)
+                context.commit({ type: 'setCurrGig', gig })
                 return gig
             } catch (err) {
                 console.log('Cannot load gig', err);
                 throw err;
             }
-
         }
-
     }
 
 }

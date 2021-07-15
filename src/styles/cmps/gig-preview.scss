@@ -1,6 +1,32 @@
 .gig-crad {
     color: black;
-    .card-details {
-        padding: 10px;
+}
+
+.card-details {
+    padding: 7px;
+}
+
+.card-title {
+    height: 50px;
+    &:hover {
+        color: $clr3;
     }
+}
+
+.rate-count {
+    color: gray;
+}
+
+.heart-icon {
+    color: gray;
+    cursor: pointer;
+}
+
+.red {
+    color: red;
+}
+
+.actions {
+    border-top: 1px solid rgba(128, 128, 128, 0.295);
+    padding: 7px;
 }

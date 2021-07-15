@@ -1,5 +1,5 @@
 <template>
-    <section class="gig-list main-layout">
+    <section class="gig-list ">
         <ul>
             <li v-for="gig in gigs" :key="gig._id">
                 <gig-preview :gig="gig"/>

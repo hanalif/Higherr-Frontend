@@ -1,12 +1,14 @@
 <template>
-  <section>
+  <section class="main-layout">
     <h1>explore</h1>
+    <gig-filter/>
     <gig-list :gigs="gigs"/>
   </section>
 </template>
 
 <script>
 import gigList from '../cmps/gig-list.vue'
+import gigFilter from '../cmps/gig-filter.vue'
 export default {
   data(){
     return{
@@ -21,7 +23,8 @@ export default {
     }
   },
   components:{
-    gigList
+    gigList,
+    gigFilter
   }
 };
 </script>

@@ -10,12 +10,13 @@
     </nav>
     <div class="gig-overview-contanier">
       <div class="gig-info">
-        <gig-overview id="gig-overview" :gig="gig" />
-        <gig-description id="gig-description" />
+        <!-- <gig-overview id="gig-overview" :gig="gig" /> -->
+        {{gig}}
+        <!-- <gig-description id="gig-description" />
         <about-seller id="about-seller" />
-        <gig-review id="gig-review" />
+        <gig-review id="gig-review" /> -->
       </div>
-      <order-details />
+      <!-- <order-details /> -->
     </div>
   </div>
 </template>
@@ -29,12 +30,12 @@ import orderDetails from "../cmps/order-details.vue";
 export default {
   computed: {
     gig() {
-       this.$store.dispatch({ type: "getGigById", id: this.$route.params.gigId,})
-       .then(gig => 
-       console.log(gig))
-    },
+      return this.$store.getters.gigToShow
+      },
   },
-
+  created(){
+    this.$store.dispatch({ type: "getGigById", id: this.$route.params.gigId,})
+  },
   components: {
     gigOverview,
     aboutSeller,

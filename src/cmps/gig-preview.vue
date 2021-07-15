@@ -6,13 +6,13 @@
         <div class="card-details">
         <p>{{gig.seller.fullname}}</p>
     <router-link :to="'/gig/'+gig._id">
-        <p>{{gig.title}}</p>
+        <p class="card-title">{{gig.title}}</p>
     </router-link>
-        <p>🌟 5.0 (22)</p>
-        <div class="actions flex space-between">
-        <p>❤</p>
-        <p>Price: {{gig.price}}$</p>
+        <p>🌟 5.0 <span class="rate-count">(22)</span></p>
         </div>
+        <div class="actions flex space-between">
+        <p class="heart-icon" :class="{red:isRed}" @click="isRed=!isRed">❤</p>
+        <p>Price: {{gig.price}}$</p>
         </div>
     </section>
 </template>
@@ -21,6 +21,11 @@
 export default {
 props:{
     gig:Object
+},
+data(){
+    return{
+        isRed: false
+    }
 }
 }
 </script>
