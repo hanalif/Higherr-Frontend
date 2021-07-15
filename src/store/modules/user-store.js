@@ -19,8 +19,11 @@ export default {
         setLoggedinUser(state, { user }) {
             state.loggedinUser = user;
         },
-        setLoggedinUser(state, { user }) {
-            state.loggedinUser = user;
+        addUser(state, { user }) {
+            state.users = [
+                ...state.users,
+                user
+            ];
         },
         setWatchedUser(state, { user }) {
             state.watchedUser = user;
@@ -52,7 +55,6 @@ export default {
                 console.log('userStore: Error in signup', err)
                 throw err
             }
-
         },
         async logout({ commit }) {
             try {
@@ -64,7 +66,6 @@ export default {
             }
         },
         async loadUsers({ commit }) {
-            // TODO: loading
             try {
                 const users = await userService.getUsers();
                 commit({ type: 'setUsers', users })

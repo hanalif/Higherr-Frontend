@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>{{ gig.title }}</h1>
-    <div>
-    <img src="gig.seller.imgUrl" />
+    <div class="seller-details">
+    <img :src="gig.seller.imgUrl" />
     <router-link to="'user/' + gig.seller._id">{{
       gig.seller.fullname
     }}</router-link> |

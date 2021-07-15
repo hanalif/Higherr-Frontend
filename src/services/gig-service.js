@@ -29,6 +29,7 @@ function getById(id) {
     // return httpService.get(`gig/${id}`)
     storageService.get(GIG_KEY, id).then(gig => console.log(gig))
     return storageService.get(GIG_KEY, id)
+    .then(gig =>  gig)
 }
 
 function remove(id) {
@@ -64,135 +65,135 @@ function getEmptyGig() {
 }
 
 const gGigs = [{
-        "_id": "10006547",
-        "title": "I will create music with unlimited instruments in any style",
-        "imgUrls": [
+       _id: "10006547",
+       tile: "I will create music with unlimited instruments in any style",
+       imgUls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
-        "price": 80.00,
-        "delivery": 30,
-        "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
-        "tags": [
+       prce: 80.00,
+       delivry: 30,
+       jobDescripton: "Fantastic duplex apartment with three bedrooms, located in...",
+     tag: [
             "TV",
             "Wifi",
             "Kitchen",
             "Pets allowed",
             "Cooking basics"
         ],
-        "seller": {
-            "_id": "51399391",
-            "fullname": "Ronit Rozen",
-            "imgUrl": "https://x.com/pic.jpg"
+    seller: {
+           _id: "51399391",
+           fullame: "Ronit Rozen",
+           imUrl: "https://x.com/pic.jpg"
         },
     },
     {
-        "_id": "10006546",
-        "title": "Garden Design",
-        "imgUrls": [
+        _id: "10006546",
+        title: "Garden Design",
+        imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
-        "price": 80.00,
-        "delivery": 30,
-        "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
-        "tags": [
+        price: 80.00,
+        delivery: 30,
+        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        tags: [
             "TV",
             "Wifi",
             "Kitchen",
             "Pets allowed",
             "Cooking basics"
         ],
-        "seller": {
-            "_id": "51399391",
-            "fullname": "Davit Pok",
-            "imgUrl": "https://x.com/pic.jpg"
+        seller: {
+            _id: "51399391",
+            fullname: "Davit Pok",
+            imgUrl: "https://x.com/pic.jpg"
         },
     },
     {
-        "_id": "1000666",
-        "title": "Garden Design",
-        "imgUrls": [
+        _id: "1000666",
+        title: "Garden Design",
+        imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
-        "price": 80.00,
-        "delivery": 30,
-        "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
-        "tags": [
+        price: 80.00,
+        delivery: 30,
+        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        tags: [
             "TV",
             "Wifi",
             "Kitchen",
             "Pets allowed",
             "Cooking basics"
         ],
-        "seller": {
-            "_id": "51395444",
-            "fullname": "Davit Pok",
-            "imgUrl": "https://x.com/pic.jpg"
+        seller: {
+            _id: "51395444",
+            fullname: "Davit Pok",
+            imgUrl: "https://x.com/pic.jpg"
         },
     },
     {
-        "_id": "1000344",
-        "title": "Garden Design",
-        "imgUrls": [
+        _id: "1000344",
+        title: "Garden Design",
+        imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
-        "price": 80.00,
-        "delivery": 30,
-        "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
-        "tags": [
+        price: 80.00,
+        delivery: 30,
+        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        tags: [
             "TV",
             "Wifi",
             "Kitchen",
             "Pets allowed",
             "Cooking basics"
         ],
-        "seller": {
-            "_id": "5139899",
-            "fullname": "Davit Pok",
-            "imgUrl": "https://x.com/pic.jpg"
+        seller: {
+            _id: "5139899",
+            fullname: "Davit Pok",
+            imgUrl: "https://x.com/pic.jpg"
         },
     },
     {
-        "_id": "1000rree3",
-        "title": "Garden Design",
-        "imgUrls": [
+        _id: "1000rree3",
+        title: "Garden Design",
+        imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
-        "price": 80.00,
-        "delivery": 30,
-        "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
-        "tags": [
+        price: 80.00,
+        delivery: 30,
+        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        tags: [
             "TV",
             "Wifi",
             "Kitchen",
             "Pets allowed",
             "Cooking basics"
         ],
-        "seller": {
-            "_id": "5139445",
-            "fullname": "Davit Pok",
-            "imgUrl": "https://x.com/pic.jpg"
+        seller: {
+            _id: "5139445",
+            fullname: "Davit Pok",
+            imgUrl: "https://x.com/pic.jpg"
         },
     },
     {
-        "_id": "1002336",
-        "title": "Garden Design",
-        "imgUrls": [
+        _id: "1002336",
+        title: "Garden Design",
+        imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
-        "price": 80.00,
-        "delivery": 30,
-        "jobDescription": "Fantastic duplex apartment with three bedrooms, located in...",
-        "tags": [
+        price: 80.00,
+        delivery: 30,
+        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        tags: [
             "TV",
             "Wifi",
             "Kitchen",
             "Pets allowed",
             "Cooking basics"
         ],
-        "seller": {
-            "_id": "5112331",
-            "fullname": "Davit Pok",
-            "imgUrl": "https://x.com/pic.jpg"
+        seller: {
+            _id: "5112331",
+            fullname: "Davit Pok",
+            imgUrl: "https://x.com/pic.jpg"
         },
     }
 

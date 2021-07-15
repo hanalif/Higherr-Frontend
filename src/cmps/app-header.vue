@@ -1,46 +1,66 @@
 <template>
-  <section>
-    <nav class="main-layout">
-      <router-link to="/">
-          logo
-      </router-link>
-      <router-link to="/explore">Explore</router-link>|
-      <button>Sign In</button>
-      <button>Join</button>
+  <section class="app-header main-layout">
+    <nav class="nav">
+      <router-link to="/"> logo </router-link>
+      <div class="menu-items">
+        <router-link to="/explore">Explore</router-link>|
+        <div v-if="!loggedInUser" class="sign-btns-container">
+          <button @click="signIn">Sign In</button>
+          <button @click="signUp">Join</button>
+        </div>
+        <div v-else class="user-menu">
+          <i class="fas fa-user" @click="onUserMenuClick"></i>
 
-      <div class="user-menu">
-          loggedinUser
-          <img src="" alt="">
+          <div class="floating-menu" v-if="isFloatingMenuOpen">
+            <ul class="floating-menu-items">
+              <li>Profile</li>
+              <li>Logout</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
-
-
-    <div class="register-modal" hidden>
-      <form>
-        <h2>Login</h2>
-        <input type="text" placeholder="username" />
-        <input type="password" placeholder="password" />
-        <button>Login</button>
-      </form>
-      <h2>Signup</h2>
-      <form>
-        <input type="text" placeholder="username" />
-        <input type="text" placeholder="Your full name" />
-        <input type="password" placeholder="password" />
-        <button>Signup</button>
-      </form>
-    </div>
   </section>
 </template>
 
 <script>
 export default {
-  nethods: {
-    goHome() {
-      this.$router.push('/')
+  data() {
+    return {
+      isSign: false,
+      isFloatingMenuOpen: false
+    };
+  },
+  methods: {
+    signIn() {
+      this.$emit('signIn');
+    },
+    signUp() {
+      this.$emit('signUp');
+    },
+    isSignModal() {
+      this.isSign = false;
+    },
+    logout() {
+      this.$store
+        .dispatch({ type: "logout" })
+        .then(() => (this.loggedInUser = this.$store.getters.loggedinUser));
+    },
+    goToUser(){
+      this.$router.push('/user/u101')
+      
+    },
+    onUserMenuClick(){
+      this.isFloatingMenuOpen = !this.isFloatingMenuOpen;
     }
-  }
-
+  },
+  computed: {
+    loggedInUser() {
+      return this.$store.getters.loggedinUser; 
+    }
+  },
+  components: {},
+  created() {},
 };
 </script>
 

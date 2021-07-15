@@ -11,9 +11,12 @@ export default {
             let gigsToShow = state.gigs;
             return gigsToShow;
         },
+<<<<<<< HEAD
         gigToShow(state) {
             return state.gig
         }
+=======
+>>>>>>> b043cdb5d111b4443e334ba6e0695f729598ea29
     },
     mutations: {
         removeGig(state, { gigId }) {
@@ -70,11 +73,15 @@ export default {
                 throw err;
             }
         },
-        async getGigById(context, payload) {
+        async getGigById(context, { id }) {
             try {
+<<<<<<< HEAD
                 let gig = await gigService.getById(JSON.stringify(payload.id))
                 console.log('~ gig', gig)
                 context.commit({ type: 'setCurrGig', gig })
+=======
+                let gig = await gigService.getById(id)
+>>>>>>> b043cdb5d111b4443e334ba6e0695f729598ea29
                 return gig
             } catch (err) {
                 console.log('Cannot load gig', err);

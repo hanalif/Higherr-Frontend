@@ -27,14 +27,9 @@ const routes = [
     component: gigDetails
   },
   {
-    path: '/user/:userId',
+    path: '/user/profile',
     component: userDetails
   },
-  {
-    path: '/user/edit/:userId',
-    component: userDetails
-  },
-  
   
 ]
 

@@ -1,0 +1,54 @@
+
+.user-details-page{
+    background-color: $bgUserDetails;
+    border-top: 1px solid $borderclr1;
+    border-bottom: 1px solid $borderclr1;
+}
+
+.user-details{
+    display: flex;
+   gap: 20px;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: rem(50px);
+   margin-bottom: rem(50px);
+   
+
+   .user-details-card{
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid $borderclr1;
+    padding: em(30px, 14px);
+    font-size: rem(14px);
+    line-height: 130%;
+   }
+
+
+    .info-column{
+
+        .user-profile-img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .profile-img{
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        .profile-name-title{
+            text-align: center;
+            padding-top: rem(16px);
+        }
+        
+    }
+
+    .gigs-column{
+       
+    }
+   
+}
+
