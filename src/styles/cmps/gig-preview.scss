@@ -8,13 +8,19 @@
 
 .card-title {
     height: 50px;
+    font-weight: 600;
     &:hover {
         color: $clr3;
     }
 }
 
 .rate-count {
-    color: #62646a;
+    color: $clr1;
+}
+
+.rate-score {
+    color: #ffd337;
+    font-weight: 600;
 }
 
 .heart-icon {

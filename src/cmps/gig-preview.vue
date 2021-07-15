@@ -1,61 +1,58 @@
 <template>
     <section class="gig-card">
-    <swiper class="swiper" :options="swiperOption">
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide>
-    <swiper-slide>Slide 7</swiper-slide>
-    <swiper-slide>Slide 8</swiper-slide>
-    <swiper-slide>Slide 9</swiper-slide>
-    <swiper-slide>Slide 10</swiper-slide>
-    <div class="swiper-pagination" ></div>
-    <div class="swiper-button-prev" ></div>
-    <div class="swiper-button-next" ></div>
-  </swiper>
-    <router-link :to="'/gig/'+gig._id">
-        <img class="card-img" :src="gig.imgUrls"/>
-    </router-link>
+        <div class="block" >
+            <el-carousel height="150px" :interval="null" :trigger="'click'">
+                <el-carousel-item v-for="(img, index) in  gig.imgUrls" :key="index">
+                    <router-link :to="'/gig/'+gig._id">
+                        <img class="card-img" :src="img"/>
+                    </router-link>
+                </el-carousel-item>
+            </el-carousel>
+        </div>
         <div class="card-details">
-        <p>{{gig.seller.fullname}}</p>
-    <router-link :to="'/gig/'+gig._id">
-        <p class="card-title">{{gig.title}}</p>
-    </router-link>
-        <p>🌟 5.0 <span class="rate-count">(22)</span></p>
+            <p>{{gig.seller.fullname}}</p>
+            <router-link :to="'/gig/'+gig._id">
+            <long-text :txt="gig.title"/>
+            </router-link>
+            <p>🌟 <span class="rate-score"> 5.0</span> <span class="rate-count">(22)</span></p>
         </div>
         <div class="actions flex space-between">
-        <p class="heart-icon" :class="{red:isRed}" @click="isRed=!isRed">❤</p>
-        <p>Price: {{gig.price}}$</p>
+            <p class="heart-icon" :class="{red:isRed}" @click="isRed=!isRed">❤</p>
+            <p>Price: {{gig.price}}$</p>
         </div>
     </section>
 </template>
 
 <script>
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import longText from './long-text.vue'
 export default {
     props:{
         gig:Object
     },
-    components:{
-        Swiper,
-        SwiperSlide
-    },
     data(){
         return{
             isRed: false,
-            swiperOption: {
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'fraction'
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev'
-                }
-            }
         }
+    },
+    components:{
+        longText
     }
 }
 </script>
+<style>
+.el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 150px;
+    margin: 0;
+  }
+
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+  }
+</style>

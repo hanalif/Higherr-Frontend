@@ -106,32 +106,34 @@ function getEmptyGig() {
 }
 
 const gGigs = [{
-       _id: "10006547",
-       tile: "I will create music with unlimited instruments in any style",
-       imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+        _id: "10006547",
+        title: "I will create music with unlimited instruments in any style",
+        imgUrls: [
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg",
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2MnHnabPJEwDC9RPSGdA4I6baM4KQ9MB3w&usqp=CAU'
         ],
-       price: 80.00,
-       delivery: 30,
-       jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
-     tags: [
+        price: 80.00,
+        delivery: 30,
+        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        tags: [
             "TV",
             "Wifi",
             "Kitchen",
             "Pets allowed",
             "Cooking basics"
         ],
-    seller: {
-           _id: "51399391",
-           fullname: "Ronit Rozen",
-           imgUrl: "https://x.com/pic.jpg"
+        seller: {
+            _id: "51399391",
+            fullname: "Ronit Rozen",
+            imgUrl: "https://x.com/pic.jpg"
         },
     },
     {
         _id: "10006546",
         title: "Home Design",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg",
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2MnHnabPJEwDC9RPSGdA4I6baM4KQ9MB3w&usqp=CAU'
         ],
         price: 120.00,
         delivery: 1,
@@ -150,7 +152,8 @@ const gGigs = [{
         _id: "1000666",
         title: "Puki Design",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg",
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2MnHnabPJEwDC9RPSGdA4I6baM4KQ9MB3w&usqp=CAU'
         ],
         price: 20.00,
         delivery: 3,
@@ -169,7 +172,8 @@ const gGigs = [{
         _id: "1000344",
         title: "I will create a great logo for your roblox game",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg",
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2MnHnabPJEwDC9RPSGdA4I6baM4KQ9MB3w&usqp=CAU'
         ],
         price: 80.00,
         delivery: 30,
@@ -181,14 +185,17 @@ const gGigs = [{
         seller: {
             _id: "5139899",
             fullname: "Muki Levi",
-            imgUrl: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+            imgUrl: ["https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2MnHnabPJEwDC9RPSGdA4I6baM4KQ9MB3w&usqp=CAU'
+            ]
         },
     },
     {
         _id: "1000rree3",
         title: "Garden Design",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg",
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2MnHnabPJEwDC9RPSGdA4I6baM4KQ9MB3w&usqp=CAU'
         ],
         price: 80.00,
         delivery: 30,
@@ -207,7 +214,8 @@ const gGigs = [{
         _id: "1002336",
         title: "Garden Design",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg",
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2MnHnabPJEwDC9RPSGdA4I6baM4KQ9MB3w&usqp=CAU'
         ],
         price: 80.00,
         delivery: 30,

@@ -1,5 +1,4 @@
 import { gigService } from "../../services/gig-service.js";
-import { storageService } from "../../services/async-storage-service.js";
 
 export default {
     state: {

@@ -39,7 +39,6 @@ p {
 
 img {
     width: 100%;
-    
 }
 
 a {
@@ -59,20 +58,23 @@ a:active {
 }
 
 li {
-	padding: 0;
-	display: block;
-	list-style: none;
-	margin: 10px 0 0 0;
-}
-label{
-	margin:0 0 3px 0;
-	padding:0px;
-	display:block;
-	font-weight: bold;
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
 }
 
+label {
+    margin: 0 0 3px 0;
+    padding: 0px;
+    display: block;
+    font-weight: bold;
+}
+
+
 /* FORM STYLE */
-input[type=text], 
+
+input[type=text],
 input[type=date],
 input[type=datetime],
 input[type=number],
@@ -81,17 +83,18 @@ input[type=time],
 input[type=url],
 input[type=email],
 input[type=password],
-textarea, 
-select{
-	height: 33px;
-	box-sizing: border-box;
-	border:1px solid #BEBEBE;
-	padding: 7px;
-	margin:0px;
-	transition: all 0.30s ease-in-out;
-	outline: none;	
+textarea,
+select {
+    height: 33px;
+    box-sizing: border-box;
+    border: 1px solid #BEBEBE;
+    padding: 7px;
+    margin: 0px;
+    transition: all 0.30s ease-in-out;
+    outline: none;
 }
-input[type=text]:focus, 
+
+input[type=text]:focus,
 input[type=date]:focus,
 input[type=datetime]:focus,
 input[type=number]:focus,
@@ -100,48 +103,56 @@ input[type=time]:focus,
 input[type=url]:focus,
 input[type=email]:focus,
 input[type=password]:focus,
-textarea:focus, 
-select:focus{
-	border-color: #292525b5;
-}
-.field-divided{
-	width: 49%;
+textarea:focus,
+select:focus {
+    border-color: #292525b5;
 }
 
-.field-long{
-	width: 100%;
+.field-divided {
+    width: 49%;
 }
-.field-select{
-	width: 100%;
+
+.field-long {
+    width: 100%;
 }
-.field-textarea{
-	height: 100px;
+
+.field-select {
+    width: 100%;
 }
-input[type=submit], input[type=button], button{
-	padding: 9px 15px;
-	border: none;
-	color: #1dbf73;
-	cursor: pointer;
-	border-color: #1dbf73;
-	box-shadow: inset 0px 0px 0px 1px #1dbf73;
-	background: none;
-	font-weight: bold;
+
+.field-textarea {
+    height: 100px;
 }
-input[type=submit]:hover, input[type=button]:hover, button:hover{
-	background: #1dbf73;
-	color: white;
-	box-shadow:none;
-	-moz-box-shadow:none;
-	-webkit-box-shadow:none;
-}
-.required{
-	color:red;
+
+input[type=submit],
+input[type=button],
+// button {
+//     padding: 9px 15px;
+//     border: none;
+//     color: #1dbf73;
+//     cursor: pointer;
+//     border-color: #1dbf73;
+//     box-shadow: inset 0px 0px 0px 1px #1dbf73;
+//     background: none;
+//     font-weight: bold;
+// }
+input[type=submit]:hover,
+input[type=button]:hover,
+// button:hover {
+//     background: #1dbf73;
+//     color: white;
+//     box-shadow: none;
+//     -moz-box-shadow: none;
+//     -webkit-box-shadow: none;
+// }
+.required {
+    color: red;
 }
 
 .btn-primary {
-	color: white;
-	background: #1dbf73;
-	&:hover {
-		background: #19a463;
-	}
+    color: white;
+    background: #1dbf73;
+    &:hover {
+        background: #19a463;
+    }
 }
