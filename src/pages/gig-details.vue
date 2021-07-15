@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <nav>
+    <nav class="gig-nav">
       <a href="#gig-overview">Overview</a>
       <a href="#gig-description">Description</a>
       <a href="#about-seller">About the seller</a>
@@ -11,9 +11,9 @@
     <div class="gig-overview-contanier" v-if="gig">
       <div class="gig-info">
         <gig-overview id="gig-overview" :gig="gig" />
-        <!-- <gig-description id="gig-description" />
-        <about-seller id="about-seller" />
-        <gig-review id="gig-review" /> -->
+        <gig-description id="gig-description" :gig="gig" />
+        <about-seller id="about-seller" :gig="gig" />
+        <gig-review id="gig-review" />
       </div>
       <order-details />
     </div>

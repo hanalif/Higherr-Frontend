@@ -64,7 +64,6 @@ export default {
         },
         async getGigById(context, { id }) {
             try {
-                // const gigId = JSON.stringify(id)
                 let gig = await gigService.getById(id)
                 return gig
             } catch (err) {
