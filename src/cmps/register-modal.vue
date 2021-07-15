@@ -6,6 +6,7 @@
       </template>
 
       <template v-slot:body>
+        
         <input type="text" v-model="user.fullname" placeholder="Full Name" />
         <input type="text" v-model="user.nickname" placeholder="Nickname" />
         <input type="password" v-model="user.password" placeholder="Password" />
