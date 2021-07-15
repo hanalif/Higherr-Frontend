@@ -8,8 +8,7 @@
       <template v-slot:body>
         <input type="text" v-model="gig.title" placeholder="Gig title" />
         <input type="text" v-model="gig.jobDescription" placeholder="Job description" />
-        <input type="text" v-model="gig.jobDescription" placeholder="Img url" /> 
-        <button><i class="far fa-plus-square"></i></button>
+        
         
 
       </template>
@@ -31,7 +30,7 @@ export default {
     return {
       gig: {
         title: "",
-        imgUrls: [],
+        imgUrls: [''],
         price: 0,
         delivery: 0,
         jobDescription:'',
@@ -47,6 +46,9 @@ export default {
   methods: {
     closeModal() {
       this.$refs.modal.closeModal();
+    },
+    addImgUrl(){
+        
     },
     openModal() {
       this.$refs.modal.openModal();
