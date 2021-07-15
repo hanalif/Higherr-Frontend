@@ -13,8 +13,8 @@
 
           <div class="floating-menu" v-if="isFloatingMenuOpen">
             <ul class="floating-menu-items">
-              <li>Profile</li>
-              <li>Logout</li>
+              <li><router-link to="/user/profile">Profile</router-link></li>
+              <li><a @click="logout">Logout</a></li>
             </ul>
           </div>
         </div>
@@ -42,17 +42,14 @@ export default {
       this.isSign = false;
     },
     logout() {
-      this.$store
-        .dispatch({ type: "logout" })
-        .then(() => (this.loggedInUser = this.$store.getters.loggedinUser));
+      this.$store.dispatch({ type: "logout" });
     },
     goToUser(){
       this.$router.push('/user/u101')
-      
     },
     onUserMenuClick(){
       this.isFloatingMenuOpen = !this.isFloatingMenuOpen;
-    }
+    },
   },
   computed: {
     loggedInUser() {
