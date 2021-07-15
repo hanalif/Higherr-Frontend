@@ -1,55 +1,54 @@
+
+.user-details-page{
+    background-color: $bgUserDetails;
+    border-top: 1px solid $borderclr1;
+    border-bottom: 1px solid $borderclr1;
+}
+
 .user-details{
     display: flex;
    gap: 20px;
    justify-content: space-between;
    align-items: center;
+   margin-top: rem(50px);
+   margin-bottom: rem(50px);
    
 
-   .profile-details{
-    margin-top: 30px;
+   .user-details-card{
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+    background-color: #fff;
     border: 1px solid $borderclr1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: $clr5;
-    border: 1px solid $clr4;
-    padding: 30px;
-    font-size: 14px;
-    width: 360px;
+    padding: em(30px, 14px);
+    font-size: rem(14px);
     line-height: 130%;
    }
 
-   .top-details{
-       display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 15px;u101u101           
-   }
 
-   .profile-name-title{
-    font-size: 20px;
-    font-weight: 700;
-    color: $clr6;
-    text-align: center;
-    display: block;
-    padding-bottom: 10px;
-   }
+    .info-column{
 
-   .online-tag{
-       align-self: flex-end;
-       color: $clr3;
-       border: 1px solid $clr3;
-    border-radius: 12px;
-    margin-bottom: 5px;
-    padding: 0 6px;
-    text-transform: capitalize;
-   }
+        .user-profile-img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    .profile-img {
-        width: 150px;
-        height: 150px;
+            .profile-img{
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        .profile-name-title{
+            text-align: center;
+            padding-top: rem(16px);
+        }
+        
     }
+
+    .gigs-column{
+       
+    }
+   
 }
 
