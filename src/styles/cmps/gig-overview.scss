@@ -4,17 +4,44 @@
     }
 }
 
-.seller-details {
-    
-
-    & img {
-        width: 0.8rem;
-    }
+.star-img {
+    width: 0.8rem;
 }
 
-.seller-info {
-    & img {
-        width: 0.8rem;
-    }
+.review-star-img {
+    width: 1.2rem;
 }
 
+.reviews-title {
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.review-rate {
+    color: #e3c51b;
+}
+
+.user-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.review-add {
+    border: 1px solid $clr4;
+    padding: 1rem;
+    margin: 0.5rem;
+}

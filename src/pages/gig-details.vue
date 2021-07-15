@@ -1,19 +1,19 @@
 
 
 <template>
-  <div>
+  <div class="main-layout">
     <nav class="gig-nav">
       <a href="#gig-overview">Overview</a>
       <a href="#gig-description">Description</a>
       <a href="#about-seller">About the seller</a>
-      <a href="#gig-eview">Reviews</a>
+      <a href="#gig-review">Reviews</a>
     </nav>
-    <div class="gig-overview-contanier" v-if="gig">
+    <div class="gig-overview-contanier" v-if="user">
       <div class="gig-info">
         <gig-overview id="gig-overview" :gig="gig" />
         <gig-description id="gig-description" :gig="gig" />
         <about-seller id="about-seller" :gig="gig" />
-        <gig-review id="gig-review" />
+        <gig-review id="gig-review" :gig="gig" :user="user" />
       </div>
       <order-details />
     </div>
@@ -27,15 +27,23 @@ import aboutSeller from "../cmps/about-seller.vue";
 import gigReview from "../cmps/gig-review.vue";
 import orderDetails from "../cmps/order-details.vue";
 export default {
-    data() {
-        return {
-            gig: null
-        }
-    },
-  created() {
-       this.$store.dispatch({ type: "getGigById", id: this.$route.params.gigId})
-       .then(gig => this.gig = gig)
-
+  data() {
+    return {
+      gig: null,
+      user: null,
+    };
+  },
+  async created() {
+    const gig = await this.$store.dispatch({
+      type: "getGigById",
+      id: this.$route.params.gigId,
+    });
+    this.gig = gig;
+    const user = await this.$store.dispatch({
+      type: "getUserById",
+      id: gig.seller._id,
+    });
+    this.user = user;
   },
   components: {
     gigOverview,

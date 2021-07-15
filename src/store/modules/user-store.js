@@ -92,6 +92,15 @@ export default {
                 throw err
             }
 
+        },
+        async getUserById(context, { id }) {
+            try {
+                let user = await userService.getById(id)
+                return user
+            } catch (err) {
+                console.log('Cannot load user', err);
+                throw err;
+            }
         }
     }
 }
