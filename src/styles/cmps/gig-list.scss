@@ -1,12 +1,18 @@
 .gig-list {
     color: black;
-    ul {
+    .ul {
         display: grid;
-        gap: 20px;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        li {
-            width: 100%;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        .li {
+            max-width: 250px;
             border: 1px solid $clr4;
+            .el-carousel__indicator--horizontal {
+                padding: 14px 4px;
+                .el-carousel__button {
+                    width: 26px;
+                }
+            }
         }
     }
 }

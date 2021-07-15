@@ -3,13 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './styles/style.scss'
-import VueAwesomeSwiper from 'vue-awesome-swiper';
-import 'swiper/swiper-bundle.css'
-import element from 'element-ui'  
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
-
-Vue.use(VueAwesomeSwiper)
-Vue.use(element)
+Vue.use(ElementUI)
 
 
 new Vue({

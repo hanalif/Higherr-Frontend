@@ -1,5 +1,4 @@
 import { gigService } from "../../services/gig-service.js";
-import { storageService } from "../../services/async-storage-service.js";
 
 export default {
     state: {
@@ -41,7 +40,7 @@ export default {
                 return gig.price >= filterBy.price.min && gig.price <= filterBy.price.max
             })
             return filtered;
-        },
+        }
     },
     mutations: {
         removeGig(state, { gigId }) {
