@@ -74,7 +74,12 @@ label {
 
 /* FORM STYLE */
 
+<<<<<<< HEAD
 input[type=text],
+=======
+// inputs
+input[type=text], 
+>>>>>>> 31819a1c0c97b2505ba70ea637d466d889cb631c
 input[type=date],
 input[type=datetime],
 input[type=number],
@@ -83,6 +88,7 @@ input[type=time],
 input[type=url],
 input[type=email],
 input[type=password],
+<<<<<<< HEAD
 textarea,
 select {
     height: 33px;
@@ -155,4 +161,69 @@ input[type=button]:hover,
     &:hover {
         background: #19a463;
     }
+=======
+textarea, 
+select{
+	border-radius: 4px;
+	height: 33px;
+	box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+	margin:0px;
+	transition: all 0.30s ease-in-out;
+	outline: none;
+
+	&:focus {
+		border-color: #292525b5;
+	}
+}
+
+.field-divided{
+	width: 49%;
+}
+
+.field-long{
+	width: 100%;
+}
+
+.field-select{
+	width: 100%;
+}
+
+.field-textarea{
+	height: 100px;
+}
+
+// buttons
+input[type=submit], input[type=button], .btn{
+	border-radius: 4px;
+	padding: 9px 15px;
+	border: none;
+	color: $clr3;
+	cursor: pointer;
+	border-color: $clr3;
+	box-shadow: inset 0px 0px 0px 1px $clr3;
+	background: none;
+	font-weight: bold;
+
+	&:hover {
+		background: $clr3;
+		color: white;
+		box-shadow:none;
+		-moz-box-shadow:none;
+		-webkit-box-shadow:none;
+	}
+}
+
+.required{
+	color:red;
+}
+
+.btn-primary {
+	color: white;
+	background: $clr3;
+	&:hover {
+		background: $clr8;
+	}
+>>>>>>> 31819a1c0c97b2505ba70ea637d466d889cb631c
 }

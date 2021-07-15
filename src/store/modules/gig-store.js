@@ -40,7 +40,7 @@ export default {
                 return gig.price >= filterBy.price.min && gig.price <= filterBy.price.max
             })
             return filtered;
-        },
+        }
     },
     mutations: {
         removeGig(state, { gigId }) {

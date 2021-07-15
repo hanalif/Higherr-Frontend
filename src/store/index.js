@@ -9,6 +9,12 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
   },
+  getters: {
+    loggedinUserGigs: state => {
+      const loggedinUserId = state.userStore.loggedinUser?.id;
+      return state.gigStore.gigs.filter(gig => gig.seller._id === loggedinUserId)
+    }
+  },
   mutations: {
   },
   actions: {
