@@ -72,6 +72,8 @@ label{
 }
 
 /* FORM STYLE */
+
+// inputs
 input[type=text], 
 input[type=date],
 input[type=datetime],
@@ -83,27 +85,20 @@ input[type=email],
 input[type=password],
 textarea, 
 select{
+	border-radius: 4px;
 	height: 33px;
 	box-sizing: border-box;
 	border:1px solid #BEBEBE;
 	padding: 7px;
 	margin:0px;
 	transition: all 0.30s ease-in-out;
-	outline: none;	
+	outline: none;
+
+	&:focus {
+		border-color: #292525b5;
+	}
 }
-input[type=text]:focus, 
-input[type=date]:focus,
-input[type=datetime]:focus,
-input[type=number]:focus,
-input[type=search]:focus,
-input[type=time]:focus,
-input[type=url]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-textarea:focus, 
-select:focus{
-	border-color: #292525b5;
-}
+
 .field-divided{
 	width: 49%;
 }
@@ -111,37 +106,44 @@ select:focus{
 .field-long{
 	width: 100%;
 }
+
 .field-select{
 	width: 100%;
 }
+
 .field-textarea{
 	height: 100px;
 }
+
+// buttons
 input[type=submit], input[type=button], button{
+	border-radius: 4px;
 	padding: 9px 15px;
 	border: none;
-	color: #1dbf73;
+	color: $clr3;
 	cursor: pointer;
-	border-color: #1dbf73;
-	box-shadow: inset 0px 0px 0px 1px #1dbf73;
+	border-color: $clr3;
+	box-shadow: inset 0px 0px 0px 1px $clr3;
 	background: none;
 	font-weight: bold;
+
+	&:hover {
+		background: $clr3;
+		color: white;
+		box-shadow:none;
+		-moz-box-shadow:none;
+		-webkit-box-shadow:none;
+	}
 }
-input[type=submit]:hover, input[type=button]:hover, button:hover{
-	background: #1dbf73;
-	color: white;
-	box-shadow:none;
-	-moz-box-shadow:none;
-	-webkit-box-shadow:none;
-}
+
 .required{
 	color:red;
 }
 
 .btn-primary {
 	color: white;
-	background: #1dbf73;
+	background: $clr3;
 	&:hover {
-		background: #19a463;
+		background: $clr8;
 	}
 }

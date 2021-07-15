@@ -49,6 +49,12 @@
     }
     &__footer {
         padding: 10px 20px 20px;
+        display: flex;
+        justify-content: flex-end;
+        .buttons-container {
+            display: flex;
+            gap: 5px;
+        }
     }
 }
 .fade-enter-active,
