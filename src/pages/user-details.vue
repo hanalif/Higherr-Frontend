@@ -93,8 +93,8 @@ export default {
     gigEditForm
   },
   created() {
-    this.userGigs = this.$store.getters.loggedinUserGigs
-    console.log( this.userGigs)
+    this.userGigs = this.$store.getters.loggedinUserGigs;
+    this.user = this.$store.getters.loggedinUser;
   },
 };
 </script>

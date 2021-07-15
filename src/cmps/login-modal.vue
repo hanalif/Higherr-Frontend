@@ -13,8 +13,8 @@
       </template>
 
       <template v-slot:footer>
-        <button @click="$refs.modal.closeModal()">Cancel</button>
-        <button class="btn-primary" @click="loginSubmit">Save</button>
+        <button class="btn" @click="$refs.modal.closeModal()">Cancel</button>
+        <button class="btn-primary btn" @click="loginSubmit">Save</button>
       </template>
     </modal>
   </div>
