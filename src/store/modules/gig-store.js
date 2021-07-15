@@ -1,15 +1,46 @@
 import { gigService } from "../../services/gig-service.js";
+import { storageService } from "../../services/async-storage-service.js";
 
 export default {
     state: {
         gigs: [],
-        filterBy: {},
+        filterBy: {
+            txt: '',
+            tags: 'all',
+            delivery: null,
+            price: {
+                min: 0,
+                max: Infinity
+            }
+        },
         currGig: {}
     },
     getters: {
         gigsToShow(state) {
-            let gigsToShow = state.gigs;
-            return gigsToShow;
+            var gigs = state.gigs
+            var filterBy = state.filterBy
+            if (filterBy.txt === '' && filterBy.tags === 'all' &&
+                !filterBy.delivery && filterBy.price.min <= 0 && filterBy.price.max === Infinity) return gigs;
+            const searchStr = filterBy.txt.toLowerCase();
+            let filtered = gigs.filter(gig => {
+                if (searchStr === '') return gig
+                return gig.title.toLowerCase().includes(searchStr)
+            })
+            filtered = filtered.filter(gig => {
+                var tagsStr = gig.tags.join(' ')
+                if (filterBy.tags === 'all') return gig
+                return tagsStr.includes(filterBy.tags)
+            })
+            filtered = filtered.filter(gig => {
+                if (filterBy.delivery === '1') return gig.delivery <= 1
+                else if (filterBy.delivery === '3') return gig.delivery <= 3
+                else if (filterBy.delivery === '7') return gig.delivery <= 7
+                else return gig.delivery > 0
+            })
+            filtered = filtered.filter(gig => {
+                return gig.price >= filterBy.price.min && gig.price <= filterBy.price.max
+            })
+            return filtered;
         },
     },
     mutations: {
@@ -31,7 +62,6 @@ export default {
             state.filterBy = filterBy;
         },
         setCurrGig(state, { gig }) {
-            console.log('~ gig', gig)
             state.currGig = gig
         }
     },
@@ -39,7 +69,7 @@ export default {
 
         async loadGigs({ commit, state }) {
             try {
-                let gigs = await gigService.query(state.filterBy)
+                let gigs = await gigService.query()
                 commit({ type: 'setGigs', gigs })
                 return gigs;
             } catch (err) {
@@ -53,6 +83,16 @@ export default {
                 commit(payload)
             } catch (err) {
                 console.log('Cannot remove gig:', payload.gigId, err);
+                throw err;
+            }
+        },
+        async setFilter({ commit }, payload) {
+            try {
+                const filterBy = payload.filterBy
+                await gigService.setFilter(filterBy)
+                commit({ type: 'setFilter', filterBy })
+            } catch (err) {
+                console.log('Cannot filter gigs:', err);
                 throw err;
             }
         },

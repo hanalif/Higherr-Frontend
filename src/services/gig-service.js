@@ -4,6 +4,15 @@ import { storageService } from '../services/async-storage-service.js'
 // const KEY = 'toyDB';
 // const SERVER_PATH = 'http://localhost:3030'
 const GIG_KEY = 'gig_db'
+let filterBy = {
+    txt: '',
+    tags: 'all',
+    delivery: null,
+    price: {
+        min: 0,
+        max: Infinity
+    }
+}
 
 export const gigService = {
     query,
@@ -11,6 +20,8 @@ export const gigService = {
     remove,
     save,
     getEmptyGig,
+    setFilter,
+    getFilterdGigs
 }
 
 
@@ -28,6 +39,7 @@ function getById(id) {
     // return axios.get(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
     // return httpService.get(`gig/${id}`)
     return storageService.get(GIG_KEY, id)
+        .then(gig => gig)
 }
 
 function remove(id) {
@@ -46,6 +58,37 @@ function save(gig) {
     }
 }
 
+function setFilter(filter) {
+    filterBy = filter
+}
+
+function getFilterdGigs() {
+    return storageService.query(GIG_KEY)
+        .then(gigs => {
+            if (filterBy.txt === '' && filterBy.tags === 'all' &&
+                !filterBy.delivery && filterBy.price.min <= 0 && filterBy.price.max === Infinity) return gigs;
+            const searchStr = filterBy.txt.toLowerCase();
+            let filtered = gigs.filter(gig => {
+                if (searchStr === '') return gig
+                return gig.title.toLowerCase().includes(searchStr)
+            })
+            filtered = filtered.filter(gig => {
+                var tagsStr = gig.tags.join(' ')
+                if (filterBy.tags === 'all') return gig
+                return tagsStr.includes(filterBy.tags)
+            })
+            filtered = filtered.filter(gig => {
+                if (filterBy.delivery === '1') return gig.delivery <= 1
+                else if (filterBy.delivery === '3') return gig.delivery <= 3
+                else if (filterBy.delivery === '7') return gig.delivery <= 7
+                else return gig.delivery > 0
+            })
+            filtered = filtered.filter(gig => {
+                return gig.price >= filterBy.price.min && gig.price <= filterBy.price.max
+            })
+            console.log(filtered);
+        });
+}
 
 
 function getEmptyGig() {
@@ -86,19 +129,16 @@ const gGigs = [{
     },
     {
         _id: "10006546",
-        title: "Garden Design",
+        title: "Home Design",
         imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
-        price: 80.00,
-        delivery: 30,
+        price: 120.00,
+        delivery: 1,
         jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
         tags: [
-            "TV",
-            "Wifi",
-            "Kitchen",
-            "Pets allowed",
-            "Cooking basics"
+            'madia',
+            'comunucation'
         ],
         seller: {
             _id: "51399391",
@@ -108,19 +148,16 @@ const gGigs = [{
     },
     {
         _id: "1000666",
-        title: "Garden Design",
+        title: "Puki Design",
         imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
-        price: 80.00,
-        delivery: 30,
+        price: 20.00,
+        delivery: 3,
         jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
         tags: [
-            "TV",
-            "Wifi",
-            "Kitchen",
-            "Pets allowed",
-            "Cooking basics"
+            'web-develop',
+            'grafic'
         ],
         seller: {
             _id: "51395444",
@@ -138,11 +175,8 @@ const gGigs = [{
         delivery: 30,
         jobDescription: "Need a logo for your Roblox game or group? I will create the perfect logo exactly like you want it. 100% gaurantee that you will absolutly love it.",
         tags: [
-            "TV",
-            "Wifi",
-            "Kitchen",
-            "Pets allowed",
-            "Cooking basics"
+            'web-develop',
+            'grafic'
         ],
         seller: {
             _id: "5139899",
@@ -160,11 +194,8 @@ const gGigs = [{
         delivery: 30,
         jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
         tags: [
-            "TV",
-            "Wifi",
-            "Kitchen",
-            "Pets allowed",
-            "Cooking basics"
+            'web-develop',
+            'grafic'
         ],
         seller: {
             _id: "5139445",
@@ -182,11 +213,8 @@ const gGigs = [{
         delivery: 30,
         jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
         tags: [
-            "TV",
-            "Wifi",
-            "Kitchen",
-            "Pets allowed",
-            "Cooking basics"
+            'web-develop',
+            'grafic'
         ],
         seller: {
             _id: "5112331",
@@ -194,5 +222,4 @@ const gGigs = [{
             imgUrl: "https://x.com/pic.jpg"
         },
     }
-
 ]

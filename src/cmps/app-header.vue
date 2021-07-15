@@ -1,23 +1,24 @@
 <template>
   <section class="app-header main-layout">
     <nav class="nav">
-      <router-link to="/"> logo </router-link>
+      <router-link class="logo" to="/">fiverr</router-link>
       <div class="menu-items">
         <router-link to="/explore">Explore</router-link>|
-        <div v-if="!loggedInUser" class="sign-btns-container">
-          <button @click="signIn">Sign In</button>
-          <button @click="signUp">Join</button>
-        </div>
+        <a @click="signIn" v-if="!loggedInUser">Sign In</a>
+        <a @click="signUp" v-if="!loggedInUser">Join</a>
         <div v-else class="user-menu">
-          <i class="fas fa-user" @click="onUserMenuClick"></i>
+          <div class="user-menu-icon" @click="onUserMenuClick">
+            <i class="fas fa-user"></i>
+          </div>
 
           <div class="floating-menu" v-if="isFloatingMenuOpen">
             <ul class="floating-menu-items">
-              <li>Profile</li>
-              <li>Logout</li>
+              <li><router-link to="/user/profile">Profile</router-link></li>
+              <li><a @click="logout">Logout</a></li>
             </ul>
           </div>
         </div>
+        <div v-if="isFloatingMenuOpen" @click="onUserMenuClick" class="backdrop"></div>
       </div>
     </nav>
   </section>
@@ -28,36 +29,33 @@ export default {
   data() {
     return {
       isSign: false,
-      isFloatingMenuOpen: false
+      isFloatingMenuOpen: false,
     };
   },
   methods: {
     signIn() {
-      this.$emit('signIn');
+      this.$emit("signIn");
     },
     signUp() {
-      this.$emit('signUp');
+      this.$emit("signUp");
     },
     isSignModal() {
       this.isSign = false;
     },
     logout() {
-      this.$store
-        .dispatch({ type: "logout" })
-        .then(() => (this.loggedInUser = this.$store.getters.loggedinUser));
+      this.$store.dispatch({ type: "logout" });
     },
-    goToUser(){
-      this.$router.push('/user/u101')
-      
+    goToUser() {
+      this.$router.push("/user/u101");
     },
-    onUserMenuClick(){
+    onUserMenuClick() {
       this.isFloatingMenuOpen = !this.isFloatingMenuOpen;
-    }
+    },
   },
   computed: {
     loggedInUser() {
-      return this.$store.getters.loggedinUser; 
-    }
+      return this.$store.getters.loggedinUser;
+    },
   },
   components: {},
   created() {},
