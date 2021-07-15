@@ -4,7 +4,7 @@ import { userService } from '../../services/user-service.js'
 // var localLoggedinUser = null;
 // if (sessionStorage.user) localLoggedinUser = JSON.parse(sessionStorage.user || null);
 
-export default  {
+export default {
     state: {
         loggedinUser: userService.getLoggedinUser(),
         users: [],
@@ -19,8 +19,11 @@ export default  {
         setLoggedinUser(state, { user }) {
             state.loggedinUser = user;
         },
-        setLoggedinUser(state, { user }) {
-            state.loggedinUser = user;
+        addUser(state, { user }) {
+            state.users = [
+                ...state.users,
+                user
+            ];
         },
         setWatchedUser(state, { user }) {
             state.watchedUser = user;
@@ -52,7 +55,6 @@ export default  {
                 console.log('userStore: Error in signup', err)
                 throw err
             }
-
         },
         async logout({ commit }) {
             try {

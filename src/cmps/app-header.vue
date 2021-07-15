@@ -1,17 +1,23 @@
 <template>
-  <section>
-    <nav class="main-layout">
-      <router-link to="/">
-          logo
-      </router-link>
-      <router-link to="/explore">Explore</router-link>|
-      <div class="sign-btns-container">
-        <button @click="join">Signup</button>
-        <button @click="join">Join</button>
-      </div>
-      <div class="user-menu">
-        loggedinUser
-        <img src="" alt="" />
+  <section class="app-header main-layout">
+    <nav class="nav">
+      <router-link to="/"> logo </router-link>
+      <div class="menu-items">
+        <router-link to="/explore">Explore</router-link>|
+        <div v-if="!loggedInUser" class="sign-btns-container">
+          <button @click="signIn">Sign In</button>
+          <button @click="signUp">Join</button>
+        </div>
+        <div v-else class="user-menu">
+          <i class="fas fa-user" @click="onUserMenuClick"></i>
+
+          <div class="floating-menu" v-if="isFloatingMenuOpen">
+            <ul class="floating-menu-items">
+              <li>Profile</li>
+              <li>Logout</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   </section>
@@ -19,15 +25,18 @@
 
 <script>
 export default {
-    data() {
+  data() {
     return {
       isSign: false,
-      loggedInUser: this.$store.getters.loggedinUser,
+      isFloatingMenuOpen: false
     };
   },
   methods: {
-    join() {
-      this.isSign = true;
+    signIn() {
+      this.$emit('signIn');
+    },
+    signUp() {
+      this.$emit('signUp');
     },
     isSignModal() {
       this.isSign = false;
@@ -35,16 +44,19 @@ export default {
     logout() {
       this.$store
         .dispatch({ type: "logout" })
-        .then(() => (this.loggedInUser = this.$store.getters.loggedinUser ));
+        .then(() => (this.loggedInUser = this.$store.getters.loggedinUser));
     },
+    onUserMenuClick(){
+      this.isFloatingMenuOpen = !this.isFloatingMenuOpen;
+    }
   },
-  components: {
-    
+  computed: {
+    loggedInUser() {
+      return this.$store.getters.loggedinUser; 
+    }
   },
-  created () {
-
-  },
-  
+  components: {},
+  created() {},
 };
 </script>
 

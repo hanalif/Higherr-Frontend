@@ -1,5 +1,51 @@
-.header-nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.app-header {
+    background-color: white;
+    .nav {
+        color: black;
+        font-weight: 900;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            color: black;
+        }
+
+        .menu-items {
+            display: flex;
+            gap: 8px;
+
+            .user-menu {
+                position: relative;
+                background: #c0c8f0;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .floating-menu {
+                    position: absolute;
+                    top: 35px;
+                    right: 0;
+                    background-color: white;
+                    box-shadow: 0 0 5px 1px #0000001f;
+                    width: 206px;
+                    border-radius: 4px;
+                    padding: 5px 15px;
+
+                    .floating-menu-items {
+                        white-space: nowrap;
+                        font-weight: 600;
+                        text-decoration: none;
+                        color: #7a7d85;
+
+                        li {
+                            padding: 5px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
