@@ -1,6 +1,7 @@
 .app-header {
     background-color: white;
     .nav {
+        user-select: none;
         color: black;
         font-weight: 900;
         display: flex;
@@ -16,14 +17,17 @@
 
             .user-menu {
                 position: relative;
-                background: #c0c8f0;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                z-index: 2;
 
+                .user-menu-icon {
+                    background: #c0c8f0;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
                 .floating-menu {
                     position: absolute;
                     top: 35px;
@@ -51,6 +55,14 @@
                         }
                     }
                 }
+            }
+            .backdrop {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
             }
         }
     }

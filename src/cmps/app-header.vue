@@ -9,7 +9,9 @@
           <button @click="signUp">Join</button>
         </div>
         <div v-else class="user-menu">
-          <i class="fas fa-user" @click="onUserMenuClick"></i>
+          <div class="user-menu-icon" @click="onUserMenuClick">
+            <i class="fas fa-user"></i>
+          </div>
 
           <div class="floating-menu" v-if="isFloatingMenuOpen">
             <ul class="floating-menu-items">
@@ -18,6 +20,7 @@
             </ul>
           </div>
         </div>
+        <div v-if="isFloatingMenuOpen" @click="onUserMenuClick" class="backdrop"></div>
       </div>
     </nav>
   </section>
@@ -28,15 +31,15 @@ export default {
   data() {
     return {
       isSign: false,
-      isFloatingMenuOpen: false
+      isFloatingMenuOpen: false,
     };
   },
   methods: {
     signIn() {
-      this.$emit('signIn');
+      this.$emit("signIn");
     },
     signUp() {
-      this.$emit('signUp');
+      this.$emit("signUp");
     },
     isSignModal() {
       this.isSign = false;
@@ -44,17 +47,17 @@ export default {
     logout() {
       this.$store.dispatch({ type: "logout" });
     },
-    goToUser(){
-      this.$router.push('/user/u101')
+    goToUser() {
+      this.$router.push("/user/u101");
     },
-    onUserMenuClick(){
+    onUserMenuClick() {
       this.isFloatingMenuOpen = !this.isFloatingMenuOpen;
     },
   },
   computed: {
     loggedInUser() {
-      return this.$store.getters.loggedinUser; 
-    }
+      return this.$store.getters.loggedinUser;
+    },
   },
   components: {},
   created() {},
