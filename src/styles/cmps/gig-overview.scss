@@ -4,6 +4,35 @@
     }
 }
 
+.gig-overview-contanier {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.order-details {
+    position: sticky;
+    top: 50%;
+    transform: translateY(-30%);
+    max-width: 350px;
+    max-height: 500px;
+}
+
+.order-card {
+    color: $clr1;
+    border: 1px solid $clr4;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    padding: 1rem;
+
+    & h1 {
+        align-self: center;
+        border-bottom: 1px solid $clr4;
+    }
+}
+
 .star-img {
     width: 0.8rem;
 }
@@ -44,4 +73,9 @@
     border: 1px solid $clr4;
     padding: 1rem;
     margin: 0.5rem;
+}
+
+.review-li {
+    border-top: 1px solid $clr4;
+    padding-top: 1rem;
 }

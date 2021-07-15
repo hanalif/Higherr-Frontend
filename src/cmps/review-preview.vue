@@ -12,8 +12,8 @@
 
 <script>
 export default {
-    props: {
-        review: Object
-    }
-}
+  props: {
+    review: Object,
+  },
+};
 </script>

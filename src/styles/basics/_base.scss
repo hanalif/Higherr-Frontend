@@ -7,12 +7,14 @@
 html {
     line-height: 1.6;
     font-family: Barlow-sami, Arial, Helvetica, sans-serif;
+	scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     background-size: 300px;
     background-attachment: fixed;
+	color: $clr7;
 }
 
 li {
@@ -25,12 +27,19 @@ ul {
 }
 
 h1,
-h2,
+h2
+{
+    margin: 0;
+	color: $clr6;
+}
+
 h3,
 h4,
 h5,
-h6 {
-    margin: 0;
+h6
+{
+	margin: 0;
+	color: $clr7;
 }
 
 p {

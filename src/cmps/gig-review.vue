@@ -17,7 +17,7 @@
         <option value="low">Low to high</option>
       </select>
       </section>
-      <button @click="toggleAdd">Add Review</button>
+      <button class="btn" @click="toggleAdd">Add Review</button>
     </div>
     <review-add v-if="isAddReview" />
     <ul class="review-list">
