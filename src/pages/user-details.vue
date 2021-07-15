@@ -79,6 +79,7 @@ export default {
   data() {
     return {
       user: null,
+      userGigs: []
     };
   },
   methods: {
@@ -92,7 +93,8 @@ export default {
     gigEditForm
   },
   created() {
-    this.user = this.$store.getters.loggedinUser;
+    this.userGigs = this.$store.getters.loggedinUserGigs
+    console.log( this.userGigs)
   },
 };
 </script>
