@@ -23,7 +23,9 @@
         </div>
 
         <div class="modal__footer">
-          <slot name="footer" />
+          <div class="buttons-container">
+            <slot name="footer" />
+          </div>
         </div>
       </div>
     </div>
