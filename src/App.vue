@@ -6,6 +6,7 @@
     <router-view />
     <app-footer />
 
+    <login-modal ref="loginModal"></login-modal>
     <register-modal ref="registerModal"></register-modal>
   </div>
 </template>
@@ -14,12 +15,13 @@
 import appHeader from "./cmps/app-header.vue";
 import appFooter from "./cmps/app-footer.vue";
 import registerModal from "./cmps/register-modal.vue";
+import loginModal from "./cmps/login-modal.vue";
 
 export default {
   created() {},
   methods: {
     onSignIn() {
-      console.log("onSignIn");
+      this.$refs.loginModal.openModal();
     },
     onSignUp() {
       this.$refs.registerModal.openModal();
@@ -28,7 +30,8 @@ export default {
   components: {
     appHeader,
     appFooter,
-    registerModal
+    registerModal,
+    loginModal
   },
 };
 </script>
