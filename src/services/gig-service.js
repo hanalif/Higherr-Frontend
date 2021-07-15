@@ -27,9 +27,7 @@ function query(filterBy) {
 function getById(id) {
     // return axios.get(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
     // return httpService.get(`gig/${id}`)
-    storageService.get(GIG_KEY, id).then(gig => console.log(gig))
     return storageService.get(GIG_KEY, id)
-    .then(gig =>  gig)
 }
 
 function remove(id) {
@@ -67,13 +65,13 @@ function getEmptyGig() {
 const gGigs = [{
        _id: "10006547",
        tile: "I will create music with unlimited instruments in any style",
-       imgUls: [
+       imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
-       prce: 80.00,
-       delivry: 30,
-       jobDescripton: "Fantastic duplex apartment with three bedrooms, located in...",
-     tag: [
+       price: 80.00,
+       delivery: 30,
+       jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+     tags: [
             "TV",
             "Wifi",
             "Kitchen",
@@ -82,8 +80,8 @@ const gGigs = [{
         ],
     seller: {
            _id: "51399391",
-           fullame: "Ronit Rozen",
-           imUrl: "https://x.com/pic.jpg"
+           fullname: "Ronit Rozen",
+           imgUrl: "https://x.com/pic.jpg"
         },
     },
     {
@@ -132,13 +130,13 @@ const gGigs = [{
     },
     {
         _id: "1000344",
-        title: "Garden Design",
+        title: "I will create a great logo for your roblox game",
         imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],
         price: 80.00,
         delivery: 30,
-        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        jobDescription: "Need a logo for your Roblox game or group? I will create the perfect logo exactly like you want it. 100% gaurantee that you will absolutly love it.",
         tags: [
             "TV",
             "Wifi",
@@ -148,8 +146,8 @@ const gGigs = [{
         ],
         seller: {
             _id: "5139899",
-            fullname: "Davit Pok",
-            imgUrl: "https://x.com/pic.jpg"
+            fullname: "Muki Levi",
+            imgUrl: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
         },
     },
     {
