@@ -1,7 +1,7 @@
 <template>
   <section class="app-header main-layout">
     <nav class="nav">
-      <router-link to="/"> logo </router-link>
+      <router-link class="logo" to="/">fiverr</router-link>
       <div class="menu-items">
         <router-link to="/explore">Explore</router-link>|
         <div v-if="!loggedInUser" class="sign-btns-container">

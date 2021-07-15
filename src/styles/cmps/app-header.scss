@@ -1,18 +1,28 @@
 .app-header {
     background-color: white;
+    height: 80px;
     .nav {
         user-select: none;
         color: black;
         font-weight: 900;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         a {
+            display: block;
             color: black;
+        }
+
+        .logo {
+            font-size: 40px;
+            font-family: serif;
+            font-weight: bold;
         }
 
         .menu-items {
             display: flex;
+            align-items: center;
             gap: 8px;
 
             .user-menu {
