@@ -1,29 +1,43 @@
 .app-header {
     background-color: white;
+    height: 80px;
     .nav {
+        user-select: none;
         color: black;
         font-weight: 900;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         a {
+            display: block;
             color: black;
+        }
+
+        .logo {
+            font-size: 40px;
+            font-family: serif;
+            font-weight: bold;
         }
 
         .menu-items {
             display: flex;
+            align-items: center;
             gap: 8px;
 
             .user-menu {
                 position: relative;
-                background: #c0c8f0;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                z-index: 2;
 
+                .user-menu-icon {
+                    background: #c0c8f0;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
                 .floating-menu {
                     position: absolute;
                     top: 35px;
@@ -42,9 +56,23 @@
 
                         li {
                             padding: 5px 0;
+                            a {
+                                color: #7a7d85;
+                                &:hover {
+                                    color: #1dbf73;
+                                }
+                            }
                         }
                     }
                 }
+            }
+            .backdrop {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
             }
         }
     }

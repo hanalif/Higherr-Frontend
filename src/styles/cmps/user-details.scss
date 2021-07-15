@@ -3,21 +3,22 @@
     background-color: $bgUserDetails;
     border-top: 1px solid $borderclr1;
     border-bottom: 1px solid $borderclr1;
+    color: $textClr1;
 }
 
 .user-details{
     display: flex;
    gap: 20px;
    justify-content: space-between;
-   align-items: center;
    margin-top: rem(50px);
    margin-bottom: rem(50px);
    
-
+    .card-size{
+        flex: 1;
+        max-width: 600px;
+        position: relative;
+    }
    .user-details-card{
-    flex: 1;
-    max-width: 400px;
-    position: relative;
     background-color: #fff;
     border: 1px solid $borderclr1;
     padding: em(30px, 14px);
@@ -25,8 +26,12 @@
     line-height: 130%;
    }
 
-
     .info-column{
+        .top-details{
+            display: flex;
+            flex-direction: column;
+            gap: rem(24px);
+        }
 
         .user-profile-img{
             display: flex;
@@ -37,17 +42,81 @@
                 width: 150px;
                 height: 150px;
             }
+
+            .top-edit-btn{
+                text-align: end;
+            }
         }
 
         .profile-name-title{
             text-align: center;
-            padding-top: rem(16px);
+            color: $clr6;
+        }
+        .user-stats{
+            display: flex;
+            flex-direction: column;
+            gap: rem(12px);
+            border-top: 1px solid $borderclr1;
+            padding-top: rem(15px);
+        }
+        .user-stat-line{
+            display: flex;
+            justify-content: space-between;
+
+            i{
+                padding-inline-end: rem(10px);
+            }
+
+            :last-child{
+                font-weight: bold;
+            }
         }
         
     }
 
+    .user-edit-btn{
+        margin-left: 10px;
+        margin-bottom: 10px;
+        font-size: em(20px);
+        cursor: pointer;
+       &:hover{
+           color: $clr3;
+       }
+    }
+
     .gigs-column{
-       
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+
+       .gigs-container{
+           display: flex;
+           gap: 20px;
+       }
+       .user-gig-card{
+        border: 1px solid $borderclr1;
+        flex: 1;
+        width: 200px;
+        position: relative;
+        background-color: $clr5;
+
+         img{
+            height: 145px;
+            object-fit: contain; 
+         }
+        
+       }
+
+       .user-gig-description{
+           color: $clr6;
+           letter-spacing: 1px;
+           line-height: normal;
+           font-weight: 700;
+           margin: 6px 12px 32px;
+       }
+
+      
+
     }
    
 }
