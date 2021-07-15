@@ -120,15 +120,15 @@ input[type=submit], input[type=button], button{
 	border-radius: 4px;
 	padding: 9px 15px;
 	border: none;
-	color: #1dbf73;
+	color: $clr3;
 	cursor: pointer;
-	border-color: #1dbf73;
-	box-shadow: inset 0px 0px 0px 1px #1dbf73;
+	border-color: $clr3;
+	box-shadow: inset 0px 0px 0px 1px $clr3;
 	background: none;
 	font-weight: bold;
 
 	&:hover {
-		background: #1dbf73;
+		background: $clr3;
 		color: white;
 		box-shadow:none;
 		-moz-box-shadow:none;
@@ -142,8 +142,8 @@ input[type=submit], input[type=button], button{
 
 .btn-primary {
 	color: white;
-	background: #1dbf73;
+	background: $clr3;
 	&:hover {
-		background: #19a463;
+		background: $clr8;
 	}
 }
