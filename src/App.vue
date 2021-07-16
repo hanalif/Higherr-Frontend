@@ -3,7 +3,7 @@
 <template>
   <div id="app">
     <app-header @signIn="onSignIn" @signUp="onSignUp" />
-    <router-view />
+    <router-view :key="$route.fullPath" />
     <app-footer />
 
     <login-modal ref="loginModal"></login-modal>
