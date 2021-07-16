@@ -2,16 +2,51 @@
   <div class="gig-edit-form">
     <modal @close="close" ref="modal">
       <template v-slot:header>
-        <h1>{{title}}</h1>
+        <h1>{{ title }}</h1>
       </template>
 
       <template v-slot:body>
-        <input type="text" v-model="gigToEdit.title" placeholder="Gig title" />
-        <input type="text" v-model="gigToEdit.jobDescription" placeholder="Job description" />
-        <input type="file" @change="onUploadImg">
-        
-        
-
+        <div class="gig-edit-container">
+          <label>Gig Title:</label>
+          <textarea
+            v-model="gig.title"
+            placeholder="Gig title"
+          ></textarea>
+        </div>
+        <div class="gig-edit-container">
+          <label>Gig Description:</label>
+          <textarea
+            v-model="gig.jobDescription"
+            placeholder="Job description"
+          ></textarea>
+        </div>
+        <div class="gig-edit-container">
+          <label for="delivery"
+            >Delivery time:
+            <input
+              name="delivery"
+              type="number"
+              v-model="gig.delivery"
+            />days</label
+          >
+        </div>
+        <div class="gig-edit-container">
+          <label for="price"
+            >Price:
+            <input
+              name="price"
+              type="number"
+              v-model="gig.price"
+            />$</label
+          >
+        </div>
+        <div class="gig-edit-container">
+          <label>Tags:</label>
+          <span v-for="(tag, index) in tagsList" :key="index">
+            <input type="checkbox" :id="tag" :name="tag" :value="tag" v-model="gig.tags" />
+            <label :for="tag">{{tag}}</label>
+          </span>
+        </div>
       </template>
 
       <template v-slot:footer>
@@ -26,50 +61,50 @@
 
 <script>
 import modal from "./modal.vue";
-import {uploadImg} from "../services/img-upload.service"
 export default {
-  props:['gigToEdit', 'seller'],
+  props: ["gigToEdit", "seller"],
   data() {
     return {
       gig: {
         title: "",
-        imgUrls: [''],
+        imgUrls: [""],
         price: 0,
         delivery: 0,
-        jobDescription:'',
-        tags: []
+        jobDescription: "",
+        tags: [],
       },
+      tagsList: [
+        "Media",
+        "Music",
+        "Web-Develop",
+        "Grafic",
+        "Comunication",
+        "Home Design",
+      ],
     };
   },
-  methods: {
-    
-  },
+  methods: {},
   computed: {
-      title() {
-          return 'edit or create'
-      },
+    title() {
+      return this.gig?._id ? "EDIT GIG" : "CREATE GIG";
+    },
   },
   methods: {
     close() {
-      this.$emit('close');
+      this.$emit("close");
     },
-      async onUploadImg(ev) {
-      const res = await uploadImg(ev)
-    },
-    addImgUrl(){
-        
-    },
+
     registerSubmit() {
-      this.gig.seller = this.seller
+      this.gig.seller = this.seller;
       this.$store.dispatch({ type: "saveGig", gig: this.gig });
+
       this.$refs.modal.closeModal();
     },
   },
-  created () {
-    if(this.gigToEdit?._id){
-        this.gig = {...this.gigToEdit};
+  created() {
+    if (this.gigToEdit?._id) {
+      this.gig = { ...this.gigToEdit };
     }
-    
   },
   components: {
     modal,
