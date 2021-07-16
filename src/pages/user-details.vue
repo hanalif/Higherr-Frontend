@@ -1,6 +1,6 @@
 <template>
   <section class="user-details-page main-layout">
-    <div class="user-details">
+    <div class="user-details" v-if="user">
       <div class="info-column card-size">
         <div class="user-details-card">
           <div class="top-details">
@@ -13,7 +13,7 @@
               />
               <div class="online-tag"> <i class="fas fa-circle"></i> online</div>
             </div>
-            <h2 class="profile-name-title">hana</h2>
+            <h2 class="profile-name-title">{{user.fullname}}</h2>
             <div class="user-stats">
               <div class="user-stat-line">
                 <span> <i class="fas fa-map-marker-alt"></i> from</span>
@@ -93,8 +93,11 @@ export default {
     gigEditForm
   },
   created() {
-    this.userGigs = this.$store.getters.loggedinUserGigs;
-    this.user = this.$store.getters.loggedinUser;
+    let userId = this.$route.params.userId
+     this.$store.dispatch({ type: "getUserById", id: userId }).then(user=>{
+        this.user = user
+    });
+
   },
 };
 </script>

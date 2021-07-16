@@ -13,7 +13,7 @@
 
           <div class="floating-menu" v-if="isFloatingMenuOpen">
             <ul class="floating-menu-items">
-              <li><router-link to="/user/profile">Profile</router-link></li>
+              <li><router-link :to="`/user/`+loggedInUser._id">Profile</router-link></li>
               <li><a @click="logout">Logout</a></li>
             </ul>
           </div>
