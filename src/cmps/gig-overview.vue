@@ -3,7 +3,7 @@
     <h1>{{ gig.title }}</h1>
     <div class="seller-details">
     <img class="user-img" :src="gig.seller.imgUrl" />
-    <router-link to="'user/' + gig.seller._id">{{
+    <router-link :to="'user/' + gig.seller._id">{{
       gig.seller.fullname
     }}</router-link> |
     <img class="star-img" src="@/assets/star.jpg" />

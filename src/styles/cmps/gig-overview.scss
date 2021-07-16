@@ -1,4 +1,9 @@
 
+.gig-details {
+    margin: 0 3rem;
+
+}
+
 .gig-nav {
     border-bottom: 1px solid $clr4;
     position: sticky;
@@ -34,9 +39,17 @@
 .order-details {
     position: sticky;
     top: 50%;
-    transform: translateY(-30%);
+    transform: translateY(-45%);
     max-width: 300px;
     max-height: 500px;
+}
+
+.gig-info {
+    
+    &>* {
+        margin-bottom: 2rem;
+        max-width: 750px;
+    }
 }
 
 .order-card {
@@ -113,6 +126,7 @@
     border: 1px solid $clr4;
     padding: 1rem;
     margin-top: 0.5rem;
+    max-width: 500px;
 }
 
 .el-carousel__item h3 {

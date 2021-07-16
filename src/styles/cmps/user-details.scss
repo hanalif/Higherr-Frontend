@@ -16,17 +16,24 @@
     margin-top: rem(50px);
     margin-bottom: rem(50px);
 
+    .card {
+        background-color: #fff;
+        border: 1px solid $borderclr1;
+        padding: em(30px, 14px);
+        font-size: rem(14px);
+        line-height: 130%;
+    }
+
     .card-size {
         flex: 1;
         max-width: 400px;
         position: relative;
     }
     .user-details-card {
-        background-color: #fff;
-        border: 1px solid $borderclr1;
-        padding: em(30px, 14px);
-        font-size: rem(14px);
-        line-height: 130%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
     }
     .info-column {
         .top-details {
@@ -62,6 +69,7 @@
                 border-radius: 50%;
                 width: 150px;
                 height: 150px;
+                border-radius: 50%;
             }
         }
         .profile-name-title {
@@ -131,7 +139,7 @@
             font-weight: 400;
             color: #303030;
             overflow: hidden;
-            margin: 6px 12px 32px;
+            padding: 10px;
             word-wrap: break-word;
             word-break: break-word;
         }

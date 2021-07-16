@@ -44,6 +44,9 @@ export default {
                 return gig.price >= filterBy.price.min && gig.price <= filterBy.price.max
             })
             return filtered.slice(startIdx, startIdx + PAGE_SIZE);
+        },
+        getGigs(state){
+            return state.gigs
         }
     },
     mutations: {
@@ -75,7 +78,6 @@ export default {
         }
     },
     actions: {
-
         async loadGigs({ commit, state }) {
             try {
                 let gigs = await gigService.query()
@@ -124,6 +126,11 @@ export default {
                 console.log('Cannot load gig', err);
                 throw err;
             }
+        },
+        async getGigsByUserId(context, {id}){
+            return context.state.gigs.filter(gig=>{
+                    gig.seller._id === id
+            })
         }
     }
 

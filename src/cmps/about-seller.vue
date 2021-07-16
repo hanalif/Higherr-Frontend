@@ -4,12 +4,9 @@
     <div class="seller-info">
       <img class="user-img" :src="gig.seller.imgUrl" />
       <h5>{{ gig.seller.fullname }}</h5>
-      <img class="star-img" src="@/assets/star.jpg" />
-      <img class="star-img" src="@/assets/star.jpg" />
-      <img class="star-img" src="@/assets/star.jpg" />
-      <img class="star-img" src="@/assets/star.jpg" />
-      <img class="star-img" src="@/assets/star.jpg" />
-      (53)
+      <el-rate v-model="value" disabled show-score text-color="#62646a">
+      </el-rate>
+      ({{seller.reviews.length}})
       <button class="btn">Contact Me</button>
     </div>
     <div class="seller-desc">
@@ -33,6 +30,19 @@ export default {
   props: {
     gig: Object,
     seller: Object,
+  },
+  data() {
+    return {
+      value: this.getAvgRating(),
+    };
+  },
+  methods: {
+    getAvgRating() {
+      const total = this.seller.reviews.reduce((acc, review) => {
+        return acc + review.rate;
+      }, 0);
+      return Math.round((total / this.seller.reviews.length) * 10) / 10;
+    },
   },
 };
 </script>
