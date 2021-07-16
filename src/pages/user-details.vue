@@ -8,7 +8,7 @@
             <div class="user-profile-img">
               <img
                   class="profile-img"
-                  :src="user.imgUrl || 'https://cdn.pixabay.com/photo/2015/12/22/04/00/photo-1103595_960_720.png'"
+                  :src="user.imgUrl || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'"
                   alt="user-avatar"
                 />
             </div>
