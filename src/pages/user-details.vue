@@ -8,7 +8,7 @@
             <div class="user-profile-img">
               <img
                   class="profile-img"
-                  :src="user.imgUrl || 'https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png'"
+                  :src="user.imgUrl || 'https://cdn.pixabay.com/photo/2015/12/22/04/00/photo-1103595_960_720.png'"
                   alt="user-avatar"
                 />
             </div>
@@ -41,7 +41,7 @@
       <div class="gigs-column">
         <div class="card">
           <div class="user-details-bar">
-            <h2 class="profile-title">User gigs</h2>
+            <h2 class="profile-title">USER GIGS</h2>
           </div>
         </div>
 
@@ -89,7 +89,9 @@ export default {
   },
   methods: {
     openGigForm() {
+      this.gigToEdit = null;
       this.showEditGigModal = true;
+
     },
     async editGig(gigId){
         const gig = await this.$store.dispatch({type: 'getGigById', id: gigId})
