@@ -2,10 +2,16 @@
   <section class="user-details-page main-layout">
     <div class="user-details" v-if="user">
       <div class="info-column card-size">
-        <div class="user-details-card">
+        <div class="user-details-card card">
           <div class="top-details">
-            'https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png'
-            alt="user-avatar" />
+            <div class="user-profile-img">
+              <img
+                  class="profile-img"
+                  :src="user.imgUrl || 'https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png'"
+                  alt="user-avatar"
+                />
+            </div>
+            <div class="online-tag"><i class="fas fa-circle"></i> online</div>
           </div>
           <h2 class="profile-name-title">{{ user.fullname }}</h2>
           <div class="user-stats">
@@ -32,7 +38,7 @@
       </div>
 
       <div class="gigs-column">
-        <div class="user-details-card">
+        <div class="card">
           <div class="user-details-bar">
             <h2 class="profile-title">User gigs</h2>
           </div>
