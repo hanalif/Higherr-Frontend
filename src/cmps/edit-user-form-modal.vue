@@ -1,8 +1,8 @@
 <template>
-  <div class="login-modal">
-    <modal ref="modal" @close="close">
+  <div class="user-edit-modal">
+    <modal ref="modal">
       <template v-slot:header>
-        <h1>Sign In</h1>
+        <h1>Edit User Details</h1>
       </template>
 
       <template v-slot:body>
@@ -13,7 +13,7 @@
       </template>
 
       <template v-slot:footer>
-        <button class="btn" @click="close">Cancel</button>
+        <button class="btn" @click="closeModal">Cancel</button>
         <button class="btn-primary btn" @click="loginSubmit">Save</button>
       </template>
     </modal>
@@ -25,19 +25,29 @@ import modal from "./modal.vue";
 export default {
   data() {
     return {
-      userCred: {
+      user: {
         username: "",
         password: ""
-      }
+      },
     };
   },
   methods: {
+    closeModal() {
+      this.$refs.modal.closeModal();
+      this.initUserCred();
+    },
+    openModal() {
+      this.$refs.modal.openModal();
+    },
     loginSubmit() {
       this.$store.dispatch({ type: "login", userCred: this.userCred });
-      this.close();
+      this.closeModal();
     },
-    close() {
-      this.$emit('close');
+    initUser() {
+      this.userCred ={
+        username: "",
+        password: ""
+      }
     }
   },
   created () {
