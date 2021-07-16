@@ -1,14 +1,22 @@
 <template>
   <div class="user-edit-modal">
-    <modal ref="modal">
+    <modal @close="close" ref="modal">
       <template v-slot:header>
         <h1>Edit User Details</h1>
       </template>
 
       <template v-slot:body>
         <div class="form-body">
-          <input type="text" v-model="userCred.username" placeholder="Username" />
-          <input type="password" v-model="userCred.password" placeholder="Password" />
+          <input
+            type="text"
+            v-model="userCred.username"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            v-model="userCred.password"
+            placeholder="Password"
+          />
         </div>
       </template>
 
@@ -26,32 +34,22 @@ export default {
   data() {
     return {
       user: {
-        username: "",
-        password: ""
+        from: "",
+        description: "",
+        skills: ""
       },
     };
   },
   methods: {
-    closeModal() {
-      this.$refs.modal.closeModal();
-      this.initUserCred();
-    },
-    openModal() {
-      this.$refs.modal.openModal();
+    close() {
+      this.$emit("close");
     },
     loginSubmit() {
       this.$store.dispatch({ type: "login", userCred: this.userCred });
-      this.closeModal();
+      this.close();
     },
-    initUser() {
-      this.userCred ={
-        username: "",
-        password: ""
-      }
-    }
   },
-  created () {
-  },
+  created() {},
   components: {
     modal,
   },
