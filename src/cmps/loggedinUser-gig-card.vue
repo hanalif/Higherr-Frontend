@@ -7,6 +7,7 @@
       />
        <long-text class="user-gig-description" :txt="gig.title"/>
       <i @click="onEditGig" class="fas fa-pen-square user-edit-btn buttom-edit-btn"></i>
+      <i @click="onRemoveGig" class="fas fa-trash user-edit-btn buttom-edit-btn"></i>
     </div>
     
   </div>
@@ -22,6 +23,9 @@ export default {
     methods:{
       onEditGig(){
         this.$emit('editGig', this.gig._id)
+      },
+      onRemoveGig(){
+        this.$emit('removeGig', this.gig._id)
       }
     }
     

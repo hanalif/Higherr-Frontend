@@ -52,6 +52,7 @@
               :gig="gig"
               :key="index"
               @editGig="editGig"
+              @removeGig="removeGig"
             ></loggedinUser-gig-card >
             <div class="user-gig-card add-new-gig">
               <div @click="openGigForm" class="circle-icon">
@@ -98,6 +99,9 @@ export default {
         this.gigToEdit = gig
         this.showEditGigModal = true; 
     },
+    async removeGig(gigId){
+       await this.$store.dispatch({type: 'removeGig', gigId: gigId})
+    },
     onEditGigClose(){
       this.showEditGigModal = false
     }
@@ -124,9 +128,10 @@ export default {
   created() {
     this.$store.dispatch("loadGigs");
     let userId = this.$route.params.userId;
+    const store = this.$store;
     this.$store.dispatch({ type: "getUserById", id: userId }).then((user) => {
       this.user = user;
-      if (user._id === this.$store.getters.loggedinUser._id) {
+      if (user._id === store.getters.loggedinUser._id) {
         this.isLoggedinUser = true;
       }
     });
