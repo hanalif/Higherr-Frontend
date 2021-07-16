@@ -9,6 +9,7 @@
         <div class="form-body">
           <input type="text" v-model="user.fullname" placeholder="Full Name" />
           <input type="text" v-model="user.nickname" placeholder="Nickname" />
+           <input type="text" v-model="user.from" placeholder="From" />
           <input type="password" v-model="user.password" placeholder="Password" />
         </div>
       </template>
@@ -30,6 +31,7 @@ export default {
         fullname: "",
         nickname: "",
         password: "",
+        from: "",
       },
     };
   },

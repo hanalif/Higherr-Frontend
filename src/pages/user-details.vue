@@ -9,33 +9,30 @@
               <img
                 class="profile-img"
                 :src="user.imgUrl ||'https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png'"
-                alt=""
+                alt="user-avatar"
               />
               <div class="online-tag"> <i class="fas fa-circle"></i> online</div>
             </div>
             <h2 class="profile-name-title">{{user.fullname}}</h2>
             <div class="user-stats">
               <div class="user-stat-line">
-                <span> <i class="fas fa-map-marker-alt"></i> from</span>
-                <span>Israel</span>
+                <span> <i class="fas fa-map-marker-alt"></i>from</span>
+                <span>{{user.from || 'Unknown yet'}}</span>
               </div>
               <div class="user-stat-line">
                 <span> <i class="fas fa-user"></i> Member since</span>
-                <span>2020</span>
+                <span>{{user.memberSince || 'unknown'}}</span>
               </div>
             </div>
             <div class="user-stats">
               <h2 class="profile-title">Description</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                ipsam odit facilis. Doloremque ipsa mollitia, ipsum beatae
-                ratione earum laboriosam, sequi temporibus atque consequuntur
-                asperiores eius rem perferendis pariatur eaque?
+               {{user.description}}
               </p>
             </div>
             <div class="user-stats">
               <h2 class="profile-title">Skills</h2>
-              <span>Video editor</span>
+              <span>{{user.skills || 'unknown yet'}}</span>
             </div>
           </div>
         </div>
@@ -49,18 +46,10 @@
         </div>
 
         <div class="gigs-container">
-          <div class="user-gig-card">
-            <img
-              src="https://www.tatapravesh.com/wp-content/uploads/2019/04/Tata-Pravesh-Pearl-Shell-Door-Teak-2.jpg"
-              alt="user-avatar"
-            />
-            <p class="user-gig-description">
-              I will do the best I can to do it
-            </p>
-            <i class="fas fa-pen-square user-edit-btn buttom-edit-btn"></i>
+          <div class="loggedinUser-gig-contain" v-if="isLoggedinUser">
+              <loggedinUser-gig-card :user="user" v-for="(gig, index) in userGigs" :key="index"></loggedinUser-gig-card>
           </div>
-
-           <div class="user-gig-card add-new-gig">
+           <div v-if="isLoggedinUser" class="user-gig-card add-new-gig">
              <div @click="openGigForm" class="circle-icon">
                <i class="fas fa-plus"></i>
              </div>
@@ -100,6 +89,9 @@ export default {
         this.user = user
         if(this.user._id === this.$store.getters.loggedinUser._id){
           this.isLoggedinUser = true
+          this.$store.dispatch({type: "getGigsByUserId", id: userId})
+        // this.userGigs = this.$store.getters.loggedinUserGigs
+        
         }
     });
   },

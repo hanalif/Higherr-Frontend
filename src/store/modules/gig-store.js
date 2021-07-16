@@ -114,6 +114,10 @@ export default {
                 console.log('Cannot load gig', err);
                 throw err;
             }
+        },
+        async getGigsByUserId(context, {id}){
+            console.log(context, id)
+            
         }
     }
 
