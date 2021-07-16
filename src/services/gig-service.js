@@ -68,7 +68,7 @@ const gGigs = [{
         ],
         seller: {
             _id: "51395444",
-            fullname: "yuli Potalov",
+            fullname: "Yuli Potalov",
             imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGa_HSPmOuXZjwVPe3iRFse3_ev61GED0hTg&usqp=CAU"
         },
     },
@@ -108,7 +108,7 @@ const gGigs = [{
         ],
         seller: {
             _id: "5139445",
-            fullname: "Dana lim",
+            fullname: "Dana Lim",
             imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2V0XCkHjYbLW3uy8osbkaWDGGOEuQnfJcuw&usqp=CAU"
         },
     },
@@ -132,7 +132,7 @@ const gGigs = [{
             fullname: "Roni Ron",
             imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2TRmnlIPn36w1HuBoXo7mreaRsINRXlhFWg&usqp=CAU"
         },
-    }
+    },
 ]
 
 export const gigService = {
@@ -146,13 +146,15 @@ export const gigService = {
 }
 
 
-function query(filterBy) {
+function query() {
     // return axios.get('http://localhost:3030/api/toy', { params: filterBy }).then(res => res.data);
     // return httpService.get(`gig`, filterBy )
-
     var gigs = storageService.query(GIG_KEY)
-    if (!gigs || !gigs.length) gigs = gGigs
-    localStorage.setItem(GIG_KEY, JSON.stringify(gigs))
+        .then(gigs => {
+            if (!gigs || !gigs.length) gigs = gGigs
+            localStorage.setItem(GIG_KEY, JSON.stringify(gigs))
+            return gigs
+        })
     return gigs
 }
 
