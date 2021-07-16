@@ -13,7 +13,11 @@
     <img class="star-img" src="@/assets/star.jpg" />
     (53)
     </div>
-    <img :src="gig.imgUrls[0]">
+    <el-carousel :interval="4000" type="card" height="200px">
+    <el-carousel-item v-for="img in gig.imgUrls" :key="img">
+      <img class="img-fit" :src="img" >
+    </el-carousel-item>
+  </el-carousel>
   </div>
 </template>
 

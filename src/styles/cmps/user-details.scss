@@ -28,19 +28,16 @@
         font-size: rem(14px);
         line-height: 130%;
     }
-
     .info-column {
         .top-details {
             display: flex;
             flex-direction: column;
             gap: rem(24px);
         }
-
         .user-profile-img {
             display: flex;
             justify-content: center;
             align-items: center;
-
             .online-tag {
                 position: absolute;
                 top: 78px;
@@ -55,19 +52,16 @@
                 justify-content: center;
                 align-items: center;
                 font-weight: 600;
-
                 i {
                     font-size: 10px;
                     padding-inline-end: 5px;
                 }
             }
-
             .profile-img {
                 width: 150px;
                 height: 150px;
             }
         }
-
         .profile-name-title {
             text-align: center;
             color: $clr6;
@@ -128,7 +122,6 @@
                 object-fit: contain;
             }
         }
-
         .user-gig-description {
             color: $clr6;
             letter-spacing: 1px;
@@ -136,7 +129,6 @@
             font-weight: 700;
             margin: 6px 12px 32px;
         }
-
         .buttom-edit-btn {
             text-align: end;
         }

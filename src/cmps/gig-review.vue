@@ -2,7 +2,7 @@
   <div>
     <div class="reviews-header">
       <section>
-      <h2 class="reviews-title">{{ user.reviews.length }} Reviews</h2>
+      <h2 class="reviews-title">{{ seller.reviews.length }} Reviews</h2>
       <img class="review-star-img" src="@/assets/star.jpg" />
       <img class="review-star-img" src="@/assets/star.jpg" />
       <img class="review-star-img" src="@/assets/star.jpg" />
@@ -21,7 +21,7 @@
     </div>
     <review-add v-if="isAddReview" />
     <ul class="review-list">
-    <review-list :reviews="user.reviews" />
+    <review-list :reviews="seller.reviews" />
     </ul>
   </div>
 </template>
@@ -33,7 +33,7 @@ import reviewAdd from './review-add.vue'
 export default {
   props: {
     gig: Object,
-    user: Object,
+    seller: Object,
   },
   data() {
     return {

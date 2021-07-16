@@ -7,14 +7,14 @@
 html {
     line-height: 1.6;
     font-family: Barlow-sami, Arial, Helvetica, sans-serif;
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     background-size: 300px;
     background-attachment: fixed;
-	color: $clr7;
+    color: $clr7;
 }
 
 li {
@@ -27,19 +27,17 @@ ul {
 }
 
 h1,
-h2
-{
+h2 {
     margin: 0;
-	color: $clr6;
+    color: $clr6;
 }
 
 h3,
 h4,
 h5,
-h6
-{
-	margin: 0;
-	color: $clr7;
+h6 {
+    margin: 0;
+    color: $clr7;
 }
 
 p {
@@ -84,7 +82,7 @@ label {
 /* FORM STYLE */
 
 // inputs
-input[type=text], 
+input[type=text],
 input[type=date],
 input[type=datetime],
 input[type=number],
@@ -93,67 +91,67 @@ input[type=time],
 input[type=url],
 input[type=email],
 input[type=password],
-textarea, 
-select{
-	border-radius: 4px;
-	height: 33px;
-	box-sizing: border-box;
-	border:1px solid #BEBEBE;
-	padding: 7px;
-	margin:0px;
-	transition: all 0.30s ease-in-out;
-	outline: none;
-
-	&:focus {
-		border-color: #292525b5;
-	}
+textarea,
+select {
+    border-radius: 4px;
+    height: 33px;
+    box-sizing: border-box;
+    border: 1px solid #BEBEBE;
+    padding: 7px;
+    margin: 0px;
+    transition: all 0.30s ease-in-out;
+    outline: none;
+    &:focus {
+        border-color: #292525b5;
+    }
 }
 
-.field-divided{
-	width: 49%;
+.field-divided {
+    width: 49%;
 }
 
-.field-long{
-	width: 100%;
+.field-long {
+    width: 100%;
 }
 
-.field-select{
-	width: 100%;
+.field-select {
+    width: 100%;
 }
 
-.field-textarea{
-	height: 100px;
+.field-textarea {
+    height: 100px;
 }
 
 // buttons
-input[type=submit], input[type=button], .btn{
-	border-radius: 4px;
-	padding: 9px 15px;
-	border: none;
-	color: $clr3;
-	cursor: pointer;
-	border-color: $clr3;
-	box-shadow: inset 0px 0px 0px 1px $clr3;
-	background: none;
-	font-weight: bold;
-
-	&:hover {
-		background: $clr3;
-		color: white;
-		box-shadow:none;
-		-moz-box-shadow:none;
-		-webkit-box-shadow:none;
-	}
+input[type=submit],
+input[type=button],
+.btn {
+    border-radius: 4px;
+    padding: 9px 15px;
+    border: none;
+    color: $clr3;
+    cursor: pointer;
+    border-color: $clr3;
+    box-shadow: inset 0px 0px 0px 1px $clr3;
+    background: none;
+    font-weight: bold;
+    &:hover {
+        background: $clr3;
+        color: white;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+    }
 }
 
-.required{
-	color:red;
+.required {
+    color: red;
 }
 
 .btn-primary {
-	color: white;
-	background: $clr3;
-	&:hover {
-		background: $clr8;
-	}
+    color: white;
+    background: $clr3;
+    &:hover {
+        background: $clr8;
+    }
 }

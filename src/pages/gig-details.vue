@@ -3,19 +3,19 @@
 <template>
   <div class="main-layout">
     <nav class="gig-nav">
-      <a href="#gig-overview">Overview</a>
-      <a href="#gig-description">Description</a>
-      <a href="#about-seller">About the seller</a>
-      <a href="#gig-review">Reviews</a>
+      <a class="gig-nav-a" href="#gig-overview">Overview</a>
+      <a class="gig-nav-a" href="#gig-description">Description</a>
+      <a class="gig-nav-a" href="#about-seller">About the seller</a>
+      <a class="gig-nav-a" href="#gig-review">Reviews</a>
     </nav>
-    <div class="gig-overview-contanier" v-if="user">
+    <div class="gig-overview-contanier" v-if="seller">
       <div class="gig-info">
         <gig-overview id="gig-overview" :gig="gig" />
         <gig-description id="gig-description" :gig="gig" />
-        <about-seller id="about-seller" :gig="gig" />
-        <gig-review id="gig-review" :gig="gig" :user="user" />
+        <about-seller id="about-seller" :gig="gig" :seller="seller" />
+        <gig-review id="gig-review" :gig="gig" :seller="seller" />
       </div>
-      <order-details :gig="gig" :user="user" />
+      <order-details :gig="gig" :seller="seller"/>
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       gig: null,
-      user: null,
+      seller: null,
     };
   },
   async created() {
@@ -43,7 +43,7 @@ export default {
       type: "getUserById",
       id: gig.seller._id,
     });
-    this.user = user;
+    this.seller = user;
   },
   components: {
     gigOverview,

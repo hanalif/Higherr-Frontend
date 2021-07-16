@@ -11,7 +11,10 @@ const gUsers =
             fullname: "Orly Amdadi",
             username: "orly@amdadi.com",
             password: "1234",
+            from: "England",
+            memberSince: "May 2021",
             imgUrl: "http://some-img",
+            about: "I am a video and photo editor, I have learned 4 years in UCLA and got my M.A there. I like to design and edit almost everything. Iv'e been doing online freelancing for a couple of years now, selling my works and you can see by my reviews that i am a pro. Thank you very much for choosing me to help you making your dreams come to life.",
             reviews: [
                 {
                     id: "dfe33",
@@ -31,7 +34,10 @@ const gUsers =
             fullname: "Daniel Sharon",
             username: "daniel@sharon.com",
             password: "1234",
+            from: "England",
+            memberSince: "May 2021",
             imgUrl: "http://some-img",
+            about: "I am a video and photo editor, I have learned 4 years in UCLA and got my M.A there. I like to design and edit almost everything. Iv'e been doing online freelancing for a couple of years now, selling my works and you can see by my reviews that i am a pro. Thank you very much for choosing me to help you making your dreams come to life.",
             reviews: [
                 {
                     id: "dAA33",
@@ -52,8 +58,11 @@ const gUsers =
             _id: "51399391",
             username: "ronit",
             password: "1234",
+            from: "England",
+            memberSince: "May 2021",
             fullname: "Ronit Rozen",
             imgUrl: "https://x.com/pic.jpg",
+            about: "I am a video and photo editor, I have learned 4 years in UCLA and got my M.A there. I like to design and edit almost everything. Iv'e been doing online freelancing for a couple of years now, selling my works and you can see by my reviews that i am a pro. Thank you very much for choosing me to help you making your dreams come to life.",
             reviews: [
                 {
                     id: "aaw13",
@@ -73,8 +82,11 @@ const gUsers =
             _id: "51399391",
             username: "david",
             password: "1234",
+            from: "England",
+            memberSince: "May 2021",
             fullname: "David Pok",
             imgUrl: "https://x.com/pic.jpg",
+            about: "I am a video and photo editor, I have learned 4 years in UCLA and got my M.A there. I like to design and edit almost everything. Iv'e been doing online freelancing for a couple of years now, selling my works and you can see by my reviews that i am a pro. Thank you very much for choosing me to help you making your dreams come to life.",
             reviews: [
                 {
                     id: "dfFDW",
@@ -94,8 +106,11 @@ const gUsers =
             _id: "51395444",
             username: "matan",
             password: "1234",
+            from: "England",
+            memberSince: "May 2021",
             fullname: "Matan Pok",
             imgUrl: "https://x.com/pic.jpg",
+            about: "I am a video and photo editor, I have learned 4 years in UCLA and got my M.A there. I like to design and edit almost everything. Iv'e been doing online freelancing for a couple of years now, selling my works and you can see by my reviews that i am a pro. Thank you very much for choosing me to help you making your dreams come to life.",
             reviews: [
                 {
                     id: "ZX2e3",
@@ -114,8 +129,11 @@ const gUsers =
             _id: "5139899",
             userName: "bob",
             password: "1234",
+            from: "England",
+            memberSince: "May 2021",
             fullname: "Bob Pok",
             imgUrl: "https://x.com/pic.jpg",
+            about: "I am a video and photo editor, I have learned 4 years in UCLA and got my M.A there. I like to design and edit almost everything. Iv'e been doing online freelancing for a couple of years now, selling my works and you can see by my reviews that i am a pro. Thank you very much for choosing me to help you making your dreams come to life.",
             reviews: [
                 {
                     id: "ALk87",
@@ -168,8 +186,11 @@ const gUsers =
             _id: "5139445",
             userName: "puki",
             password: "1234",
+            from: "England",
+            memberSince: "May 2021",
             fullname: "Puki Pok",
             imgUrl: "https://x.com/pic.jpg",
+            about: "I am a video and photo editor, I have learned 4 years in UCLA and got my M.A there. I like to design and edit almost everything. Iv'e been doing online freelancing for a couple of years now, selling my works and you can see by my reviews that i am a pro. Thank you very much for choosing me to help you making your dreams come to life.",
             reviews: [
                 {
                     id: "A11qw",
@@ -189,8 +210,11 @@ const gUsers =
             _id: "5112331",
             userName: "dana",
             password: "1234",
+            from: "England",
+            memberSince: "May 2021",
             fullname: "Dana Pok",
             imgUrl: "https://x.com/pic.jpg",
+            about: "I am a video and photo editor, I have learned 4 years in UCLA and got my M.A there. I like to design and edit almost everything. Iv'e been doing online freelancing for a couple of years now, selling my works and you can see by my reviews that i am a pro. Thank you very much for choosing me to help you making your dreams come to life.",
             reviews: [
                 {
                     id: "vfr44",
