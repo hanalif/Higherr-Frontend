@@ -10,7 +10,7 @@
     <img class="star-img" src="@/assets/star.jpg" />
     <img class="star-img" src="@/assets/star.jpg" />
     (53)
-    <button>Contact Me</button>   
+    <button class="btn">Contact Me</button>   
   </div>
 
 </div>

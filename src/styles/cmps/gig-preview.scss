@@ -18,6 +18,18 @@
     color: $clr1;
 }
 
+.user-card-title {
+    align-items: center;
+    p {
+        padding-left: 10px;
+    }
+}
+
+.gig-card-price {
+    color: $clr1;
+    font-weight: bold;
+}
+
 .rate-score {
     color: #ffd337;
     font-weight: 600;
