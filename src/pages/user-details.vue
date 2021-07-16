@@ -3,6 +3,7 @@
     <div class="user-details" v-if="user">
       <div class="info-column card-size">
         <div class="user-details-card card">
+           <i  v-if="isLoggedinUser" class="fas fa-pen-square user-edit-btn top-edit-btn"></i>
           <div class="top-details">
             <div class="user-profile-img">
               <img
@@ -58,6 +59,13 @@
               <h2 class="add-new-gig-desc">Create new gig</h2>
             </div>
           </template>
+          <template v-else>
+              <gig-preview  
+              v-for="(gig, index) in userGigs"
+              :gig="gig"
+              :key="index"
+            ></gig-preview>
+          </template>
         </div>
       </div>
     </div>
@@ -68,6 +76,7 @@
 <script>
 import gigEditForm from "../cmps/gig-edit-form.vue";
 import loggedinUserGigCard from "../cmps/loggedinUser-gig-card.vue";
+import gigPreview from '../cmps/gig-preview.vue'
 export default {
   data() {
     return {
@@ -92,6 +101,7 @@ export default {
   components: {
     gigEditForm,
     loggedinUserGigCard,
+    gigPreview
   },
   created() {
     this.$store.dispatch("loadGigs");

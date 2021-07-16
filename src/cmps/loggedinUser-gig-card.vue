@@ -5,7 +5,7 @@
         :src="gig.imgUrls[0] || 'https://cdn.pixabay.com/photo/2016/03/21/20/05/image-1271454_960_720.png'"
         alt="gig-image"
       />
-       <long-text :txt="gig.title"/>
+       <long-text class="user-gig-description" :txt="gig.title"/>
       <i class="fas fa-pen-square user-edit-btn buttom-edit-btn"></i>
     </div>
     
