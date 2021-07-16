@@ -40,6 +40,9 @@ export default {
                 return gig.price >= filterBy.price.min && gig.price <= filterBy.price.max
             })
             return filtered;
+        },
+        getGigs(state){
+            return state.gigs
         }
     },
     mutations: {
@@ -65,7 +68,6 @@ export default {
         }
     },
     actions: {
-
         async loadGigs({ commit, state }) {
             try {
                 let gigs = await gigService.query()
@@ -116,8 +118,9 @@ export default {
             }
         },
         async getGigsByUserId(context, {id}){
-            console.log(context, id)
-            
+            return context.state.gigs.filter(gig=>{
+                    gig.seller._id === id
+            })
         }
     }
 

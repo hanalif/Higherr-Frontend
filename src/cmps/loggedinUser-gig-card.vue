@@ -1,21 +1,28 @@
 <template>
   <div>
-    <div v-if="isLoggedinUser" class="user-gig-card">
+    <div class="user-gig-card">
       <img
-        src="https://www.tatapravesh.com/wp-content/uploads/2019/04/Tata-Pravesh-Pearl-Shell-Door-Teak-2.jpg"
-        alt="user-avatar"
+        :src="gig.imgUrls[0] || 'https://cdn.pixabay.com/photo/2016/03/21/20/05/image-1271454_960_720.png'"
+        alt="gig-image"
       />
-      <p class="user-gig-description">I will do the best I can to do it</p>
+       <long-text :txt="gig.title"/>
       <i class="fas fa-pen-square user-edit-btn buttom-edit-btn"></i>
     </div>
+    
   </div>
 </template>
 
 <script>
+import longText from './long-text.vue'
 export default {
-    props: ['user']
+    props: ['gig'],
+    components:{
+        longText
+    }
+    
     
 };
+
 </script>
 
 <style lang="scss" scoped>

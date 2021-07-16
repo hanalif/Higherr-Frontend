@@ -18,7 +18,8 @@ import registerModal from "./cmps/register-modal.vue";
 import loginModal from "./cmps/login-modal.vue";
 
 export default {
-  created() {},
+  created() {
+  },
   methods: {
     onSignIn() {
       this.$refs.loginModal.openModal();
