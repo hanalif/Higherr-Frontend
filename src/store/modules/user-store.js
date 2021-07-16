@@ -13,7 +13,7 @@ export default {
     getters: {
         users({ users }) { return users },
         loggedinUser({ loggedinUser }) { return loggedinUser },
-        watchedUser({ watchedUser }) { return watchedUser }
+        watchedUser({ watchedUser }) { return watchedUser },
     },
     mutations: {
         setLoggedinUser(state, { user }) {
@@ -85,8 +85,8 @@ export default {
         },
         async updateUser({ commit }, { user }) {
             try {
-                user = await userService.update(user);
-                commit({ type: 'setUser', user })
+                user = await userService.save(user);
+                commit({ type: 'setUsers', user })
             } catch (err) {
                 console.log('userStore: Error in updateUser', err)
                 throw err

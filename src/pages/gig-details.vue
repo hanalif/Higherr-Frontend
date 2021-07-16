@@ -1,7 +1,7 @@
 
 
 <template>
-  <div class="main-layout">
+  <div class="main-layout gig-details">
     <nav class="gig-nav">
       <a class="gig-nav-a" href="#gig-overview">Overview</a>
       <a class="gig-nav-a" href="#gig-description">Description</a>
