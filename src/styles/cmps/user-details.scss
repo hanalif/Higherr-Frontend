@@ -12,12 +12,13 @@
 .user-details {
     display: flex;
     gap: 20px;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: rem(50px);
     margin-bottom: rem(50px);
+
     .card-size {
         flex: 1;
-        max-width: 600px;
+        max-width: 400px;
         position: relative;
     }
     .user-details-card {
@@ -75,10 +76,12 @@
         .user-stat-line {
             display: flex;
             justify-content: space-between;
+
             i {
                 padding-inline-end: rem(10px);
             }
-             :last-child {
+
+            :last-child {
                 font-weight: bold;
             }
         }
@@ -95,20 +98,25 @@
             color: $clr3;
         }
     }
+
     .gigs-column {
+        max-width: 736px;
         gap: 20px;
         display: flex;
+        flex: 1;
         flex-direction: column;
+
         .gigs-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, 232px);
+            gap: 20px;
         }
         .user-gig-card {
             border: 1px solid $borderclr1;
-            width: 250px;
+            width: 232px;
             position: relative;
             background-color: $clr5;
+
             img {
                 height: 145px;
                 object-fit: contain;
@@ -132,10 +140,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 250px;
+
     h2 {
         cursor: pointer;
     }
+
     .circle-icon {
         cursor: pointer;
         background-color: #78cdd2;

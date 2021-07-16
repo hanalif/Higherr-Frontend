@@ -249,12 +249,12 @@ export const userService = {
 // window.userService = userService
 getUsers()
 
-function getUsers() {
+async function getUsers() {
     // return storageService.query('user')
     // return httpService.get(`user`)
-    var users = storageService.query(USER_KEY)
-    if (!users || !users.length) users = gUsers
-    localStorage.setItem(USER_KEY, JSON.stringify(users))
+    var users = await storageService.query(USER_KEY);
+    if (!users || !users.length) users = gUsers;
+    localStorage.setItem(USER_KEY, JSON.stringify(users));
     return users
 }
 
