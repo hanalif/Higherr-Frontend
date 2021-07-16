@@ -12,7 +12,7 @@
           </div>
 
           <div class="floating-menu" v-if="isFloatingMenuOpen">
-            <ul class="floating-menu-items">
+            <ul class="floating-menu-items" @click="onUserMenuClick">
               <li><router-link :to="`/user/`+loggedInUser._id">Profile</router-link></li>
               <li><a @click="logout">Logout</a></li>
             </ul>
@@ -44,6 +44,7 @@ export default {
     },
     logout() {
       this.$store.dispatch({ type: "logout" });
+      this.$router.push("/");
     },
     goToUser() {
       this.$router.push("/user/u101");

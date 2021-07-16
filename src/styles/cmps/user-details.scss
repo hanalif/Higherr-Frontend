@@ -12,53 +12,64 @@
 .user-details {
     display: flex;
     gap: 20px;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: rem(50px);
     margin-bottom: rem(50px);
-    .card-size {
-        flex: 1;
-        max-width: 600px;
-        position: relative;
-    }
-    .user-details-card {
+
+    .card {
         background-color: #fff;
         border: 1px solid $borderclr1;
         padding: em(30px, 14px);
         font-size: rem(14px);
         line-height: 130%;
     }
+
+    .card-size {
+        flex: 1;
+        max-width: 400px;
+        position: relative;
+    }
+    .user-details-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
     .info-column {
         .top-details {
+            position: relative;
             display: flex;
             flex-direction: column;
             gap: rem(24px);
+        }
+        .online-tag {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            border: 1px solid $clr3;
+            border-radius: 12px;
+            color: $clr3;
+            margin-bottom: 5px;
+            padding: 0 6px;
+            text-transform: capitalize;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            i {
+                font-size: 10px;
+                padding-inline-end: 5px;
+            }
         }
         .user-profile-img {
             display: flex;
             justify-content: center;
             align-items: center;
-            .online-tag {
-                position: absolute;
-                top: 78px;
-                right: 142px;
-                border: 1px solid $clr3;
-                border-radius: 12px;
-                color: $clr3;
-                margin-bottom: 5px;
-                padding: 0 6px;
-                text-transform: capitalize;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-weight: 600;
-                i {
-                    font-size: 10px;
-                    padding-inline-end: 5px;
-                }
-            }
             .profile-img {
+                border-radius: 50%;
                 width: 150px;
                 height: 150px;
+                border-radius: 50%;
             }
         }
         .profile-name-title {
@@ -75,10 +86,12 @@
         .user-stat-line {
             display: flex;
             justify-content: space-between;
+
             i {
                 padding-inline-end: rem(10px);
             }
-             :last-child {
+
+            :last-child {
                 font-weight: bold;
             }
         }
@@ -95,31 +108,40 @@
             color: $clr3;
         }
     }
+
     .gigs-column {
+        max-width: 736px;
         gap: 20px;
         display: flex;
+        flex: 1;
         flex-direction: column;
+
         .gigs-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, 232px);
+            gap: 20px;
         }
         .user-gig-card {
             border: 1px solid $borderclr1;
-            width: 250px;
+            width: 232px;
             position: relative;
             background-color: $clr5;
+            height: 260px;
+
             img {
                 height: 145px;
                 object-fit: contain;
             }
         }
         .user-gig-description {
-            color: $clr6;
-            letter-spacing: 1px;
-            line-height: normal;
-            font-weight: 700;
-            margin: 6px 12px 32px;
+            font-size: 15px;
+            line-height: 140%;
+            font-weight: 400;
+            color: #303030;
+            overflow: hidden;
+            padding: 10px;
+            word-wrap: break-word;
+            word-break: break-word;
         }
         .buttom-edit-btn {
             text-align: end;
@@ -132,10 +154,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 250px;
+
     h2 {
         cursor: pointer;
     }
+
     .circle-icon {
         cursor: pointer;
         background-color: #78cdd2;
@@ -147,5 +170,10 @@
         align-items: center;
         color: #fff;
         font-size: 20px;
+    }
+
+    .add-new-gig-desc {
+        font-size: 14px;
+        margin-top: 12px;
     }
 }

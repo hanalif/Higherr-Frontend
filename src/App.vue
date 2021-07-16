@@ -3,7 +3,7 @@
 <template>
   <div id="app">
     <app-header @signIn="onSignIn" @signUp="onSignUp" />
-    <router-view />
+    <router-view :key="$route.fullPath" />
     <app-footer />
 
     <login-modal ref="loginModal"></login-modal>
@@ -18,7 +18,8 @@ import registerModal from "./cmps/register-modal.vue";
 import loginModal from "./cmps/login-modal.vue";
 
 export default {
-  created() {},
+  created() {
+  },
   methods: {
     onSignIn() {
       this.$refs.loginModal.openModal();
