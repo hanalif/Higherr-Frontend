@@ -12,7 +12,9 @@
         <div class="card-details">
             <div class="user-card-title flex">
             <img class="user-img" :src="gig.seller.imgUrl" alt="">
+            <router-link :to="'user/'+gig.seller._id">
             <p>{{gig.seller.fullname}}</p>
+            </router-link>
                 </div>
             <router-link :to="'/gig/'+gig._id">
             <long-text :txt="gig.title"/>

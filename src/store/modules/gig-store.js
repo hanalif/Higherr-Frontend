@@ -1,6 +1,6 @@
 import { gigService } from "../../services/gig-service.js";
 
-const PAGE_SIZE = 3
+const PAGE_SIZE = 4
 
 export default {
     state: {

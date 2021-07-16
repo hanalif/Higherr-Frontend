@@ -48,7 +48,7 @@ const gGigs = [{
             'home-design',
         ],
         seller: {
-            _id: "51399391",
+            _id: "51399392",
             fullname: "Davir Ronen",
             imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUIjt1729YRBsVKe30AwJ2rHv4nWJBrUxxsQ&usqp=CAU"
         },
@@ -89,7 +89,7 @@ const gGigs = [{
         seller: {
             _id: "5139899",
             fullname: "Muki Levi",
-            imgUrl: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+            imgUrl: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFjZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
         },
     },
     {
@@ -107,7 +107,7 @@ const gGigs = [{
             'comunication'
         ],
         seller: {
-            _id: "5139445",
+            _id: "755443",
             fullname: "Dana Lim",
             imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2V0XCkHjYbLW3uy8osbkaWDGGOEuQnfJcuw&usqp=CAU"
         },
