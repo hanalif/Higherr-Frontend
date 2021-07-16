@@ -18,6 +18,11 @@ const routes = [
     path: '/explore',
     component: explore,
   },
+
+  {
+    path: '/user/:userId',
+    component: userDetails
+  },
   {
     path: '/gig/edit/:gigId?',
     component: gigEdit
@@ -26,10 +31,7 @@ const routes = [
     path: '/gig/:gigId',
     component: gigDetails
   },
-  {
-    path: '/user/:userId',
-    component: userDetails
-  },
+
   
 ]
 

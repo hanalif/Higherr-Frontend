@@ -46,9 +46,6 @@ export default {
       this.$store.dispatch({ type: "logout" });
       this.$router.push("/");
     },
-    goToUser() {
-      this.$router.push("/user/u101");
-    },
     onUserMenuClick() {
       this.isFloatingMenuOpen = !this.isFloatingMenuOpen;
     },
