@@ -8,7 +8,7 @@
       </div>
       <h4>{{ gig.jobDescription }}</h4>
       <h3>{{ gig.delivery }} Days delivery</h3>
-      <button>Purchase ({{ gig.price }}$)</button>
+      <button class="btn">Purchase ({{ gig.price }}$)</button>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@
 export default {
   props: {
     gig: Object,
-    user: Object,
+    seller: Object,
   },
 };
 </script>

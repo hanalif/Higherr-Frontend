@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div class="gigs-column card-size">
+      <div class="gigs-column">
         <div class="user-details-card">
           <div class="user-details-bar">
             <h2 class="profile-title">User gigs</h2>
@@ -87,7 +87,7 @@ export default {
     let userId = this.$route.params.userId
      this.$store.dispatch({ type: "getUserById", id: userId }).then(user=>{
         this.user = user
-        if(this.user._id === this.$store.getters.loggedinUser._id){
+        if(user._id === this.$store.getters.loggedinUser._id){
           this.isLoggedinUser = true
           this.$store.dispatch({type: "getGigsByUserId", id: userId})
         // this.userGigs = this.$store.getters.loggedinUserGigs

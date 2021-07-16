@@ -4,13 +4,16 @@
             <el-carousel height="150px" :interval="null" :trigger="'click'">
                 <el-carousel-item v-for="(img, index) in  gig.imgUrls" :key="index">
                     <router-link :to="'/gig/'+gig._id">
-                        <img class="card-img" :src="img"/>
+                        <img class="card-img img-fit" :src="img"/>
                     </router-link>
                 </el-carousel-item>
             </el-carousel>
         </div>
         <div class="card-details">
+            <div class="user-card-title flex">
+            <img class="user-img" :src="gig.seller.imgUrl" alt="">
             <p>{{gig.seller.fullname}}</p>
+                </div>
             <router-link :to="'/gig/'+gig._id">
             <long-text :txt="gig.title"/>
             </router-link>
@@ -18,7 +21,7 @@
         </div>
         <div class="actions flex space-between">
             <p class="heart-icon" :class="{red:isRed}" @click="isRed=!isRed">❤</p>
-            <p>Price: {{gig.price}}$</p>
+            <p class="gig-card-price">Price: {{gig.price}}$</p>
         </div>
     </section>
 </template>
@@ -39,20 +42,3 @@ export default {
     }
 }
 </script>
-<style>
-.el-carousel__item h3 {
-    color: #475669;
-    font-size: 14px;
-    opacity: 0.75;
-    line-height: 150px;
-    margin: 0;
-  }
-
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  }
-</style>

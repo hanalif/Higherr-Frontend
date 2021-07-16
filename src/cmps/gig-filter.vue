@@ -3,9 +3,11 @@
     <input type="text" v-model="filterBy.txt" placeholder="Search By Title.."/>
     <select name="" id="" v-model="filterBy.tags">
         <option value="media">Media</option>
+        <option value="music">Music</option>
         <option value="web-develop">Web-Develop</option>
         <option value="grafic">Grafic</option>
         <option value="comunication">Comunication</option>
+        <option value="home-design">Home Design</option>
         <option value="all">All</option>
     </select>
     <select name="" id="" v-model="filterBy.delivery">

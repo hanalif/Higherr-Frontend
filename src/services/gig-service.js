@@ -16,73 +16,72 @@ let filterBy = {
 
 const gGigs = [{
         _id: "10006547",
-        tile: "I will create music with unlimited instruments in any style",
+        title: "I will create music with unlimited instruments in any style",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ69Svv9n1P4SAtpSWIhlbsmfmPkofjjHGKvA&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyGVLcL8EH0abXdF_XVjeRM8s4qV1UWJwndQ&usqp=CAU '
         ],
-        price: 80.00,
-        delivery: 30,
-        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        price: 90.00,
+        delivery: 10,
+        jobDescription: "Over 8 years experience, I can produce any style you want and every genre you request.Feel free to contact me before placing the order and I will reply any questions.",
         tags: [
-            "TV",
-            "Wifi",
-            "Kitchen",
-            "Pets allowed",
-            "Cooking basics"
+            'madia',
+            'music'
         ],
         seller: {
             _id: "51399391",
             fullname: "Ronit Rozen",
-            imgUrl: "https://x.com/pic.jpg"
+            imgUrl: "https://i2-prod.mirror.co.uk/incoming/article14334083.ece/ALTERNATES/s615/3_Beautiful-girl-with-a-gentle-smile.jpg"
         },
     },
     {
         _id: "10006546",
-        title: "Home Design",
+        title: "I will design your home interior and exterior",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSItJSqhHESyzSoUWKiO2Psh8Ql_hOV0CInlg&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYpn_UkBDJ-6p9KXrXKk5OcLTCX202gz2OfA&usqp=CAU'
         ],
         price: 120.00,
-        delivery: 1,
-        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        delivery: 16,
+        jobDescription: "Hello, I am Davir Ronen Structural & Design Engineer in CECB ( Central Engineering Consultancy Bureau). Under this gig i design your dream home and provide you High Quality photo realistic Interior/Exterior render images. If you need more than that, i can provide you a video flythrough of your DREAM HOME also ...",
         tags: [
-            'madia',
-            'comunucation'
+            'home-design',
         ],
         seller: {
             _id: "51399391",
-            fullname: "Davit Pok",
-            imgUrl: "https://x.com/pic.jpg"
+            fullname: "Davir Ronen",
+            imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUIjt1729YRBsVKe30AwJ2rHv4nWJBrUxxsQ&usqp=CAU"
         },
     },
     {
         _id: "1000666",
-        title: "Puki Design",
+        title: "I will do custom order related to graphic design work",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            'https://www.pixelo.net/wp-content/uploads/2018/10/1934823-e1540532501723.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhfbgspa1XrSRSB064jU-V0K6GOf8VyrIlcQ&usqp=CAU'
         ],
-        price: 20.00,
+        price: 55.00,
         delivery: 3,
-        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        jobDescription: "Message me first before ordering so we can discuss about this gig. In this gig $5 will do you basic, simple and nice editing, but for more complex editing the price will increase. We can discuss and agree about the price. The price will depend on how complex the graphic job.",
         tags: [
-            'web-develop',
             'grafic'
         ],
         seller: {
             _id: "51395444",
-            fullname: "Davit Pok",
-            imgUrl: "https://x.com/pic.jpg"
+            fullname: "yuli Potalov",
+            imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGa_HSPmOuXZjwVPe3iRFse3_ev61GED0hTg&usqp=CAU"
         },
     },
     {
         _id: "1000344",
-        title: "I will create a great logo for your roblox game",
+        title: "I will design and develop a modern responsive wordpress website",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            'https://www.usnews.com/dims4/USNEWS/2cf9b0b/2147483647/crop/2000x1335%2B0%2B0/resize/300x300%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F65%2F62%2Fc9cb60d24ac89d56462b1228574a%2F201009-codingcomputer-stock.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfzDaybnxduCvnjXSvs34wtpfu6cb8QvXNLA&usqp=CAU'
         ],
-        price: 80.00,
-        delivery: 30,
-        jobDescription: "Need a logo for your Roblox game or group? I will create the perfect logo exactly like you want it. 100% gaurantee that you will absolutly love it.",
+        price: 180.00,
+        delivery: 38,
+        jobDescription: "Hello there, My name is Muki Levi, a Senior Web Developer in website development 24/7. Why choose me? I have experience with a large range of projects in Wordpress, including but not limited to a business website, blog, e-commerce, agency, directory listing, job portal, real estate and many more. I work with a focus on Standard, Aesthetics, and Professionalism to deliver the right product for your business.",
         tags: [
             'web-develop',
             'grafic'
@@ -95,40 +94,43 @@ const gGigs = [{
     },
     {
         _id: "1000rree3",
-        title: "Garden Design",
+        title: "I will remove noise, wind, echo, repair and clean your audio",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            'https://i.pinimg.com/originals/56/9c/2f/569c2f5ae8b76f899c3552a146014816.png',
+            'https://www.adorama.com/alc/wp-content/uploads/2018/12/shutterstock_484405837-1024x614.jpg'
         ],
-        price: 80.00,
-        delivery: 30,
-        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        price: 87.00,
+        delivery: 20,
+        jobDescription: "If your audio needs special repair, please send it to me before ordering to determine if I can help. If you are looking for a professional audio editor who works with industry-best tools, then let's talk about how I can help.",
         tags: [
-            'web-develop',
-            'grafic'
+            'music',
+            'comunication'
         ],
         seller: {
             _id: "5139445",
-            fullname: "Davit Pok",
-            imgUrl: "https://x.com/pic.jpg"
+            fullname: "Dana lim",
+            imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2V0XCkHjYbLW3uy8osbkaWDGGOEuQnfJcuw&usqp=CAU"
         },
     },
     {
         _id: "1002336",
-        title: "Garden Design",
+        title: "I will be your professional video spokesperson",
         imgUrls: [
-            "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
+            'https://cdn.pixabay.com/photo/2019/10/04/07/41/microphone-4525034_1280.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyk6Ly4Fb7aZSnsCvef2r-A_vH6WMQ2bzm4g&usqp=CAU'
         ],
-        price: 80.00,
-        delivery: 30,
-        jobDescription: "Fantastic duplex apartment with three bedrooms, located in...",
+        price: 110.00,
+        delivery: 5,
+        jobDescription: "I'm Roni and I'm available to be your video spokesperson. I have extensive spokesperson, acting and modeling experience. Work with a pro that can effectively communicate your message.",
         tags: [
-            'web-develop',
-            'grafic'
+            'music',
+            'media',
+            'comunication'
         ],
         seller: {
             _id: "5112331",
-            fullname: "Davit Pok",
-            imgUrl: "https://x.com/pic.jpg"
+            fullname: "Roni Ron",
+            imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2TRmnlIPn36w1HuBoXo7mreaRsINRXlhFWg&usqp=CAU"
         },
     }
 ]
