@@ -4,11 +4,11 @@
       <div class="info-column card-size">
         <div class="user-details-card">
           <div class="top-details">
-             <i class="fas fa-pen-square user-edit-btn top-edit-btn"></i>
+             <i v-if="isLoggedinUser" class="fas fa-pen-square user-edit-btn top-edit-btn"></i>
             <div class="user-profile-img">
               <img
                 class="profile-img"
-                src="https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
+                :src="user.imgUrl ||'https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png'"
                 alt=""
               />
               <div class="online-tag"> <i class="fas fa-circle"></i> online</div>
@@ -52,7 +52,7 @@
           <div class="user-gig-card">
             <img
               src="https://www.tatapravesh.com/wp-content/uploads/2019/04/Tata-Pravesh-Pearl-Shell-Door-Teak-2.jpg"
-              alt=""
+              alt="user-avatar"
             />
             <p class="user-gig-description">
               I will do the best I can to do it
@@ -79,7 +79,9 @@ export default {
   data() {
     return {
       user: null,
-      userGigs: []
+      userGigs: [],
+      isLoggedinUser: false
+
     };
   },
   methods: {
@@ -96,8 +98,10 @@ export default {
     let userId = this.$route.params.userId
      this.$store.dispatch({ type: "getUserById", id: userId }).then(user=>{
         this.user = user
+        if(this.user._id === this.$store.getters.loggedinUser._id){
+          this.isLoggedinUser = true
+        }
     });
-
   },
 };
 </script>
