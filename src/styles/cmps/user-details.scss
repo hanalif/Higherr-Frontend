@@ -30,34 +30,36 @@
     }
     .info-column {
         .top-details {
+            position: relative;
             display: flex;
             flex-direction: column;
             gap: rem(24px);
+        }
+        .online-tag {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            border: 1px solid $clr3;
+            border-radius: 12px;
+            color: $clr3;
+            margin-bottom: 5px;
+            padding: 0 6px;
+            text-transform: capitalize;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            i {
+                font-size: 10px;
+                padding-inline-end: 5px;
+            }
         }
         .user-profile-img {
             display: flex;
             justify-content: center;
             align-items: center;
-            .online-tag {
-                position: absolute;
-                top: 78px;
-                right: 142px;
-                border: 1px solid $clr3;
-                border-radius: 12px;
-                color: $clr3;
-                margin-bottom: 5px;
-                padding: 0 6px;
-                text-transform: capitalize;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-weight: 600;
-                i {
-                    font-size: 10px;
-                    padding-inline-end: 5px;
-                }
-            }
             .profile-img {
+                border-radius: 50%;
                 width: 150px;
                 height: 150px;
                 border-radius: 50%;
@@ -117,6 +119,7 @@
             width: 232px;
             position: relative;
             background-color: $clr5;
+            height: 260px;
 
             img {
                 height: 145px;
@@ -124,11 +127,14 @@
             }
         }
         .user-gig-description {
-            color: $clr6;
-            letter-spacing: 1px;
-            line-height: normal;
-            font-weight: 700;
+            font-size: 15px;
+            line-height: 140%;
+            font-weight: 400;
+            color: #303030;
+            overflow: hidden;
             margin: 6px 12px 32px;
+            word-wrap: break-word;
+            word-break: break-word;
         }
         .buttom-edit-btn {
             text-align: end;
@@ -157,5 +163,10 @@
         align-items: center;
         color: #fff;
         font-size: 20px;
+    }
+
+    .add-new-gig-desc {
+        font-size: 14px;
+        margin-top: 12px;
     }
 }

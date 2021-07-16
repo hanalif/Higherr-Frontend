@@ -3,6 +3,8 @@
     <h1>explore</h1>
     <gig-filter/>
     <gig-list :gigs="gigs"/>
+    <button @click="movePage(-1)">Prev</button>
+    <button @click="movePage(1)">Next</button>
   </section>
 </template>
 
@@ -16,6 +18,11 @@ export default {
   },
   created(){
     this.$store.dispatch('loadGigs')
+  },
+  methods:{
+    movePage(diff){
+      this.$store.commit({type:'movePage', diff:diff})
+    }
   },
   computed:{
     gigs(){

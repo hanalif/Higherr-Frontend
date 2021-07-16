@@ -1,8 +1,11 @@
 import { gigService } from "../../services/gig-service.js";
 
+const PAGE_SIZE = 3
+
 export default {
     state: {
         gigs: [],
+        pageIndex: 0,
         filterBy: {
             txt: '',
             tags: 'all',
@@ -16,10 +19,11 @@ export default {
     },
     getters: {
         gigsToShow(state) {
+            var startIdx = state.pageIndex * PAGE_SIZE
             var gigs = state.gigs
             var filterBy = state.filterBy
             if (filterBy.txt === '' && filterBy.tags === 'all' &&
-                !filterBy.delivery && filterBy.price.min <= 0 && filterBy.price.max === Infinity) return gigs;
+                !filterBy.delivery && filterBy.price.min <= 0 && filterBy.price.max === Infinity) return gigs.slice(startIdx, startIdx + PAGE_SIZE);
             const searchStr = filterBy.txt.toLowerCase();
             let filtered = gigs.filter(gig => {
                 if (searchStr === '') return gig
@@ -39,7 +43,7 @@ export default {
             filtered = filtered.filter(gig => {
                 return gig.price >= filterBy.price.min && gig.price <= filterBy.price.max
             })
-            return filtered;
+            return filtered.slice(startIdx, startIdx + PAGE_SIZE);
         },
         getGigs(state){
             return state.gigs
@@ -65,6 +69,12 @@ export default {
         },
         setCurrGig(state, { gig }) {
             state.currGig = gig
+        },
+        movePage(state, { diff }) {
+            state.pageIndex += diff
+            const maxPageNum = Math.ceil(state.gigs.length / PAGE_SIZE)
+            if (state.pageIndex >= maxPageNum) state.pageIndex = 0
+            if (state.pageIndex < 0) state.pageIndex = maxPageNum - 1
         }
     },
     actions: {
