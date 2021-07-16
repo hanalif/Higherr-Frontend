@@ -3,12 +3,12 @@
 }
 
 .card-details {
-    padding: 7px;
+    padding: 10px;
 }
 
 .card-title {
     height: 50px;
-    font-weight: 600;
+    margin: 5px 0;
     &:hover {
         color: $clr3;
     }
@@ -18,10 +18,19 @@
     color: $clr1;
 }
 
+.star-img {
+    color: #ffbe5b;
+}
+
 .user-card-title {
     align-items: center;
+    // font-family: macan-light;
+    font-size: 00.9rem;
     p {
         padding-left: 10px;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -31,7 +40,7 @@
 }
 
 .rate-score {
-    color: #ffd337;
+    color: #ffbe5b;
     font-weight: 600;
 }
 
@@ -46,5 +55,5 @@
 
 .actions {
     border-top: 1px solid rgba(128, 128, 128, 0.295);
-    padding: 7px;
+    padding: 10px;
 }

@@ -1,6 +1,15 @@
 // fonts
-
 @font-face {
     font-family: Barlow-sami;
     src: url(~@/assets/fonts/BarlowSemiCondensed/BarlowSemiCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: macan-regular;
+    src: url(~@/assets/fonts/macan/macan-regular-92412b97c2a1e21c95ba8d938a2c55df.woff2)
+}
+
+@font-face {
+    font-family: macan-light;
+    src: url(~@/assets/fonts/macan/macan-light-0835cc4494a2fbedfb7b6f618ce90f1e.woff2)
 }

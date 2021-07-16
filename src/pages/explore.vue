@@ -3,8 +3,10 @@
     <h1>explore</h1>
     <gig-filter/>
     <gig-list :gigs="gigs"/>
-    <button @click="movePage(-1)">Prev</button>
-    <button @click="movePage(1)">Next</button>
+    <div class="pagging-btns flex space-between">
+    <button @click="movePage(-1)">⪻ Prev</button>
+    <button @click="movePage(1)">Next ⪼</button>
+    </div>
   </section>
 </template>
 
