@@ -51,7 +51,8 @@
               v-for="(gig, index) in userGigs"
               :gig="gig"
               :key="index"
-            ></loggedinUser-gig-card>
+              @editGig="editGig"
+            ></loggedinUser-gig-card >
             <div class="user-gig-card add-new-gig">
               <div @click="openGigForm" class="circle-icon">
                 <i class="fas fa-plus"></i>
@@ -69,7 +70,7 @@
         </div>
       </div>
     </div>
-    <gig-edit-form ref="gigEditForm"></gig-edit-form>
+    <gig-edit-form v-if="showEditGigModal"  @close="onEditGigClose" :seller="seller" :gigToEdit="gigToEdit"></gig-edit-form>
   </section>
 </template>
 
@@ -82,12 +83,23 @@ export default {
     return {
       user: null,
       isLoggedinUser: false,
+      gigToEdit: null,
+      showEditGigModal: false
     };
   },
   methods: {
     openGigForm() {
-      this.$refs.gigEditForm.openModal();
+      this.showEditGigModal = true;
     },
+    async editGig(gigId){
+        const gig = await this.$store.dispatch({type: 'getGigById', id: gigId})
+        this.gigToEdit = gig
+        this.showEditGigModal = true; 
+    },
+    onEditGigClose(){
+      this.showEditGigModal = false
+    }
+    
   },
 
   computed: {
@@ -97,6 +109,10 @@ export default {
     userGigs() {
       return this.gigs.filter((gig) => gig.seller._id === this.user._id);
     },
+    seller(){
+      const seller = {_id : this.user._id, fullname: this.user.fullname, imgUrl: this.user.imgUrl || 'https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png' }
+      return seller
+    }
   },
   components: {
     gigEditForm,

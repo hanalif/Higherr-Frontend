@@ -6,7 +6,7 @@
         alt="gig-image"
       />
        <long-text class="user-gig-description" :txt="gig.title"/>
-      <i class="fas fa-pen-square user-edit-btn buttom-edit-btn"></i>
+      <i @click="onEditGig" class="fas fa-pen-square user-edit-btn buttom-edit-btn"></i>
     </div>
     
   </div>
@@ -18,6 +18,11 @@ export default {
     props: ['gig'],
     components:{
         longText
+    },
+    methods:{
+      onEditGig(){
+        this.$emit('editGig', this.gig._id)
+      }
     }
     
     

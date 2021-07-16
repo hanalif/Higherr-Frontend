@@ -1,13 +1,14 @@
 <template>
   <div class="gig-edit-form">
-    <modal ref="modal">
+    <modal @close="close" ref="modal">
       <template v-slot:header>
         <h1>{{title}}</h1>
       </template>
 
       <template v-slot:body>
-        <input type="text" v-model="gig.title" placeholder="Gig title" />
-        <input type="text" v-model="gig.jobDescription" placeholder="Job description" />
+        <input type="text" v-model="gigToEdit.title" placeholder="Gig title" />
+        <input type="text" v-model="gigToEdit.jobDescription" placeholder="Job description" />
+        <input type="file" @change="onUploadImg">
         
         
 
@@ -25,7 +26,9 @@
 
 <script>
 import modal from "./modal.vue";
+import {uploadImg} from "../services/img-upload.service"
 export default {
+  props:['gigToEdit', 'seller'],
   data() {
     return {
       gig: {
@@ -38,25 +41,35 @@ export default {
       },
     };
   },
+  methods: {
+    
+  },
   computed: {
       title() {
           return 'edit or create'
-      }
+      },
   },
   methods: {
-    closeModal() {
-      this.$refs.modal.closeModal();
+    close() {
+      this.$emit('close');
+    },
+      async onUploadImg(ev) {
+      const res = await uploadImg(ev)
     },
     addImgUrl(){
         
     },
-    openModal() {
-      this.$refs.modal.openModal();
-    },
     registerSubmit() {
+      this.gig.seller = this.seller
       this.$store.dispatch({ type: "saveGig", gig: this.gig });
       this.$refs.modal.closeModal();
     },
+  },
+  created () {
+    if(this.gigToEdit?._id){
+        this.gigToEdit = {...this.gig};
+    }
+    
   },
   components: {
     modal,

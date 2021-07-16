@@ -25,7 +25,10 @@ import modal from "./modal.vue";
 export default {
   data() {
     return {
-      userCred,
+      userCred: {
+        username: "",
+        password: ""
+      },
     };
   },
   methods: {
@@ -47,8 +50,8 @@ export default {
       }
     }
   },
-  created () {
-    this.initUserCred();
+  create () {
+    
   },
   components: {
     modal,

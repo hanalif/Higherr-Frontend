@@ -22,7 +22,7 @@
     {
         "_id": "u102",
         "fullname": "Daniel Sharon",
-        "userName": "dan@sharon.com",
+        "username": "dan@sharon.com",
         "password": "1234",
         "imgUrl": "http://some-img",
         "reviews": [
