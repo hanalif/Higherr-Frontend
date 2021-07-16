@@ -67,7 +67,7 @@ export default {
   },
   created () {
     if(this.gigToEdit?._id){
-        this.gigToEdit = {...this.gig};
+        this.gig = {...this.gigToEdit};
     }
     
   },
