@@ -59,7 +59,7 @@ export default {
           this.loggedInUser = user;
           this.credencials = { username: "", password: "" };
           this.isSignModal()
-          this.$router.push(`/user/${this.loggedInUser.id}`);
+          this.$router.push(`/user/${this.loggedInUser._id}`);
           
         });
     },
@@ -81,7 +81,7 @@ export default {
             this.isSignModal()
          this.loggedInUser = this.$store.getters.loggedinUser;
         }).then(()=>{
-             this.$router.push(`/user/${this.loggedInUser.id}`);
+             this.$router.push(`/user/${this.loggedInUser._id}`);
         })
     },
   },

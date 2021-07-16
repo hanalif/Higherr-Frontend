@@ -27,7 +27,7 @@ const routes = [
     component: gigDetails
   },
   {
-    path: '/user/profile',
+    path: '/user/:userId',
     component: userDetails
   },
   

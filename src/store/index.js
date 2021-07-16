@@ -11,7 +11,7 @@ export default new Vuex.Store({
   },
   getters: {
     loggedinUserGigs: state => {
-      const loggedinUserId = state.userStore.loggedinUser?.id;
+      const loggedinUserId = state.userStore.loggedinUser?._id;
       return state.gigStore.gigs.filter(gig => gig.seller._id === loggedinUserId)
     }
   },
