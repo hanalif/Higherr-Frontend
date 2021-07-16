@@ -16,7 +16,7 @@ let filterBy = {
 
 const gGigs = [{
         _id: "10006547",
-        tile: "I will create music with unlimited instruments in any style",
+        title: "I will create music with unlimited instruments in any style",
         imgUrls: [
             "https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/NS-WKMAG0730-1595944356.jpg"
         ],

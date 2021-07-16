@@ -4,7 +4,7 @@
             <el-carousel height="150px" :interval="null" :trigger="'click'">
                 <el-carousel-item v-for="(img, index) in  gig.imgUrls" :key="index">
                     <router-link :to="'/gig/'+gig._id">
-                        <img class="card-img" :src="img"/>
+                        <img class="card-img img-fit" :src="img"/>
                     </router-link>
                 </el-carousel-item>
             </el-carousel>
