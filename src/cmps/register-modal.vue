@@ -1,6 +1,6 @@
 <template>
   <div class="register-modal">
-    <modal ref="modal">
+    <modal ref="modal" @close="close">
       <template v-slot:header>
         <h1>Sign Up</h1>
       </template>
@@ -14,7 +14,7 @@
       </template>
 
       <template v-slot:footer>
-        <button class="btn" @click="closeModal">Cancel</button>
+        <button class="btn" @click="close">Cancel</button>
         <button class="btn-primary btn" @click="registerSubmit">Save</button>
       </template>
     </modal>
@@ -26,32 +26,24 @@ import modal from "./modal.vue";
 export default {
   data() {
     return {
-      user: Object,
+      user: {
+        fullname: "",
+        nickname: "",
+        password: "",
+      },
     };
   },
   methods: {
-    closeModal() {
-      this.$refs.modal.closeModal();
+    close() {
       this.$emit('close');
-      this.initUserData();
-    },
-    openModal() {
-      this.$refs.modal.openModal();
     },
     registerSubmit() {
       this.$store.dispatch({ type: "signup", userCred: this.user });
-      this.closeModal();
+      this.close();
     },
-    initUserData() {
-      this.user = {
-        fullname: "",
-        username: "",
-        password: "",
-      }
-    }
   },
   created () {
-    this.initUserData();
+    
   },
   components: {
     modal,

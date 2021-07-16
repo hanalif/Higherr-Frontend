@@ -19,7 +19,7 @@
             <router-link :to="'/gig/'+gig._id">
             <long-text :txt="gig.title"/>
             </router-link>
-            <p>🌟 <span class="rate-score"> 5.0</span> <span class="rate-count">(22)</span></p>
+            <p><img class="star-img" src="@/assets/star.jpg" /> <span class="rate-score"> 5.0</span> <span class="rate-count">(22)</span></p>
         </div>
         <div class="actions flex space-between">
             <p class="heart-icon" :class="{red:isRed}" @click="isRed=!isRed">❤</p>

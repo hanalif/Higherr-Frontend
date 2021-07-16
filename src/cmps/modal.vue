@@ -2,7 +2,7 @@
 
 <template>
   <transition name="fade">
-    <div class="modal" v-if="show">
+    <div class="modal">
       <div class="modal__backdrop" @click="closeModal()" />
 
       <div class="modal__dialog">
@@ -42,13 +42,12 @@ export default {
   },
   methods: {
     closeModal() {
-      this.show = false;
       document.querySelector("body").classList.remove("overflow-hidden");
+      this.$emit('close');
     },
-    openModal() {
-      this.show = true;
-      document.querySelector("body").classList.add("overflow-hidden");
-    },
+  },
+  created () {
+     document.querySelector("body").classList.add("overflow-hidden");
   },
 };
 </script>

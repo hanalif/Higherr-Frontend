@@ -6,8 +6,11 @@
     <router-view :key="$route.fullPath" />
     <app-footer />
 
-    <login-modal ref="loginModal"></login-modal>
-    <register-modal ref="registerModal"></register-modal>
+    <login-modal v-if="showLoginModal" @close="onLoginModalClose"></login-modal>
+    <register-modal
+      v-if="showRegisterModal"
+      @close="onRegisteModalClose"
+    ></register-modal>
   </div>
 </template>
 
@@ -18,21 +21,32 @@ import registerModal from "./cmps/register-modal.vue";
 import loginModal from "./cmps/login-modal.vue";
 
 export default {
-  created() {
+  created() {},
+  data() {
+    return {
+      showLoginModal: false,
+      showRegisterModal: false,
+    };
   },
   methods: {
     onSignIn() {
-      this.$refs.loginModal.openModal();
+      this.showLoginModal = true;
     },
     onSignUp() {
-      this.$refs.registerModal.openModal();
-    }
+      this.showRegisterModal = true;
+    },
+    onLoginModalClose() {
+      this.showLoginModal = false;
+    },
+    onRegisteModalClose() {
+      this.showRegisterModal = false;
+    },
   },
   components: {
     appHeader,
     appFooter,
     registerModal,
-    loginModal
+    loginModal,
   },
 };
 </script>
