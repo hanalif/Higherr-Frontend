@@ -277,6 +277,11 @@ function save(user) {
     }
 }
 
+async function signup(userCred) {
+    const user = await storageService.post(USER_KEY, userCred)
+    // const user = await httpService.post('auth/signup', userCred)
+    return _saveLocalUser(user)
+}
 
 // async function increaseScore(by = SCORE_FOR_REVIEW) {
 //     const user = getLoggedinUser()
@@ -293,12 +298,7 @@ async function login(userCred) {
     // const user = await httpService.post('auth/login', userCred)
     // if (user) return _saveLocalUser(user)
 }
-async function signup(userCred) {
 
-    const user = await storageService.post(USER_KEY, userCred)
-    // const user = await httpService.post('auth/signup', userCred)
-    return _saveLocalUser(user)
-}
 function logout() {
     sessionStorage.clear()
     // return await httpService.post('auth/logout')

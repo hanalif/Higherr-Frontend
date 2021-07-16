@@ -1,6 +1,6 @@
 <template>
   <section>
-    <li v-for="review in reviews" :key="review.id">
+    <li v-for="review in reviews" :key="review._id">
       <review-preview :review="review" />
       <br>
     </li>
