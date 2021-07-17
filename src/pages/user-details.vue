@@ -13,8 +13,7 @@
               <img
                 class="profile-img"
                 :src="
-                  user.imgUrl ||
-                  'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+                  user.imgUrl
                 "
                 alt="user-avatar"
               />
@@ -86,10 +85,11 @@
     >
     </gig-edit-form>
 
-    <edit-user-form
+        <edit-user-form
       v-if="showEditUserFormModal"
       @close="onCloseEditUserModal"
     ></edit-user-form>
+    
   </section>
 </template>
 

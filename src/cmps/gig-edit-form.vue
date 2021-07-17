@@ -106,7 +106,6 @@ export default {
       this.$emit("close");
     },
     async onUploadImg(ev){
-      console.log('img ev', ev.target.files[0])
       const res = await uploadImg(ev);
       this.gig.imgUrls.unshift(res.url)
     },
