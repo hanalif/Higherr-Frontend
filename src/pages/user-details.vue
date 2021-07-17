@@ -88,6 +88,7 @@
         <edit-user-form
       v-if="showEditUserFormModal"
       @close="onCloseEditUserModal"
+      @updateUserProfile="updateUserProfile"
     ></edit-user-form>
     
   </section>
@@ -118,6 +119,11 @@ export default {
     },
     openEditUserForm() {
       this.showEditUserFormModal = true;
+    },
+    async updateUserProfile(updatedUser){
+      await this.$store.dispatch({ type: "updateUser", user: updatedUser })
+      this.user = updatedUser;
+
     },
     async editGig(gigId) {
       const gig = await this.$store.dispatch({ type: "getGigById", id: gigId });

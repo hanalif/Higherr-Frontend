@@ -59,17 +59,19 @@ export default {
       this.$emit("close");
     },
     async onUploadImg(ev){
-       console.log('img ev', ev.target.files[0])
       const res = await uploadImg(ev);
       this.user.imgUrl = res.url
     },
     formSubmit(){
-      console.log('save user profile details')
+       console.log(this.user) 
+       this.$emit('updateUserProfile', this.user)
+       
+
        this.$refs.modal.closeModal();
     }
   },
   created() {
-    this.user = {...this.$store.getters.loggedinUser} 
+    this.user = {...this.$store.getters.loggedinUser}
   },
   components: {
     modal,
