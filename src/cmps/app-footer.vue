@@ -1,6 +1,7 @@
 <template>
-    <div>
-        <h1>app-footer</h1>
+    <div class="footer">
+        <h1>higherr.</h1>
+        <h4>© Higherr Inovations Ltd. 2021</h4>
     </div>
 </template>
 

@@ -2,16 +2,16 @@
   <div>
     <h1>{{ gig.title }}</h1>
     <div class="seller-details">
-    <img class="user-img" :src="gig.seller.imgUrl" />
-    <router-link :to="'user/' + gig.seller._id">{{
+    <img :src="gig.seller.imgUrl" />
+    <router-link :to="'/user/' + gig.seller._id">{{
       gig.seller.fullname
     }}</router-link> |
-    <img class="star-img" src="@/assets/star.jpg" />
-    <img class="star-img" src="@/assets/star.jpg" />
-    <img class="star-img" src="@/assets/star.jpg" />
-    <img class="star-img" src="@/assets/star.jpg" />
-    <img class="star-img" src="@/assets/star.jpg" />
-    (53)
+    <div class="overview-rate">
+          <el-rate v-model="value" disabled show-score text-color="#ffbe5b">
+          </el-rate>
+          <span>({{ seller.reviews.length }})</span
+          >
+        </div>
     </div>
     <el-carousel :interval="4000" type="card" height="200px">
     <el-carousel-item v-for="img in gig.imgUrls" :key="img">
@@ -25,6 +25,12 @@
 export default {
   props: {
     gig: Object,
+    seller: Object
   },
+  data() {
+    return {
+      value: 3
+    }
+  }
 };
 </script>

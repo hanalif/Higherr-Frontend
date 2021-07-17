@@ -2,12 +2,19 @@
   <div>
     <h1>About The Seller</h1>
     <div class="seller-info">
-      <img class="user-img" :src="gig.seller.imgUrl" />
-      <h5>{{ gig.seller.fullname }}</h5>
-      <el-rate v-model="value" disabled show-score text-color="#62646a">
-      </el-rate>
-      ({{seller.reviews.length}})
-      <button class="btn">Contact Me</button>
+      <img class="about-seller-img" :src="gig.seller.imgUrl" />
+      <div class="about-user-details">
+        <router-link :to="'/user/' + gig.seller._id">
+        <h4 class="about-name">{{ gig.seller.fullname }}</h4>
+        </router-link>
+        <div class="about-rate">
+          <el-rate v-model="value" disabled show-score text-color="#ffbe5b">
+          </el-rate>
+          <span>({{ seller.reviews.length }})</span
+          >
+        </div>
+        <button class="about-seller-contact">Contact Me</button>
+      </div>
     </div>
     <div class="seller-desc">
       <div class="seller-data">
