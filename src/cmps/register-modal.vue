@@ -38,6 +38,8 @@ export default {
       this.$emit('close');
     },
     registerSubmit() {
+      let date = new Date;
+      this.user.memberSince = date.getFullYear();
       this.$store.dispatch({ type: "signup", userCred: this.user });
       this.close();
     },
