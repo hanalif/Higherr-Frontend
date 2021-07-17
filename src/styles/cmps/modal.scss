@@ -28,6 +28,18 @@
         @media screen and (max-width: 1500px) {
             width: 50%;
         }
+        @media screen and (max-width: 1000px) {
+            width: 60%;
+        }
+        @media screen and (max-width: 800px) {
+            width: 70%;
+        }
+        @media screen and (max-width: 600px) {
+            width: 80%;
+        }
+        @media screen and (max-width: 400px) {
+            width: 90%;
+        }
     }
     &__close {
         width: 30px;

@@ -28,6 +28,10 @@
             placeholder="Write your main skills"
           ></textarea>
         </div>
+        <div class="user-edit-container">
+          <label>From:</label>
+          <input type="text" v-model="user.from" placeholder="Country">
+        </div>
         </div>
       </template>
 
