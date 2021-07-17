@@ -1,24 +1,28 @@
 <template>
   <div>
     <div class="reviews-header">
-      <section>
+      <section class="flex">
         <h2 class="reviews-title">{{ seller.reviews.length }} Reviews</h2>
-        <el-rate
-  v-model="value"
-  disabled
-  text-color="#ff9900"
-  score-template="{value}">
-</el-rate>
-        <h3 class="reviews-title review-rate">{{ getAvg }}</h3>
+        <div class="reviews-title-rating">
+          <el-rate
+            v-model="value"
+            disabled
+            text-color="#ff9900"
+            score-template="{value}"
+          >
+          </el-rate>
+          <h3 class="reviews-title review-rate">{{ getAvg }}</h3>
+        </div>
       </section>
-      <section>
-        <select>
+      <button class="btn" @click="toggleAdd">Add Review</button>
+      <section class="sort-ratings">
+        <h3>Sort by </h3>
+        <select v-model="sortBy" @change="sortReviews">
           <option value="recent">Most recent</option>
           <option value="high">High to low</option>
           <option value="low">Low to high</option>
         </select>
       </section>
-      <button class="btn" @click="toggleAdd">Add Review</button>
     </div>
     <review-add v-if="isAddReview" @submitReview="submitReview" />
     <ul class="review-list">
@@ -40,7 +44,8 @@ export default {
   data() {
     return {
       isAddReview: false,
-      value: this.getAvgRating()
+      value: this.getAvgRating(),
+      sortBy: 'recent'
     };
   },
   methods: {
@@ -50,6 +55,7 @@ export default {
     submitReview(review) {
       const user = this.$store.getters.loggedinUser;
       review._id = utilService.makeId();
+      review.createdAt = Date.now();
       review.by = {
         _id: user._id,
         fullname: user.fullname,
@@ -67,15 +73,17 @@ export default {
       }, 0);
       return Math.round((total / this.seller.reviews.length) * 10) / 10;
     },
+    sortReviews() {
+      this.$store.commit({type:'sortReviews', sortBy: this.sortBy, sellerId: this.seller._id})
+    }
   },
   computed: {
     getStars() {
-      const rate = this.getAvgRating()
-      console.log(rate);
+      const rate = this.getAvgRating();
     },
     getAvg() {
-      return this.getAvgRating()
-    }
+      return this.getAvgRating();
+    },
   },
   components: {
     utilService,

@@ -10,6 +10,9 @@
       <h3>{{ gig.delivery }} Days delivery</h3>
       <button class="btn">Purchase ({{ gig.price }}$)</button>
     </div>
+    <div class="contact-btn-container">
+    <button class="contact-seller-btn">Contact Seller</button>
+    </div>
   </div>
 </template>
 

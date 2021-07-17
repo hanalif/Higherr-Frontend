@@ -1,0 +1,77 @@
+.seller-data {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid $clr4;
+    margin-bottom: 0.8rem;
+    & .seller-header {
+        color: $clr1;
+    }
+}
+
+.seller-desc {
+    border: 1px solid $clr4;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    max-width: 500px;
+}
+
+.about-seller-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+
+}
+
+.seller-info {
+    display: flex;
+    gap: 1rem;
+}
+
+.about-rate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.about-name {
+    font-weight: bolder;
+} 
+
+.about-user-details {
+    display: flex;
+    flex-direction: column;
+    & span {
+        font-size: 1.2rem;
+    }
+    
+    
+    
+}
+
+.about-seller-contact {
+    transform: translateY(80%);
+    border-radius: 4px;
+    padding: 9px 15px;
+    border: none;
+    color: $clr1;
+    cursor: pointer;
+    border-color: $clr1;
+    box-shadow: inset 0px 0px 0px 1px $clr1;
+    background: none;
+    font-weight: bold;
+    transition: 0.2s;
+    &:hover {
+        background: $clr1;
+        color: white;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+}
+
+
+.about-seller-review-num {
+    font-size: 14px;
+    color: $clr2;
+}

@@ -10,7 +10,7 @@
     </nav>
     <div class="gig-overview-contanier" v-if="seller">
       <div class="gig-info">
-        <gig-overview id="gig-overview" :gig="gig" />
+        <gig-overview id="gig-overview" :gig="gig" :seller="seller" />
         <gig-description id="gig-description" :gig="gig" />
         <about-seller id="about-seller" :gig="gig" :seller="seller" />
         <gig-review id="gig-review" :gig="gig" :seller="seller" />
@@ -44,6 +44,9 @@ export default {
       id: gig.seller._id,
     });
     this.seller = user;
+    const users = await this.$store.dispatch({
+      type: 'loadUsers'
+    })
   },
   components: {
     gigOverview,

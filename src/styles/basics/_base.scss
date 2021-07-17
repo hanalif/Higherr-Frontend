@@ -139,6 +139,7 @@ input[type=button],
     box-shadow: inset 0px 0px 0px 1px $clr3;
     background: none;
     font-weight: bold;
+    transition: 0.2s;
     &:hover {
         background: $clr3;
         color: white;
