@@ -57,7 +57,7 @@ export default {
             state.gigs.splice(idx, 1)
         },
         addGig(state, { gig }) {
-            state.gigs.unshift(gig)
+            state.gigs.push(gig)
         },
         updateGig(state, { gig }) {
             const idx = state.gigs.findIndex(g => g._id === gig._id)

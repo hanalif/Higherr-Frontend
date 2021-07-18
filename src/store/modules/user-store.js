@@ -101,10 +101,13 @@ export default {
                 throw err
             }
         },
-        async updateUser({ commit }, { user }) {
+        async updateUser({ commit, state }, { user }) {
             try {
                 user = await userService.save(user);
                 commit({ type: 'setUsers', user })
+                if (user._id === state.loggedinUser._id) {
+                    commit({ type: 'setLoggedinUser', user: user })
+                }
             } catch (err) {
                 console.log('userStore: Error in updateUser', err)
                 throw err

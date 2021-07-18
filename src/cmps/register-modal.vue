@@ -28,7 +28,7 @@ export default {
     return {
       user: {
         fullname: "",
-        nickname: "",
+        username: "",
         password: "",
       },
     };
@@ -38,6 +38,9 @@ export default {
       this.$emit('close');
     },
     registerSubmit() {
+      let date = new Date;
+      this.user.memberSince = date.getFullYear();
+      this.user.imgUrl = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
       this.$store.dispatch({ type: "signup", userCred: this.user });
       this.close();
     },
