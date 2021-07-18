@@ -19,7 +19,7 @@
             <router-link :to="'/gig/'+gig._id">
             <long-text :txt="gig.title"/>
             </router-link>
-            <p><img class="star-img" src="@/assets/star.jpg" /> <span class="rate-score"> 5.0</span> <span class="rate-count">(22)</span></p>
+            <p><img class="star-img" src="@/assets/star.jpg" /> <span class="rate-score">{{getAvgRating}}</span> <span class="rate-count">({{rateCount}})</span></p>
         </div>
         <div class="actions flex space-between">
             <p class="heart-icon" :class="{red:isRed}" @click="isRed=!isRed">❤</p>
@@ -34,10 +34,28 @@ export default {
     props:{
         gig:Object
     },
+    created(){
+    },
     data(){
         return{
             isRed: false,
+            users: this.$store.getters.users,
         }
+    },
+    computed:{
+        rateCount(){
+            const user = this.users.find(user=>user._id === this.gig.seller._id)
+            return user.reviews.length
+        },
+        getAvgRating() {
+            const user = this.users.find(user=>user._id === this.gig.seller._id)
+            const total = user.reviews.reduce((acc, review) => {
+            return acc + review.rate;
+        }, 0);
+        return Math.round((total / user.reviews.length) * 10) / 10;
+    },
+    },
+    metods:{
     },
     components:{
         longText

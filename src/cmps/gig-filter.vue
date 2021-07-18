@@ -51,7 +51,7 @@ export default {
                     max:this.filterBy.price.max
                 }
             }
-            this.$store.dispatch({type:'setFilter',filterBy})
+            this.$store.commit({type:'setFilter',filterBy})
         }
     }
 
