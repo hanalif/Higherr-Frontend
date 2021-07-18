@@ -1,6 +1,6 @@
 import { gigService } from "../../services/gig-service.js";
 
-const PAGE_SIZE = 4
+const PAGE_SIZE = 12
 
 export default {
     state: {
@@ -38,6 +38,8 @@ export default {
                 if (filterBy.delivery === '1') return gig.delivery <= 1
                 else if (filterBy.delivery === '3') return gig.delivery <= 3
                 else if (filterBy.delivery === '7') return gig.delivery <= 7
+                else if (filterBy.delivery === '15') return gig.delivery <= 15
+                else if (filterBy.delivery === '30') return gig.delivery <= 30
                 else return gig.delivery > 0
             })
             filtered = filtered.filter(gig => {
@@ -58,7 +60,7 @@ export default {
             state.gigs.splice(idx, 1)
         },
         addGig(state, { gig }) {
-            state.gigs.unshift(gig)
+            state.gigs.push(gig)
         },
         updateGig(state, { gig }) {
             const idx = state.gigs.findIndex(g => g._id === gig._id)

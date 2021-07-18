@@ -8,14 +8,15 @@
 
 .card-title {
     height: 50px;
-    margin: 5px 0;
+    margin: 10px 0;
+    text-overflow: clip;
     &:hover {
         color: $clr3;
     }
 }
 
 .rate-count {
-    color: $clr1;
+    color: rgba(128, 128, 128, 0.507);
 }
 
 .star-img {

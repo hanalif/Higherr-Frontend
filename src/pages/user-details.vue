@@ -3,14 +3,20 @@
     <div class="user-details" v-if="user">
       <div class="info-column card-size">
         <div class="user-details-card card">
-           <i  v-if="isLoggedinUser" class="fas fa-pen-square user-edit-btn top-edit-btn"></i>
+          <i
+            v-if="isLoggedinUser"
+            @click="openEditUserForm"
+            class="fas fa-pen-square user-edit-btn top-edit-btn"
+          ></i>
           <div class="top-details">
             <div class="user-profile-img">
               <img
-                  class="profile-img"
-                  :src="user.imgUrl || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'"
-                  alt="user-avatar"
-                />
+                class="profile-img"
+                :src="
+                  user.imgUrl
+                "
+                alt="user-avatar"
+              />
             </div>
             <div class="online-tag"><i class="fas fa-circle"></i> online</div>
           </div>
@@ -41,7 +47,7 @@
       <div class="gigs-column">
         <div class="card">
           <div class="user-details-bar">
-            <h2 class="profile-title">USER GIGS</h2>
+            <h2 class="profile-title">{{this.user.fullname +`'s`}} gigs</h2>
           </div>
         </div>
 
@@ -53,7 +59,7 @@
               :key="index"
               @editGig="editGig"
               @removeGig="removeGig"
-            ></loggedinUser-gig-card >
+            ></loggedinUser-gig-card>
             <div class="user-gig-card add-new-gig">
               <div @click="openGigForm" class="circle-icon">
                 <i class="fas fa-plus"></i>
@@ -62,7 +68,7 @@
             </div>
           </template>
           <template v-else>
-              <gig-preview  
+            <gig-preview
               v-for="(gig, index) in userGigs"
               :gig="gig"
               :key="index"
@@ -71,41 +77,69 @@
         </div>
       </div>
     </div>
-    <gig-edit-form v-if="showEditGigModal"  @close="onEditGigClose" :seller="seller" :gigToEdit="gigToEdit"></gig-edit-form>
+    <gig-edit-form
+      v-if="showEditGigModal"
+      @close="onEditGigClose"
+      :seller="seller"
+      :gigToEdit="gigToEdit"
+    >
+    </gig-edit-form>
+
+        <edit-user-form
+      v-if="showEditUserFormModal"
+      @close="onCloseEditUserModal"
+      @updateUserProfile="updateUserProfile"
+    ></edit-user-form>
+    
   </section>
 </template>
 
 <script>
 import gigEditForm from "../cmps/gig-edit-form.vue";
 import loggedinUserGigCard from "../cmps/loggedinUser-gig-card.vue";
-import gigPreview from '../cmps/gig-preview.vue'
+import gigPreview from "../cmps/gig-preview.vue";
+import editUserForm from "../cmps/edit-user-form-modal.vue";
 export default {
   data() {
     return {
       user: null,
       isLoggedinUser: false,
       gigToEdit: null,
-      showEditGigModal: false
+      showEditGigModal: false,
+      showEditUserFormModal: false,
     };
   },
+ 
   methods: {
+    onCloseEditUserModal() {
+      this.showEditUserFormModal = false;
+    },
     openGigForm() {
       this.gigToEdit = null;
       this.showEditGigModal = true;
+    },
+    openEditUserForm() {
+      this.showEditUserFormModal = true;
+    },
+    async updateUserProfile(updatedUser){
+      await this.$store.dispatch({ type: "updateUser", user: updatedUser })
+      this.user = updatedUser;
 
     },
-    async editGig(gigId){
-        const gig = await this.$store.dispatch({type: 'getGigById', id: gigId})
-        this.gigToEdit = gig
-        this.showEditGigModal = true; 
+    async editGig(gigId) {
+      const gig = await this.$store.dispatch({ type: "getGigById", id: gigId });
+      this.gigToEdit = gig;
+      this.showEditGigModal = true;
     },
-    async removeGig(gigId){
-       await this.$store.dispatch({type: 'removeGig', gigId: gigId})
+    async removeGig(gigId) {
+      await this.$store.dispatch({ type: "removeGig", gigId: gigId });
     },
-    onEditGigClose(){
-      this.showEditGigModal = false
-    }
-    
+    onEditGigClose() {
+      this.showEditGigModal = false;
+    },
+    onEditUserFormClose() {
+      this.showEditUserFormModal = false;
+    },
   },
 
   computed: {
@@ -115,15 +149,22 @@ export default {
     userGigs() {
       return this.gigs.filter((gig) => gig.seller._id === this.user._id);
     },
-    seller(){
-      const seller = {_id : this.user._id, fullname: this.user.fullname, imgUrl: this.user.imgUrl || 'https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png' }
-      return seller
-    }
+    seller() {
+      const seller = {
+        _id: this.user._id,
+        fullname: this.user.fullname,
+        imgUrl:
+          this.user.imgUrl ||
+          "https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png",
+      };
+      return seller;
+    },
   },
   components: {
     gigEditForm,
     loggedinUserGigCard,
-    gigPreview
+    gigPreview,
+    editUserForm,
   },
   created() {
     this.$store.dispatch("loadGigs");

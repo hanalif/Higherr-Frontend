@@ -31,6 +31,18 @@
           >
         </div>
         <div class="gig-edit-container">
+          <label >
+            Add new imgae:
+              <input @change="onUploadImg" type="file" hidden>
+              <i class="fas fa-camera img-upload"></i>
+          </label>
+          
+          <div v-for="(gigImgUrl, index) in gig.imgUrls" :key="index" class="imgs-list">
+            <img :src="gigImgUrl" alt="img">
+            <i @click="onRemoveImgFromGig(gigImgUrl)" class="fas fa-trash"></i>
+          </div>
+        </div>
+        <div class="gig-edit-container">
           <label for="price"
             >Price:
             <input
@@ -60,6 +72,7 @@
 </template>
 
 <script>
+import {uploadImg} from '../services/img-upload.service.js'
 import modal from "./modal.vue";
 export default {
   props: ["gigToEdit", "seller"],
@@ -67,23 +80,22 @@ export default {
     return {
       gig: {
         title: "",
-        imgUrls: [""],
+        imgUrls: ["https://cdn.pixabay.com/photo/2017/11/10/05/04/camera-2935403_960_720.png"],
         price: 0,
         delivery: 0,
         jobDescription: "",
         tags: [],
       },
       tagsList: [
-        "Media",
-        "Music",
-        "Web-Develop",
-        "Grafic",
-        "Comunication",
-        "Home Design",
+        "media",
+        "music",
+        "web-develop",
+        "grafic",
+        "comunication",
+        "home-Design",
       ],
     };
   },
-  methods: {},
   computed: {
     title() {
       return this.gig?._id ? "EDIT GIG" : "CREATE GIG";
@@ -92,6 +104,14 @@ export default {
   methods: {
     close() {
       this.$emit("close");
+    },
+    async onUploadImg(ev){
+      const res = await uploadImg(ev);
+      this.gig.imgUrls.unshift(res.url)
+    },
+    onRemoveImgFromGig(gigImgUrl){
+      let imgIndex = this.gig.imgUrls.findIndex(url => url === gigImgUrl)
+      this.gig.imgUrls.splice(imgIndex, 1)
     },
 
     registerSubmit() {
