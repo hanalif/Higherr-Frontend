@@ -20,6 +20,7 @@
                   >Profile</router-link
                 >
               </li>
+              <li><router-link to="/orders">Orders</router-link></li>
               <li><a @click="logout">Logout</a></li>
             </ul>
           </div>
