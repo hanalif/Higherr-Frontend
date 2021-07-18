@@ -11,7 +11,7 @@
         color: #fff;
         font-size: 3rem;
         & span {
-            font-style: italic;
+            font-family: domaine;
         }
     }
     & img {
@@ -21,13 +21,29 @@
     }
     & button {
         height: 50px;
+        width: 100px;
+        border-radius: 0 5px 5px 0;
+        padding: 9px 15px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        background: $clr3;
+        font-weight: bold;
+        transition: 0.2s;
+        &:hover {
+            background-color: $clr8;
+        }
     }
 }
 
 .hero-searchbar {
-    width: 450px;
+    width: 550px;
     height: 50px !important; 
     line-height: 50px;
+    border-radius: 5px 0 0 5px !important;
+    font-family: inherit;
+    font-size: 1rem;
+    transform: translateY(1.3%);
     
 }
 

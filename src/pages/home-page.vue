@@ -4,8 +4,9 @@
       <div class="hero-txt">
         <h1>Find the perfect <span>freelance</span></h1>
         <h1>service for your every need.</h1>
-        <form>
+        <form @submit.prevent="searchGigs">
           <input
+            v-model="filterBy.txt"
             class="hero-searchbar"
             type="text"
             placeholder="Search anything..."
@@ -32,22 +33,52 @@
 </template>
 
 <script>
-import gigPreview from '../cmps/gig-preview.vue'
+import gigPreview from "../cmps/gig-preview.vue";
 
 export default {
-
+  data() {
+    return {
+      filterBy: {
+        txt: "",
+        tags: "all",
+        delivery: "all",
+        price: {
+          min: 0,
+          max: Infinity,
+        },
+      },
+    };
+  },
   created() {
     this.$store.dispatch({ type: "loadUsers" });
     this.$store.dispatch({ type: "loadGigs" });
   },
   computed: {
     topGigs() {
-      return this.$store.getters.topGigs
-    }
+      return this.$store.getters.topGigs;
+    },
+  },
+  methods: {
+    filter() {
+      const filterBy = {
+        txt: this.filterBy.txt,
+        tags: this.filterBy.tags,
+        delivery: this.filterBy.delivery,
+        price: {
+          min: this.filterBy.price.min,
+          max: this.filterBy.price.max,
+        },
+      };
+      this.$store.commit({ type: "setFilter", filterBy });
+    },
+    searchGigs() {
+      this.filter();
+      this.$router.push("/explore");
+    },
   },
   components: {
-    gigPreview
-  }
+    gigPreview,
+  },
 };
 </script>
 

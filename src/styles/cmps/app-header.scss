@@ -35,7 +35,7 @@
                 z-index: 4;
 
                 .user-menu-icon {
-                    background: #c0c8f0;
+                    background: none;
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
@@ -81,4 +81,10 @@
             }
         }
     }
+}
+
+.user-menu-img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
 }

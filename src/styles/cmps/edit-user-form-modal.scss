@@ -1,2 +1,62 @@
 
+.edit-modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
 
+.edit-container{
+    width: 100%;
+    border-bottom: 1px solid #c4c4c4db;
+    padding: 15px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+
+    .edit-label-container{
+        flex: 1;
+        max-width: 140px;
+    }
+
+    .edit-textarea-container{
+        flex: 1;
+        max-width: 350px;
+
+        textarea{
+            width: 100%;
+            font-family: 'macan-regular';
+            font-size: large;
+            text-transform: capitalize;
+            resize: none;
+            color: #898989;
+        }
+    }
+
+}
+
+.user-profile-img{
+    position: relative;
+   
+
+    .img-upload{
+        position: absolute;
+        top: 8px;
+        right: 2px;
+        z-index: 2;
+
+    }
+
+    .circle-shape-around-camera-icon{
+        position: absolute;
+        top: -3px;
+        right: -9px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        z-index: 1;
+        box-shadow:  0px 1px 3px 0px #959595;
+    }
+}
