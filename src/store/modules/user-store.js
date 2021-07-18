@@ -14,6 +14,10 @@ export default {
         users({ users }) { return users },
         loggedinUser({ loggedinUser }) { return loggedinUser },
         watchedUser({ watchedUser }) { return watchedUser },
+        loggedinImg({loggedinUser}) {
+            console.log(loggedinUser.imgUrl);
+            return loggedinUser.imgUrl
+        }
     },
     mutations: {
         setLoggedinUser(state, { user }) {
