@@ -10,8 +10,8 @@
         <a @click="signIn" v-if="!loggedInUser">Sign In</a>
         <a @click="signUp" v-if="!loggedInUser">Join</a>
         <div v-else class="user-menu">
-          <div class="user-menu-icon" @click="onUserMenuClick">
-            <img class="user-menu-img" :src="loggedInImg" />
+          <div class="user-menu-icon">
+              <img class="user-menu-img" @click="onUserMenuClick" :src="loggedInImg">
           </div>
 {{isTop1}}
           <div class="floating-menu" v-if="isFloatingMenuOpen">
