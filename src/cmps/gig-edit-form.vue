@@ -156,6 +156,9 @@ export default {
 
     registerSubmit() {
       this.gig.seller = this.seller;
+    
+    
+      
       this.$store.dispatch({ type: "saveGig", gig: this.gig });
 
       this.$refs.modal.closeModal();
