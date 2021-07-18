@@ -1,5 +1,8 @@
 <template>
-  <section class="app-header main-layout">
+  <section
+    :class="{ fixed: isHome, green: isTop }"
+    class="app-header main-layout"
+  >
     <nav class="nav">
       <router-link class="logo" to="/">higherr<span>.</span></router-link>
       <div class="menu-items">
@@ -8,18 +11,25 @@
         <a @click="signUp" v-if="!loggedInUser">Join</a>
         <div v-else class="user-menu">
           <div class="user-menu-icon" @click="onUserMenuClick">
-            <!-- <i class="fas fa-user"></i> -->
-            <img class="user-menu-img" :src="loggedInImg">
+            <img class="user-menu-img" :src="loggedInImg" />
           </div>
-
+{{isTop1}}
           <div class="floating-menu" v-if="isFloatingMenuOpen">
             <ul class="floating-menu-items" @click="onUserMenuClick">
-              <li><router-link :to="`/user/`+loggedInUser._id">Profile</router-link></li>
+              <li>
+                <router-link :to="`/user/` + loggedInUser._id"
+                  >Profile</router-link
+                >
+              </li>
               <li><a @click="logout">Logout</a></li>
             </ul>
           </div>
         </div>
-        <div v-if="isFloatingMenuOpen" @click="onUserMenuClick" class="backdrop"></div>
+        <div
+          v-if="isFloatingMenuOpen"
+          @click="onUserMenuClick"
+          class="backdrop"
+        ></div>
       </div>
     </nav>
   </section>
@@ -31,6 +41,9 @@ export default {
     return {
       isSign: false,
       isFloatingMenuOpen: false,
+      isTop: true,
+      isHome: true,
+      height: null,
     };
   },
   methods: {
@@ -50,6 +63,10 @@ export default {
     onUserMenuClick() {
       this.isFloatingMenuOpen = !this.isFloatingMenuOpen;
     },
+    checkTop() {
+      if(window.pageYOffset === 0 && this.$router.currentRoute.fullPath === "/") this.isTop = true
+      else this.isTop = false
+    }
   },
   computed: {
     loggedInUser() {
@@ -57,10 +74,34 @@ export default {
     },
     loggedInImg() {
       return this.$store.getters.loggedinImg;
-    }
+    },
   },
-  components: {},
-  created() {},
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        if (this.$router.currentRoute.fullPath === "/") {
+          this.isHome = true;
+        } else {
+          this.isHome = false;
+        }
+      this.checkTop()
+      },
+    },
+    $el: {
+      handler() {
+        if (this.$el.offsetTop === 0) {
+          this.isTop = true;
+        } else {
+          this.isTop = false;
+        }
+        console.log();
+      },
+    },
+  },
+  created() {
+    addEventListener('scroll', this.checkTop)
+  }
 };
 </script>
 

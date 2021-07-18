@@ -1,7 +1,7 @@
 .hero {
     background-color: #003B17;
     height: 550px;
-    padding-top: 7rem;
+    padding-top: 12rem;
     padding-inline-start: 5rem;
     padding-inline-end: 1rem;
     display: flex;
@@ -17,7 +17,7 @@
     & img {
         height: 500px;
         width: 500px;
-        transform: translateY(-12.4%);
+        align-self: flex-end;
     }
     & button {
         height: 50px;

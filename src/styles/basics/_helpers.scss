@@ -29,4 +29,20 @@
     height: 100%;
 }
 
+.fixed {
+    position: fixed;
+}
+
+.app-header.green.main-layout {
+    background-color: #003B17;
+    border: none;
+    transition: 0.4s;
+    & * {
+        color: #fff;
+    }
+    & a {
+        color: #fff;
+    }
+}
+
 
