@@ -2,7 +2,7 @@
   <div class="edit-user-form-modal">
     <modal @close="close" ref="modal">
       <template v-slot:header>
-        <h1>Edit User Details</h1>
+        <h1 class="edit-user-title">Edit User Details</h1>
       </template>
       <template v-slot:body>
         <div class="form-body">
