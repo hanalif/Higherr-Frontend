@@ -48,6 +48,9 @@
 
 .top-gigs {
     margin-bottom: 5rem;
+    & h1 {
+        font-weight: bold;
+    }
 }
 
 .category-icon {

@@ -6,7 +6,7 @@
         <h2>Standard</h2>
         <h2>{{ gig.price }}$</h2>
       </div>
-      <h4>{{ gig.jobDescription }}</h4>
+      <h4>{{ gig.summary }}</h4>
       <h3>{{ gig.delivery }} Days delivery</h3>
       <button class="btn">Purchase ({{ gig.price }}$)</button>
     </div>

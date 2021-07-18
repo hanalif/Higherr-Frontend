@@ -24,6 +24,7 @@ const gGigs = [{
         ],
         price: 90.00,
         delivery: 10,
+        summary: "musical edditing for your liking, in maximum 10 days. with instruments of your choosing.",  
         jobDescription: "Over 8 years experience, I can produce any style you want and every genre you request.Feel free to contact me before placing the order and I will reply any questions.",
         tags: [
             'madia',
@@ -45,6 +46,7 @@ const gGigs = [{
         ],
         price: 120.00,
         delivery: 16,
+        summary: "Interior and/or exterior design with up to 5 revisions. Guaranteed delivery in 16 days.",
         jobDescription: "Hello, I am Davir Ronen Structural & Design Engineer in CECB ( Central Engineering Consultancy Bureau). Under this gig i design your dream home and provide you High Quality photo realistic Interior/Exterior render images. If you need more than that, i can provide you a video flythrough of your DREAM HOME also ...",
         tags: [
             'home-design',
@@ -65,6 +67,7 @@ const gGigs = [{
         ],
         price: 55.00,
         delivery: 3,
+        summary: "Fast graphic design job for web or mobile. Very fast delivery. 1 revision only.",
         jobDescription: "Message me first before ordering so we can discuss about this gig. In this gig $5 will do you basic, simple and nice editing, but for more complex editing the price will increase. We can discuss and agree about the price. The price will depend on how complex the graphic job.",
         tags: [
             'grafic'
@@ -85,6 +88,7 @@ const gGigs = [{
         ],
         price: 180.00,
         delivery: 38,
+        summary: "Fully reponsive Wordpress website with up to 5 pages. Constant contact between the seller and buyer for the whole proccess.",
         jobDescription: "Hello there, My name is Muki Levi, a Senior Web Developer in website development 24/7. Why choose me? I have experience with a large range of projects in Wordpress, including but not limited to a business website, blog, e-commerce, agency, directory listing, job portal, real estate and many more. I work with a focus on Standard, Aesthetics, and Professionalism to deliver the right product for your business.",
         tags: [
             'web-develop',
@@ -104,7 +108,8 @@ const gGigs = [{
             'https://buffer.com/library/content/images/library/wp-content/uploads/2017/09/13-Places-to-Find-Background-Music-for-Video-Cover-Image-2.jpg'
         ],
         price: 87.00,
-        delivery: 20,
+        delivery: 10,
+        summary: "Sound edditing and background noise removal for your recording. Up to 5 minutes of sound, with 2 revisions.",
         jobDescription: "If your audio needs special repair, please send it to me before ordering to determine if I can help. If you are looking for a professional audio editor who works with industry-best tools, then let's talk about how I can help.",
         tags: [
             'music',
@@ -126,6 +131,7 @@ const gGigs = [{
         ],
         price: 110.00,
         delivery: 5,
+        summary: "A personal spokesperson for any video, Get personal Zoom meetings and work togther for the perfect video.",
         jobDescription: "I'm Roni and I'm available to be your video spokesperson. I have extensive spokesperson, acting and modeling experience. Work with a pro that can effectively communicate your message.",
         tags: [
             'music',
@@ -147,7 +153,8 @@ const gGigs = [{
             'https://us.123rf.com/450wm/twindesigner/twindesigner1709/twindesigner170900091/86042541-a-brush-stroke-letter-logo-design-black-paint-logo-leters-icon-with-elegant-circle-vector-design-.jpg?ver=6'
         ],
         price: 38.00,
-        delivery: 2,
+        delivery: 4,
+        summary: "3 logos for averything you want, 2 revisions included(note that the revisions are for all logos combined).",
         jobDescription: "This Gig is of one of many design kinds we offer. Flat design concepts are one of our fortes. For the logo to be timeless it doesn’t need to be with complex structures or patterns. It just needs to be simple, memorable and which gives a distinctive essence to your business",
         tags: [
             'logo-design',
@@ -169,6 +176,7 @@ const gGigs = [{
         ],
         price: 65.00,
         delivery: 5,
+        summary: "A unique and minimalist logo for your buisness. Delivery in 5 days, 2 revisions included.",
         jobDescription: "I am a professional and Unique, creative logo design service provider, offering 100% original and conceptual layout solutions for businesses of varying sizes. The creativity of your work will be the true representative of your business and natch its nature and standard.",
         tags: [
             'logo-design',
@@ -182,14 +190,15 @@ const gGigs = [{
     },
     {
         _id: "43223525",
-        title: "Our Studio will design unique company logo and business card",
+        title: "Our Studio will design unique company logo and business cards",
         imgUrls: [
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjNrkajecqwyp_UIi0n7_nCdBUm-O3-wS5cg&usqp=CAU',
             'https://d3re0f381bckq9.cloudfront.net/31789585_1483432297-55590-1-1_536x335.jpg',
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP9dhjHvMBDSS64A47P_GJoVI2Vmtf9SlNuw&usqp=CAU'
         ],
         price: 89.00,
-        delivery: 4,
+        delivery: 7,
+        summary: "Logo design for company or buisness. buisness cards for up to 3 people inside the company. 1 week fast delivery.", 
         jobDescription: "we are a professional design team having more than 5 years of experience. So are creating modern and minimal logos with Business card And Stationery with this gig. ",
         tags: [
             'logo-design',
@@ -211,6 +220,7 @@ const gGigs = [{
         ],
         price: 270.00,
         delivery: 15,
+        summary: "3D visualization for enterior or exterior design of your home. 15 days and you can have your desired home.",
         jobDescription: "PLEASE CONTACT BEFORE PLACE AN ORDER, so we can discuss more about the time frame and price. Dear Client, I am experienced architecture and interior 3D designer. I can do the design, 2d plans and elevations for the building you want.I make photo-realistic renders using 3ds Max,Corona, Vray and Photoshop. I will determine your goals and requirements of the project, make interior spaces functional, and beautiful by solving space requirements and selecting decorative items, such as colors, materials, lighting, furniture, wall finishes and flooring. I use my sense of style, to develop designs that look great and are aesthetically pleasing. I can strongly assure you that I will be able to provide you according to your desire, taking care of all of the details for you.",
         tags: [
             'home-design',
@@ -231,6 +241,7 @@ const gGigs = [{
         ],
         price: 230.00,
         delivery: 21,
+        sumarry: "An all inclusive custom package for your home. Interior and exterior design included. Multiple revisions.",
         jobDescription: "I am a skilled, Architect with +12 years of experience in residential building projects and 3D BIM Models. I am also a Revit Certified Professional and a Black belted 3D Design Coordinator. I have delivered numerous mega projects within various countries including USA, Canada, Middle East and Gulf. I firmly believe my key-skill is that I pay attention to details and always prioritize quality.",
         tags: [
             'home-design',
@@ -251,6 +262,7 @@ const gGigs = [{
         ],
         price: 119.00,
         delivery: 6,
+        summary: "Poster/Flyer/Postcard design for any need. fast delivery and professional look.", 
         jobDescription: "Hi, I’m Sol, professionally trained graphic designer talent. I’ve already completed thousands of orders here on Fiverr with 5-star reviews. That’s because I produce  high quality graphics that are ready for you to use and provide excellent customer service. Looking for a professionally designed Flyer to promote your product, business or anything you want ?",
         tags: [
             'grafic',
@@ -270,7 +282,8 @@ const gGigs = [{
             'https://www.designindaba.com/sites/default/files/node/news/25070/thulasizwe-mamba-interview-201900021012still008.jpg',
         ],
         price: 189.00,
-        delivery: 17,
+        delivery: 9,
+        summary: "Graphic design and photo manipulation, Up to a whole album of maximum 60 photos. With all inclusize design for each photo.",
         jobDescription: "Perfect Place for your any graphic design Needs! I'll do any graphic design or photoshop work in 24 hours for you! Low on budget? but want High Quality work? then this GIG is just for you! Flyers, Google Ads, Website images, Portrait, vector designs, business cards, social media graphics,Product Photos: for Amazon, eBay (& for any other platform you need)",
         tags: [
             'grafic',
@@ -291,6 +304,7 @@ const gGigs = [{
         ],
         price: 289.00,
         delivery: 31,
+        summary: "A fully functioning desktop application created with python. Multiple revisions included and fluent workflow for the whole 1 month proccess.",
         jobDescription: "Hi I am a Computer Science Engineering degree holder with more than 4 years of experience in python. I have completed a huge number of python related projects using various python libraries.",
         tags: [
             'web-develop',
@@ -311,6 +325,7 @@ const gGigs = [{
         ],
         price: 350.00,
         delivery: 22,
+        summary: "Web design and development customized to your liking. Personal revisions all along the way. 100% satisfaction gauranteed.",
         jobDescription: "I design and build only custom websites with attention to your customers' needs. I strive for minimal aesthetics and modern visuals but make it easy to use. I don't use templates and don't do fast design.",
         tags: [
             'web-develop',
