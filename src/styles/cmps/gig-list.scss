@@ -2,7 +2,7 @@
     color: black;
     .ul {
         display: grid;
-        gap: 30px;
+        gap: 35px;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         .li {
             border: 1px solid $clr4;

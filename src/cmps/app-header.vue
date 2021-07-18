@@ -8,7 +8,8 @@
         <a @click="signUp" v-if="!loggedInUser">Join</a>
         <div v-else class="user-menu">
           <div class="user-menu-icon" @click="onUserMenuClick">
-            <i class="fas fa-user"></i>
+            <!-- <i class="fas fa-user"></i> -->
+            <img class="user-menu-img" :src="loggedInImg">
           </div>
 
           <div class="floating-menu" v-if="isFloatingMenuOpen">
@@ -54,6 +55,9 @@ export default {
     loggedInUser() {
       return this.$store.getters.loggedinUser;
     },
+    loggedInImg() {
+      return this.$store.getters.loggedinImg;
+    }
   },
   components: {},
   created() {},
