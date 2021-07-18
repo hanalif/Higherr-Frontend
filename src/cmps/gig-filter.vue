@@ -9,7 +9,7 @@
         <option value="comunication">Comunication</option>
         <option value="home-design">Home Design</option>
         <option value="logo-design">Logo Design</option>
-        <option value="all">All</option>
+        <option value="all">All Categories</option>
     </select>
     <select name="" id="" v-model="filterBy.delivery" @change="filter">
         <option value="1">Up To 1 Day</option>
@@ -17,7 +17,7 @@
         <option value="7">Up To 7 Days</option>
         <option value="15">Up To 15 Days</option>
         <option value="30">Up To 30 Days</option>
-        <option value="all">All</option>
+        <option value="all">All Delivery Days</option>
     </select>
     <input type="number" placeholder="Min Price"  v-model="filterBy.price.min">
     <input type="number" placeholder="Max Price"  v-model="filterBy.price.max">
