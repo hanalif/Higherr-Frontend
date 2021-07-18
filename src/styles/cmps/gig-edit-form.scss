@@ -1,3 +1,17 @@
 .img-upload{
     cursor: pointer;
 }
+
+.info-container{
+    
+    display: flex;
+    gap: 10px;
+    span{
+        display: contents;
+        color: #898989;
+    }
+    input{
+        width: 55px;
+        color: #898989;
+    }
+}

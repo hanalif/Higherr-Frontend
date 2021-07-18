@@ -2,33 +2,73 @@
   <div class="gig-edit-form">
     <modal @close="close" ref="modal">
       <template v-slot:header>
-        <h1>{{ title }}</h1>
+        <h1></h1>
       </template>
-
       <template v-slot:body>
-        <div class="gig-edit-container">
-          <label>Gig Title:</label>
-          <textarea
+        <div class="edit-modal-body">
+        <h1>{{ title }}</h1>
+
+        <div class="edit-container">
+          <div class="edit-label-container">
+              <label>Gig Title:</label>
+          </div>
+          <div class="edit-textarea-container">
+              <textarea
             v-model="gig.title"
             placeholder="Gig title"
           ></textarea>
+          </div>
         </div>
-        <div class="gig-edit-container">
-          <label>Gig Description:</label>
-          <textarea
+
+        <div class="edit-container">
+          <div class="edit-label-container">
+              <label>Gig Description:</label>
+          </div>
+          <div class="edit-textarea-container">
+               <textarea
             v-model="gig.jobDescription"
             placeholder="Job description"
           ></textarea>
+          </div>
         </div>
-        <div class="gig-edit-container">
-          <label for="delivery"
-            >Delivery time:
-            <input
+
+        <div class="edit-container">
+          <div class="edit-label-container">
+            <label>Delivery time:</label>
+          </div>
+         <div class="edit-textarea-container info-container">
+           <input
               name="delivery"
               type="number"
-              v-model="gig.delivery"
-            />days</label
-          >
+              v-model="gig.delivery"/>
+          <label for="delivery">days</label>
+         </div>
+        </div>
+
+         <div class="edit-container">
+           <div class="edit-label-container">
+             <label>Price:</label>
+           </div>
+           <div class="edit-textarea-container info-container">
+              <input
+              name="price"
+              type="number"
+              v-model="gig.price"
+            />
+            <label>$</label>
+           </div>
+        </div>
+          <div class="edit-container">
+            <div class="edit-label-container">
+               <label>Tags:</label>
+            </div>
+         <div class="edit-textarea-container">
+             <span v-for="(tag, index) in tagsList" :key="index">
+            <input type="checkbox" :id="tag" :name="tag" :value="tag" v-model="gig.tags" />
+            <label :for="tag">{{tag}}</label>
+          </span>
+         </div>
+         
         </div>
         <div class="gig-edit-container">
           <label >
@@ -42,22 +82,8 @@
             <i @click="onRemoveImgFromGig(gigImgUrl)" class="fas fa-trash"></i>
           </div>
         </div>
-        <div class="gig-edit-container">
-          <label for="price"
-            >Price:
-            <input
-              name="price"
-              type="number"
-              v-model="gig.price"
-            />$</label
-          >
-        </div>
-        <div class="gig-edit-container">
-          <label>Tags:</label>
-          <span v-for="(tag, index) in tagsList" :key="index">
-            <input type="checkbox" :id="tag" :name="tag" :value="tag" v-model="gig.tags" />
-            <label :for="tag">{{tag}}</label>
-          </span>
+       
+       
         </div>
       </template>
 

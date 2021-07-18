@@ -2,35 +2,52 @@
   <div class="edit-user-form-modal">
     <modal @close="close" ref="modal">
       <template v-slot:header>
-        <h1 class="edit-user-title">Edit User Details</h1>
+        <h1></h1>
       </template>
       <template v-slot:body>
-        <div class="form-body">
+        <div class="form-body edit-modal-body">
+          <h1 class="edit-user-title">Edit User Details</h1>
           <div class="user-profile-img">
              <label >
             <input @change="onUploadImg" type="file" hidden>
             <i class="fas fa-camera img-upload"></i>
+            <div class="circle-shape-around-camera-icon"></div>
+            <div class="circle-shape-around-camera-icon"></div>
               
           </label>
               <img class="profile-img" :src="user.imgUrl" alt="">
           </div>
-          <div class="user-edit-container">
-          <label>User Description:</label>
-          <textarea
+          <div class="edit-container">
+            <div class="edit-label-container">
+                  <label>User Description:</label>
+            </div>
+          <div class="edit-textarea-container">
+              <textarea 
             v-model="user.description"
             placeholder="Tell us about your self"
           ></textarea>
+          </div>
         </div>
-         <div class="user-edit-container">
-          <label>Skills:</label>
-          <textarea
+
+         <div class="edit-container">
+           <div class="edit-label-container">
+             <label>Skills:</label>
+           </div>
+          <div class="edit-textarea-container">
+            <textarea
             v-model="user.skills"
             placeholder="Write your main skills"
           ></textarea>
+          </div>
         </div>
-        <div class="user-edit-container">
-          <label>From:</label>
-          <input type="text" v-model="user.from" placeholder="Country">
+
+        <div class="edit-container">
+          <div class="edit-label-container">
+               <label>From:</label>
+          </div>
+         <div class="edit-textarea-container">
+            <input type="text" v-model="user.from" placeholder="Country">
+         </div>  
         </div>
         </div>
       </template>
