@@ -1,6 +1,6 @@
 import { gigService } from "../../services/gig-service.js";
 
-const PAGE_SIZE = 4
+const PAGE_SIZE = 12
 
 export default {
     state: {
@@ -38,6 +38,8 @@ export default {
                 if (filterBy.delivery === '1') return gig.delivery <= 1
                 else if (filterBy.delivery === '3') return gig.delivery <= 3
                 else if (filterBy.delivery === '7') return gig.delivery <= 7
+                else if (filterBy.delivery === '15') return gig.delivery <= 15
+                else if (filterBy.delivery === '30') return gig.delivery <= 30
                 else return gig.delivery > 0
             })
             filtered = filtered.filter(gig => {
@@ -45,8 +47,11 @@ export default {
             })
             return filtered.slice(startIdx, startIdx + PAGE_SIZE);
         },
-        getGigs(state){
+        getGigs(state) {
             return state.gigs
+        },
+        topGigs(state) {
+            return state.gigs.slice(0, 5)
         }
     },
     mutations: {
@@ -127,9 +132,9 @@ export default {
                 throw err;
             }
         },
-        async getGigsByUserId(context, {id}){
-            return context.state.gigs.filter(gig=>{
-                    gig.seller._id === id
+        async getGigsByUserId(context, { id }) {
+            return context.state.gigs.filter(gig => {
+                gig.seller._id === id
             })
         }
     }

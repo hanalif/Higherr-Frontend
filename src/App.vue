@@ -4,13 +4,13 @@
   <div id="app">
     <app-header @signIn="onSignIn" @signUp="onSignUp" />
     <router-view :key="$route.fullPath" />
-    <app-footer />
 
     <login-modal v-if="showLoginModal" @close="onLoginModalClose"></login-modal>
     <register-modal
       v-if="showRegisterModal"
       @close="onRegisteModalClose"
     ></register-modal>
+    <app-footer />
   </div>
 </template>
 
