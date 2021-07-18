@@ -32,7 +32,7 @@
 import longText from './long-text.vue'
 export default {
     props:{
-        gig:Object
+        gig:Object,
     },
     created(){
     },
