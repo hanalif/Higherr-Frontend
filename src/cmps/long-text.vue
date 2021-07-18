@@ -13,16 +13,16 @@ props: ['txt'],
     },
     methods: {
         setLong() {
-            return this.txt.length > 65
+            return this.txt.length > 55
         },
     },
     computed: {
         getTextForDisplay() {
-            if (this.isLong) return this.txt.substring(0, 65);
+            if (this.isLong) return this.txt.substring(0, 55);
             else return this.txt
         },
         showBtn() {
-            return this.txt.length > 65
+            return this.txt.length > 55
         },
         setBtnTxt() {
             if (this.isLong) return 'read more'

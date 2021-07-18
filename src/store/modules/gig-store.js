@@ -102,16 +102,16 @@ export default {
                 throw err;
             }
         },
-        async setFilter({ commit }, payload) {
-            try {
-                const filterBy = payload.filterBy
-                await gigService.setFilter(filterBy)
-                commit({ type: 'setFilter', filterBy })
-            } catch (err) {
-                console.log('Cannot filter gigs:', err);
-                throw err;
-            }
-        },
+        // async setFilter({ commit }, payload) {
+        //     try {
+        //         const filterBy = payload.filterBy
+        //         await gigService.setFilter(filterBy)
+        //         commit({ type: 'setFilter', filterBy })
+        //     } catch (err) {
+        //         console.log('Cannot filter gigs:', err);
+        //         throw err;
+        //     }
+        // },
         async saveGig({ commit }, payload) {
             const type = (payload.gig._id) ? 'updateGig' : 'addGig';
             try {

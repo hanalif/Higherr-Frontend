@@ -38,18 +38,16 @@ export default {
             console.log(state.users);
             if (sortBy === 'high') {
                 state.users.find(user => user._id = sellerId).reviews.sort((a, b) => {
-                   return b.rate - a.rate
+                    return b.rate - a.rate
                 })
-            }
-            else if (sortBy === 'low') {
+            } else if (sortBy === 'low') {
                 state.users.find(user => user._id = sellerId).reviews.sort((a, b) => {
                     return a.rate - b.rate
                 })
-            }
-            else if (sortBy = 'recent') {
+            } else if (sortBy = 'recent') {
                 state.users.find(user => user._id = sellerId).reviews.sort((a, b) => {
-                   return a.createdAt - b.createdAt
-               })
+                    return a.createdAt - b.createdAt
+                })
             }
         }
     },
