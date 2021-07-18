@@ -117,9 +117,7 @@ export default {
       isImgLoading: false,
       gig: {
         title: "",
-        imgUrls: [
-          "https://cdn.pixabay.com/photo/2017/11/10/05/04/camera-2935403_960_720.png",
-        ],
+        imgUrls: [],
         price: 0,
         delivery: 0,
         jobDescription: "",
