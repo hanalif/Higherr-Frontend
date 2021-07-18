@@ -1,5 +1,5 @@
 <template>
-  <div class="user-edit-modal">
+  <div class="edit-user-form-modal">
     <modal @close="close" ref="modal">
       <template v-slot:header>
         <h1>Edit User Details</h1>
@@ -8,9 +8,9 @@
         <div class="form-body">
           <div class="user-profile-img">
              <label >
-            Add new imgae:
-              <input @change="onUploadImg" type="file" hidden>
-              <i class="fas fa-camera img-upload"></i>
+            <input @change="onUploadImg" type="file" hidden>
+            <i class="fas fa-camera img-upload"></i>
+              
           </label>
               <img class="profile-img" :src="user.imgUrl" alt="">
           </div>
