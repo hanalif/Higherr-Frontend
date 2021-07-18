@@ -345,7 +345,7 @@ const gUsers = [{
                 id: "11Ppo",
                 createdAt: 1626541100128,
                 txt: "The service was so good, I had a lot of fun using this service. Thank you very much I really aprecciate it. Just one thing, he took a little bit more time than garunteed but other than that the whole experience was nice. ",
-                rate: 4,
+                rate: 5,
                 by: {
                     _id: "u102",
                     fullname: "Puki Ben-David",
@@ -369,7 +369,7 @@ const gUsers = [{
                 id: "KH566",
                 createdAt: 1626541156128,
                 txt: "The service was so good, I had a lot of fun using this service. Thank you very much I really aprecciate it. Just one thing, he took a little bit more time than garunteed but other than that the whole experience was nice. ",
-                rate: 4,
+                rate: 5,
                 by: {
                     _id: "u102",
                     fullname: "Puki Ben-David",
