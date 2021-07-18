@@ -1,0 +1,36 @@
+.hero {
+    background-color: #003B17;
+    height: 550px;
+    padding-top: 7rem;
+    padding-inline-start: 5rem;
+    padding-inline-end: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    & h1 {
+        color: #fff;
+        font-size: 3rem;
+        & span {
+            font-style: italic;
+        }
+    }
+    & img {
+        height: 500px;
+        width: 500px;
+        transform: translateY(-12.4%);
+    }
+    & button {
+        height: 50px;
+    }
+}
+
+.hero-searchbar {
+    width: 450px;
+    height: 50px !important; 
+    line-height: 50px;
+    
+}
+
+.top-gigs {
+    margin-bottom: 5rem;
+}

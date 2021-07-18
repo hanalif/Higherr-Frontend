@@ -45,8 +45,11 @@ export default {
             })
             return filtered.slice(startIdx, startIdx + PAGE_SIZE);
         },
-        getGigs(state){
+        getGigs(state) {
             return state.gigs
+        },
+        topGigs(state) {
+            return state.gigs.slice(0, 5)
         }
     },
     mutations: {
@@ -127,9 +130,9 @@ export default {
                 throw err;
             }
         },
-        async getGigsByUserId(context, {id}){
-            return context.state.gigs.filter(gig=>{
-                    gig.seller._id === id
+        async getGigsByUserId(context, { id }) {
+            return context.state.gigs.filter(gig => {
+                gig.seller._id === id
             })
         }
     }

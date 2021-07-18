@@ -1,6 +1,7 @@
 .app-header {
     background-color: white;
     height: 80px;
+    border-bottom: 1px solid $clr4;
     .nav {
         user-select: none;
         color: black;
@@ -16,8 +17,12 @@
 
         .logo {
             font-size: 40px;
+            color: #404145;
             font-family: serif;
             font-weight: bold;
+            & span {
+                color: green;
+            }
         }
 
         .menu-items {
