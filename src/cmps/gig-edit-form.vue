@@ -98,9 +98,9 @@
       </template>
 
       <template v-slot:footer>
-        <div>
-          <button class="btn" @click="$refs.modal.closeModal()">Cancel</button>
-          <button class="btn" @click="registerSubmit">Save</button>
+        <div class="buttons-container">
+          <button class="btn"  @click="$refs.modal.closeModal()">Cancel</button>
+          <button class="btn-primary btn" @click="registerSubmit">Save</button>
         </div>
       </template>
     </modal>
