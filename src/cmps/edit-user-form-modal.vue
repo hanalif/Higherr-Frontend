@@ -8,14 +8,15 @@
         <div class="form-body edit-modal-body">
           <h1 class="edit-user-title">Edit User Details</h1>
           <div class="user-profile-img">
-             <label >
+             <label>
+               
             <input @change="onUploadImg" type="file" hidden>
             <i class="fas fa-camera img-upload"></i>
             <div class="circle-shape-around-camera-icon"></div>
-            <div class="circle-shape-around-camera-icon"></div>
-              
+            <div class="circle-shape-around-camera-icon"></div>  
+            <img v-if="isImgLoading" class="profile-img" src="https://thumbs.gfycat.com/ArtisticShoddyKudu-small.gif" alt="">
+            <img v-else class="profile-img" :src="user.imgUrl" alt="">
           </label>
-              <img class="profile-img" :src="user.imgUrl" alt="">
           </div>
           <div class="edit-container">
             <div class="edit-label-container">
@@ -66,6 +67,7 @@ import {uploadImg} from '../services/img-upload.service.js'
 export default {
   data() {
     return {
+      isImgLoading: false,
       user: {
         from: "",
         description: "",
@@ -80,8 +82,10 @@ export default {
       this.$emit("close");
     },
     async onUploadImg(ev){
+      this.isImgLoading= true;
       const res = await uploadImg(ev);
       this.user.imgUrl = res.url
+      this.isImgLoading= false;
     },
     formSubmit(){
        console.log(this.user) 
