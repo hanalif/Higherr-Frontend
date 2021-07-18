@@ -156,9 +156,7 @@ export default {
 
     registerSubmit() {
       this.gig.seller = this.seller;
-    
-    
-      
+    if (this.gig.imgUrls.length === 0) {this.gig.imgUrls = ['https://cdn.pixabay.com/photo/2016/03/21/20/05/image-1271454_960_720.png']}
       this.$store.dispatch({ type: "saveGig", gig: this.gig });
 
       this.$refs.modal.closeModal();
