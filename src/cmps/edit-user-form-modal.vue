@@ -24,7 +24,7 @@
             </div>
           <div class="edit-textarea-container">
               <textarea 
-            v-model="user.description"
+            v-model="user.about"
             placeholder="Tell us about your self"
           ></textarea>
           </div>
@@ -70,7 +70,7 @@ export default {
       isImgLoading: false,
       user: {
         from: "",
-        description: "",
+        about: "",
         skills: "",
         imgUrl:""
       },

@@ -34,12 +34,12 @@
           <div class="user-stats">
             <h2 class="profile-title">Description</h2>
             <p>
-              {{ user.description }}
+              {{ user.about || "Unknown yet"}} 
             </p>
           </div>
           <div class="user-stats">
             <h2 class="profile-title">Skills</h2>
-            <span>{{ user.skills || "unknown yet" }}</span>
+            <span>{{ user.skills || "Unknown yet" }}</span>
           </div>
         </div>
       </div>
