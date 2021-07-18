@@ -47,7 +47,7 @@
       <div class="gigs-column">
         <div class="card">
           <div class="user-details-bar">
-            <h2 class="profile-title">USER GIGS</h2>
+            <h2 class="profile-title">{{this.user.fullname +`'s`}} gigs</h2>
           </div>
         </div>
 
@@ -109,6 +109,7 @@ export default {
       showEditUserFormModal: false,
     };
   },
+ 
   methods: {
     onCloseEditUserModal() {
       this.showEditUserFormModal = false;
