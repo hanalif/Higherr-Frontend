@@ -12,7 +12,7 @@
 import gigPreview from './gig-preview.vue'
 export default {
 props:{
-    gigs:Array
+    gigs:Array,
 },
 components:{
     gigPreview
