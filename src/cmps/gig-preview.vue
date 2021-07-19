@@ -1,7 +1,7 @@
 <template>
     <section class="gig-card">
         <div class="block" >
-            <el-carousel height="150px" :interval="null" :trigger="'click'">
+            <el-carousel height="180px" :interval="null" :trigger="'click'">
                 <el-carousel-item v-for="(img, index) in  gig.imgUrls" :key="index">
                     <router-link :to="'/gig/'+gig._id">
                         <img class="card-img img-fit" :src="img"/>

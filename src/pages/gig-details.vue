@@ -15,7 +15,7 @@
         <about-seller id="about-seller" :gig="gig" :seller="seller" />
         <gig-review id="gig-review" :gig="gig" :seller="seller" />
       </div>
-      <order-details :gig="gig" :seller="seller"/>
+      <order-details class="order-details" :gig="gig" :seller="seller"/>
     </div>
   </div>
 </template>
