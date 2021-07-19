@@ -9,7 +9,6 @@
           <h1>body-modal</h1>
         </div>
       </template>
-
       <template v-slot:footer>
         <button class="btn" @click="close">Cancel</button>
         <button class="btn-primary btn" @click="formSubmit">Save</button>

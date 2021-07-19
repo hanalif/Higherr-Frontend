@@ -24,7 +24,7 @@ const gGigs = [{
         ],
         price: 90.00,
         delivery: 10,
-        summary: "musical edditing for your liking, in maximum 10 days. with instruments of your choosing.",  
+        summary: "musical edditing for your liking, in maximum 10 days. with instruments of your choosing.",
         jobDescription: "Over 8 years experience, I can produce any style you want and every genre you request.Feel free to contact me before placing the order and I will reply any questions.",
         tags: [
             'madia',
@@ -198,7 +198,7 @@ const gGigs = [{
         ],
         price: 89.00,
         delivery: 7,
-        summary: "Logo design for company or buisness. buisness cards for up to 3 people inside the company. 1 week fast delivery.", 
+        summary: "Logo design for company or buisness. buisness cards for up to 3 people inside the company. 1 week fast delivery.",
         jobDescription: "we are a professional design team having more than 5 years of experience. So are creating modern and minimal logos with Business card And Stationery with this gig. ",
         tags: [
             'logo-design',
@@ -262,7 +262,7 @@ const gGigs = [{
         ],
         price: 119.00,
         delivery: 6,
-        summary: "Poster/Flyer/Postcard design for any need. fast delivery and professional look.", 
+        summary: "Poster/Flyer/Postcard design for any need. fast delivery and professional look.",
         jobDescription: "Hi, I’m Sol, professionally trained graphic designer talent. I’ve already completed thousands of orders here on Fiverr with 5-star reviews. That’s because I produce  high quality graphics that are ready for you to use and provide excellent customer service. Looking for a professionally designed Flyer to promote your product, business or anything you want ?",
         tags: [
             'grafic',

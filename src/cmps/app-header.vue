@@ -46,7 +46,6 @@
         ></div>
       </div>
     </nav>
-    <menu-content-use v-if="showTryModal" @close="closeTryModal"></menu-content-use>
   </section>
 </template>
 
