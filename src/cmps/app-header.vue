@@ -4,6 +4,7 @@
     class="app-header main-layout"
   >
     <nav class="nav">
+      <button @click="openTryModal">Try modal</button>
       <router-link class="logo" to="/">higherr<span>.</span></router-link>
       <div class="menu-items">
         <router-link to="/explore">Explore</router-link>
@@ -32,11 +33,15 @@
         ></div>
       </div>
     </nav>
+    <menu-content-use v-if="showTryModal" @close="closeTryModal"></menu-content-use>
   </section>
 </template>
 
 <script>
+import menuContentUse from '../cmps/menu-content-use.vue'
+
 export default {
+
   data() {
     return {
       isSign: false,
@@ -44,6 +49,7 @@ export default {
       isTop: true,
       isHome: true,
       height: null,
+      showTryModal: false,
     };
   },
   methods: {
@@ -66,6 +72,12 @@ export default {
     checkTop() {
       if(window.pageYOffset === 0 && this.$router.currentRoute.fullPath === "/") this.isTop = true
       else this.isTop = false
+    },
+    openTryModal(){
+      this.showTryModal = true;
+    },
+    closeTryModal(){
+      this.showTryModal = false;
     }
   },
   computed: {
@@ -98,6 +110,9 @@ export default {
         console.log();
       },
     },
+  },
+  components: {
+    menuContentUse,
   },
   created() {
     addEventListener('scroll', this.checkTop)

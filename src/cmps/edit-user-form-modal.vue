@@ -77,7 +77,6 @@ export default {
     };
   },
   methods: {
-    formSubmit() {},
     close() {
       this.$emit("close");
     },
