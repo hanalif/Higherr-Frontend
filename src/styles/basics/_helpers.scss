@@ -64,3 +64,13 @@
         color: #fff;
     }
 }
+
+.active-btn {
+    color: $clr3 !important;
+    background-color: #fff !important;
+    box-shadow: inset 0px -2px 0px 0px $clr3;
+}
+
+.marked {
+    color: $clr3;
+}

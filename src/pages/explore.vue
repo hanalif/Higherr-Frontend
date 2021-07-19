@@ -19,6 +19,7 @@ export default {
   },
   created(){
     this.$store.dispatch('loadGigs')
+    console.log(this.$store.getters.paggingSize);
   },
   methods:{
     movePage(diff){
