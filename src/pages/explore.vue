@@ -1,6 +1,5 @@
 <template>
   <section class="main-layout">
-    <h1>explore</h1>
     <gig-filter/>
     <gig-list :gigs="gigs"/>
     <div class="pagging-btns flex space-between">

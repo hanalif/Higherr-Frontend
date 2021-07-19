@@ -6,12 +6,21 @@
     padding: 10px;
 }
 
+.card-img {
+    &:hover {
+        .card-title {
+            color: $clr3;
+        }
+    }
+}
+
 .card-title {
     height: 50px;
     margin: 10px 0;
     text-overflow: clip;
     &:hover {
         color: $clr3;
+        transition: 0.15s;
     }
 }
 
@@ -21,14 +30,31 @@
 
 .star-img {
     color: #ffbe5b;
+    margin-right: 5px;
+    height: 18px;
+    padding-bottom: 2px;
+}
+
+.rating {
+    align-items: center;
+    height: 20px;
 }
 
 .user-card-title {
     align-items: center;
     // font-family: macan-light;
     font-size: 00.9rem;
-    p {
+    .seller-level {
+        color: #bab6bc;
         padding-left: 10px;
+        height: 18px;
+    }
+    .topSeller {
+        color: #ffc45b;
+    }
+    .seller-fullname {
+        padding-left: 10px;
+        height: 18px;
         &:hover {
             text-decoration: underline;
         }
@@ -55,6 +81,6 @@
 }
 
 .actions {
-    border-top: 1px solid rgba(128, 128, 128, 0.295);
+    border-top: 1px solid #e4e5e7;
     padding: 10px;
 }

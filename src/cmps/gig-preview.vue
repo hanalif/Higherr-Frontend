@@ -12,18 +12,21 @@
         <div class="card-details">
             <div class="user-card-title flex">
             <img class="user-img" :src="gig.seller.imgUrl" alt="">
-            <router-link :to="'user/'+gig.seller._id">
-            <p>{{gig.seller.fullname}}</p>
-            </router-link>
+                <div class="seller-name-level flex column">
+                    <router-link :to="'user/'+gig.seller._id">
+                        <p class="seller-fullname">{{gig.seller.fullname}}</p>
+                    </router-link>
+                    <p class="seller-level" :class="{topSeller: isTopSeller}">{{userLevel}}</p>
                 </div>
+            </div>
             <router-link :to="'/gig/'+gig._id">
             <long-text :txt="gig.title"/>
             </router-link>
-            <p><img class="star-img" src="@/assets/star.jpg" /> <span class="rate-score">{{getAvgRating}}</span> <span class="rate-count">({{rateCount}})</span></p>
+            <p class="flex rating"><img class="star-img" src="@/assets/star.jpg" /> <span class="rate-score">{{getAvgRating}}</span> <span class="rate-count">({{rateCount}})</span></p>
         </div>
         <div class="actions flex space-between">
             <p class="heart-icon" :class="{red:isRed}" @click="isRed=!isRed">❤</p>
-            <p class="gig-card-price">Price: {{gig.price}}$</p>
+            <p class="gig-card-price">Price: ${{gig.price}}</p>
         </div>
     </section>
 </template>
@@ -40,6 +43,7 @@ export default {
         return{
             isRed: false,
             users: this.$store.getters.users,
+            isTopSeller: false
         }
     },
     computed:{
@@ -55,6 +59,21 @@ export default {
         }, 0);
         return Math.round((total / user.reviews.length) * 10) / 10;
     },
+    userLevel(){
+        if (this.getAvgRating >= 5) {
+            this.isTopSeller = true 
+            return 'Top Rated Seller'
+            }
+        else if (this.getAvgRating >= 4) {
+            this.isTopSeller = false
+            return 'Level 2 Seller'
+            }
+        else if (this.getAvgRating >= 3) {
+            this.isTopSeller = false
+            return 'Level 1 Seller'
+            }
+    
+    }
     },
     metods:{
     },
