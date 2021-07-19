@@ -19,10 +19,12 @@
         }
 
         .logo {
-            font-size: 40px;
+            font-size: 2rem;
             color: #404145;
             font-family: serif;
             font-weight: bold;
+            letter-spacing: 0px;
+            font-family: fjalla;
             & span {
                 color: green;
             }
@@ -91,4 +93,33 @@
     width: 30px;
     height: 30px;
     object-fit: cover;
+}
+
+.logo-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    & button {
+        border-radius: 0 3px 3px 0;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        background: $clr3;
+        font-weight: bold;
+        transition: 0.2s;
+        &:hover {
+            background-color: $clr8;
+        }
+    }
+    & input {
+        width: 300px;
+        line-height: 50px;
+        border-radius: 3px 0 0 3px !important;
+        font-family: inherit;
+        font-size: 0.9rem;
+        border-right: none;
+        color: $clr1;
+    }
 }

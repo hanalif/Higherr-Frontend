@@ -8,16 +8,16 @@ export default {
     state: {
         loggedinUser: userService.getLoggedinUser(),
         users: [],
-        watchedUser: null
+        watchedUser: null,
     },
     getters: {
         users({ users }) { return users },
         loggedinUser({ loggedinUser }) { return loggedinUser },
         watchedUser({ watchedUser }) { return watchedUser },
-        loggedinImg({loggedinUser}) {
+        loggedinImg({ loggedinUser }) {
             console.log(loggedinUser.imgUrl);
             return loggedinUser.imgUrl
-        }
+        },
     },
     mutations: {
         setLoggedinUser(state, { user }) {
@@ -38,22 +38,6 @@ export default {
         removeUser(state, { userId }) {
             state.users = state.users.filter(user => user._id !== userId)
         },
-        sortReviews(state, { sortBy, sellerId }) {
-            console.log(state.users);
-            if (sortBy === 'high') {
-                state.users.find(user => user._id = sellerId).reviews.sort((a, b) => {
-                    return b.rate - a.rate
-                })
-            } else if (sortBy === 'low') {
-                state.users.find(user => user._id = sellerId).reviews.sort((a, b) => {
-                    return a.rate - b.rate
-                })
-            } else if (sortBy = 'recent') {
-                state.users.find(user => user._id = sellerId).reviews.sort((a, b) => {
-                    return a.createdAt - b.createdAt
-                })
-            }
-        }
     },
     actions: {
         async login({ commit }, { userCred }) {

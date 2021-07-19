@@ -4,14 +4,28 @@
     class="app-header main-layout"
   >
     <nav class="nav">
+      <div class="logo-search-bar">
       <router-link class="logo" to="/">higherr<span>.</span></router-link>
+      <form v-if="!isTop" >
+        <input
+          v-model="filterBy.txt"
+          type="text"
+          placeholder='🔎︎  Find Services'
+        />
+        <button @click.prevent="searchGigs">Search</button>
+      </form>
+      </div>
       <div class="menu-items">
         <router-link to="/explore">Explore</router-link>
         <a @click="signIn" v-if="!loggedInUser">Sign In</a>
         <a @click="signUp" v-if="!loggedInUser">Join</a>
         <div v-else class="user-menu">
           <div class="user-menu-icon">
-              <img class="user-menu-img" @click="onUserMenuClick" :src="loggedInImg">
+            <img
+              class="user-menu-img"
+              @click="onUserMenuClick"
+              :src="loggedInImg"
+            />
           </div>
           <div class="floating-menu" v-if="isFloatingMenuOpen">
             <ul class="floating-menu-items" @click="onUserMenuClick">
@@ -38,7 +52,6 @@
 
 <script>
 
-
 export default {
 
   data() {
@@ -48,7 +61,15 @@ export default {
       isTop: true,
       isHome: true,
       height: null,
-      showTryModal: false,
+      filterBy: {
+        txt: "",
+        tags: "all",
+        delivery: "all",
+        price: {
+          min: 0,
+          max: Infinity,
+        },
+      },
     };
   },
   methods: {
@@ -69,10 +90,17 @@ export default {
       this.isFloatingMenuOpen = !this.isFloatingMenuOpen;
     },
     checkTop() {
-      if(window.pageYOffset === 0 && this.$router.currentRoute.fullPath === "/") this.isTop = true
-      else this.isTop = false
+      if (
+        window.pageYOffset === 0 &&
+        this.$router.currentRoute.fullPath === "/"
+      )
+        this.isTop = true;
+      else this.isTop = false;
     },
- 
+    searchGigs() {
+      this.$store.commit({ type: "setFilter", filterBy: this.filterBy });
+      if (this.$route.path !== '/explore') this.$router.push("/explore");
+    },
   },
   computed: {
     loggedInUser() {
@@ -91,7 +119,7 @@ export default {
         } else {
           this.isHome = false;
         }
-      this.checkTop()
+        this.checkTop();
       },
     },
     $el: {
@@ -105,10 +133,11 @@ export default {
       },
     },
   },
- 
+  components: {
+  },
   created() {
-    addEventListener('scroll', this.checkTop)
-  }
+    addEventListener("scroll", this.checkTop);
+  },
 };
 </script>
 

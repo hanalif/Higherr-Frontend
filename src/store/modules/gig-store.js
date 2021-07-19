@@ -52,7 +52,7 @@ export default {
         },
         topGigs(state) {
             // add sort by highest rate or review amount
-            return state.gigs.slice(0, 4)
+            return state.gigs.slice(5, 9)
         }
     },
     mutations: {
