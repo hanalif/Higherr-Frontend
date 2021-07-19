@@ -16,8 +16,8 @@
       </section>
       <button class="btn" @click="toggleAdd">Add Review</button>
       <section class="sort-ratings">
-        <h3>Sort by </h3>
-        <select v-model="sortBy" @change="sortReviews">
+        <h3>Sort by</h3>
+        <select v-model="sortBy">
           <option value="recent">Most recent</option>
           <option value="high">High to low</option>
           <option value="low">Low to high</option>
@@ -26,7 +26,7 @@
     </div>
     <review-add v-if="isAddReview" @submitReview="submitReview" />
     <ul class="review-list">
-      <review-list :reviews="seller.reviews" />
+      <review-list :reviews="sortedReviews" />
     </ul>
   </div>
 </template>
@@ -45,7 +45,7 @@ export default {
     return {
       isAddReview: false,
       value: this.getAvgRating(),
-      sortBy: 'recent'
+      sortBy: "recent",
     };
   },
   methods: {
@@ -73,9 +73,6 @@ export default {
       }, 0);
       return Math.round((total / this.seller.reviews.length) * 10) / 10;
     },
-    sortReviews() {
-      this.$store.commit({type:'sortReviews', sortBy: this.sortBy, sellerId: this.seller._id})
-    }
   },
   computed: {
     getStars() {
@@ -83,6 +80,25 @@ export default {
     },
     getAvg() {
       return this.getAvgRating();
+    },
+    getReviews() {
+      let reviews = this.$store.getters.userReviews;
+      if (!reviews || !reviews.length) reviews = this.seller.reviews;
+      return reviews;
+    },
+    sortedReviews() {
+      let reviews = JSON.parse(JSON.stringify(this.seller.reviews));
+      if (this.sortBy === "low") {
+        reviews = reviews.sort((a, b) => {
+          return a.rate - b.rate;
+        });
+      }
+      else if (this.sortBy === "high") {
+       reviews = reviews.sort((a, b) => {
+          return b.rate - a.rate;
+        });
+      }
+      return reviews;
     },
   },
   components: {
