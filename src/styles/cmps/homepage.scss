@@ -40,7 +40,21 @@
     }
 }
 
+.home-page-search-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    .home-page-search-icon{
+        position: absolute;
+        top: 16px;
+        left: 12px;
+    }
+}
+
 .hero-searchbar {
+    padding: 0;
     width: 550px;
     height: 50px !important;
     line-height: 50px;
@@ -48,6 +62,7 @@
     font-family: inherit;
     font-size: 1.2rem;
     transform: translate(1px, -2.1%);
+    padding-inline-start: 36px;
 }
 
 .top-gigs {

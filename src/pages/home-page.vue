@@ -3,14 +3,15 @@
     <div class="hero">
       <div class="hero-txt">
         <h1>Find the perfect <span>freelance</span> <br>service for your every need.</h1>
-        <form @submit.prevent="searchGigs">
+        <form class="home-page-search-container" @submit.prevent="searchGigs">
           <input
             v-model="filterBy.txt"
             class="hero-searchbar"
             type="text"
-            placeholder='🔎︎   Try "web design"'
+            placeholder='Try "web design"'
           />
           <button>Search</button>
+           <i class="fas fa-search home-page-search-icon"></i>
         </form>
       </div>
       <img src="@/assets/hero1.png" />

@@ -34,6 +34,7 @@
                   >Profile</router-link
                 >
               </li>
+              <li><router-link to="/orders">Orders</router-link></li>
               <li><a @click="logout">Logout</a></li>
             </ul>
           </div>
@@ -45,11 +46,14 @@
         ></div>
       </div>
     </nav>
+    <menu-content-use v-if="showTryModal" @close="closeTryModal"></menu-content-use>
   </section>
 </template>
 
 <script>
+
 export default {
+
   data() {
     return {
       isSign: false,
@@ -128,6 +132,8 @@ export default {
         console.log();
       },
     },
+  },
+  components: {
   },
   created() {
     addEventListener("scroll", this.checkTop);
