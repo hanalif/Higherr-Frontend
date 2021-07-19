@@ -1,6 +1,6 @@
 <template>
 <section class="filter">
-    <input type="text" v-model="filterBy.txt" placeholder="Search By Title.."/>
+    <input type="text" v-model="filterBy.txt" placeholder="Find Services"/>
     <select name="" id="" v-model="filterBy.tags" @change="filter">
         <option value="media">Media</option>
         <option value="music">Music</option>
@@ -21,7 +21,7 @@
     </select>
     <input type="number" placeholder="Min Price"  v-model="filterBy.price.min">
     <input type="number" placeholder="Max Price"  v-model="filterBy.price.max">
-    <button @click="filter" class="btn-primary btn">Save</button>
+    <button @click="filter" class="btn-primary btn">Search</button>
 </section>
 </template>
 
