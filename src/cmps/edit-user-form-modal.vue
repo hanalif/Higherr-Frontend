@@ -72,12 +72,11 @@ export default {
         from: "",
         about: "",
         skills: "",
-        imgUrl:""
+        imgUrl:"",
       },
     };
   },
   methods: {
-    formSubmit() {},
     close() {
       this.$emit("close");
     },
@@ -88,7 +87,8 @@ export default {
       this.isImgLoading= false;
     },
     formSubmit(){
-       console.log(this.user) 
+       console.log(this.user)
+
        this.$emit('updateUserProfile', this.user)
        
 
