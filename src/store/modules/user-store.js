@@ -87,10 +87,12 @@ export default {
                 throw err
             }
         },
-        async updateUser({ commit, state }, { user }) {
+        async updateUser({ dispatch, commit, state }, { user }) {
             try {
                 user = await userService.save(user);
-                commit({ type: 'setUsers', user })
+                await dispatch({ type: 'loadUsers' })
+            
+
                 if (user._id === state.loggedinUser._id) {
                     commit({ type: 'setLoggedinUser', user: user })
                 }

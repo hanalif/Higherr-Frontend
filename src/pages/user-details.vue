@@ -147,7 +147,8 @@ export default {
       return this.$store.getters.getGigs;
     },
     userGigs() {
-      return this.gigs.filter((gig) => gig.seller._id === this.user._id);
+      let userGigs = this.gigs.filter(gig => gig.seller._id === this.user._id)
+      return userGigs;
     },
     seller() {
       const seller = {
@@ -171,7 +172,7 @@ export default {
     let userId = this.$route.params.userId;
     const store = this.$store;
     this.$store.dispatch({ type: "getUserById", id: userId }).then((user) => {
-      this.user = user;
+       this.user = user;
       if (user._id === store.getters.loggedinUser._id) {
         this.isLoggedinUser = true;
       }
