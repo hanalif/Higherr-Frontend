@@ -1,11 +1,7 @@
 <template>
 <section class="filter">
-    <input type="text" v-model="filterBy.txt" placeholder="Find Services"/>
-    <button @click="openTryModal">Categories</button>
-    <filter-modal v-if="showTryModal" @close="closeTryModal">
-        
-        </filter-modal>
-        
+    <button class="tags-btn" @click="openTryModal">Categories <span>></span></button>
+    <tags-modal class="tags-modal" v-if="showTryModal" @close="showTryModal = false" @search="filter"/>
     <select name="" id="" v-model="filterBy.delivery" @change="filter">
         <option value="1">Up To 1 Day</option>
         <option value="3">Up To 3 Days</option>
@@ -19,9 +15,8 @@
     <button @click="filter" class="btn-primary btn">Search</button>
 </section>
 </template>
-
 <script>
-import filterModal from './filter-modal.vue'
+import tagsModal from './tags-modal.vue'
 export default {
     data(){
         return{
@@ -38,18 +33,22 @@ export default {
         }
     },
     methods:{
-        filter(){
+        filter(filterBy){
+            console.log('~ filterBy', filterBy)
+            if(filterBy) this.filterBy = filterBy
+            console.log('hi');
             this.$store.commit({type:'setFilter',filterBy:this.filterBy})
+            this.showTryModal = false;
         },
         openTryModal(){
-        this.showTryModal = true;
+            this.showTryModal = !this.showTryModal
     },
         closeTryModal(){
         this.showTryModal = false;
         }
     },
     components:{
-        filterModal
+    tagsModal
     },
     destroyed(){
         this.filterBy.txt = ''

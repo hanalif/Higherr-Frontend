@@ -42,7 +42,7 @@ export default {
     data(){
         return{
             isRed: false,
-            users: this.$store.getters.users,
+            // users: this.$store.getters.users,
             isTopSeller: false
         }
     },
@@ -50,6 +50,9 @@ export default {
         rateCount(){
             const user = this.users.find(user=>user._id === this.gig.seller._id)
             return user.reviews.length
+        },
+        users(){
+            return this.$store.getters.users
         },
         getAvgRating() {
             const user = this.users.find(user=>user._id === this.gig.seller._id)
