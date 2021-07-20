@@ -16,7 +16,7 @@
     <div class="gig-imgs-container">
       <img class="gig-main-img" :src="imgToShow" />
       <div class="img-thumbnails">
-        <img :class="{'show-img':isShownImg}"  v-for="img in gig.imgUrls" :key="img" :src="img" @click="setImg" />
+        <img  v-for="img in gig.imgUrls" :key="img" :src="img" @click="setImg" />
       
       </div>
     </div>

@@ -78,7 +78,6 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch({ type: "loadUsers" });
     this.$store.dispatch({ type: "loadGigs" });
   },
   computed: {
