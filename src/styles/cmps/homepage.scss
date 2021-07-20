@@ -2,8 +2,8 @@
     background-color: #003B17;
     height: 650px;
     padding-top: 12rem;
-    padding-inline-start: 5rem;
-    padding-inline-end: 1rem;
+    padding-inline-start: 4.2rem;
+    padding-inline-end: 2rem;
     display: flex;
     justify-content: space-between;
     margin-bottom: 5rem;
@@ -62,13 +62,15 @@
     font-family: inherit;
     font-size: 1.2rem;
     transform: translate(1px, -1.6%);
-    padding-inline-start: 36px;
+    padding-inline-start: 2rem;
 }
 
 .top-gigs {
     margin-bottom: 5rem;
-    & h1 {
+    
+    & h2 {
         font-weight: bold;
+        font-size: 35px;
     }
 }
 

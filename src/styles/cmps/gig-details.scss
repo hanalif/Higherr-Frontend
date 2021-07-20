@@ -1,6 +1,6 @@
 
 .gig-details {
-    margin: 0 4rem;
+    padding: 0 6rem;
 
 }
 
@@ -9,7 +9,7 @@
     position: sticky;
     top: 0.1rem;
     background-color: #fff;
-    padding: 1rem;
+    padding: 1rem 4.2rem;
     z-index: 3;
 }
 .gig-nav-a{
@@ -22,7 +22,7 @@
         color: $clr7;
     }
 
-    &:after {
+    &:active {
         color: $clr6;
     }
 }

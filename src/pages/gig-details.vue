@@ -1,13 +1,14 @@
 
 
 <template>
-  <div class="main-layout gig-details">
+<section>
     <nav class="gig-nav">
       <a class="gig-nav-a" href="#gig-overview">Overview</a>
       <a class="gig-nav-a" href="#gig-description">Description</a>
       <a class="gig-nav-a" href="#about-seller">About the seller</a>
       <a class="gig-nav-a" href="#gig-review">Reviews</a>
     </nav>
+  <div class=" gig-details">
     <div class="gig-overview-contanier" v-if="seller">
       <div class="gig-info">
         <gig-overview id="gig-overview" :gig="gig" :seller="seller" />
@@ -18,6 +19,7 @@
       <order-details class="order-details" :gig="gig" :seller="seller"/>
     </div>
   </div>
+</section>
 </template>
 
 <script>

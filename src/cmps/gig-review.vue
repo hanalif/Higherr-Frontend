@@ -5,13 +5,13 @@
         <h2 class="reviews-title">{{ seller.reviews.length }} Reviews</h2>
         <div class="reviews-title-rating">
           <el-rate
-            v-model="value"
+            v-model="getAvgRating"
             disabled
             text-color="#ff9900"
             score-template="{value}"
           >
           </el-rate>
-          <h3 class="reviews-title review-rate">{{ getAvg }}</h3>
+          <h3 class="reviews-title review-rate">{{ getAvgRating }}</h3>
         </div>
       </section>
       <button class="btn" @click="toggleAdd">Add Review</button>
@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       isAddReview: false,
-      value: this.getAvgRating(),
+      // value: this.getAvgRating(),
       sortBy: "recent",
     };
   },
@@ -67,20 +67,17 @@ export default {
       this.$store.dispatch({ type: "updateUser", user: this.seller });
       this.toggleAdd();
     },
+  },
+  computed: {
     getAvgRating() {
       const total = this.seller.reviews.reduce((acc, review) => {
         return acc + review.rate;
       }, 0);
       return Math.round((total / this.seller.reviews.length) * 10) / 10;
     },
-  },
-  computed: {
-    getStars() {
-      const rate = this.getAvgRating();
-    },
-    getAvg() {
-      return this.getAvgRating();
-    },
+    // getAvg() {
+    //   return this.getAvgRating();
+    // },
     getReviews() {
       let reviews = this.$store.getters.userReviews;
       if (!reviews || !reviews.length) reviews = this.seller.reviews;
