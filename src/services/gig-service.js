@@ -1,8 +1,8 @@
-// import axios from 'axios'
+import axios from 'axios'
 import { storageService } from '../services/async-storage-service.js'
-// import { httpService } from './http.service'
-// const KEY = 'toyDB';
-// const SERVER_PATH = 'http://localhost:3030'
+import { httpService } from '../services/http.service.js'
+const KEY = 'highrDB';
+const SERVER_PATH = 'http://localhost:3030'
 const GIG_KEY = 'gig_db'
 let filterBy = {
     txt: '',
@@ -350,37 +350,37 @@ export const gigService = {
 
 
 function query() {
-    // return axios.get('http://localhost:3030/api/toy', { params: filterBy }).then(res => res.data);
+    return axios.get('http://localhost:3030/api/gig').then(res => res.data);
     // return httpService.get(`gig`, filterBy )
-    var gigs = storageService.query(GIG_KEY)
-        .then(gigs => {
-            if (!gigs || !gigs.length) gigs = gGigs
-            localStorage.setItem(GIG_KEY, JSON.stringify(gigs))
-            return gigs
-        })
-    return gigs
+    // var gigs = storageService.query(GIG_KEY)
+    //     .then(gigs => {
+    //         if (!gigs || !gigs.length) gigs = gGigs
+    //         localStorage.setItem(GIG_KEY, JSON.stringify(gigs))
+    //         return gigs
+    //     })
+    // return gigs
 }
 
 function getById(id) {
-    // return axios.get(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
+    return axios.get(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
     // return httpService.get(`gig/${id}`)
-    return storageService.get(GIG_KEY, id)
-        .then(gig => gig)
+    // return storageService.get(GIG_KEY, id)
+    //     .then(gig => gig)
 }
 
 function remove(id) {
-    // return axios.delete(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
-    // return httpService.delete(`gig/${id}`)
-    return storageService.remove(GIG_KEY, id)
+    return axios.delete(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
+    // // return httpService.delete(`gig/${id}`)
+    // return storageService.remove(GIG_KEY, id)
 }
 
 function save(gig) {
     if (gig._id) {
-        // return httpService.put(`gig`, gig)
-        return storageService.put(GIG_KEY, gig)
+        return httpService.put(`gig`, gig)
+        // return storageService.put(GIG_KEY, gig)
     } else {
-        // return httpService.post(`gig`, gig)
-        return storageService.post(GIG_KEY, gig)
+        return httpService.post(`gig`, gig)
+        // return storageService.post(GIG_KEY, gig)
     }
 }
 
@@ -389,9 +389,9 @@ function setFilter(filter) {
 }
 
 function getFilterdGigs() {
-    return storageService.query(GIG_KEY)
-        .then(gigs => {
-            if (filterBy.txt === '' && filterBy.tags === 'all' &&
+    return axios.get('http://localhost:3030/api/gig').then(res => {
+        let gigs = res.data
+        if (filterBy.txt === '' && filterBy.tags === 'all' &&
                 !filterBy.delivery && filterBy.price.min <= 0 && filterBy.price.max === Infinity) return gigs;
             const searchStr = filterBy.txt.toLowerCase();
             let filtered = gigs.filter(gig => {
@@ -413,7 +413,8 @@ function getFilterdGigs() {
                 return gig.price >= filterBy.price.min && gig.price <= filterBy.price.max
             })
             console.log(filtered);
-        });
+    
+    })
 }
 
 
