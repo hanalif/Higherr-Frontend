@@ -42,7 +42,6 @@ export default {
     data(){
         return{
             isRed: false,
-            // users: this.$store.getters.users,
             isTopSeller: false
         }
     },

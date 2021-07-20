@@ -15,7 +15,8 @@ export default {
                 max: Infinity
             }
         },
-        currGig: {}
+        currGig: {},
+
     },
     getters: {
         gigsToShow(state) {
@@ -57,6 +58,9 @@ export default {
         paggingSize(state) {
             let pages = state.gigs.length
             return pages
+        },
+        getPageIdx(state) {
+            return state.pageIndex
         }
     },
     mutations: {
@@ -85,6 +89,9 @@ export default {
             const maxPageNum = Math.ceil(state.gigs.length / PAGE_SIZE)
             if (state.pageIndex >= maxPageNum) state.pageIndex = 0
             if (state.pageIndex < 0) state.pageIndex = maxPageNum - 1
+        },
+        jumpToPage(state, { num }) {
+            state.pageIndex = num - 1
         }
     },
     actions: {
