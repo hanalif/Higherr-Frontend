@@ -1,8 +1,7 @@
 <template>
 <section class="filter">
-    <button class="tags-btn" @click="ToggleTagsModal">Categories <span :class="{open:openTagsModal}">></span>
+    <button class="tags-btn" @click="ToggleTagsModal">Categories <span :class="{open:openTagsModal}">></span></button>
     <tags-modal class="tags-modal" v-if="openTagsModal" @close="openTagsModal = false" @search="filter"/>
-    </button>
     <button class="delivery-btn" @click="ToggleDeliveryModal">Delivery Days <span :class="{open:openDeliveryModal}">></span></button>
     <delivery-modal class="delivery-modal" v-if="openDeliveryModal" @close="openDeliveryModal = false" @search="filter"/>
     <button @click="TogglePriceModal" class="price-btn">Price <span :class="{open:openPriceModal}">></span></button>

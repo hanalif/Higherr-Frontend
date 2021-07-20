@@ -17,12 +17,12 @@
                             <label for="web-develop">Web-Develop</label>
                         </div>
                         <div class="flex tag-section">
-                            <input type="radio" name="grafic" value="grafic" v-model="filterBy.tags">
-                            <label for="grafic">Grafic</label>
+                            <input type="radio" name="graphic" value="graphic" v-model="filterBy.tags">
+                            <label for="graphic">Grafic</label>
                         </div>
                         <div class="flex tag-section">
-                            <input type="radio" name="comunication" value="comunication" v-model="filterBy.tags">
-                            <label for="comunication">Comunication</label>
+                            <input type="radio" name="communication" value="communication" v-model="filterBy.tags">
+                            <label for="communication">Comunication</label>
                         </div>
                     </div>
                     <div>
@@ -66,7 +66,6 @@ methods: {
     this.$emit("close");
     },
         search(){
-            console.log(this.filterBy);
             this.$emit('search', this.filterBy)
         }
 },
