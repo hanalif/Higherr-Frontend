@@ -7,3 +7,32 @@
         background-color: #fff;
     }
 }
+
+.removeBtn {
+    visibility: hidden;
+}
+
+.page {
+    font-family: macan-regular;
+    font-weight: bold;
+    font-size: 18px;
+    color: $clr1;
+}
+
+.currPage {
+    color: $clr3;
+}
+
+.prev-btn {
+    font-family: macan-regular;
+    font-weight: bold;
+    font-size: 18px;
+    color: $clr1;
+}
+
+.next-btn {
+    font-family: macan-regular;
+    font-weight: bold;
+    font-size: 18px;
+    color: $clr1;
+}

@@ -4,12 +4,12 @@
             <form action="">
                 <div class="flex column price-container">
                     <div class="flex">
-                        <label for="min-price">Min Price: </label>
-                        <input class="min-price" name="min-price" type="number" placeholder="Min Price"  v-model="filterBy.price.min">
+                        <label class="min-price" for="min-price">Min Price: </label>
+                        <input  name="min-price" type="number" placeholder="Min Price"  v-model="filterBy.price.min">
                     </div>
                     <div class="flex">
-                        <label for="max-price">Max Price: </label>
-                        <input class="max-price" name="max-price" type="number" placeholder="Max Price"  v-model="filterBy.price.max">
+                        <label class="max-price" for="max-price">Max Price: </label>
+                        <input  name="max-price" type="number" placeholder="Max Price"  v-model="filterBy.price.max">
                     </div>
                 </div>
             </form>
