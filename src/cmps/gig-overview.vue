@@ -7,7 +7,7 @@
         gig.seller.fullname
       }}</router-link>
       |
-      <div class="overview-rate">
+      <div v-if="seller.reviews.length" class="overview-rate">
         <el-rate v-model="value" disabled show-score text-color="#ffbe5b">
         </el-rate>
         <span>({{ seller.reviews.length }})</span>
@@ -18,7 +18,7 @@
       <img class="gig-main-img" :src="imgToShow" />
       </div>
       <div class="img-thumbnails">
-        <img  v-for="img in gig.imgUrls" :key="img" :src="img" @click="setImg" />
+        <img :class="isMain(img)"  v-for="img in gig.imgUrls" :key="img" :src="img" @click="setImg" />
       
       </div>
     </div>
@@ -49,8 +49,11 @@ export default {
     }
   },
   computed: {
-    isShowImg() {
-      return  
+    isMain() {
+      return ((img) => {
+        if (img === this.imgToShow) 
+        return 'main-img'
+      })
     }
   }
 };

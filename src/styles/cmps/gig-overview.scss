@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .seller-details {
@@ -32,25 +33,30 @@
     margin-top: 0.5rem;
     resize: none;
     max-width: 600px;
-    background-color: #F5F5F5;
-    border: 1px solid #EFEFF0;
 }
 
 .main-img-container {
     height: 400px;
     width: 100%;
+    background-color: #F5F5F5;
+    border: 1px solid #EFEFF0;
 }
 
 .img-thumbnails {
     display: flex;
     justify-content: center;
-    // background-color: $clr10;
-    gap: 0.5rem;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
     & img{
-        height: 70px;
-        width: 70px;
+        height: 75px;
+        width: 112px;
         object-fit: cover;
         opacity: 0.5;
+        cursor: pointer;
+        & :focus {
+          height: 200px;;  
+        }
     }
 }
 

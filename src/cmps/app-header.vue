@@ -99,6 +99,7 @@ export default {
     searchGigs() {
       this.$store.commit({ type: "setFilter", filterBy: this.filterBy });
       if (this.$route.path !== '/explore') this.$router.push("/explore");
+      // this.filterBy.txt = ""
     },
   },
   computed: {
@@ -128,7 +129,6 @@ export default {
         } else {
           this.isTop = false;
         }
-        console.log();
       },
     },
   },

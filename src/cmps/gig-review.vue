@@ -11,7 +11,7 @@
             score-template="{value}"
           >
           </el-rate>
-          <h3 class="reviews-title review-rate">{{ getAvgRating }}</h3>
+          <h3 v-if="seller.reviews.length" class="reviews-title review-rate">{{ getAvgRating }}</h3>
         </div>
       </section>
       <button class="btn" @click="toggleAdd">Add Review</button>

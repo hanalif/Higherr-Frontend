@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="hero">
+    <div class="hero" :style="{backgroundColor:heroChange}">
       <div class="hero-txt">
         <h1>
           Find the perfect <span>freelance</span> <br />service for your every
@@ -193,12 +193,24 @@ export default {
           max: Infinity,
         },
       },
+      interval: null,
+      heroState: 1
     };
   },
   created() {
     this.$store.dispatch({ type: "loadGigs" });
+    this.interval = setInterval(() => {
+        this.heroState++
+        if (this.heroState > 3) this.heroState = 1 
+    }, 8000)
   },
   computed: {
+    heroChange() {
+      if (this.heroState === 1) return '#003B17'
+      if (this.heroState === 2) return '#AC405B'
+      if (this.heroState === 3) return '#942C0B'
+
+    },
     topGigs() {
       const gigs = this.$store.state.gigStore.gigs;
       const sellers = this.$store.state.userStore.users;
@@ -212,15 +224,17 @@ export default {
       }, 0);
       seller.avgRate = (total / seller.reviews.length)
       })
-      topSellers.sort((a, b) => {
-        return b.avgRate - a.avgRate
-      })
       const topGigs = gigs.filter(gig => {
          return topSellers.some(seller =>{
+                gig.avgRate = seller.avgRate
            return seller._id === gig.seller._id 
         })
       })
-      return topGigs
+      topGigs.sort((a, b) => {
+        return b.avgRate - a.avgRate
+      })
+      
+      return topGigs.slice(0,4)
     },
   },
   methods: {
@@ -245,6 +259,9 @@ export default {
       this.filter(category);
       this.$router.push("/explore");
     },
+  },
+  destroyed() {
+    clearInterval(this.interval)
   },
   components: {
     gigPreview,

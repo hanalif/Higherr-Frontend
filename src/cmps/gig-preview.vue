@@ -56,7 +56,7 @@ export default {
         },
         getAvgRating() {
             const user = this.users.find(user=>user._id === this.gig.seller._id)
-            if(!user.reviews){user.reviews = []}
+            if(!user.reviews || !user.reviews.length ) return ""
             const total = user.reviews.reduce((acc, review) => {
             return acc + review.rate;
         }, 0);

@@ -1,5 +1,4 @@
 .hero {
-    background-color: #003B17;
     height: 650px;
     padding-top: 12rem;
     padding-inline-start: 4.2rem;
@@ -7,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 5rem;
+    transition: 2s;
     & h1 {
         color: #fff;
         font-size: 3rem;
