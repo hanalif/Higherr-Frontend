@@ -17,7 +17,7 @@
           <i class="fas fa-search home-page-search-icon"></i>
         </form>
       </div>
-      <img src="@/assets/hero1.png" />
+      <img :src="require(`@/assets/hero${heroState}.png`)" />
     </div>
     <div class="top-gigs gig-list main-layout">
       <h2>Our Best Gigs</h2>
@@ -209,6 +209,11 @@ export default {
       if (this.heroState === 1) return '#003B17'
       if (this.heroState === 2) return '#AC405B'
       if (this.heroState === 3) return '#942C0B'
+    },
+    heroImgChange() {
+      if (this.heroState === 1) return '@/assets/hero1.png'
+      if (this.heroState === 2) return '@/assets/hero2.png'
+      if (this.heroState === 3) return '@/assets/hero3.png'
 
     },
     topGigs() {

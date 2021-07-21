@@ -19,7 +19,6 @@
         .logo {
             font-size: 1.8rem;
             color: #404145;
-            font-family: serif;
             font-weight: bold;
             letter-spacing: 0px;
             font-family: fjalla;
@@ -116,4 +115,25 @@
         border-right: none;
         color: $clr1;
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+.join-btn {
+    border-radius: 4px;
+    padding: 0.5rem 1.4rem;
+    border: none;
+    color: $clr3;
+    cursor: pointer;
+    border-color: $clr3;
+    box-shadow: inset 0px 0px 0px 1px $clr3;
+    background: none;
+    font-weight: bold;
+    transition: 0.2s;
+    &:hover {
+        background: $clr3;
+        color: white;
+    }
+}
+>>>>>>> 33022044c471b4843790eb853ea688ca44b1541e
