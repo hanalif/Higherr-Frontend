@@ -14,7 +14,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 1;
+        z-index: 5;
     }
 
     
@@ -26,7 +26,7 @@
         display: flex;
         flex-direction: column;
         border-radius: 5px;
-        z-index: 2;
+        z-index: 6;
 
 
         @media screen and (max-width: 1500px) {

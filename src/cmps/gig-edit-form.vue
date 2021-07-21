@@ -70,7 +70,7 @@
 
           <div class="gig-images-edit-container">
             <div class="gig-images-edit-title">
-              <label>Images</label>
+              <label>Images(Up to 5)</label>
               <small
                 >Get noticed by the right buyers with visual examples of your
                 services.</small
@@ -78,11 +78,12 @@
             </div>
             <div class="gig-edit-imgs-list">
               <div class="gig-edit-img-card">
-                <label >
+                <label v-if="gig.imgUrls.length <=5" >
                   <input @change="onUploadImg" type="file" hidden />
                 <img v-if="isImgLoading" class="gig-edit-img-upload" src="https://thumbs.gfycat.com/ArtisticShoddyKudu-small.gif" alt="">
-                <i v-else class="fas fa-camera gig-edit-img-upload"></i>
+                <i v-else  class="fas fa-camera gig-edit-img-upload"></i>
                 </label>
+                  <bold class="gig-edit-limit-img-title" v-else>Up to 5 images</bold>
                 
               </div>
               <div
@@ -111,7 +112,10 @@
 import { uploadImg } from "../services/img-upload.service.js";
 import modal from "./modal.vue";
 export default {
-  props: ["gigToEdit", "seller"],
+  props: {
+    gigToEdit: Object,
+    seller: Object
+  },
   data() {
     return {
       isImgLoading: false,
@@ -127,8 +131,8 @@ export default {
         "media",
         "music",
         "web-develop",
-        "grafic",
-        "comunication",
+        "graphic",
+        "communication",
         "home-design",
         "logo-design",
       ],
@@ -144,10 +148,16 @@ export default {
       this.$emit("close");
     },
     async onUploadImg(ev) {
-      this.isImgLoading = true;
-      const res = await uploadImg(ev);
-      this.gig.imgUrls.unshift(res.url);
-      this.isImgLoading = false;
+      try{
+        
+        this.isImgLoading = true;
+        const res = await uploadImg(ev);
+        this.gig.imgUrls.unshift(res.url);
+        this.isImgLoading = false;
+
+      }catch{
+        console.log('err load img')
+      }
     },
     onRemoveImgFromGig(gigImgUrl) {
       let imgIndex = this.gig.imgUrls.findIndex((url) => url === gigImgUrl);
@@ -158,7 +168,6 @@ export default {
       this.gig.seller = this.seller;
     if (this.gig.imgUrls.length === 0) {this.gig.imgUrls = ['https://cdn.pixabay.com/photo/2016/03/21/20/05/image-1271454_960_720.png']}
       this.$store.dispatch({ type: "saveGig", gig: this.gig });
-
       this.$refs.modal.closeModal();
     },
   },

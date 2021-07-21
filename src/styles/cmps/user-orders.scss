@@ -4,16 +4,22 @@
 background-color: #f7f7f7;
 min-height: 585px;
 
-    
 }
 .user-orders{
     margin-bottom: 10px;
    
     
+    
 
-    .user-erders-main-title{
+    .user-orders-main-title{
         font-weight: 300;
         margin-top: 20px;
+        text-align: center;
+    }
+    .main-title{
+      border-bottom:  1px solid #ddd;
+      color: #62646a;
+      font-family:  macan-regular, Arial, Helvetica, sans-serif;
     }
 
     body {

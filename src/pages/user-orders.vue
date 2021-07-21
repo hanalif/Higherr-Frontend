@@ -1,36 +1,107 @@
 <template>
   <div class="user-orders-page">
     <div class="user-orders main-layout">
+      <h1 class="user-orders-main-title main-title">{{this.user.fullname +`'s`}} orders</h1>
+      
+      <div class="user-orders-as-seller-container">
       <table>
-        <caption class="user-erders-main-title">
-          Manage Orders
+        <caption class="user-orders-main-title">
+          My orders 
         </caption>
         <thead>
           <tr>
-            <th scope="col">Buyer</th>
-            <th scope="col">Gig</th>
-            <th scope="col">Due on</th>
-            <th scope="col">Total</th>
+            <th scope="col">Title</th>
             <th scope="col">Status</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Price</th>
+            <th scope="col">Seller</th>
+            <th scope="col">Contact seller</th>
+            <th scope="col">Remove order</th>
           </tr>
         </thead>
-        <tbody>
+        <template v-if="userAsBuyerOrders"> 
+          <tbody  v-for="order in userAsBuyerOrders" :key="order._id">
           <tr>
-            <td scope="row" data-label="Account">Visa - 6076</td>
-            <td data-label="Gig">hello world</td>
-            <td data-label="Due on">02/01/2016 - 02/29/2016</td>
-            <td data-label="Total">$2,443</td>
-            <td data-label="Status">pending</td>
+            <td scope="row" data-label="Title">{{order.title}}</td>
+            <td data-label="Status">{{order.status}}</td>
+            <td data-label="Created at">{{order.createdAt}}</td>
+            <td data-label="Price"><span>$</span>{{order.price}}</td>
+            <td data-label="Seller">{{order.seller.fullname}}</td>
+            <td data-label="Contact seller"><button class="btn">Contact seller</button></td>
+            <td data-label="Remove order"><i @click="onRemoveOrder(order._id)" class="fas fa-trash"></i></td>
+          </tr>
+        </tbody> 
+        </template>
+      </table>
+      </div>
+      <div class="user-orders-as-buyer-container">
+      <table>
+        <caption class="user-orders-main-title">
+          Incoming orders 
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Price</th>
+            <th scope="col">Buyer</th>
+            <th scope="col">Contact buyer</th>
+          </tr>
+        </thead>
+        <template v-if="userAsSellerOrders">
+        <tbody v-for="order in userAsSellerOrders" :key="order._id">
+          <tr>
+            <td scope="row" data-label="Title">{{order.title}}</td>
+            <td data-label="Status">{{order.status}}</td>
+            <td data-label="Created at">{{order.createdAt}}</td>
+            <td data-label="Price"><span>$</span>{{order.price}}</td>
+            <td data-label="Seller">{{order.buyer.fullname}}</td>
+            <td data-label="Contact seller"><button class="btn">Contact buyer</button></td>
           </tr>
         </tbody>
+        </template>
       </table>
+      </div>
+
     </div>
   </div>
 </template>
 
 <script>
-export default {};
-</script>
+export default {
+  data() {
+    return {
 
-<style lang="scss" scoped>
-</style>
+      
+    }
+  },
+  computed: {
+    userAsSellerOrders() {
+       return this.$store.getters.userAsSellerOrders 
+    },
+    userAsBuyerOrders(){
+      return this.$store.getters.userAsBuyerOrders
+    },
+    user(){
+      return this.$store.getters.loggedinUser
+    },
+  },
+  methods: {
+    onRemoveOrder(orderId) {
+       this.$store.dispatch({type: 'removeOrders' , orderId: orderId}).then(() =>{
+          console.log('removed')
+      });
+    }
+  },
+
+  created () {
+      this.$store.dispatch('loadOrders').then(()=>{
+        console.log(this.$store.getters.userAsBuyerOrders)
+        console.log(this.$store.getters.userAsBuyerOrders)
+      })
+     
+  },
+
+};
+</script>

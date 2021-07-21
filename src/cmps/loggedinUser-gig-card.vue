@@ -5,7 +5,9 @@
         :src="gig.imgUrls[0] || 'https://cdn.pixabay.com/photo/2016/03/21/20/05/image-1271454_960_720.png'"
         alt="gig-image"
       />
-       <long-text class="user-gig-description" :txt="gig.title"/>
+      <router-link :to="'/gig/'+gig._id">
+        <long-text class="user-gig-description" :txt="gig.title"/>
+      </router-link>
       <i @click="onEditGig" class="fas fa-pen-square user-edit-btn buttom-edit-btn"></i>
       <i @click="onRemoveGig" class="fas fa-trash user-edit-btn buttom-edit-btn"></i>
     </div>
