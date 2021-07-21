@@ -1,12 +1,12 @@
 .hero {
-    background-color: #003B17;
     height: 650px;
     padding-top: 12rem;
-    padding-inline-start: 5rem;
-    padding-inline-end: 1rem;
+    padding-inline-start: 4.2rem;
+    padding-inline-end: 2rem;
     display: flex;
     justify-content: space-between;
     margin-bottom: 5rem;
+    transition: 2s;
     & h1 {
         color: #fff;
         font-size: 3rem;
@@ -18,15 +18,16 @@
         }
     }
     & img {
-        height: 600px;
-        width: 600px;
+        height: 500px;
+        width: 500px;
         align-self: flex-end;
+        transition: 2s;
     }
     & button {
         height: 50px;
         width: 100px;
         border-radius: 0 5px 5px 0;
-        padding: 9px 15px;
+        padding: 15px 15px;
         border: none;
         color: #fff;
         cursor: pointer;
@@ -40,13 +41,12 @@
     }
 }
 
-.home-page-search-container{
+.home-page-search-container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: baseline;
-
-    .home-page-search-icon{
+    .home-page-search-icon {
         position: absolute;
         top: 16px;
         left: 12px;
@@ -62,13 +62,14 @@
     font-family: inherit;
     font-size: 1.2rem;
     transform: translate(1px, -1.6%);
-    padding-inline-start: 36px;
+    padding-inline-start: 2rem;
 }
 
 .top-gigs {
     margin-bottom: 5rem;
-    & h1 {
+    & h2 {
         font-weight: bold;
+        font-size: 35px;
     }
 }
 

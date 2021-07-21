@@ -7,7 +7,7 @@
         <router-link :to="'/user/' + gig.seller._id">
         <h4 class="about-name">{{ gig.seller.fullname }}</h4>
         </router-link>
-        <div class="about-rate">
+        <div v-if="seller.reviews.length" class="about-rate">
           <el-rate v-model="value" disabled show-score text-color="#ffbe5b">
           </el-rate>
           <span>({{ seller.reviews.length }})</span

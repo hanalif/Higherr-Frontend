@@ -11,7 +11,6 @@
           <h4>{{ currPkg }}</h4>
           <h4>${{ price }}</h4>
         </div>
-        <h4>{{ gig.summary }}</h4>
         <div class="flex space-between">
           <h5>⧗ {{ delivery }} Days delivery</h5>
           <h5>↻ {{revisions}} Revisions</h5>
@@ -41,7 +40,7 @@ export default {
     return {
       currPkg: "Basic",
       revisions: 2,
-      delivery: this.gig.delivery,
+      delivery: +this.gig.delivery,
       price: this.gig.price,
       isBasic: true,
       isStandard: false,
@@ -52,7 +51,7 @@ export default {
     basic() {
       this.currPkg = 'Basic'
       this.revisions = 2
-      this.delivery = this.gig.delivery
+      this.delivery = +this.gig.delivery
       this.price = this.gig.price
       this.isBasic = true
       this.isStandard = false
@@ -61,7 +60,7 @@ export default {
     standard() {
       this.currPkg = 'Standard'
       this.revisions = 4
-      this.delivery = this.gig.delivery + 2
+      this.delivery = +this.gig.delivery + 2
       this.price = this.gig.price * 1.5
       this.isBasic = false
       this.isStandard = true
@@ -70,7 +69,7 @@ export default {
     premium() {
       this.currPkg = 'Premium'
       this.revisions = 7
-      this.delivery = this.gig.delivery + 5
+      this.delivery = +this.gig.delivery + 5
       this.price = this.gig.price * 2
       this.isBasic = false
       this.isStandard = false
