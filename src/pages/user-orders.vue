@@ -1,9 +1,10 @@
 <template>
   <div class="user-orders-page">
     <div class="user-orders main-layout">
-      <table>
+      <h1 class="user-orders-main-title">{{this.user.fullname +`'s`}} orders</h1>
+      <table class="user-orders-as-seller-container">
         <caption class="user-erders-main-title">
-          Manage Orders
+          Manage Orders 
         </caption>
         <thead>
           <tr>
@@ -32,13 +33,21 @@
 export default {
   data() {
     return {
+
       
     }
   },
   computed: {
     userAsSellerOrders() {
-      return this.$store.getters.userAsSellerOrders 
+       return this.$store.getters.userAsSellerOrders 
+    },
+    userAsBuyerOrders(){
+      return this.$store.getters.userAsBuyerOrders
+    },
+    user(){
+      return this.$store.getters.loggedinUser
     }
+    
   },
 
   created () {
@@ -46,7 +55,6 @@ export default {
           console.log('orders', orders)
       });
      
-
   },
 
 };

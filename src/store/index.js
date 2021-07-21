@@ -17,6 +17,10 @@ export default new Vuex.Store({
     userAsSellerOrders : state => {
       const loggedinUserId = state.userStore.loggedinUser?._id;
       return state.orderStore.orders.filter(order => order.seller._id === loggedinUserId)
+    },
+    userAsBuyerOrders : state => {
+      const loggedinUserId = state.userStore.loggedinUser?._id;
+      return state.orderStore.orders.filter(order => order.buyer._id === loggedinUserId)
     }
   },
   mutations: {
