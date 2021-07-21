@@ -13,6 +13,10 @@ export default new Vuex.Store({
     loggedinUserGigs: state => {
       const loggedinUserId = state.userStore.loggedinUser?._id;
       return state.gigStore.gigs.filter(gig => gig.seller._id === loggedinUserId)
+    },
+    userAsSellerOrders : state => {
+      const loggedinUserId = state.userStore.loggedinUser?._id;
+      return state.orderStore.orders.filter(order => order.seller._id === loggedinUserId)
     }
   },
   mutations: {

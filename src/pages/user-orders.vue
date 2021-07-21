@@ -29,8 +29,25 @@
 </template>
 
 <script>
-export default {};
-</script>
+export default {
+  data() {
+    return {
+      
+    }
+  },
+  computed: {
+    userAsSellerOrders() {
+      return this.$store.getters.userAsSellerOrders 
+    }
+  },
 
-<style lang="scss" scoped>
-</style>
+  created () {
+      this.$store.dispatch('loadOrders').then(orders =>{
+          console.log('orders', orders)
+      });
+     
+
+  },
+
+};
+</script>
