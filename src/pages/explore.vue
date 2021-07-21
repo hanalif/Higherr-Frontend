@@ -20,10 +20,28 @@ import gigFilter from '../cmps/gig-filter.vue'
 export default {
   data(){
     return{
+      filterBy:{
+                txt:'',
+                tags:'all',
+                delivery: 'all',
+                price:{
+                    min:0,
+                    max:Infinity
+                    }
+            },
+            sortBy:'all'
     }
   },
   created(){
     this.$store.dispatch('loadGigs')
+    .then(()=>{
+      this.$store.commit({type:'setSort', sortBy:this.sortBy})
+    }).then(()=>{
+      if(this.$route.query.category){
+        this.filterBy.tags = this.$route.query.category
+      }
+      this.$store.commit({type:'setFilter', filterBy:this.filterBy})
+    })
   },
   methods:{
     movePage(diff){

@@ -253,7 +253,6 @@ export default {
           max: this.filterBy.price.max,
         },
       };
-      console.log(filterBy);
       this.$store.commit({ type: "setFilter", filterBy });
     },
     searchGigs() {
@@ -262,7 +261,7 @@ export default {
     },
     moveToCategory(category) {
       this.filter(category);
-      this.$router.push("/explore");
+      this.$router.push(`/explore?category=${category}`);
     },
   },
   destroyed() {

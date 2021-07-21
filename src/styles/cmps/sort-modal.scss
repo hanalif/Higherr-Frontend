@@ -1,44 +1,63 @@
-.tags-modal {
+.sort-modal {
     font-family: macan-regular;
     transition: 1s;
-    .tags-container {
+    .tags-buttons-container {
+        // display: none;
+    }
+    .sort-container {
         gap: 20px
     }
     top: 143px;
-    left: 4.3%;
-    width: 350px;
+    left: 80.3%;
+    width: 200px;
     position: absolute;
     .modal__footer {
         justify-content: inherit;
     }
 }
 
-.tag-section {
-    padding-bottom: 10px;
-}
-
-.tags-btn {
-    border: 1px solid #e4e5e7;
+.sort-btn {
+    border: none;
     background-color: #fff;
     border-radius: 5px;
     font-family: macan-regular;
-    font-weight: bold;
+    font-weight: bolder;
     color: #222325;
     cursor: pointer;
     padding: 10px;
-    margin-right: 10px;
-    span {
+    span.arrow {
         margin-left: 5px;
         transition: all 0.7s ease;
         display: inline-block;
         transform: rotate(90deg);
         width: 10px;
     }
-    span.open {
+    span.arrow.open {
         transform: rotate(270deg);
     }
 }
 
-.tags-buttons-container {
-    width: 100%;
+.high-to-low {
+    cursor: pointer;
+}
+
+.low-to-high {
+    cursor: pointer;
+}
+
+#high-to-low {
+    display: none;
+}
+
+#low-to-high {
+    display: none;
+}
+
+.clicked {
+    color: $clr3;
+}
+
+span.sort-By {
+    color: $clr1;
+    font-weight: lighter;
 }
