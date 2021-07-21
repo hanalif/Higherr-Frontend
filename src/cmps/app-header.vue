@@ -5,20 +5,28 @@
   >
     <nav class="nav">
       <div class="logo-search-bar">
-      <router-link class="logo" to="/">higherr<span>.</span></router-link>
-      <form v-if="!isTop" >
-        <input
-          v-model="filterBy.txt"
-          type="text"
-          placeholder='🔎︎  Find Services'
-        />
-        <button @click.prevent="searchGigs">Search</button>
-      </form>
+        <router-link class="logo" to="/">higherr<span>.</span></router-link>
+        <form v-if="!isTop">
+          <input
+            v-model="filterBy.txt"
+            type="text"
+            placeholder="🔎︎  Find Services"
+          />
+          <button @click.prevent="searchGigs">Search</button>
+        </form>
       </div>
       <div class="menu-items">
         <router-link to="/explore">Explore</router-link>
+        <a @click="becomeSeller">Become a Seller</a>
         <a @click="signIn" v-if="!loggedInUser">Sign In</a>
-        <a @click="signUp" v-if="!loggedInUser">Join</a>
+        <button
+          :class="{ 'white-btn': isTop }"
+          class="join-btn"
+          @click="signUp"
+          v-if="!loggedInUser"
+        >
+          Join
+        </button>
         <div v-else class="user-menu">
           <div class="user-menu-icon">
             <img
@@ -50,9 +58,7 @@
 </template>
 
 <script>
-
 export default {
-
   data() {
     return {
       isSign: false,
@@ -98,8 +104,11 @@ export default {
     },
     searchGigs() {
       this.$store.commit({ type: "setFilter", filterBy: this.filterBy });
-      if (this.$route.path !== '/explore') this.$router.push("/explore");
-      // this.filterBy.txt = ""
+      if (this.$route.path !== "/explore") this.$router.push("/explore");
+    },
+    becomeSeller() {
+      if (!this.loggedInUser) return;
+      else this.$router.push(`/user/${this.loggedInUser._id}`);
     },
   },
   computed: {
@@ -132,8 +141,7 @@ export default {
       },
     },
   },
-  components: {
-  },
+  components: {},
   created() {
     addEventListener("scroll", this.checkTop);
   },
