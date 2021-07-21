@@ -24,7 +24,11 @@
 <script>
 import modal from "./modal.vue";
 export default {
-  props: ['gig'],
+  props: {
+    gig: Object,
+    pkg: Object
+
+  },
   data() {
     return {};
   },
@@ -38,12 +42,12 @@ export default {
       this.$emit("close");
     },
     registerSubmit() {
-        let dateOfCreatedOrder = `${new Date().getMonth()+1}/${new Date().getFullYear()}`;
+        let dateOfCreatedOrder = `${new Date().getDay()}/${new Date().getMonth()+1}/${new Date().getFullYear()}`;
       const orderToSave = {
         title: this.gig.title,
         status: "pending",
         createdAt: dateOfCreatedOrder,
-        price: this.gig.price,
+        price: this.pkg.price,
         seller: this.gig.seller,
         buyer: {
           _id: this.loggedinUser._id,
