@@ -27,6 +27,19 @@
                 color: green;
             }
         }
+        .app-header-search-container{
+            position: relative;
+            input{
+                padding-inline-start: 35px;
+            }
+
+            .app-header-search-icon{
+                position: absolute;
+                top: 8px;
+                left: 6px;
+                color: #7a7d85;
+            }
+        }
         .menu-items {
             display: flex;
             align-items: center;

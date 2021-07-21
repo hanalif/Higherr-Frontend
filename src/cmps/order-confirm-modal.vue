@@ -38,7 +38,8 @@ export default {
       this.$emit("close");
     },
     registerSubmit() {
-        let dateOfCreatedOrder = `${new Date().getMonth()+1}/${new Date().getFullYear()}`;
+      
+      let dateOfCreatedOrder = `${new Date().getMonth()+1}/${new Date().getFullYear()}`;
       const orderToSave = {
         title: this.gig.title,
         status: "pending",
