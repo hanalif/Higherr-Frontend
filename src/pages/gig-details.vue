@@ -49,6 +49,7 @@ export default {
     const users = await this.$store.dispatch({
       type: 'loadUsers'
     })
+    this.$store.commit({type:'setCurrGig', gig:this.gig})
   },
   components: {
     gigOverview,
