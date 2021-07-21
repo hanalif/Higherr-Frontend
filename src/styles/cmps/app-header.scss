@@ -12,33 +12,29 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         a {
             display: block;
             color: #62646a;
         }
-
         .logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #404145;
             font-family: serif;
             font-weight: bold;
             letter-spacing: 0px;
             font-family: fjalla;
+            transform: translateY(-2px);
             & span {
                 color: green;
             }
         }
-
         .menu-items {
             display: flex;
             align-items: center;
             gap: 1.5rem;
-
             .user-menu {
                 position: relative;
                 z-index: 4;
-
                 .user-menu-icon {
                     background: none;
                     width: 30px;
@@ -57,13 +53,11 @@
                     width: 206px;
                     border-radius: 4px;
                     padding: 5px 15px;
-
                     .floating-menu-items {
                         white-space: nowrap;
                         font-weight: 600;
                         text-decoration: none;
                         color: #7a7d85;
-
                         li {
                             padding: 5px 0;
                             a {

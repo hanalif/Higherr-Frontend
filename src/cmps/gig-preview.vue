@@ -2,7 +2,7 @@
     <section class="gig-card">
         <div class="block" >
             <el-carousel height="180px" :interval="null" :trigger="'click'">
-                <el-carousel-item v-for="(img, index) in  gig.imgUrls" :key="index">
+                <el-carousel-item v-for="(img, index) in  imgsToShow" :key="index">
                     <router-link :to="'/gig/'+gig._id">
                         <img class="card-img img-fit" :src="img"/>
                     </router-link>
@@ -42,7 +42,8 @@ export default {
     data(){
         return{
             isRed: false,
-            isTopSeller: false
+            isTopSeller: false,
+            imgsToShow: this.gig.imgUrls.slice(0,4)
         }
     },
     computed:{

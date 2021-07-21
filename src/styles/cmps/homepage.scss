@@ -26,7 +26,7 @@
         height: 50px;
         width: 100px;
         border-radius: 0 5px 5px 0;
-        padding: 9px 15px;
+        padding: 15px 15px;
         border: none;
         color: #fff;
         cursor: pointer;
@@ -40,13 +40,12 @@
     }
 }
 
-.home-page-search-container{
+.home-page-search-container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: baseline;
-
-    .home-page-search-icon{
+    .home-page-search-icon {
         position: absolute;
         top: 16px;
         left: 12px;
@@ -67,7 +66,6 @@
 
 .top-gigs {
     margin-bottom: 5rem;
-    
     & h2 {
         font-weight: bold;
         font-size: 35px;

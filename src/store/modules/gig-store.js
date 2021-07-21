@@ -16,7 +16,6 @@ export default {
             }
         },
         currGig: {},
-
     },
     getters: {
         gigsToShow(state) {
@@ -56,7 +55,7 @@ export default {
             return state.gigs.slice(5, 9)
         },
         paggingSize(state) {
-            let pages = state.gigs.length
+            let pages = Math.floor(state.gigs.length / PAGE_SIZE)
             return pages
         },
         getPageIdx(state) {
@@ -114,16 +113,6 @@ export default {
                 throw err;
             }
         },
-        // async setFilter({ commit }, payload) {
-        //     try {
-        //         const filterBy = payload.filterBy
-        //         await gigService.setFilter(filterBy)
-        //         commit({ type: 'setFilter', filterBy })
-        //     } catch (err) {
-        //         console.log('Cannot filter gigs:', err);
-        //         throw err;
-        //     }
-        // },
         async saveGig({ commit }, payload) {
             const type = (payload.gig._id) ? 'updateGig' : 'addGig';
             try {
