@@ -45,12 +45,21 @@
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     .home-page-search-icon {
         position: absolute;
         top: 16px;
         left: 12px;
     }
+    input{
+        padding-inline-start: 35px;
+    }
+    button{
+        position: absolute;
+        right: 0;
+        top: -1px;
+    }
+
 }
 
 .hero-searchbar {
