@@ -18,11 +18,11 @@
                         </div>
                         <div class="flex tag-section">
                             <input type="radio" name="graphic" value="graphic" v-model="filterBy.tags">
-                            <label for="graphic">Grafic</label>
+                            <label for="graphic">Graphic</label>
                         </div>
                         <div class="flex tag-section">
                             <input type="radio" name="communication" value="communication" v-model="filterBy.tags">
-                            <label for="communication">Comunication</label>
+                            <label for="communication">Communication</label>
                         </div>
                     </div>
                     <div>
