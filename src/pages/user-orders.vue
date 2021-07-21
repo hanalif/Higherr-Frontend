@@ -1,30 +1,59 @@
 <template>
   <div class="user-orders-page">
     <div class="user-orders main-layout">
-      <h1 class="user-orders-main-title">{{this.user.fullname +`'s`}} orders</h1>
+      <h1 class="user-orders-main-title main-title">{{this.user.fullname +`'s`}} orders</h1>
       <table class="user-orders-as-seller-container">
-        <caption class="user-erders-main-title">
-          Manage Orders 
+        <caption class="user-orders-main-title">
+          My orders 
         </caption>
         <thead>
           <tr>
-            <th scope="col">Buyer</th>
-            <th scope="col">Gig</th>
-            <th scope="col">Due on</th>
-            <th scope="col">Total</th>
+            <th scope="col">Title</th>
             <th scope="col">Status</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Price</th>
+            <th scope="col">Seller</th>
+            <th scope="col">Contact seller</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody v-for="order in userAsBuyerOrders" :key="order._id">
           <tr>
-            <td scope="row" data-label="Account">Visa - 6076</td>
-            <td data-label="Gig">hello world</td>
-            <td data-label="Due on">02/01/2016 - 02/29/2016</td>
-            <td data-label="Total">$2,443</td>
-            <td data-label="Status">pending</td>
+            <td scope="row" data-label="Title">{{order.title}}</td>
+            <td data-label="Status">{{order.status}}</td>
+            <td data-label="Created at">{{order.createdAt}}</td>
+            <td data-label="Price">{{order.price}}</td>
+            <td data-label="Seller">{{order.seller.fullname}}</td>
+            <td data-label="Contact seller"><button class="btn">Contact seller</button></td>
           </tr>
         </tbody>
       </table>
+
+      <table class="user-orders-as-buyer-container">
+        <caption class="user-orders-main-title">
+          Incoming orders 
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Price</th>
+            <th scope="col">Buyer</th>
+            <th scope="col">Contact buyer</th>
+          </tr>
+        </thead>
+        <tbody v-for="order in userAsSellerOrders" :key="order._id">
+          <tr>
+            <td scope="row" data-label="Title">{{order.title}}</td>
+            <td data-label="Status">{{order.status}}</td>
+            <td data-label="Created at">{{order.createdAt}}</td>
+            <td data-label="Price">{{order.price}}</td>
+            <td data-label="Seller">{{order.buyer.fullname}}</td>
+            <td data-label="Contact seller"><button class="btn">Contact buyer</button></td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 </template>
