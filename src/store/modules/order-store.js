@@ -11,7 +11,7 @@ export default {
 
     },
     mutations: {
-        removeOrder(state, { orderId }) {
+        removeOrders(state, { orderId }) {
             const idx = state.orders.findIndex(order => order._id === orderId)
             state.orders.splice(idx, 1)
         },

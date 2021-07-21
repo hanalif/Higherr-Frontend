@@ -22,15 +22,17 @@
         <h5> <span :class="{marked:isPremium}">✔</span> &nbsp; Maximum amount of revisions</h5>
         <h5> <span :class="{marked:isPremium}">✔</span> &nbsp; Constant communication with seller</h5>
       </div>
-      <button class="order-btn">Purchase (${{ price }})</button>
+      <button class="order-btn" @click="createOrder">Purchase (${{ price }})</button>
     </div>
     <div class="contact-btn-container">
       <button class="contact-seller-btn">Contact Seller</button>
     </div>
+    <order-confirm-modal v-if="showConfirmOrderModal" @close="onConfirmOrderClose"  :gig="gig"></order-confirm-modal>
   </div>
 </template>
 
 <script>
+import orderConfirmModal from './order-confirm-modal.vue'
 export default {
   props: {
     gig: Object,
@@ -45,6 +47,8 @@ export default {
       isBasic: true,
       isStandard: false,
       isPremium: false,
+      isOrderModalOpen: false,
+      showConfirmOrderModal: false
     };
   },
   methods: {
@@ -75,6 +79,20 @@ export default {
       this.isStandard = false
       this.isPremium = true
     },
-  }
+   onConfirmOrderClose() {
+      this.showConfirmOrderModal = false;
+    },
+    createOrder(){
+       this.showConfirmOrderModal = true;
+      console.log('create order')
+    }
+  },
+   components: {
+      orderConfirmModal,
+    },
+    created () {
+      console.log('gig to send order modal',this.gig);
+    },
+  
 };
 </script>
