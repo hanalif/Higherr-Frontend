@@ -1,5 +1,5 @@
 <template>
-  <div class="modal">
+  <div class="user-msg">
     <h4>{{ msg }}</h4>
   </div>
 </template>
