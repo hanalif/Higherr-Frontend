@@ -91,8 +91,6 @@ export default {
             try {
                 user = await userService.save(user);
                 await dispatch({ type: 'loadUsers' })
-            
-
                 if (user._id === state.loggedinUser._id) {
                     commit({ type: 'setLoggedinUser', user: user })
                 }
@@ -100,7 +98,6 @@ export default {
                 console.log('userStore: Error in updateUser', err)
                 throw err
             }
-
         },
         async getUserById(context, { id }) {
             try {

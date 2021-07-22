@@ -37,6 +37,9 @@ export default {
         },
         getPageIdx(state) {
             return state.pageIndex
+        },
+        getCurrGig(state) {
+            return state.currGig
         }
     },
     mutations: {
