@@ -5,7 +5,7 @@ import homePage from '../pages/home-page.vue'
 import gigDetails from '../pages/gig-details.vue'
 import userDetails from '../pages/user-details.vue'
 import userOrders from '../pages/user-orders.vue'
-import chat from '../pages/chat'
+
 
 Vue.use(VueRouter)
 
@@ -29,10 +29,6 @@ const routes = [{
     {
         path: '/gig/:gigId',
         component: gigDetails
-    },
-    {
-        path: '/chat',
-        component: chat
     },
 ]
 

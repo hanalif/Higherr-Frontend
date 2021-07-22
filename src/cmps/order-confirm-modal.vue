@@ -57,6 +57,7 @@ export default {
         },
       };
       this.$store.dispatch({ type: "saveOrder", order: orderToSave });
+      
       this.$refs.modal.closeModal();
     },
   },
