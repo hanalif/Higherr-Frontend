@@ -172,11 +172,15 @@ input[type=button],
     position: fixed;
     top: 50%;
     left: 50%;
-    border: 1px solid black;
-    opacity: 0.6;
-    height: 200px;
-    width: 350px;
-    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid $clr3;
+    color: $clr3;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    align-items: center;
     border-radius: 5px;
-    font-size: 2rem;
+    font-size: 1rem;
 }

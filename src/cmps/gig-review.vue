@@ -46,7 +46,6 @@ export default {
   data() {
     return {
       isAddReview: false,
-      // value: this.getAvgRating(),
       sortBy: "recent",
     };
   },
@@ -55,12 +54,11 @@ export default {
       this.isAddReview = !this.isAddReview;
     },
     submitReview(review) {
-      const user = this.$store.getters.loggedinUser;
-      if (!user)
-        return this.$store.commit({
-          type: "setMsg",
-          msg: "You must be signed in to add a review",
-        });
+      let user = this.$store.getters.loggedinUser;
+      if (!user) user = {
+        _id:  utilService.makeId(),
+        fullname: 'guest'+utilService.getRandomInt(1000, 9999)
+      }
       review._id = utilService.makeId();
       review.createdAt = Date.now();
       review.by = {
@@ -68,7 +66,7 @@ export default {
         fullname: user.fullname,
         imgUrl:
           user.imgUrl ||
-          "https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png",
+          'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
       };
       this.seller.reviews.unshift(review);
       this.$store.dispatch({ type: "updateUser", user: this.seller });

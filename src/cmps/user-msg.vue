@@ -13,7 +13,7 @@ export default {
      msg() {
           setTimeout(() => {
               this.$store.commit({type:'setMsg', msg: ''})
-          },3000)
+          },2000)
           return this.$store.getters.userMsg
       } 
   }
