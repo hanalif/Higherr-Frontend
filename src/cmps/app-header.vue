@@ -6,14 +6,17 @@
     <nav class="nav">
       <div class="logo-search-bar">
         <router-link class="logo" to="/">higherr<span>.</span></router-link>
+        <div class="app-header-search-container">
         <form v-if="!isTop">
           <input
             v-model="filterBy.txt"
             type="text"
-            placeholder="🔎︎  Find Services"
+            placeholder="Find Services"
           />
           <button @click.prevent="searchGigs">Search</button>
+          <i class="fas fa-search app-header-search-icon"></i>
         </form>
+        </div>
       </div>
       <div class="menu-items">
         <router-link to="/explore">Explore</router-link>

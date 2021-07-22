@@ -6,16 +6,16 @@
           Find the perfect <span>freelance</span> <br />service for your every
           need
         </h1>
-        <form class="home-page-search-container" @submit.prevent="searchGigs">
+        <div class="home-page-search-container">
           <input
             v-model="filterBy.txt"
             class="hero-searchbar"
             type="text"
             placeholder='Try "web design"'
           />
-          <button>Search</button>
-          <i class="fas fa-search home-page-search-icon"></i>
-        </form>
+        <i class="fas fa-search home-page-search-icon"></i>
+        <button @click="searchGigs">Search</button>
+        </div>
       </div>
       <div class="hero-img-container">
         <img :class="{ visible: isOne }" src="@/assets/hero1.png" />
