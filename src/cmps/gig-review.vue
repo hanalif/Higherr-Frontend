@@ -11,7 +11,9 @@
             score-template="{value}"
           >
           </el-rate>
-          <h3 v-if="seller.reviews.length" class="reviews-title review-rate">{{ getAvgRating }}</h3>
+          <h3 v-if="seller.reviews.length" class="reviews-title review-rate">
+            {{ getAvgRating }}
+          </h3>
         </div>
       </section>
       <button class="btn" @click="toggleAdd">Add Review</button>
@@ -54,6 +56,11 @@ export default {
     },
     submitReview(review) {
       const user = this.$store.getters.loggedinUser;
+      if (!user)
+        return this.$store.commit({
+          type: "setMsg",
+          msg: "You must be signed in to add a review",
+        });
       review._id = utilService.makeId();
       review.createdAt = Date.now();
       review.by = {
@@ -89,9 +96,8 @@ export default {
         reviews = reviews.sort((a, b) => {
           return a.rate - b.rate;
         });
-      }
-      else if (this.sortBy === "high") {
-       reviews = reviews.sort((a, b) => {
+      } else if (this.sortBy === "high") {
+        reviews = reviews.sort((a, b) => {
           return b.rate - a.rate;
         });
       }

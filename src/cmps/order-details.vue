@@ -115,7 +115,6 @@ export default {
     orderConfirmModal,
   },
   created() {
-    console.log("gig to send order modal", this.gig);
   },
 };
 </script>

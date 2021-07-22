@@ -1,9 +1,10 @@
 .order-details {
+    grid-column: 3;
     margin-top: 30px;
     margin-bottom: 100px;
     position: sticky;
     top: 80px;
-    width: 400px;
+    max-width: 400px;
     max-height: 500px;
 }
 
