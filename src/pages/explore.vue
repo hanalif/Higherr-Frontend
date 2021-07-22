@@ -33,6 +33,7 @@ export default {
     }
   },
   created(){
+    this.filterBy = this.$store.getters.getFilter
     this.$store.dispatch('loadGigs')
     .then(()=>{
       this.$store.commit({type:'setSort', sortBy:this.sortBy})
