@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-import modal from "./modal.vue";
+import modal from './modal.vue';
 export default {
   props: {
     gig: Object,
