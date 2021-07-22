@@ -40,6 +40,9 @@ export default {
         },
         getCurrGig(state) {
             return state.currGig
+        },
+        getFilter(state) {
+            return state.filterBy
         }
     },
     mutations: {

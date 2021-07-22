@@ -21,33 +21,21 @@ function createSocketService() {
     var socket = null;
     const socketService = {
         async setup() {
-            // YaronB: Need to send a dummy ajax request as to setup the socket-session correctly
-            // await httpService.get('setup-session')
-            // socket = io(baseUrl, { reconnection: false})
             socket = io(baseUrl)
-                // socketIsReady = true;
         },
         on(eventName, cb) {
-            console.log('~ cb', cb)
-            console.log('~ eventName', eventName)
-                // if (!socket) await socketService.setup()
             socket.on(eventName, cb)
         },
         off(eventName, cb = null) {
-            // if (!socket) await socketService.setup()
             if (!socket) return;
             if (!cb) socket.removeAllListeners(eventName)
             else socket.off(eventName, cb)
         },
         emit(eventName, data) {
-            console.log('~ data', data)
-            console.log('~ eventName', eventName)
-                // if (!socket) await socketService.setup()
             socket.emit(eventName, data)
         },
         terminate() {
             socket = null
-                // socketIsReady = false
         }
     }
     return socketService
