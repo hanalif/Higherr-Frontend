@@ -19,7 +19,6 @@
       </div>
       <div class="img-thumbnails">
         <img :class="isMain(img)"  v-for="img in gig.imgUrls" :key="img" :src="img" @click="setImg" />
-      
       </div>
     </div>
   </div>

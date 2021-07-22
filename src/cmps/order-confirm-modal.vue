@@ -24,7 +24,11 @@
 <script>
 import modal from "./modal.vue";
 export default {
-  props: ['gig'],
+  props: {
+    gig: Object,
+    pkg: Object
+
+  },
   data() {
     return {};
   },
@@ -44,7 +48,7 @@ export default {
         title: this.gig.title,
         status: "pending",
         createdAt: dateOfCreatedOrder,
-        price: this.gig.price,
+        price: this.pkg.price,
         seller: this.gig.seller,
         buyer: {
           _id: this.loggedinUser._id,

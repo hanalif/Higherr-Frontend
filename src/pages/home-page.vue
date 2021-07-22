@@ -18,6 +18,7 @@
         </div>
       </div>
       <img :src="require(`@/assets/hero${heroState}.png`)" />
+      <h6>{{heroTxt}}</h6>
     </div>
     <div class="top-gigs gig-list main-layout">
       <h2>Our Best Gigs</h2>
@@ -194,7 +195,8 @@ export default {
         },
       },
       interval: null,
-      heroState: 1
+      heroState: 1,
+      heroTxt: this.heroName
     };
   },
   created() {
@@ -210,10 +212,10 @@ export default {
       if (this.heroState === 2) return '#AC405B'
       if (this.heroState === 3) return '#942C0B'
     },
-    heroImgChange() {
-      if (this.heroState === 1) return '@/assets/hero1.png'
-      if (this.heroState === 2) return '@/assets/hero2.png'
-      if (this.heroState === 3) return '@/assets/hero3.png'
+    heroName() {
+      if (this.heroState === 1) return 'Bojan, Video Editor'
+      if (this.heroState === 2) return 'Emily, Home Designer'
+      if (this.heroState === 3) return 'Julia, Web Developer'
 
     },
     topGigs() {
