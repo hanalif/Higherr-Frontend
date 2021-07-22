@@ -3,22 +3,20 @@
 <template>
 <section>
     <nav class="gig-nav">
-      <a class="gig-nav-a" href="#gig-overview">Overview</a>
-      <a class="gig-nav-a" href="#gig-description">Description</a>
-      <a class="gig-nav-a" href="#about-seller">About the seller</a>
-      <a class="gig-nav-a" href="#gig-review">Reviews</a>
+      <a @click="scrollToElement($event, 'gig-overview')">Overview</a>
+      <a @click="scrollToElement($event, 'gig-description')">Description</a>
+      <a @click="scrollToElement($event, 'about-seller')">About the seller</a>
+      <a @click="scrollToElement($event, 'gig-review')">Reviews</a>
     </nav>
-  <!-- <div class=" gig-details"> -->
     <div class="gig-layout" v-if="seller">
       <div class="gig-info">
-        <gig-overview id="gig-overview" :gig="gig" :seller="seller" />
-        <gig-description id="gig-description" :gig="gig" />
-        <about-seller id="about-seller" :gig="gig" :seller="seller" />
-        <gig-review id="gig-review" :gig="gig" :seller="seller" />
+        <gig-overview ref="gig-overview" :gig="gig" :seller="seller" />
+        <gig-description ref="gig-description" :gig="gig" />
+        <about-seller ref="about-seller" :gig="gig" :seller="seller" />
+        <gig-review ref="gig-review" :gig="gig" :seller="seller" />
       </div>
       <order-details class="order-details" :gig="gig" :seller="seller"/>
     </div>
-  <!-- </div> -->
 </section>
 </template>
 
@@ -46,10 +44,13 @@ export default {
       id: gig.seller._id,
     });
     this.seller = user;
-    const users = await this.$store.dispatch({
-      type: 'loadUsers'
-    })
     this.$store.commit({type:'setCurrGig', gig:this.gig})
+  },
+  methods: {
+    scrollToElement(ev, ref) {
+    const offset = this.$refs[ref].$el.offsetTop
+    window.scrollTo(0, offset-60)
+    }
   },
   components: {
     gigOverview,

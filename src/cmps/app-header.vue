@@ -110,7 +110,12 @@ export default {
       if (this.$route.path !== "/explore") this.$router.push("/explore");
     },
     becomeSeller() {
-      if (!this.loggedInUser) return;
+      if (!this.loggedInUser) {
+        this.$store.commit({type:'setMsg', msg: 'You must be logged in first.'})
+        setTimeout(() => {
+          this.signUp()
+        },2000)
+      }
       else this.$router.push(`/user/${this.loggedInUser._id}`);
     },
   },

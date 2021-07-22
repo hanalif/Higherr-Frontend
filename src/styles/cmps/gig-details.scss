@@ -1,9 +1,4 @@
 
-// .gig-details {
-//     padding: 0 6rem;
-
-// }
-
 .gig-nav {
     border-bottom: 1px solid $clr4;
     position: sticky;
@@ -12,19 +7,19 @@
     padding: 1rem 4.2rem;
     z-index: 3;
     margin-bottom: 2rem;
-}
-.gig-nav-a{
-    margin-right: 1rem;
-    font-weight: bold;
-    color: $clr1;
-   
-    &:hover {
-        color: $clr7;
-    }
+    & a{
+   margin-right: 1rem;
+   font-weight: bold;
+   color: $clr1;
+  
+   &:hover {
+       color: $clr7;
+   }
 
-    &:active {
-        color: $clr6;
-    }
+   &:active {
+       color: $clr6;
+   }
+ }
 }
 
 .gig-info {

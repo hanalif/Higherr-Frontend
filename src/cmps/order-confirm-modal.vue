@@ -6,7 +6,7 @@
       </template>
       <template v-slot:body>
         <div class="edit-modal-body">
-          <h1>Do you confirm the order?</h1>
+          <h1>Confirm your Purchase</h1>
         </div>
       </template>
 

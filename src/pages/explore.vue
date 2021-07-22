@@ -1,7 +1,8 @@
 <template>
   <section class="main-layout">
     <gig-filter/>
-    <gig-list :gigs="gigs"/>
+    <gig-list v-if="gigs" :gigs="gigs"/>
+    <img v-else src="https://thumbs.gfycat.com/ArtisticShoddyKudu-small.gif" alt="">
     <div class="pagging-btns flex space-between">
     <button :class="{removeBtn:isFirst}" class="prev-btn" @click="movePage(-1)">Prev</button>
       <div class="nums-btns flex">
@@ -33,7 +34,7 @@ export default {
     }
   },
   created(){
-    this.filterBy = this.$store.getters.getFilter
+    this.filterBy.txt = this.$store.getters.getFilter.txt
     this.$store.dispatch('loadGigs')
     .then(()=>{
       this.$store.commit({type:'setSort', sortBy:this.sortBy})
