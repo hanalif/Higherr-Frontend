@@ -42,10 +42,14 @@
 }
 
 .home-page-search-container {
-    position: relative;
-    display: flex;
+    overflow: hidden;
+    border-radius: 9px;
+    grid-template-columns: 1fr auto;
+    position:relative;
+    display: -ms-inline-grid;
     justify-content: center;
     align-items: center;
+    width: 447px;
     .home-page-search-icon {
         position: absolute;
         top: 16px;
@@ -53,11 +57,12 @@
     }
     input{
         padding-inline-start: 35px;
+        border: none;
     }
     button{
         position: absolute;
         right: 0;
-        top: -1px;
+        top: 0;
     }
 
 }
