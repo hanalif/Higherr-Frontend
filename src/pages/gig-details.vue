@@ -8,8 +8,8 @@
       <a class="gig-nav-a" href="#about-seller">About the seller</a>
       <a class="gig-nav-a" href="#gig-review">Reviews</a>
     </nav>
-  <div class=" gig-details">
-    <div class="gig-overview-contanier" v-if="seller">
+  <!-- <div class=" gig-details"> -->
+    <div class="gig-layout" v-if="seller">
       <div class="gig-info">
         <gig-overview id="gig-overview" :gig="gig" :seller="seller" />
         <gig-description id="gig-description" :gig="gig" />
@@ -18,7 +18,7 @@
       </div>
       <order-details class="order-details" :gig="gig" :seller="seller"/>
     </div>
-  </div>
+  <!-- </div> -->
 </section>
 </template>
 
@@ -49,6 +49,7 @@ export default {
     const users = await this.$store.dispatch({
       type: 'loadUsers'
     })
+    this.$store.commit({type:'setCurrGig', gig:this.gig})
   },
   components: {
     gigOverview,

@@ -5,7 +5,7 @@
                 <div class="flex column sort-container">
                     <div class="flex">
                         <input  id="high-to-low" type="radio" value="high-to-low"  v-model="sortBy">
-                        <label @click="checkClicked('high')" :class="{clicked:isHighClicked}" class="high-to-low" for="high-to-low">high To Low</label>
+                        <label @click="checkClicked('high')" :class="{clicked:isHighClicked}" class="high-to-low" for="high-to-low">High To Low</label>
                     </div>
                     <div class="flex">
                         <input  id="low-to-high" type="radio" value="low-to-high" v-model="sortBy">

@@ -10,19 +10,13 @@
     & h1 {
         color: #fff;
         font-size: 3rem;
+        font-weight: 700;
         line-height: 3.5rem;
         margin-bottom: 1rem;
         & span {
             font-family: domaine;
             font-weight: normal;
         }
-    }
-    & img {
-        height: 550px;
-        width: 550px;
-        align-self: flex-end;
-        transition: 2s;
-        object-fit: contain;
     }
     & button {
         height: 50px;
@@ -39,6 +33,22 @@
         &:hover {
             background-color: $clr8;
         }
+    }
+}
+
+.hero-img-container {
+    width: 100%;
+    position: relative;
+    & img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: inline;
+        align-self: flex-end;
+        transition: 1s;
+        object-fit: contain;
+        object-position: bottom;
+        opacity: 0;
     }
 }
 

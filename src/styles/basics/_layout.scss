@@ -24,3 +24,10 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 4;
 }
+
+.gig-layout {
+    display: grid;
+    grid-template-columns: 8rem 2fr 1fr 8rem;
+    grid-auto-flow: dense;
+    gap: 2rem;
+}
