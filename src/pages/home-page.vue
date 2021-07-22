@@ -22,7 +22,7 @@
         <img :class="{ visible: isTwo }" src="@/assets/hero2.png" />
         <img :class="{ visible: isThree }" src="@/assets/hero3.png" />
       </div>
-      <h6>{{ heroTxt }}</h6>
+      <h6>{{ heroName }}</h6>
     </div>
     <div class="top-gigs gig-list main-layout">
       <h2>Our Best Gigs</h2>
@@ -200,7 +200,7 @@ export default {
       },
       interval: null,
       heroState: 1,
-      heroTxt: this.heroName,
+      // heroTxt: this.heroName,
     };
   },
   created() {
@@ -208,7 +208,7 @@ export default {
     this.interval = setInterval(() => {
       this.heroState++;
       if (this.heroState > 3) this.heroState = 1;
-    }, 8000);
+    }, 5000);
   },
   computed: {
     heroChange() {
@@ -217,6 +217,7 @@ export default {
       if (this.heroState === 3) return "#942C0B";
     },
     heroName() {
+      // console.log('this.heroState ', this.heroState );
       if (this.heroState === 1) return "Bojan, Video Editor";
       if (this.heroState === 2) return "Emily, Home Designer";
       if (this.heroState === 3) return "Julia, Web Developer";

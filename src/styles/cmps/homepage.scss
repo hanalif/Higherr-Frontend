@@ -4,10 +4,11 @@
     padding-inline-start: 4.2rem;
     padding-inline-end: 2rem;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     margin-bottom: 5rem;
     transition: 2s;
     & h1 {
+        transform: translateY(50px);
         color: #fff;
         font-size: 3rem;
         font-weight: 700;
@@ -39,6 +40,7 @@
 .hero-img-container {
     width: 100%;
     position: relative;
+    flex: 1;
     & img {
         position: absolute;
         width: 100%;
@@ -57,10 +59,11 @@
     border-radius: 9px;
     grid-template-columns: 1fr auto;
     position:relative;
-    display: -ms-inline-grid;
+    display: inline-grid;
     justify-content: center;
+    transform: translateY(60px);
     align-items: center;
-    width: 447px;
+    flex: 1;
     .home-page-search-icon {
         position: absolute;
         top: 16px;
