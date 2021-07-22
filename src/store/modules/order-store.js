@@ -33,7 +33,7 @@ export default {
         }
     },
     actions: {
-        loadOrders({ commit, state }) {
+         loadOrders({ commit, state }) {
             return orderService.query(state.filterBy)
                 .then(orders => {
                     commit({ type: 'setOrders', orders })
@@ -43,6 +43,15 @@ export default {
                     console.log('Cannot load orders', err);
                     throw err;
                 })
+
+                // try{
+                //     let orders = orderService.query(state.filterBy)
+                //     commit({ type: 'setOrders', orders })
+                //     return orders
+                // }catch (err){
+                //     console.log('Cannot load orders', err);
+                //     throw err;
+                // }
         },
         removeOrders({ commit }, payload) {
             return orderService.remove(payload.orderId)

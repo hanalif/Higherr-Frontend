@@ -22,6 +22,7 @@
   </div>
 </template>
 <script>
+import { socketService } from '../services/socket.service';
 import modal from './modal.vue';
 export default {
   props: {
@@ -42,7 +43,6 @@ export default {
       this.$emit("close");
     },
     registerSubmit() {
-      
       let dateOfCreatedOrder = `${new Date().getMonth()+1}/${new Date().getFullYear()}`;
       const orderToSave = {
         title: this.gig.title,
@@ -57,11 +57,13 @@ export default {
         },
       };
       this.$store.dispatch({ type: "saveOrder", order: orderToSave });
-      
+      socketService.emit('newOrder', orderToSave.seller._id)
       this.$refs.modal.closeModal();
     },
   },
-  created() {},
+  created() {
+    
+  },
   components: {
     modal,
   },

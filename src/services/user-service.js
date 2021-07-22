@@ -1,6 +1,8 @@
 // import { storageService } from './async-storage.service'
 import { httpService } from '../services/http.service.js'
-import { storageService } from '../services/async-storage-service.js'
+import { socketService } from './socket.service.js'
+// import { storageService } from '../services/async-storage-service.js'
+
 // const SCORE_FOR_REVIEW = 10
 const USER_KEY = 'user'
 
@@ -52,7 +54,8 @@ function save(user) {
 async function signup(userCred) {
     // const user = await storageService.post(USER_KEY, userCred)
         const user = await httpService.post('auth/signup', userCred)
-        
+        // socketService.emit('set-user-socket', user._id);
+
     return _saveLocalUser(user)
 }
 
@@ -69,12 +72,14 @@ async function login(userCred) {
     // return _saveLocalUser(user)
 
     const user = await httpService.post('auth/login', userCred)
+    // socketService.emit('login', user._id);
     if (user) return _saveLocalUser(user)
 }
 
 function logout() {
     sessionStorage.clear()
-        // return await httpService.post('auth/logout')
+    // socketService.emit('unset-user-socket')
+    // return await httpService.post('auth/logout')
 }
 
 function _saveLocalUser(user) {
