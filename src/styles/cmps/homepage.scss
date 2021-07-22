@@ -8,7 +8,7 @@
     margin-bottom: 5rem;
     transition: 2s;
     & h1 {
-        transform: translateY(50px);
+        // transform: translateY(50px);
         color: #fff;
         font-size: 3rem;
         font-weight: 700;
@@ -19,28 +19,14 @@
             font-weight: normal;
         }
     }
-    & button {
-        height: 50px;
-        width: 100px;
-        border-radius: 0 5px 5px 0;
-        padding: 15px 15px;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        background: $clr3;
-        font-weight: bold;
-        transition: 0.2s;
-        font-size: 1.2rem;
-        &:hover {
-            background-color: $clr8;
-        }
-    }
 }
 
 .hero-img-container {
     width: 100%;
     position: relative;
     flex: 1;
+    height: 600px;
+    top: -142px;
     & img {
         position: absolute;
         width: 100%;
@@ -52,6 +38,14 @@
         object-position: bottom;
         opacity: 0;
     }
+    & h6 {
+        position: absolute;
+        bottom: 10px;
+        right: 50px;
+        color: #fff;
+        font-size: 1rem;
+        opacity: 0;
+    }
 }
 
 .home-page-search-container {
@@ -61,9 +55,10 @@
     position:relative;
     display: inline-grid;
     justify-content: center;
-    transform: translateY(60px);
+    // transform: translateY(60px);
     align-items: center;
     flex: 1;
+    width: 100%;
     .home-page-search-icon {
         position: absolute;
         top: 16px;
@@ -72,11 +67,29 @@
     input{
         padding-inline-start: 35px;
         border: none;
+        &::placeholder {
+            color: #9597A3;
+            font-size: 1rem;
+        }
     }
     button{
         position: absolute;
         right: 0;
-        top: 0;
+        top: -0.5px;
+            height: 50px;
+            width: 100px;
+            border-radius: 0 5px 5px 0;
+            padding: 15px 15px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            background: $clr3;
+            font-weight: bold;
+            transition: 0.2s;
+            font-size: 1.2rem;
+            &:hover {
+                background-color: $clr8;
+            }
     }
 
 }
@@ -91,6 +104,34 @@
     font-size: 1.2rem;
     transform: translate(1px, -1.6%);
     padding-inline-start: 2rem;
+}
+
+.popular-searches {
+    display: flex;
+    padding-top: 24px;
+    & span {
+        color: #fff;
+        font-weight: bold;
+    }
+    & button {
+        font-size: 0.9rem;
+        cursor: pointer;
+        background-color: transparent;
+        line-height: 24px;
+        font-weight: 600;
+        color: #fff;
+        padding: 1px 12px 0;
+        border: 1px solid #fff;
+        border-radius: 40px;
+        transition: all .2s ease-in-out;
+        z-index: 4;
+        margin-left: 12px;
+        &:hover {
+            background-color: #fff;
+            color: #404145;
+            text-decoration: none;
+        }
+    }
 }
 
 .top-gigs {
