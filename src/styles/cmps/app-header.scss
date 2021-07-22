@@ -15,6 +15,7 @@
         a {
             display: block;
             color: #62646a;
+    
         }
         .logo {
             font-size: 1.8rem;
@@ -27,10 +28,26 @@
                 color: green;
             }
         }
+        .app-header-search-container{
+            position: relative;
+            input{
+                padding-inline-start: 35px;
+            }
+
+            .app-header-search-icon{
+                position: absolute;
+                top: 8px;
+                left: 6px;
+                color: #7a7d85;
+            }
+        }
         .menu-items {
             display: flex;
             align-items: center;
             gap: 1.5rem;
+            a:hover {
+                color: $clr3;
+            }
             .user-menu {
                 position: relative;
                 z-index: 4;

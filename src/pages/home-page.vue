@@ -1,24 +1,28 @@
 <template>
   <div>
-    <div class="hero" :style="{backgroundColor:heroChange}">
+    <div class="hero" :style="{ backgroundColor: heroChange }">
       <div class="hero-txt">
         <h1>
           Find the perfect <span>freelance</span> <br />service for your every
-          need.
+          need
         </h1>
-        <form class="home-page-search-container" @submit.prevent="searchGigs">
+        <div class="home-page-search-container">
           <input
             v-model="filterBy.txt"
             class="hero-searchbar"
             type="text"
             placeholder='Try "web design"'
           />
-          <button>Search</button>
-          <i class="fas fa-search home-page-search-icon"></i>
-        </form>
+        <i class="fas fa-search home-page-search-icon"></i>
+        <button @click="searchGigs">Search</button>
+        </div>
       </div>
-      <img :src="require(`@/assets/hero${heroState}.png`)" />
-      <h6>{{heroTxt}}</h6>
+      <div class="hero-img-container">
+        <img :class="{ visible: isOne }" src="@/assets/hero1.png" />
+        <img :class="{ visible: isTwo }" src="@/assets/hero2.png" />
+        <img :class="{ visible: isThree }" src="@/assets/hero3.png" />
+      </div>
+      <h6>{{ heroTxt }}</h6>
     </div>
     <div class="top-gigs gig-list main-layout">
       <h2>Our Best Gigs</h2>
@@ -196,27 +200,35 @@ export default {
       },
       interval: null,
       heroState: 1,
-      heroTxt: this.heroName
+      heroTxt: this.heroName,
     };
   },
   created() {
     this.$store.dispatch({ type: "loadGigs" });
     this.interval = setInterval(() => {
-        this.heroState++
-        if (this.heroState > 3) this.heroState = 1 
-    }, 8000)
+      this.heroState++;
+      if (this.heroState > 3) this.heroState = 1;
+    }, 8000);
   },
   computed: {
     heroChange() {
-      if (this.heroState === 1) return '#003B17'
-      if (this.heroState === 2) return '#AC405B'
-      if (this.heroState === 3) return '#942C0B'
+      if (this.heroState === 1) return "#003B17";
+      if (this.heroState === 2) return "#AC405B";
+      if (this.heroState === 3) return "#942C0B";
     },
     heroName() {
-      if (this.heroState === 1) return 'Bojan, Video Editor'
-      if (this.heroState === 2) return 'Emily, Home Designer'
-      if (this.heroState === 3) return 'Julia, Web Developer'
-
+      if (this.heroState === 1) return "Bojan, Video Editor";
+      if (this.heroState === 2) return "Emily, Home Designer";
+      if (this.heroState === 3) return "Julia, Web Developer";
+    },
+    isOne() {
+      return this.heroState === 1;
+    },
+    isTwo() {
+      return this.heroState === 2;
+    },
+    isThree() {
+      return this.heroState === 3;
     },
     topGigs() {
       const gigs = this.$store.state.gigStore.gigs;
@@ -225,23 +237,23 @@ export default {
         if (!seller.reviews) return;
         return seller.reviews.length >= 2;
       });
-      topSellers.forEach(seller => {
+      topSellers.forEach((seller) => {
         const total = seller.reviews.reduce((acc, review) => {
-        return acc + review.rate;
-      }, 0);
-      seller.avgRate = (total / seller.reviews.length)
-      })
-      const topGigs = gigs.filter(gig => {
-         return topSellers.some(seller =>{
-                gig.avgRate = seller.avgRate
-           return seller._id === gig.seller._id 
-        })
-      })
+          return acc + review.rate;
+        }, 0);
+        seller.avgRate = total / seller.reviews.length;
+      });
+      const topGigs = gigs.filter((gig) => {
+        return topSellers.some((seller) => {
+          gig.avgRate = seller.avgRate;
+          return seller._id === gig.seller._id;
+        });
+      });
       topGigs.sort((a, b) => {
-        return b.avgRate - a.avgRate
-      })
-      
-      return topGigs.slice(0,4)
+        return b.avgRate - a.avgRate;
+      });
+
+      return topGigs.slice(0, 4);
     },
   },
   methods: {
@@ -267,7 +279,7 @@ export default {
     },
   },
   destroyed() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   },
   components: {
     gigPreview,

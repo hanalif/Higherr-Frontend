@@ -8,22 +8,27 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    userMsg: ''
   },
   getters: {
     loggedinUserGigs: state => {
       const loggedinUserId = state.userStore.loggedinUser?._id;
       return state.gigStore.gigs.filter(gig => gig.seller._id === loggedinUserId)
     },
-    userAsSellerOrders : state => {
+    userAsSellerOrders: state => {
       const loggedinUserId = state.userStore.loggedinUser?._id;
       return state.orderStore.orders.filter(order => order.seller._id === loggedinUserId)
     },
-    userAsBuyerOrders : state => {
+    userAsBuyerOrders: state => {
       const loggedinUserId = state.userStore.loggedinUser?._id;
       return state.orderStore.orders.filter(order => order.buyer._id === loggedinUserId)
-    }
+    },
+    userMsg({ userMsg }) { return userMsg }
   },
   mutations: {
+    setMsg({userMsg}, { msg }) {
+      userMsg = msg
+    }
   },
   actions: {
   },
