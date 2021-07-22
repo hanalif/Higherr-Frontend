@@ -23,11 +23,13 @@ export default new Vuex.Store({
       const loggedinUserId = state.userStore.loggedinUser?._id;
       return state.orderStore.orders.filter(order => order.buyer._id === loggedinUserId)
     },
-    userMsg({ userMsg }) { return userMsg }
+    userMsg(state) {
+    return state.userMsg
+    }
   },
   mutations: {
-    setMsg({userMsg}, { msg }) {
-      userMsg = msg
+    setMsg(state, { msg }) {
+      state.userMsg = msg
     }
   },
   actions: {

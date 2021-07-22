@@ -1,5 +1,5 @@
 <template>
-  <div class="modal">
+  <div class="user-msg">
     <h4>{{ msg }}</h4>
   </div>
 </template>
@@ -10,8 +10,10 @@ export default {
     return {};
   },
   computed: {
-      msg() {
-          console.log( this.$store.getters.userMsg);
+     msg() {
+          setTimeout(() => {
+              this.$store.commit({type:'setMsg', msg: ''})
+          },3000)
           return this.$store.getters.userMsg
       } 
   }

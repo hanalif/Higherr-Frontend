@@ -48,7 +48,7 @@ export default {
   computed: {
     isUserMsg() {
       const msg = this.$store.getters.userMsg
-      if (!msg || msg === '') return false
+      if (!msg) return false
       else return true
     }
   },
