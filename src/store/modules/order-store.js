@@ -1,5 +1,6 @@
 
 import { orderService } from "../../services/order-service.js"
+import { socketService, SOCKET_EVENT_ORDER_ADDED } from "../../services/socket.service.js"
 
 
 export default {
@@ -43,15 +44,6 @@ export default {
                     console.log('Cannot load orders', err);
                     throw err;
                 })
-
-                // try{
-                //     let orders = orderService.query(state.filterBy)
-                //     commit({ type: 'setOrders', orders })
-                //     return orders
-                // }catch (err){
-                //     console.log('Cannot load orders', err);
-                //     throw err;
-                // }
         },
         removeOrders({ commit }, payload) {
             return orderService.remove(payload.orderId)
