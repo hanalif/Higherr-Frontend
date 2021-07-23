@@ -73,8 +73,7 @@
 export default {
   data() {
     return {
-
-      
+       
     }
   },
   computed: {
@@ -98,9 +97,9 @@ export default {
 
   created () {
       this.$store.dispatch('loadOrders').then(()=>{
-        console.log(this.$store.getters.userAsBuyerOrders)
-        console.log(this.$store.getters.userAsBuyerOrders)
+          this.$store.commit({ type: "resetNumOfNewOrders" })
       })
+      
      
   },
 

@@ -32,6 +32,10 @@
         </button>
         <div v-else class="user-menu">
           <div class="user-menu-icon">
+            <div v-if="numOfNewOrders !== 0" class="num-of-new-orders-container">
+              <div><span>{{numOfNewOrders}}</span></div>
+            </div>
+              
             <img
               class="user-menu-img"
               @click="onUserMenuClick"
@@ -92,6 +96,7 @@ export default {
     },
     logout() {
       this.$store.dispatch({ type: "logout" });
+      this.$store.commit({type: 'resetNumOfNewOrders'})
       this.$router.push("/");
     },
     onUserMenuClick() {
@@ -126,6 +131,9 @@ export default {
     loggedInImg() {
       return this.$store.getters.loggedinImg;
     },
+    numOfNewOrders(){
+      return this.$store.getters.numOfNewOrders;
+    }
   },
   watch: {
     $route: {

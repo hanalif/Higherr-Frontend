@@ -10,7 +10,7 @@
           <div class="circle-check-icon"><i class="fas fa-check"></i></div>
          <div class="order-confirm-modal-content">
            <h1>Awesome!</h1>
-          <p>Your order has been confirmed. Check your messages for detials.</p>
+          <p>Your order has been confirmed. Check your orders for detials.</p>
          </div>
         </div>
       </template>
@@ -62,7 +62,6 @@ export default {
         },
       };
       this.$store.dispatch({ type: "saveOrder", order: orderToSave });
-      socketService.emit('newOrder', orderToSave.seller._id)
       this.$refs.modal.closeModal();
     },
   },

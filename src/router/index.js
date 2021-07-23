@@ -25,7 +25,8 @@ const routes = [{
     },
     {
         path: '/orders',
-        component: userOrders
+        component: userOrders,
+        name: 'orders',
     },
     {
         path: '/gig/:gigId',
