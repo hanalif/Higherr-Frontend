@@ -8,17 +8,15 @@ min-height: 585px;
 .user-orders{
     margin-bottom: 10px;
    
-    
-    
 
     .user-orders-main-title{
         font-weight: 300;
         margin-top: 20px;
-        text-align: center;
+        text-align:start;
     }
     .main-title{
       border-bottom:  1px solid #ddd;
-      color: #62646a;
+      color: #272930;
       font-family:  macan-regular, Arial, Helvetica, sans-serif;
     }
 
@@ -34,6 +32,10 @@ min-height: 585px;
         padding: 0;
         width: 100%;
         table-layout: fixed;
+      }
+
+      .table-order-title{
+        text-align: start;
       }
       
       table caption {
@@ -93,10 +95,6 @@ min-height: 585px;
         }
         
         table td::before {
-          /*
-          * aria-label has no advantage, it won't be read inside a table
-          content: attr(aria-label);
-          */
           content: attr(data-label);
           float: left;
           font-weight: bold;
