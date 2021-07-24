@@ -46,6 +46,11 @@ min-height: 585px;
 
       .table-order-title{
         text-align: start;
+        @include for-mobile-layout {
+          @media (max-width: $break-narrow) {
+            text-align: end;
+          }
+      }
       }
       
       table caption {
