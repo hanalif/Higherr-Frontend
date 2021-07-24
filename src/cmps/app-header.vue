@@ -33,7 +33,7 @@
         </form>
         </div>
       </div>
-      <div class="menu-items">
+      <div class="menu-items" :class="{ 'logged': loggedInUser != null }">
         <router-link class="hide-from-nav" to="/explore">Explore</router-link>
         <a class="hide-from-nav" @click="becomeSeller">Become a Seller</a>
         <a class="hide-from-nav" @click="signIn" v-if="!loggedInUser">Sign In</a>
@@ -132,8 +132,10 @@ export default {
       else this.isTop = false;
     },
     searchGigs() {
+      
       this.$store.commit({ type: "setFilter", filterBy: this.filterBy });
-      if (this.$route.path !== "/explore") this.$router.push("/explore");
+      if (this.$route.path !== "/explore") this.$router.push("/explore")
+
     },
     becomeSeller() {
       if (!this.loggedInUser) {
@@ -157,6 +159,9 @@ export default {
     },
     loggedInImg() {
       return this.$store.getters.loggedinImg;
+    },
+    setFilterBy(){
+      this.filterBy.txt = this.$store.getters.getFilterBy
     },
     numOfNewOrders(){
       return this.$store.getters.numOfNewOrders;

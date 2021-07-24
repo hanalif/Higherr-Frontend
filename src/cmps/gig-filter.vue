@@ -42,6 +42,7 @@ export default {
         filter(filterBy){
             if(filterBy) this.filterBy = filterBy
             this.$store.commit({type:'setFilter',filterBy:this.filterBy})
+            this.$emit('filter',this.filterBy)
             this.openDeliveryModal = false
             this.openTagsModal = false
             this.openPriceModal = false

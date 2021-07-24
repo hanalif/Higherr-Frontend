@@ -135,7 +135,7 @@
                 }
             }
             .backdrop {
-                position: absolute;
+                position: fixed;
                 left: 0;
                 right: 0;
                 top: 0;
@@ -226,6 +226,12 @@
                 position: static;
             }
 
+            .menu-items {
+                &.logged {
+                    position: absolute;
+                }
+            }
+
             .side-menu-icon{
                 display: block;
                 font-size: 29px;
@@ -259,3 +265,4 @@
         }
     }
 }
+

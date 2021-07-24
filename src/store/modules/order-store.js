@@ -1,4 +1,3 @@
-
 import { orderService } from "../../services/order-service.js"
 import { socketService, SOCKET_EVENT_ORDER_ADDED } from "../../services/socket.service.js"
 
@@ -6,11 +5,11 @@ import { socketService, SOCKET_EVENT_ORDER_ADDED } from "../../services/socket.s
 export default {
     state: {
         orders: [],
-        filterBy: { type: 'all', title: '', fromPrice: 0, toPrice: null, status: 'all'},
+        filterBy: { type: 'all', title: '', fromPrice: 0, toPrice: null, status: 'all' },
         numOfNewOrders: 0
-        
+
     },
-    getters: { 
+    getters: {
         numOfNewOrders({ numOfNewOrders }) { return numOfNewOrders },
     },
     mutations: {
@@ -19,7 +18,7 @@ export default {
             state.orders.splice(idx, 1)
         },
         addOrder(state, { order }) {
-            if(!state.orders.some(o=> o._id === order._id)){
+            if (!state.orders.some(o => o._id === order._id)) {
                 state.orders.unshift(order)
             }
         },
@@ -30,21 +29,21 @@ export default {
         setOrders(state, { orders }) {
             state.orders = orders
         },
-        setLoggedinUserOrders(state, { loggedinUserOrders }){
+        setLoggedinUserOrders(state, { loggedinUserOrders }) {
             state.loggedInUserOrders = loggedinUserOrders
         },
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
         },
-        incrementNumOfNewOrders(state, {newOrder} ){
+        incrementNumOfNewOrders(state, { newOrder }) {
             state.numOfNewOrders++;
         },
-        resetNumOfNewOrders(state){
+        resetNumOfNewOrders(state) {
             state.numOfNewOrders = 0;
-        } 
+        }
     },
     actions: {
-         loadOrders({ commit, state }) {
+        loadOrders({ commit, state }) {
             return orderService.query(state.filterBy)
                 .then(orders => {
                     commit({ type: 'setOrders', orders })
@@ -87,7 +86,6 @@ export default {
                     throw err;
                 })
         }
-
     }
 
 }

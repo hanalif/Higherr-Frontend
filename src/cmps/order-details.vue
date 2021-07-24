@@ -43,14 +43,14 @@
       </button>
     </div>
     <div class="contact-btn-container">
-      <button class="contact-seller-btn">Contact Seller</button>
+      <button to="chat" class="contact-seller-btn">Contact Seller</button>
     </div>
-    <!-- <order-confirm-modal
+    <order-confirm-modal
       v-if="showConfirmOrderModal"
       @close="onConfirmOrderClose"
       :gig="gig"
       :pkg="pkg"
-    ></order-confirm-modal> -->
+    ></order-confirm-modal>
   </div>
 </template>
 

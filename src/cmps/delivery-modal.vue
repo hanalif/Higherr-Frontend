@@ -2,30 +2,34 @@
     <menu-content-modal @close="close" @search="search">
         <template v-slot:body>
             <form action="">
-                <div class="flex column delivery-container">
-                    <div class="flex">
-                        <input type="radio" name="1" value="1" v-model="filterBy.delivery">
-                        <label for="1">Up To 1 Day</label>
+                <div class="flex delivery-container">
+                    <div>
+                        <div class="flex delivery-section">
+                            <input type="radio" id="one" value="1" v-model="filterBy.delivery">
+                            <label :class="isClicked('1')" class="one" for="one">Up To 1 Day</label>
+                        </div>
+                        <div class="flex delivery-section">
+                            <input type="radio" id="three" value="3" v-model="filterBy.delivery">
+                            <label :class="isClicked('3')" class="three" for="three">Up To 3 Days</label>
+                        </div>
+                        <div class="flex delivery-section">
+                            <input type="radio" id="seven" value="7" v-model="filterBy.delivery">
+                            <label :class="isClicked('7')" class="seven" for="seven">Up To 7 Days</label>
+                        </div>
+                        <div class="flex delivery-section">
+                            <input type="radio" id="fifteen" value="15" v-model="filterBy.delivery">
+                            <label :class="isClicked('15')" class="fifteen" for="fifteen">Up To 15 Days</label>
+                        </div>
                     </div>
-                    <div class="flex">
-                        <input type="radio" name="3" value="3" v-model="filterBy.delivery">
-                        <label for="3">Up To 3 Days</label>
-                    </div>
-                    <div class="flex">
-                        <input type="radio" name="7" value="7" v-model="filterBy.delivery">
-                        <label for="7">Up To 7 Days</label>
-                    </div>
-                    <div class="flex">
-                        <input type="radio" name="15" value="15" v-model="filterBy.delivery">
-                        <label for="15">Up To 15 Days</label>
-                    </div>
-                    <div class="flex">
-                        <input type="radio" name="30" value="30" v-model="filterBy.delivery">
-                        <label for="30">Up To 30 Days</label>
-                    </div>
-                    <div class="flex">
-                        <input type="radio" name="all" value="all" v-model="filterBy.delivery">
-                        <label for="all">All Delivery Days</label>
+                    <div>
+                        <div class="flex delivery-section">
+                            <input type="radio" id="thirty" value="30" v-model="filterBy.delivery">
+                            <label :class="isClicked('30')" class="thirty" for="thirty">Up To 30 Days</label>
+                        </div>
+                        <div class="flex delivery-section">
+                            <input type="radio" id="all" value="all" v-model="filterBy.delivery">
+                            <label :class="isClicked('all')" class="all" for="all">All Delivery Days</label>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -55,6 +59,14 @@ methods: {
     },
     search(){
         this.$emit('search', this.filterBy)
+    }
+},
+computed:{
+     isClicked(){
+        return ((delivery)=>{
+            if(delivery === this.filterBy.delivery)
+            return 'clicked'
+        })
     }
 },
 components: {
