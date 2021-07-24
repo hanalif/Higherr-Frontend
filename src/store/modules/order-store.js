@@ -1,11 +1,10 @@
-
 import { orderService } from "../../services/order-service.js"
 
 
 export default {
     state: {
         orders: [],
-        filterBy: { type: 'all', title: '', fromPrice: 0, toPrice: null, status: 'all'},
+        filterBy: { type: 'all', title: '', fromPrice: 0, toPrice: null, status: 'all' },
     },
     getters: {
 
@@ -25,7 +24,7 @@ export default {
         setOrders(state, { orders }) {
             state.orders = orders
         },
-        setLoggedinUserOrders(state, { loggedinUserOrders }){
+        setLoggedinUserOrders(state, { loggedinUserOrders }) {
             state.loggedInUserOrders = loggedinUserOrders
         },
         setFilter(state, { filterBy }) {
@@ -33,7 +32,7 @@ export default {
         }
     },
     actions: {
-         loadOrders({ commit, state }) {
+        loadOrders({ commit, state }) {
             return orderService.query(state.filterBy)
                 .then(orders => {
                     commit({ type: 'setOrders', orders })
@@ -43,15 +42,6 @@ export default {
                     console.log('Cannot load orders', err);
                     throw err;
                 })
-
-                // try{
-                //     let orders = orderService.query(state.filterBy)
-                //     commit({ type: 'setOrders', orders })
-                //     return orders
-                // }catch (err){
-                //     console.log('Cannot load orders', err);
-                //     throw err;
-                // }
         },
         removeOrders({ commit }, payload) {
             return orderService.remove(payload.orderId)
@@ -85,7 +75,6 @@ export default {
                     throw err;
                 })
         }
-
     }
 
 }

@@ -8,8 +8,7 @@
         <div class="form-body edit-modal-body">
           <h1 class="edit-user-title">Edit User Details</h1>
           <div class="user-profile-img">
-             <label>
-               
+            <label>
             <input @change="onUploadImg" type="file" hidden>
             <i class="fas fa-camera img-upload"></i>
             <div class="circle-shape-around-camera-icon"></div>
@@ -29,11 +28,10 @@
           ></textarea>
           </div>
         </div>
-
-         <div class="edit-container">
-           <div class="edit-label-container">
-             <label>Skills:</label>
-           </div>
+        <div class="edit-container">
+          <div class="edit-label-container">
+            <label>Skills:</label>
+          </div>
           <div class="edit-textarea-container">
             <textarea
             v-model="user.skills"
@@ -44,11 +42,11 @@
 
         <div class="edit-container">
           <div class="edit-label-container">
-               <label>From:</label>
+              <label>From:</label>
           </div>
-         <div class="edit-textarea-container">
+        <div class="edit-textarea-container">
             <input type="text" v-model="user.from" placeholder="Country">
-         </div>  
+        </div>  
         </div>
         </div>
       </template>

@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="menu-items">
-        <router-link to="/explore">Explore</router-link>
+        <router-link class="explore-link" to="/explore">Explore</router-link>
         <a @click="becomeSeller">Become a Seller</a>
         <a @click="signIn" v-if="!loggedInUser">Sign In</a>
         <button
@@ -106,8 +106,10 @@ export default {
       else this.isTop = false;
     },
     searchGigs() {
+      
       this.$store.commit({ type: "setFilter", filterBy: this.filterBy });
-      if (this.$route.path !== "/explore") this.$router.push("/explore");
+      if (this.$route.path !== "/explore") this.$router.push("/explore")
+
     },
     becomeSeller() {
       if (!this.loggedInUser) {
@@ -126,6 +128,9 @@ export default {
     loggedInImg() {
       return this.$store.getters.loggedinImg;
     },
+    setFilterBy(){
+      this.filterBy.txt = this.$store.getters.getFilterBy
+    }
   },
   watch: {
     $route: {

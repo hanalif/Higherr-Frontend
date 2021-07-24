@@ -1,6 +1,9 @@
 <template>
   <section class="main-layout">
-    <gig-filter/>
+    <gig-filter @filter="filter"/>
+    <h1 v-if="filterBy.txt">Results For: "{{filterTxt}}"</h1>
+    <h1 v-else-if="filterBy.tags !== 'all'">Results For: "{{filterBy.tags}}"</h1>
+    <h1 v-else></h1>
     <gig-list v-if="gigs" :gigs="gigs"/>
     <img v-else src="https://thumbs.gfycat.com/ArtisticShoddyKudu-small.gif" alt="">
     <div class="pagging-btns flex space-between">
@@ -52,8 +55,18 @@ export default {
     jumpToPage(num){
       this.$store.commit({type:'jumpToPage', num:num})
     },
+    filter(filterBy){
+      if(!this.filterBy.txt !== ''){
+        this.filterBy = filterBy
+      }
+    }
   },
   computed:{
+    filterTxt(){
+      this.filterBy.txt = this.$store.getters.getFilter.txt  
+      console.log(this.$store.getters.getFilter.txt);
+      return this.$store.getters.getFilter.txt
+    },
     gigs(){
       return this.$store.getters.gigsToShow
     },

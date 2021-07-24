@@ -4,12 +4,24 @@
     .sort-container {
         gap: 20px
     }
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+            left: 0;
+            width: 90vw;
+            top: 183px;
+            margin: auto;
+        }
+    }
     top: 143px;
     left: 80.3%;
     width: 200px;
     position: absolute;
     .modal__footer {
         justify-content: inherit;
+    }
+    .modal__header {
+        justify-content: inherit;
+        padding: 5px;
     }
 }
 
@@ -22,6 +34,11 @@
     color: #222325;
     cursor: pointer;
     padding: 10px;
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+            padding-left: unset;
+        }
+    }
     span.arrow {
         margin-left: 5px;
         transition: all 0.7s ease;

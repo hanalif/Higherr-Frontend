@@ -43,7 +43,7 @@
       </button>
     </div>
     <div class="contact-btn-container">
-      <button class="contact-seller-btn">Contact Seller</button>
+      <button to="chat" class="contact-seller-btn">Contact Seller</button>
     </div>
     <order-confirm-modal
       v-if="showConfirmOrderModal"

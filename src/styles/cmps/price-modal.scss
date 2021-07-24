@@ -4,12 +4,24 @@
     .price-container {
         gap: 20px
     }
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+            left: 0;
+            width: 90vw;
+            top: 183px;
+            margin: auto;
+        }
+    }
     top: 143px;
     left: 23.6%;
     width: 350px;
     position: absolute;
     .modal__footer {
         justify-content: inherit;
+    }
+    .modal__header {
+        justify-content: inherit;
+        padding: 5px;
     }
 }
 

@@ -15,7 +15,6 @@
         a {
             display: block;
             color: #62646a;
-    
         }
         .logo {
             font-size: 1.8rem;
@@ -28,13 +27,12 @@
                 color: green;
             }
         }
-        .app-header-search-container{
+        .app-header-search-container {
             position: relative;
-            input{
+            input {
                 padding-inline-start: 35px;
             }
-
-            .app-header-search-icon{
+            .app-header-search-icon {
                 position: absolute;
                 top: 8px;
                 left: 6px;
@@ -120,9 +118,6 @@
         background: $clr3;
         font-weight: bold;
         transition: 0.2s;
-        &:hover {
-            background-color: pink;
-        }
     }
     & input {
         width: 300px;
@@ -150,4 +145,12 @@
         background: $clr3;
         color: white;
     }
+}
+
+.explore-active {
+    border-bottom: 3px solid $clr3;
+}
+
+.explore-link.router-link-active {
+    border-bottom: 3px solid $clr3;
 }
