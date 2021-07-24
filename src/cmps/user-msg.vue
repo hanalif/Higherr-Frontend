@@ -11,9 +11,9 @@ export default {
   },
   computed: {
      msg() {
-          setTimeout(() => {
-              this.$store.commit({type:'setMsg', msg: ''})
-          },2000)
+          // setTimeout(() => {
+          //     this.$store.commit({type:'setMsg', msg: ''})
+          // },2000)
           return this.$store.getters.userMsg
       } 
   }

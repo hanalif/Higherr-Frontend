@@ -4,12 +4,10 @@
   <div id="app">
     <app-header @signIn="onSignIn" @signUp="onSignUp" />
     <router-view :key="$route.fullPath" />
-    <user-msg v-if="isUserMsg"/>
+    <user-msg v-if="isUserMsg" />
     <login-modal v-if="showLoginModal" @close="onLoginModalClose"></login-modal>
-    <register-modal
-      v-if="showRegisterModal"
-      @close="onRegisteModalClose"
-    ></register-modal>
+    <register-modal v-if="showRegisterModal" @close="onRegisteModalClose">
+    </register-modal>
     <app-footer />
   </div>
 </template>
@@ -20,10 +18,18 @@ import appFooter from "./cmps/app-footer.vue";
 import registerModal from "./cmps/register-modal.vue";
 import loginModal from "./cmps/login-modal.vue";
 import userMsg from "./cmps/user-msg.vue";
+import { socketService } from './services/socket.service';
 
 export default {
   created() {
     this.$store.dispatch("loadUsers");
+    socketService.on('new-order', (order) => {
+      if(this.$route.name !== 'orders'){
+          this.$store.commit({ type: "incrementNumOfNewOrders"})
+      }
+      this.$store.commit({ type: "addOrder", order })
+      console.log("new order!!", order);
+    });
   },
   data() {
     return {
@@ -47,10 +53,10 @@ export default {
   },
   computed: {
     isUserMsg() {
-      const msg = this.$store.getters.userMsg
-      if (!msg) return false
-      else return true
-    }
+      const msg = this.$store.getters.userMsg;
+      if (!msg) return false;
+      else return true;
+    },
   },
   components: {
     appHeader,

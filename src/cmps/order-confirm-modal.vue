@@ -2,19 +2,24 @@
   <div class="order-confirm-modal">
     <modal @close="close" ref="modal">
       <template v-slot:header>
+           
         <h1></h1>
       </template>
       <template v-slot:body>
         <div class="edit-modal-body">
-          <h1>Confirm your Purchase</h1>
+          <div class="circle-check-icon"><i class="fas fa-check"></i></div>
+         <div class="order-confirm-modal-content">
+           <h1>Awesome!</h1>
+          <p>Your order has been confirmed. Check your orders for detials.</p>
+         </div>
         </div>
       </template>
 
       <template v-slot:footer>
         <div class="buttons-container">
-          <button class="btn" @click="$refs.modal.closeModal()">Cancel</button>
+          <!-- <button class="btn" @click="$refs.modal.closeModal()">Cancel</button> -->
           <button class="btn-primary btn" @click="registerSubmit">
-            Confirm
+            OK
           </button>
         </div>
       </template>
@@ -57,7 +62,6 @@ export default {
         },
       };
       this.$store.dispatch({ type: "saveOrder", order: orderToSave });
-      socketService.emit('newOrder', orderToSave.seller._id)
       this.$refs.modal.closeModal();
     },
   },
