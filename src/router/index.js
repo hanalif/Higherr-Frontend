@@ -7,6 +7,7 @@ import userDetails from '../pages/user-details.vue'
 import userOrders from '../pages/user-orders.vue'
 
 
+
 Vue.use(VueRouter)
 
 const routes = [{
@@ -23,12 +24,15 @@ const routes = [{
     },
     {
         path: '/orders',
-        component: userOrders
+        component: userOrders,
+        name: 'orders',
     },
     {
         path: '/gig/:gigId',
         component: gigDetails
     },
+    
+
 ]
 
 const router = new VueRouter({

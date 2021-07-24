@@ -45,12 +45,12 @@
     <div class="contact-btn-container">
       <button to="chat" class="contact-seller-btn">Contact Seller</button>
     </div>
-    <order-confirm-modal
+    <!-- <order-confirm-modal
       v-if="showConfirmOrderModal"
       @close="onConfirmOrderClose"
       :gig="gig"
       :pkg="pkg"
-    ></order-confirm-modal>
+    ></order-confirm-modal> -->
   </div>
 </template>
 
@@ -75,6 +75,11 @@ export default {
       isOrderModalOpen: false,
       showConfirmOrderModal: false,
     };
+  },
+  computed: {
+    loggedinUser() {
+      return this.$store.getters.loggedinUser;
+    }
   },
   methods: {
     basic() {
@@ -114,7 +119,6 @@ export default {
   components: {
     orderConfirmModal,
   },
-  created() {
-  },
+  created() {},
 };
 </script>

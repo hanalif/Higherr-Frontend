@@ -1,6 +1,7 @@
 <template>
-  <div class="home-page-container">
-    <div class="hero" :style="{ backgroundColor: heroChange }">
+  <div>
+    <div class="hero main-layout" :style="{ backgroundColor: heroChange }">
+      <div class="hero-content-container">
       <div class="hero-txt">
         <h1>
           Find the perfect <span>freelance</span> <br />service for your every
@@ -31,6 +32,7 @@
         <h6 :class="{ visible: isOne }">{{ heroName }}</h6>
         <h6 :class="{ visible: isTwo }">{{ heroName }}</h6>
         <h6 :class="{ visible: isThree }">{{ heroName }}</h6>
+      </div>
       </div>
     </div>
     <div class="top-gigs gig-list main-layout">

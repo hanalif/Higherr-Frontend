@@ -1,13 +1,16 @@
 import { orderService } from "../../services/order-service.js"
+import { socketService, SOCKET_EVENT_ORDER_ADDED } from "../../services/socket.service.js"
 
 
 export default {
     state: {
         orders: [],
         filterBy: { type: 'all', title: '', fromPrice: 0, toPrice: null, status: 'all' },
+        numOfNewOrders: 0
+
     },
     getters: {
-
+        numOfNewOrders({ numOfNewOrders }) { return numOfNewOrders },
     },
     mutations: {
         removeOrders(state, { orderId }) {
@@ -15,7 +18,9 @@ export default {
             state.orders.splice(idx, 1)
         },
         addOrder(state, { order }) {
-            state.orders.unshift(order)
+            if (!state.orders.some(o => o._id === order._id)) {
+                state.orders.unshift(order)
+            }
         },
         updateOrder(state, { order }) {
             const idx = state.orders.findIndex(t => t._id === order._id)
@@ -29,6 +34,12 @@ export default {
         },
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
+        },
+        incrementNumOfNewOrders(state, { newOrder }) {
+            state.numOfNewOrders++;
+        },
+        resetNumOfNewOrders(state) {
+            state.numOfNewOrders = 0;
         }
     },
     actions: {

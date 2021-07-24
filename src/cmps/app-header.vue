@@ -4,6 +4,21 @@
     class="app-header main-layout"
   >
     <nav class="nav">
+      <a @click="openSideNav"><i class="fas fa-bars side-menu-icon"></i></a>
+      <div class="side-menu-container">
+         <div id="mySidenav" class="sidenav" :class="{ 'is-open': isSidebarOpen }">
+           <div class="sidebar-header">
+
+           </div>
+           <div class="sidebar-menu">
+              <a href="javascript:void(0)" class="closebtn sidebar-link" @click="closeSidebar">&times;</a>
+              <router-link class="hide-from-nav sidebar-link" to="/explore">Explore</router-link>
+              <a class="hide-from-nav sidebar-link" @click="becomeSeller">Become a Seller</a>
+              <a class="hide-from-nav sidebar-link" @click="signIn" v-if="!loggedInUser">Sign In</a>
+           </div>
+        </div>
+      </div>
+     
       <div class="logo-search-bar">
         <router-link class="logo" to="/">higherr<span>.</span></router-link>
         <div class="app-header-search-container">
@@ -19,9 +34,9 @@
         </div>
       </div>
       <div class="menu-items">
-        <router-link class="explore-link" to="/explore">Explore</router-link>
-        <a @click="becomeSeller">Become a Seller</a>
-        <a @click="signIn" v-if="!loggedInUser">Sign In</a>
+        <router-link class="hide-from-nav" to="/explore">Explore</router-link>
+        <a class="hide-from-nav" @click="becomeSeller">Become a Seller</a>
+        <a class="hide-from-nav" @click="signIn" v-if="!loggedInUser">Sign In</a>
         <button
           :class="{ 'white-btn': isTop }"
           class="join-btn"
@@ -30,8 +45,12 @@
         >
           Join
         </button>
-        <div v-else class="user-menu">
+        <div  v-else class="user-menu hide-from-nav">
           <div class="user-menu-icon">
+            <div v-if="numOfNewOrders !== 0" class="num-of-new-orders-container">
+              <div><span>{{numOfNewOrders}}</span></div>
+            </div>
+              
             <img
               class="user-menu-img"
               @click="onUserMenuClick"
@@ -55,6 +74,11 @@
           @click="onUserMenuClick"
           class="backdrop"
         ></div>
+         <div
+            v-if="isSidebarOpen"
+            @click="closeSidebar"
+            class="backdrop with-black-opacity">
+          </div>
       </div>
     </nav>
   </section>
@@ -66,6 +90,7 @@ export default {
     return {
       isSign: false,
       isFloatingMenuOpen: false,
+      isSidebarOpen: false,
       isTop: true,
       isHome: true,
       height: null,
@@ -92,6 +117,7 @@ export default {
     },
     logout() {
       this.$store.dispatch({ type: "logout" });
+      this.$store.commit({type: 'resetNumOfNewOrders'})
       this.$router.push("/");
     },
     onUserMenuClick() {
@@ -120,6 +146,12 @@ export default {
       }
       else this.$router.push(`/user/${this.loggedInUser._id}`);
     },
+    openSideNav(){
+      this.isSidebarOpen = true;
+    },
+    closeSidebar() {
+      this.isSidebarOpen = false;
+    }
   },
   computed: {
     loggedInUser() {
@@ -130,6 +162,9 @@ export default {
     },
     setFilterBy(){
       this.filterBy.txt = this.$store.getters.getFilterBy
+    },
+    numOfNewOrders(){
+      return this.$store.getters.numOfNewOrders;
     }
   },
   watch: {

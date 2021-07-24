@@ -5,12 +5,12 @@
         <input
           type="text"
           placeholder="username"
-          v-model="credencials.username"
+          v-model="credentials.username"
         />
         <input
           type="password"
           placeholder="password"
-          v-model="credencials.password"
+          v-model="credentials.password"
         />
         <button>Login</button>
 
@@ -19,18 +19,18 @@
         <form @submit.prevent="signup">
           <input
             type="text"
-            placeholder="username"
-            v-model="signUpCredencials.username"
+            placeholder="Username"
+            v-model="signUpCredentials.username"
           />
           <input
             type="text"
             placeholder="Your full name"
-            v-model="signUpCredencials.fullname"
+            v-model="signUpCredentials.fullname"
           />
           <input
             type="password"
-            placeholder="password"
-            v-model="signUpCredencials.password"
+            placeholder="Password"
+            v-model="signUpCredentials.password"
           />
           <button>Signup</button>
         </form>
@@ -42,10 +42,11 @@
 export default {
   data() {
     return {
-      credencials: { username: "", password: "" },
-      signUpCredencials: {
+      credentials: { username: "", password: "" },
+      signUpCredentials: {
         username: "",
         password: "",
+        confirmPass: "",
         fullname: "",
         imgUrl: "https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png"
       },
@@ -55,10 +56,10 @@ export default {
    methods: {
     login() {
       this.$store
-        .dispatch({ type: "login", userCred: this.credencials })
+        .dispatch({ type: "login", userCred: this.credentials })
         .then((user) => {
           this.loggedInUser = user;
-          this.credencials = { username: "", password: "" };
+          this.credentials = { username: "", password: "" };
           this.isSignModal()
           this.$router.push(`/user/${this.loggedInUser._id}`);
           
@@ -69,11 +70,11 @@ export default {
     },
     signup() {
       this.$store
-        .dispatch({ type: "signup", userCred: this.signUpCredencials })
+        .dispatch({ type: "signup", userCred: this.signUpCredentials })
         .then((user) => {
           console.log(user)
           this.loggedInUser = user;
-          this.signUpCredencials = {
+          this.signUpCredentials = {
             username: "",
             password: "",
             fullname: ""

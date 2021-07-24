@@ -11,6 +11,7 @@
     @include for-narrow-layout {
         @include layout-columns($break-narrow);
     }
+
     @include for-normal-layout {
         @include layout-columns($break-normal);
     }

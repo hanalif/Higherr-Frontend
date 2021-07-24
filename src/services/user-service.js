@@ -54,7 +54,7 @@ function save(user) {
 async function signup(userCred) {
     // const user = await storageService.post(USER_KEY, userCred)
         const user = await httpService.post('auth/signup', userCred)
-        // socketService.emit('set-user-socket', user._id);
+        socketService.emit('set-user-socket', user._id);
 
     return _saveLocalUser(user)
 }
@@ -71,15 +71,15 @@ async function login(userCred) {
     // const user = users.find(user => user.username === userCred.username)
     // return _saveLocalUser(user)
 
-    const user = await httpService.post('auth/login', userCred)
-    // socketService.emit('login', user._id);
+    const user = await httpService.post('auth/login', userCred);
+    socketService.emit('set-user-socket', user._id);
     if (user) return _saveLocalUser(user)
 }
 
-function logout() {
+async function logout() {
     sessionStorage.clear()
-    // socketService.emit('unset-user-socket')
-    // return await httpService.post('auth/logout')
+    socketService.emit('unset-user-socket')
+    return await httpService.post('auth/logout')
 }
 
 function _saveLocalUser(user) {
