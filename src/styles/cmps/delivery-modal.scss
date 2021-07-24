@@ -4,9 +4,21 @@
     top: 143px;
     left: 13.35%;
     width: 300px;
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+            left: 0;
+            width: 90vw;
+            top: 183px;
+            margin: auto;
+        }
+    }
     position: absolute;
     .modal__footer {
         justify-content: inherit;
+    }
+    .modal__header {
+        justify-content: inherit;
+        padding: 5px;
     }
 }
 
@@ -30,4 +42,48 @@
     span.open {
         transform: rotate(270deg);
     }
+}
+
+.delivery-container {
+    gap: 20px;
+}
+
+.one {
+    cursor: pointer;
+}
+
+#one {
+    display: none;
+}
+
+.three {
+    cursor: pointer;
+}
+
+#three {
+    display: none;
+}
+
+.seven {
+    cursor: pointer;
+}
+
+#seven {
+    display: none;
+}
+
+.fifteen {
+    cursor: pointer;
+}
+
+#fifteen {
+    display: none;
+}
+
+.thirty {
+    cursor: pointer;
+}
+
+#thirty {
+    display: none;
 }

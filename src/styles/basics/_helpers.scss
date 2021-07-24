@@ -53,18 +53,6 @@
     position: fixed;
 }
 
-.app-header.green.main-layout {
-    background-color: #ffffff00;
-    border: none;
-    transition: 0.4s;
-    & * {
-        color: #fff;
-    }
-    & a {
-        color: #fff;
-    }
-}
-
 .active-btn {
     color: $clr3 !important;
     background-color: #fff !important;

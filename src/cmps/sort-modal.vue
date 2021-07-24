@@ -5,11 +5,11 @@
                 <div class="flex column sort-container">
                     <div class="flex">
                         <input  id="high-to-low" type="radio" value="high-to-low"  v-model="sortBy">
-                        <label @click="checkClicked('high')" :class="{clicked:isHighClicked}" class="high-to-low" for="high-to-low">High To Low</label>
+                        <label :class="isClicked('high-to-low')" class="high-to-low" for="high-to-low">High To Low</label>
                     </div>
                     <div class="flex">
                         <input  id="low-to-high" type="radio" value="low-to-high" v-model="sortBy">
-                        <label @click="checkClicked('low')" :class="{clicked:isLowClicked}" class="low-to-high" for="low-to-high">Low To High</label>
+                        <label :class="isClicked('low-to-high')" class="low-to-high" for="low-to-high">Low To High</label>
                     </div>
                 </div>
             </form>
@@ -56,6 +56,12 @@ checkClicked(diff){
 }
 },
 computed:{
+       isClicked(){
+        return ((sortBy)=>{
+            if(sortBy === this.sortBy)
+            return 'clicked'
+        })
+    }
 },
 components: {
     menuContentModal,

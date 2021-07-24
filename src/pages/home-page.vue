@@ -1,13 +1,14 @@
 <template>
   <div>
-    <div class="hero" :style="{ backgroundColor: heroChange }">
+    <div class="hero main-layout" :style="{ backgroundColor: heroChange }">
+      <div class="hero-content-container">
       <div class="hero-txt">
         <h1>
           Find the perfect <span>freelance</span> <br />service for your every
           need
         </h1>
         <div class="home-page-search-container">
-          <input
+          <input 
             v-model="filterBy.txt"
             class="hero-searchbar"
             type="text"
@@ -32,6 +33,7 @@
         <h6 :class="{ visible: isTwo }">{{ heroName }}</h6>
         <h6 :class="{ visible: isThree }">{{ heroName }}</h6>
       </div>
+      </div>
     </div>
     <div class="top-gigs gig-list main-layout">
       <h2>Our Best Gigs</h2>
@@ -40,6 +42,24 @@
           <gig-preview :gig="gig" />
         </li>
       </ul>
+    </div>
+    <div class="about  main-layout">
+      <div class="about-contianer grid">
+        <div class="about-content">
+          <h2>A whole world of freelance talent at your fingertips</h2>
+          <h3>✅ The best for every budget</h3>
+          <p>Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
+          <h3>✅ Quality work done quickly</h3>
+          <p>Find the right freelancer to begin working on your project within minutes.</p>
+          <h3>✅ Protected payments, every time</h3>
+          <p>Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+          <h3>✅ 24/7 support</h3>
+          <p>Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
+        </div>
+        <div class="about-img">
+          <img src="https://www.contentive.com/wp-content/uploads/2017/11/happy-people-working-together-e1516966599366.jpg" alt="">
+        </div>
+      </div>
     </div>
     <div class="categories-container main-layout">
       <h2>Explore the marketplace</h2>

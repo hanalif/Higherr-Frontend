@@ -18,7 +18,6 @@ const routes = [{
         path: '/explore',
         component: explore,
     },
-
     {
         path: '/user/:userId',
         component: userDetails

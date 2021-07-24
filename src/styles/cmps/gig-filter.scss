@@ -2,4 +2,9 @@
     display: flex;
     gap: 5px;
     margin: 30px 0;
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+            flex-direction: column;
+        }
+    }
 }

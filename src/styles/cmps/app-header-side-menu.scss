@@ -1,0 +1,47 @@
+.app-header.main-layout {
+
+    .sidenav {
+        &.is-open {
+            transform: translateX(272px);
+        }
+
+        left: -272px;
+        background-color: #fff;
+        position: fixed;
+        z-index: 10001;
+        width: 272px;
+        height: 100%;
+        top: 0;
+        padding-top: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        transition: all .3s ease;
+        overflow-x: hidden;
+    
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        .sidebar-header {
+            height: 62px;
+        }
+    
+        .sidebar-menu {
+            padding-left: 20px;
+            padding-right: 20px;
+            color: #95979d;
+            .sidebar-link {
+                padding-top: 8px;
+                padding-bottom: 8px;
+                color: #95979d;
+                font-weight: 400;
+            }
+        }
+      }
+      
+}

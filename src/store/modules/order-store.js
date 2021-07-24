@@ -1,4 +1,3 @@
-
 import { orderService } from "../../services/order-service.js"
 import { socketService, SOCKET_EVENT_ORDER_ADDED } from "../../services/socket.service.js"
 
@@ -41,10 +40,6 @@ export default {
         },
         resetNumOfNewOrders(state) {
             state.numOfNewOrders = 0;
-        },
-        acceptOrder(state, { id }) {
-            const order = state.orders.find(order => order._id === id)
-            order.status = "Accepted"
         }
     },
     actions: {
@@ -91,7 +86,6 @@ export default {
                     throw err;
                 })
         }
-
     }
 
 }
