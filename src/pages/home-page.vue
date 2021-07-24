@@ -8,7 +8,7 @@
           need
         </h1>
         <div class="home-page-search-container">
-          <input
+          <input 
             v-model="filterBy.txt"
             class="hero-searchbar"
             type="text"
