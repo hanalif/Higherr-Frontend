@@ -164,6 +164,16 @@ input[type=button],
     }
 }
 
+.btn-danger {
+    color: white;
+    background: rgb(245, 45, 45);
+     box-shadow: inset 0px 0px 0px 1px rgb(255, 78, 78);
+    &:hover {
+        background: rgb(253, 114, 114);
+    }
+}
+
+
 .content-wrap {
     padding-bottom: 4rem;
 }

@@ -22,7 +22,8 @@
         <tbody v-for="order in userAsSellerOrders" :key="order._id">
           <tr>
             <td scope="row" data-label="Title" class="table-order-title">{{order.title}}</td>
-            <td data-label="Status">{{order.status}}</td>
+            <td data-label="Status">{{order.status}}
+            </td>
             <td data-label="Created at">{{order.createdAt}}</td>
             <td data-label="Price"><span>$</span>{{order.price}}</td>
             <td data-label="Seller">{{order.buyer.fullname}}</td>
@@ -58,7 +59,7 @@
             <td data-label="Price"><span>$</span>{{order.price}}</td>
             <td data-label="Seller">{{order.seller.fullname}}</td>
             <td data-label="Contact seller"><button class="btn">Contact seller</button></td>
-            <td data-label="Remove order" ><button @click="onRemoveOrder(order._id)" class="btn btn-primary">Cancel order</button></td>
+            <td data-label="Remove order" ><button @click="onRemoveOrder(order._id)" class="btn btn-danger">Cancel order</button></td>
           </tr>
         </tbody> 
         </template>
@@ -73,6 +74,7 @@
 export default {
   data() {
     return {
+      
        
     }
   },
@@ -92,7 +94,7 @@ export default {
        this.$store.dispatch({type: 'removeOrders' , orderId: orderId}).then(() =>{
           console.log('removed')
       });
-    }
+    },
   },
 
   created () {

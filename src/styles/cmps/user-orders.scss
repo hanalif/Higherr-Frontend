@@ -5,6 +5,16 @@ background-color: #f7f7f7;
 min-height: 585px;
 
 }
+.order-status-btn{
+  border: none;
+  background-color: white;
+  font-family: macan-regular;
+  color: #62646a;
+  cursor: pointer;
+  &:hover{
+    color: #f52d2d;
+  }
+}
 .user-orders{
     margin-bottom: 10px;
    
