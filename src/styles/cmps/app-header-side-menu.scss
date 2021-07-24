@@ -1,10 +1,8 @@
 .app-header.main-layout {
-
     .sidenav {
         &.is-open {
             transform: translateX(272px);
         }
-
         left: -272px;
         background-color: #fff;
         position: fixed;
@@ -18,7 +16,6 @@
         flex-direction: column;
         transition: all .3s ease;
         overflow-x: hidden;
-    
         .closebtn {
             position: absolute;
             top: 0;
@@ -26,11 +23,9 @@
             font-size: 36px;
             margin-left: 50px;
         }
-        
         .sidebar-header {
             height: 62px;
         }
-    
         .sidebar-menu {
             padding-left: 20px;
             padding-right: 20px;
@@ -42,6 +37,9 @@
                 font-weight: 400;
             }
         }
-      }
-      
+    }
+}
+
+.explore-link.router-link-active {
+    border-bottom: 2px solid $clr3;
 }

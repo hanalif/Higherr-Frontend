@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="menu-items" :class="{ 'logged': loggedInUser != null }">
-        <router-link class="hide-from-nav" to="/explore">Explore</router-link>
+        <router-link class="hide-from-nav explore-link" to="/explore">Explore</router-link>
         <a class="hide-from-nav" @click="becomeSeller">Become a Seller</a>
         <a class="hide-from-nav" @click="signIn" v-if="!loggedInUser">Sign In</a>
         <button
