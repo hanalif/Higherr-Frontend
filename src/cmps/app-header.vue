@@ -8,7 +8,7 @@
       <div class="side-menu-container">
          <div id="mySidenav" class="sidenav" :class="{ 'is-open': isSidebarOpen }">
            <div class="sidebar-header">
-
+             
            </div>
            <div class="sidebar-menu">
               <a href="javascript:void(0)" class="closebtn sidebar-link" @click="closeSidebar">&times;</a>
