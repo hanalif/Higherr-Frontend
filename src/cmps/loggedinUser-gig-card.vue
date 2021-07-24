@@ -9,7 +9,8 @@
         <long-text class="user-gig-description" :txt="gig.title"/>
       </router-link>
       <i @click="onEditGig" class="fas fa-pen-square user-edit-btn buttom-edit-btn"></i>
-      <button @click="onRemoveGig" class="btn">Remove</button>
+      <i @click="onRemoveGig" class="fas fa-backspace user-edit-btn buttom-edit-btn"></i>
+      
       <!-- <i class="fas fa-trash user-edit-btn buttom-edit-btn"></i> -->
     </div>
     

@@ -8,13 +8,33 @@
       <div class="side-menu-container">
          <div id="mySidenav" class="sidenav" :class="{ 'is-open': isSidebarOpen }">
            <div class="sidebar-header">
-             
+                <button
+          class="btn btn-primary" @click="signUpOnSideNav" v-if="!loggedInUser"> Join Higherr </button>
+           <div v-else class="user-menu-icon">
+            <div v-if="numOfNewOrders !== 0" class="num-of-new-orders-container-side-nav">
+              <div><span class="side-nav-span">{{numOfNewOrders}}</span></div>
+            </div>
+            <img
+              class="user-menu-img user-img-side-nav"
+              @click="onUserMenuClick"
+              :src="loggedInImg"
+            />
+            <h2 class="side-nav-fullname-title">{{loggedInUser.fullname}}</h2>
+          </div>
            </div>
+           
            <div class="sidebar-menu">
-              <a href="javascript:void(0)" class="closebtn sidebar-link" @click="closeSidebar">&times;</a>
-              <router-link class="hide-from-nav sidebar-link" to="/explore">Explore</router-link>
-              <a class="hide-from-nav sidebar-link" @click="becomeSeller">Become a Seller</a>
-              <a class="hide-from-nav sidebar-link" @click="signIn" v-if="!loggedInUser">Sign In</a>
+              <!-- <a href="javascript:void(0)" class="closebtn sidebar-link" @click="closeSidebar">&times;</a> -->
+               <a class="hide-from-nav sidebar-link" @click="signInOnSideNav" v-if="!loggedInUser">Sign In</a>
+              <router-link class="hide-from-nav sidebar-link" to="/explore" @click.native="closeSidebar">Explore</router-link>
+              <a class="hide-from-nav sidebar-link" v-if="!loggedInUser" @click="signUpOnSideNav">Become a Seller</a>
+                <template v-if="loggedInUser">
+                <router-link class="hide-from-nav sidebar-link" to="/" @click.native="closeSidebar">Home</router-link>
+                <router-link :to="`/user/` + loggedInUser._id" class="sidebar-link" @click.native="closeSidebar">Profile</router-link>
+              <router-link to="/orders" class="sidebar-link" @click.native="closeSidebar">Orders</router-link>
+              <a @click="logoutFromSideBar" class="sidebar-link">Logout</a>
+                </template>
+             
            </div>
         </div>
       </div>
@@ -111,6 +131,21 @@ export default {
     },
     signUp() {
       this.$emit("signUp");
+    },
+    signUpOnSideNav(){
+      this.$emit("signUp");
+       this.isSidebarOpen = false;
+    },
+    logoutFromSideBar(){
+      this.$store.dispatch({ type: "logout" });
+      this.$store.commit({type: 'resetNumOfNewOrders'})
+      this.$router.push("/");
+      this.isSidebarOpen = false;
+
+    },
+    signInOnSideNav(){
+      this.$emit("signIn");
+      this.isSidebarOpen = false;
     },
     isSignModal() {
       this.isSign = false;

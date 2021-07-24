@@ -5,7 +5,7 @@
         <h1></h1>
       </template>
       <template v-slot:body>
-        <div class="edit-modal-body">
+        <div class="edit-user-modal-body">
           <h1>{{ title }}</h1>
 
           <div class="edit-container">
