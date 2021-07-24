@@ -4,7 +4,7 @@
     class="app-header main-layout"
   >
     <nav class="nav">
-      <a @click="openSideNav"><i class="fas fa-bars side-menu-icon"></i></a>
+      <a @click="openSideNav" class="hamburger-menu"><i class="fas fa-bars side-menu-icon"></i></a>
       <div class="side-menu-container">
          <div id="mySidenav" class="sidenav" :class="{ 'is-open': isSidebarOpen }">
            <div class="sidebar-header">

@@ -25,6 +25,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .hamburger-menu {
+            position: absolute;
+        }
+
+        .side-menu-container {
+            position: absolute;
+        }
+
         a {
             display: block;
             color: #62646a;
@@ -209,6 +218,14 @@
             }
         }
         .nav{
+            .hamburger-menu {
+                position: static;
+            }
+
+            .side-menu-container {
+                position: static;
+            }
+
             .side-menu-icon{
                 display: block;
                 font-size: 29px;
