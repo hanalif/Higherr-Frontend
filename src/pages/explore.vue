@@ -1,5 +1,5 @@
 <template>
-  <section class="main-layout">
+  <section class="explore main-layout">
     <gig-filter @filter="filter"/>
     <h1 v-if="filterBy.txt">Results For: "{{filterTxt}}"</h1>
     <h1 v-else-if="filterBy.tags !== 'all'">Results For: "{{filterBy.tags}}"</h1>

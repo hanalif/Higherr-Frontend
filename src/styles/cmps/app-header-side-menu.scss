@@ -1,7 +1,7 @@
 .app-header.main-layout {
     .sidenav {
         padding-left: 20px;
-            padding-right: 20px;
+        padding-right: 20px;
         &.is-open {
             transform: translateX(272px);
         }
@@ -28,23 +28,20 @@
         .sidebar-header {
             height: 62px;
             margin-bottom: 10px;
-
-            .user-menu-icon{
+            .user-menu-icon {
                 display: flex;
                 align-items: center;
                 gap: 15px;
             }
-
-                .side-nav-fullname-title{
-                    color: #404145;
-                    font-weight: 700;
-                    padding-bottom: 8px;
-                    display: block;
-                    text-decoration: none;
-                    font-size: 16px;
-                }
-
-            .num-of-new-orders-container-side-nav{
+            .side-nav-fullname-title {
+                color: #404145;
+                font-weight: 700;
+                padding-bottom: 8px;
+                display: block;
+                text-decoration: none;
+                font-size: 16px;
+            }
+            .num-of-new-orders-container-side-nav {
                 height: 20px;
                 width: 20px;
                 background-color: #f52d2d;
@@ -57,25 +54,22 @@
                 position: absolute;
                 top: 14px;
                 left: 64px;
-                .side-nav-span{
+                .side-nav-span {
                     color: white;
                 }
             }
-
-
-            button{
+            button {
                 color: white;
                 width: 130px;
                 height: 42px;
                 font-size: 16px;
             }
-            .user-img-side-nav{
+            .user-img-side-nav {
                 height: 60px;
                 width: 60px;
             }
         }
         .sidebar-menu {
-            
             color: #95979d;
             .sidebar-link {
                 padding-top: 8px;
@@ -89,4 +83,12 @@
 
 .explore-link.router-link-active {
     border-bottom: 2px solid $clr3;
+}
+
+.nav {
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+            margin: 0 20px;
+        }
+    }
 }

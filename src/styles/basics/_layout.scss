@@ -11,7 +11,11 @@
     @include for-narrow-layout {
         @include layout-columns($break-narrow);
     }
-
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+            grid-template-columns: 0rem 1fr 0rem;
+        }
+    }
     @include for-normal-layout {
         @include layout-columns($break-normal);
     }

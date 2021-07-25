@@ -37,6 +37,8 @@
     @include for-mobile-layout {
         @media (max-width: $break-narrow) {
             padding-left: unset;
+            position: relative;
+            left: 68.4%;
         }
     }
     span.arrow {

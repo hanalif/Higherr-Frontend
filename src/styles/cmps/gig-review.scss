@@ -22,6 +22,9 @@
 
 .review-rate {
     color: #e3c51b;
+    position: relative;
+    top: 2px;
+    font-size: 20px;
 }
 
 .user-img {
@@ -48,7 +51,7 @@
     opacity: 0.75;
     line-height: 200px;
     margin: 0;
-  }
+}
 
 .review-txt {
     resize: none;
