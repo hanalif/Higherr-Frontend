@@ -74,4 +74,13 @@
 
 .visible {
     opacity: 1 !important;
+    z-index: 1 !important;
+}
+
+.open {
+    transform: rotate(270deg) !important;
+}
+
+.done {
+    color: #1dbf73;
 }
