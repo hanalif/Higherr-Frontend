@@ -39,7 +39,11 @@
             }
 
             .orders-notifications-hamburger{
-                color: white;
+
+                span{
+                    color: white;
+                }
+                
             }
             div{
                 height: 20px;
