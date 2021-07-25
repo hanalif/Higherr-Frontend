@@ -4,6 +4,8 @@
     flex-direction: row;
     border-bottom: 1px solid #c4c4c4db;
     padding-bottom: 20px;
+    justify-content: center;
+    gap: 30px;
     
     .circle-check-icon{
         flex: 1;
@@ -26,6 +28,8 @@
         flex-direction: column;
         gap: 5px;
         max-width: 290px;
+
+        
         
     }
 }
