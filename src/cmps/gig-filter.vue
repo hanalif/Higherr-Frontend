@@ -22,15 +22,7 @@ import sortModal from './sort-modal.vue'
 export default {
     data(){
         return{
-            filterBy:{
-                txt:'',
-                tags:'all',
-                delivery: 'all',
-                price:{
-                    min:0,
-                    max:Infinity
-                    }
-            },
+            filterBy: this.$store.getters.getFilter,
             openTagsModal:false,
             openDeliveryModal: false,
             openPriceModal: false,

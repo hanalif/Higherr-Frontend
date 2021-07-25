@@ -37,7 +37,7 @@ export default {
     }
   },
   created(){
-    this.filterBy.txt = this.$store.getters.getFilter.txt
+    this.filterBy = this.$store.getters.getFilter
     this.$store.dispatch('loadGigs')
     .then(()=>{
       this.$store.commit({type:'setSort', sortBy:this.sortBy})
@@ -56,7 +56,7 @@ export default {
       this.$store.commit({type:'jumpToPage', num:num})
     },
     filter(filterBy){
-      if(!this.filterBy.txt !== ''){
+      if(!this.filterBy.txt === ''){
         this.filterBy = filterBy
       }
     }

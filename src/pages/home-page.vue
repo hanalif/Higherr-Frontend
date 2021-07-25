@@ -19,9 +19,9 @@
         </div>
         <div class="popular-searches">
           <span>Popular:</span>
-          <button @click="searchPopular('web design')">Website design</button> 
-          <button @click="searchPopular('logo')">Logo Design</button> 
-          <button @click="searchPopular('video')">Video Editting</button> 
+          <button @click="searchPopular('web-develop')">Web development</button> 
+          <button @click="searchPopular('logo-design')">Logo Design</button> 
+          <button @click="searchPopular('media')">Media Editting</button> 
           <button @click="searchPopular('graphic')">Graphic Design</button> 
         </div>
       </div>
@@ -307,7 +307,7 @@ export default {
       this.$router.push(`/explore?category=${category}`);
     },
     searchPopular(txt) {
-      this.filterBy.txt = txt
+      this.filterBy.tags = txt
       this.searchGigs()
     }
   },
