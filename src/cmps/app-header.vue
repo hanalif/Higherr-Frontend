@@ -49,7 +49,7 @@
       </div>
      
       <div class="logo-search-bar">
-        <router-link class="logo" to="/">higherr<span>.</span></router-link>
+        <router-link class="logo" to="/">higherr<span>•</span></router-link>
         <div class="app-header-search-container">
         <form v-if="!isTop">
           <input

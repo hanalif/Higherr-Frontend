@@ -39,7 +39,11 @@
             }
 
             .orders-notifications-hamburger{
-                color: white;
+
+                span{
+                    color: white;
+                }
+                
             }
             div{
                 height: 20px;
@@ -79,8 +83,10 @@
             font-family: fjalla;
             transform: translateY(-2px);
             & span {
-                color: green;
+                color: $clr3;
                 font-family: none;
+                display: inline-block;
+                transform: translateY(6px);
             }
         }
         .app-header-search-container{

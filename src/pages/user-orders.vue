@@ -2,7 +2,7 @@
   <div class="user-orders-page">
     <div class="user-orders main-layout">
       <h1 class="user-orders-main-title main-title">
-        {{ this.user.fullname + `'s` }} orders
+        Your orders overview
       </h1>
 
       <div class="user-orders-as-buyer-container">
@@ -24,7 +24,7 @@
           <template v-if="userAsSellerOrders">
             <tbody v-for="order in userAsSellerOrders" :key="order._id">
               <tr>
-                <td scope="row" data-label="Title" class="table-order-title">
+                <td scope="row" data-label="Title" class="table-order-title truncate">
                   {{ order.title }}
                 </td>
                 <td data-label="Status" :class="{done:order.status === 'Done'}">{{ order.status }}</td>
@@ -72,7 +72,7 @@
           <template v-if="userAsBuyerOrders">
             <tbody v-for="order in userAsBuyerOrders" :key="order._id">
               <tr>
-                <td scope="row" data-label="Title" class="table-order-title">
+                <td scope="row" data-label="Title" class="table-order-title truncate">
                   {{ order.title }}
                 </td>
                 <td data-label="Status" :class="{done:order.status === 'Done'}">{{ order.status }}</td>

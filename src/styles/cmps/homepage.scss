@@ -2,7 +2,7 @@
     height: 650px;
     padding-top: 12rem;
     margin-bottom: 5rem;
-    transition: 2s;
+    transition: 1s;
     @include for-mobile-layout {
         @media (max-width: $break-narrow) {
             padding-inline-start: 0;
@@ -60,7 +60,7 @@
         height: 100%;
         display: inline;
         align-self: flex-end;
-        transition: 1s;
+        transition: 0.6s;
         object-fit: contain;
         object-position: bottom;
         opacity: 0;
@@ -68,7 +68,7 @@
     & h6 {
         position: absolute;
         bottom: 10px;
-        right: 50px;
+        right: 0;
         color: #fff;
         font-size: 1rem;
         opacity: 0;
