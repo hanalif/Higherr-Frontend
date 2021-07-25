@@ -14,8 +14,6 @@ let filterBy = {
     }
 }
 
-
-
 export const gigService = {
     query,
     getById,

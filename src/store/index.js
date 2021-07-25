@@ -24,7 +24,7 @@ export default new Vuex.Store({
       return state.orderStore.orders.filter(order => order.buyer._id === loggedinUserId)
     },
     userMsg(state) {
-    return state.userMsg
+      return state.userMsg
     }
   },
   mutations: {
