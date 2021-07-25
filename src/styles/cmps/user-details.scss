@@ -30,6 +30,13 @@
     margin-top: rem(50px);
     margin-bottom: rem(50px);
 
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+            flex-direction: column;
+            margin-top: 23px;
+        }
+    }
+
     .card {
         background-color: #fff;
         border: 1px solid $borderclr1;
@@ -124,6 +131,12 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, 232px);
             gap: 20px;
+            @include for-mobile-layout {
+                @media (max-width: $break-narrow) {
+                   display: flex;
+                   flex-direction: column;
+                }
+            }
         }
         .user-gig-card {
             border: 1px solid $borderclr1;
@@ -131,6 +144,13 @@
             position: relative;
             background-color: $clr5;
             height: 270px;
+
+            @include for-mobile-layout {
+                @media (max-width: $break-narrow) {
+                   width: 100%;
+                   height: 303px;
+                }
+            }
 
             img {
                 height: 145px;

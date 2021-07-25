@@ -1,7 +1,7 @@
 
 
 <template>
-<section>
+<section class="gig-dtails-page">
     <nav class="gig-nav">
       <a @click="scrollToElement($event, 'gig-overview')">Overview</a>
       <a @click="scrollToElement($event, 'gig-description')">Description</a>

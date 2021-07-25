@@ -5,7 +5,7 @@
         <h1></h1>
       </template>
       <template v-slot:body>
-        <div class="form-body edit-modal-body">
+        <div class="form-body edit-user-modal-body">
           <h1 class="edit-user-title">Edit User Details</h1>
           <div class="user-profile-img">
             <label>
