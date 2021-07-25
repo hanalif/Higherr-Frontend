@@ -19,11 +19,11 @@
     <div class="seller-desc">
       <div class="seller-data">
         <div class="from">
-          <h3 class="seller-header">From</h3>
+          <h4 class="seller-header">From</h4>
           <h3>{{ seller.from }}</h3>
         </div>
         <div class="since">
-          <h3 class="seller-header">Member since</h3>
+          <h4 class="seller-header">Member since</h4>
           <h3>{{ seller.memberSince }}</h3>
         </div>
       </div>
