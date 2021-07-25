@@ -5,7 +5,7 @@
     <nav class="nav">
       <a @click="openSideNav" class="hamburger-menu"><i class="fas fa-bars side-menu-icon"></i>
       <div v-if="numOfNewOrders !== 0" class="num-of-new-orders-hamburger-container">
-              <div><span class="side-nav-span">{{numOfNewOrders}}</span></div>
+              <div class="orders-notifications-hamburger"><span class="side-nav-span">{{numOfNewOrders}}</span></div>
             </div>
       </a>
       

@@ -68,7 +68,8 @@
             </div>
           </template>
           <template v-else>
-            <gig-preview
+            <gig-preview 
+            class="user-gig-not-edit-card"
               v-for="(gig, index) in userGigs"
               :gig="gig"
               :key="index"
