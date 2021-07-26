@@ -48,14 +48,10 @@ export default {
       this.$emit("close");
     },
     registerSubmit() {
-      const dateObj = new Date();
-      const month = dateObj.getUTCMonth() + 1;
-      const day = dateObj.getUTCDate();
-      const year = dateObj.getUTCFullYear();  
       const orderToSave = {
         title: this.gig.title,
         status: "pending",
-        createdAt: day + "/" + month + "/" + year,
+        createdAt: Date.now(),
         price: this.pkg.price,
         seller: this.gig.seller,
         buyer: {

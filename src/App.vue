@@ -23,6 +23,7 @@ import { socketService } from './services/socket.service';
 export default {
   created() {
     this.$store.dispatch("loadUsers");
+    this.$store.dispatch("loadOrders");
     socketService.on('new-order', (order) => {
       if(this.$route.name !== 'orders'){
           this.$store.commit({ type: "incrementNumOfNewOrders"})

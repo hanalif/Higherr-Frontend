@@ -20,6 +20,7 @@ export default {
         addOrder(state, { order }) {
             if (!state.orders.some(o => o._id === order._id)) {
                 state.orders.unshift(order)
+                console.log(state.orders)
             }
         },
         updateOrder(state, { order }) {
@@ -28,6 +29,7 @@ export default {
         },
         setOrders(state, { orders }) {
             state.orders = orders
+            console.log(state.orders)
         },
         setLoggedinUserOrders(state, { loggedinUserOrders }) {
             state.loggedInUserOrders = loggedinUserOrders

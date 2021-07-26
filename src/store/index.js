@@ -21,7 +21,9 @@ export default new Vuex.Store({
     },
     userAsBuyerOrders: state => {
       const loggedinUserId = state.userStore.loggedinUser?._id;
-      return state.orderStore.orders.filter(order => order.buyer._id === loggedinUserId)
+      let ordersAsBuyer = state.orderStore.orders.filter(order => order.buyer._id === loggedinUserId) 
+      return ordersAsBuyer
+      
     },
     userMsg(state) {
       return state.userMsg
