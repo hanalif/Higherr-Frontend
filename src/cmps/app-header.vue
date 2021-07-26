@@ -30,6 +30,7 @@
            <div class="sidebar-menu">
               <!-- <a href="javascript:void(0)" class="closebtn sidebar-link" @click="closeSidebar">&times;</a> -->
                <a class="hide-from-nav sidebar-link" @click="signInOnSideNav" v-if="!loggedInUser">Sign In</a>
+                 <router-link class="hide-from-nav sidebar-link" to="/" @click.native="closeSidebar">Home</router-link>
               <router-link class="hide-from-nav sidebar-link" to="/explore" @click.native="closeSidebar">Explore</router-link>
               <a class="hide-from-nav sidebar-link" v-if="!loggedInUser" @click="signUpOnSideNav">Become a Seller</a>
               <!-- <div class="browse-categories-container">
@@ -38,7 +39,6 @@
               </div> -->
                
                 <template v-if="loggedInUser">
-                <router-link class="hide-from-nav sidebar-link" to="/" @click.native="closeSidebar">Home</router-link>
                 <router-link :to="`/user/` + loggedInUser._id" class="sidebar-link" @click.native="closeSidebar">Profile</router-link>
               <router-link to="/orders" class="sidebar-link" @click.native="closeSidebar">Orders
                 <div class="position-orders-notifications-user-menu">

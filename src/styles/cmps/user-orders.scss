@@ -23,9 +23,12 @@ min-height: 585px;
         font-weight: 300;
         margin-top: 20px;
         text-align:start;
-        margin-left: 27px;
-        margin-right: 20px;
         font-size: 23px;
+        @include for-mobile-layout {
+          margin-left: 27px;
+          margin-right: 20px;
+      }
+
     }
     .main-title{
       border-bottom:  1px solid #ddd;
@@ -33,10 +36,7 @@ min-height: 585px;
       font-family:  macan-regular, Arial, Helvetica, sans-serif;
     }
 
-    body {
-        font-family: "Open Sans", sans-serif;
-        line-height: 1.25;
-      }
+
       
       table {
         border: 1px solid #ccc;
@@ -51,7 +51,7 @@ min-height: 585px;
         text-align: start;
         @include for-mobile-layout {
           @media (max-width: $break-narrow) {
-            text-align: end;
+            text-align: center;
           }
       }
       }
@@ -109,9 +109,11 @@ min-height: 585px;
         
         table td {
           border-bottom: 1px solid #ddd;
-          display: block;
           font-size: .8em;
           text-align: right;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
         }
         
         table td::before {
@@ -171,4 +173,11 @@ min-height: 585px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  @include for-mobile-layout {
+    width: inherit;
+  white-space:inherit;
+  overflow:inherit;
+  text-overflow:inherit;
+}
+
 }

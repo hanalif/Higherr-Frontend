@@ -25,12 +25,12 @@
           <template v-if="userAsSellerOrders">
             <tbody v-for="order in userAsSellerOrders" :key="order._id">
               <tr>
-                <td scope="row" data-label="Title" class="table-order-title truncate">
+                <td scope="row"  class="table-order-title truncate">
                   {{ order.title }}
                 </td>
                 <td data-label="Status" :class="{done:order.status === 'Done'}">{{ order.status }}</td>
                 <td data-label="Created at">{{ order.createdAt }}</td>
-                <td data-label="Price"><span>$</span>{{ order.price }}</td>
+                <td data-label="Price">${{ order.price }}</td>
                 <td data-label="From">{{ order.buyer.fullname }}</td>
                 <td data-label="Contact seller">
                   <button class="btn">Contact buyer</button>
