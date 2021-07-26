@@ -9,7 +9,7 @@ export default {
         filterBy: {
             txt: '',
             tags: 'all',
-            delivery: null,
+            delivery: 'all',
             price: {
                 min: 0,
                 max: Infinity
@@ -28,7 +28,6 @@ export default {
             return state.gigs
         },
         topGigs(state) {
-            // add sort by highest rate or review amount
             return state.gigs.slice(5, 9)
         },
         paggingSize(state) {
@@ -81,7 +80,7 @@ export default {
                 else if (filterBy.delivery === '7') return gig.delivery <= 7
                 else if (filterBy.delivery === '15') return gig.delivery <= 15
                 else if (filterBy.delivery === '30') return gig.delivery <= 30
-                else return gig.delivery > 0
+                else return gig.delivery >= 0
             })
             filtered = filtered.filter(gig => {
                 return gig.price >= filterBy.price.min && gig.price <= filterBy.price.max

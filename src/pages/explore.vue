@@ -29,7 +29,7 @@ export default {
     }
   },
   created(){
-    // this.filterBy = this.$store.getters.getFilter
+    this.filterBy = this.$store.getters.getFilter
     this.$store.dispatch('loadGigs')
     .then(()=>{
       this.$store.commit({type:'setSort', sortBy:this.sortBy})
@@ -60,10 +60,6 @@ export default {
     }
   },
   computed:{
-    // filterTxt(){
-    //   this.filterBy.txt = this.$store.getters.getFilter.txt  
-    //   return this.$store.getters.getFilter.txt
-    // },
     gigs(){
       return this.$store.getters.gigsToShow
     },
