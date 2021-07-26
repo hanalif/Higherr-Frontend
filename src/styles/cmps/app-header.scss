@@ -5,7 +5,6 @@
     border-bottom: 1px solid $clr4;
     z-index: 3;
     transition: 0.4s;
-
     &.green.main-layout {
         background-color: #ffffff00;
         border: none;
@@ -17,7 +16,6 @@
             color: #fff;
         }
     }
-
     .nav {
         user-select: none;
         color: #62646a;
@@ -25,8 +23,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        .num-of-new-orders-hamburger-container{
+        .num-of-new-orders-hamburger-container {
             display: none;
             position: absolute;
             top: 17px;
@@ -37,15 +34,12 @@
                     display: block;
                 }
             }
-
-            .orders-notifications-hamburger{
-
-                span{
+            .orders-notifications-hamburger {
+                span {
                     color: white;
                 }
-                
             }
-            div{
+            div {
                 height: 20px;
                 width: 20px;
                 background-color: rgb(245, 45, 45);
@@ -56,23 +50,18 @@
                 border: 1px solid white;
                 font-size: 10px;
             }
-
         }
-
         .hamburger-menu {
             position: absolute;
         }
-
         .side-menu-container {
             position: absolute;
         }
-
         a {
             display: block;
             color: #62646a;
-    
         }
-        .side-menu-icon{
+        .side-menu-icon {
             display: none;
         }
         .logo {
@@ -89,13 +78,12 @@
                 transform: translateY(6px);
             }
         }
-        .app-header-search-container{
+        .app-header-search-container {
             position: relative;
-            input{
+            input {
                 padding-inline-start: 35px;
             }
-
-            .app-header-search-icon{
+            .app-header-search-icon {
                 position: absolute;
                 top: 8px;
                 left: 6px;
@@ -123,13 +111,11 @@
                     justify-content: center;
                     cursor: pointer;
                     position: relative;
-
-                    .num-of-new-orders-container{
+                    .num-of-new-orders-container {
                         position: absolute;
                         top: -9px;
                         left: 19px;
-                        
-                        div{
+                        div {
                             height: 20px;
                             width: 20px;
                             background-color: rgb(245, 45, 45);
@@ -149,7 +135,7 @@
                     right: 0;
                     background-color: white;
                     box-shadow: 0 0 5px 1px #0000001f;
-                    width: 206px;
+                    width: 120px;
                     border-radius: 4px;
                     padding: 5px 15px;
                     .floating-menu-items {
@@ -176,7 +162,6 @@
                 top: 0;
                 bottom: 0;
                 z-index: 1;
-
                 &.with-black-opacity {
                     background-color: rgba(0, 0, 0, 0.3);
                 }
@@ -199,13 +184,14 @@
     & button {
         border-radius: 0 3px 3px 0;
         padding: 8px 16px;
-        font-size: 14px;
+        font-size: 15px;
         border: none;
         color: #fff;
         cursor: pointer;
         background: $clr3;
         font-weight: bold;
         transition: 0.2s;
+        transform: translateY(2px);
         &:hover {
             background-color: #19a463;
         }
@@ -238,7 +224,6 @@
     }
 }
 
-
 @media screen and (max-width: 800px) {
     .app-header {
         &.green.main-layout {
@@ -252,42 +237,35 @@
                 color: #62646a;
             }
         }
-        .nav{
+        .nav {
             .hamburger-menu {
                 position: static;
             }
-
             .side-menu-container {
                 position: static;
             }
-
             .menu-items {
                 &.logged {
                     position: absolute;
                 }
             }
-
-            .side-menu-icon{
+            .side-menu-icon {
                 display: block;
                 font-size: 29px;
                 color: #404145;
             }
         }
-       
-        .menu-items{
-            .hide-from-nav{
-            display: none;
+        .menu-items {
+            .hide-from-nav {
+                display: none;
             }
-
-            .join-btn{
+            .join-btn {
                 font-size: 15px;
             }
-
         }
         .app-header-search-container {
             display: none;
         }
-
         .join-btn {
             border-color: white;
             box-shadow: none;
@@ -300,4 +278,3 @@
         }
     }
 }
-

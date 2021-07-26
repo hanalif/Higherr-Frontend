@@ -1,7 +1,7 @@
 <template>
   <section class="explore main-layout">
     <gig-filter @filter="filter"/>
-    <h1 v-if="filterBy.txt">Results For: "{{filterTxt}}"</h1>
+    <h1 v-if="filterBy.txt">Results For: "{{filterBy.txt}}"</h1>
     <h1 v-else-if="filterBy.tags !== 'all'">Results For: "{{filterBy.tags}}"</h1>
     <h1 v-else></h1>
     <gig-list v-if="gigs" :gigs="gigs"/>
@@ -24,20 +24,12 @@ import gigFilter from '../cmps/gig-filter.vue'
 export default {
   data(){
     return{
-      filterBy:{
-                txt:'',
-                tags:'all',
-                delivery: 'all',
-                price:{
-                    min:0,
-                    max:Infinity
-                    }
-            },
+      filterBy:this.$store.getters.getFilter,
             sortBy:'all'
     }
   },
   created(){
-    this.filterBy = this.$store.getters.getFilter
+    // this.filterBy = this.$store.getters.getFilter
     this.$store.dispatch('loadGigs')
     .then(()=>{
       this.$store.commit({type:'setSort', sortBy:this.sortBy})
@@ -57,16 +49,21 @@ export default {
     },
     filter(filterBy){
       if(!this.filterBy.txt === ''){
+        this.filterBy.tags = 'all'
         this.filterBy = filterBy
-      }
+        this.$store.commit({type:'setFilter', filterBy:this.filterBy})
+      } else {
+        this.filterBy.txt = ''
+        this.filterBy = filterBy
+        this.$store.commit({type:'setFilter', filterBy:this.filterBy})
+        } 
     }
   },
   computed:{
-    filterTxt(){
-      this.filterBy.txt = this.$store.getters.getFilter.txt  
-      console.log(this.$store.getters.getFilter.txt);
-      return this.$store.getters.getFilter.txt
-    },
+    // filterTxt(){
+    //   this.filterBy.txt = this.$store.getters.getFilter.txt  
+    //   return this.$store.getters.getFilter.txt
+    // },
     gigs(){
       return this.$store.getters.gigsToShow
     },

@@ -13,8 +13,8 @@
                             <label :class="isClicked('music')" class="music" for="music">Music</label>
                         </div>
                         <div class="flex tag-section">
-                            <input id="web-develop" type="radio" value="web-develop" v-model="filterBy.tags">
-                            <label :class="isClicked('web-develop')" class="web-develop" for="web-develop">Web-Develop</label>
+                            <input id="web-development" type="radio" value="web-development" v-model="filterBy.tags">
+                            <label :class="isClicked('web-development')" class="web-development" for="web-development">Web Development</label>
                         </div>
                         <div class="flex tag-section">
                             <input id="graphic" type="radio" name="graphic" value="graphic" v-model="filterBy.tags">

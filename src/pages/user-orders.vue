@@ -4,7 +4,6 @@
       <h1 class="user-orders-main-title main-title">
         Your orders overview
       </h1>
-
       <div class="user-orders-as-buyer-container">
         <table>
           <caption class="user-orders-main-title">
