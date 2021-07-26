@@ -19,7 +19,7 @@
         </div>
         <div class="popular-searches">
           <span>Popular:</span>
-          <button @click="searchPopular('web-develop')">Web development</button> 
+          <button @click="searchPopular('web-development')">Web development</button> 
           <button @click="searchPopular('logo-design')">Logo Design</button> 
           <button @click="searchPopular('media')">Media Editting</button> 
           <button @click="searchPopular('graphic')">Graphic Design</button> 
@@ -29,9 +29,18 @@
         <img :class="{ visible: isOne }" src="@/assets/hero1.png" />
         <img :class="{ visible: isTwo }" src="@/assets/hero2.png" />
         <img :class="{ visible: isThree }" src="@/assets/hero3.png" />
-        <h6 :class="{ visible: isOne }">{{ heroName }}</h6>
-        <h6 :class="{ visible: isTwo }">{{ heroName }}</h6>
-        <h6 :class="{ visible: isThree }">{{ heroName }}</h6>
+        <div class="stars-container">
+          <img class="hero-stars" :class="{ visible: isOne }" src="@/assets/five-stars.png" />
+          <h6 :class="{ visible: isOne }">{{ heroName }}</h6>
+        </div>
+        <div>
+          <img class="hero-stars" :class="{ visible: isTwo }" src="@/assets/five-stars.png" />
+          <h6 :class="{ visible: isTwo }">{{ heroName }}</h6>
+        </div>
+        <div>
+          <img class="hero-stars" :class="{ visible: isThree }" src="@/assets/five-stars.png" />
+          <h6 :class="{ visible: isThree }">{{ heroName }}</h6>
+        </div>
       </div>
       </div>
     </div>
@@ -85,7 +94,7 @@
         </div>
         <div
           class="category flex column align-center"
-          @click="moveToCategory('web-develop')"
+          @click="moveToCategory('web-development')"
         >
           <svg
             class="category-icon"

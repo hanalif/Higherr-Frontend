@@ -132,15 +132,7 @@ export default {
       isTop: true,
       isHome: true,
       height: null,
-      filterBy: {
-        txt: "",
-        tags: "all",
-        delivery: "all",
-        price: {
-          min: 0,
-          max: Infinity,
-        },
-      },
+      filterBy: this.$store.getters.getFilter
     };
   },
   methods: {
@@ -185,10 +177,8 @@ export default {
       else this.isTop = false;
     },
     searchGigs() {
-      
       this.$store.commit({ type: "setFilter", filterBy: this.filterBy });
       if (this.$route.path !== "/explore") this.$router.push("/explore")
-
     },
     becomeSeller() {
       if (!this.loggedInUser) {
@@ -214,7 +204,7 @@ export default {
       return this.$store.getters.loggedinImg;
     },
     setFilterBy(){
-      this.filterBy.txt = this.$store.getters.getFilterBy
+      this.filterBy = this.$store.getters.getFilterBy
     },
     numOfNewOrders(){
       return this.$store.getters.numOfNewOrders;
