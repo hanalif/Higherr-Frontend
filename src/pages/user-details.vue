@@ -172,8 +172,10 @@ export default {
     this.$store.dispatch("loadGigs");
     let userId = this.$route.params.userId;
     const store = this.$store;
-    this.$store.dispatch({ type: "getUserById", id: userId }).then((user) => {
-       this.user = user;
+    this.$store.dispatch({ type: "getUserById", id: userId })
+    .then((user) => {
+       this.user = user
+       console.log(user)
       if (user._id === store.getters.loggedinUser._id) {
         this.isLoggedinUser = true;
       }

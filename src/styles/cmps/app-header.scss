@@ -191,7 +191,7 @@
         background: $clr3;
         font-weight: bold;
         transition: 0.2s;
-        transform: translateY(2px);
+        height: 33px;
         &:hover {
             background-color: #19a463;
         }
@@ -204,6 +204,7 @@
         font-size: 0.9rem;
         border-right: none;
         color: $clr1;
+        
     }
 }
 
