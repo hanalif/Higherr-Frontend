@@ -23,39 +23,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-<<<<<<< HEAD
 
 
-=======
-        .num-of-new-orders-hamburger-container {
-            display: none;
-            position: absolute;
-            top: 17px;
-            left: 51px;
-            @include for-mobile-layout {
-                @media (max-width: $break-narrow) {
-                    position: absolute;
-                    display: block;
-                }
-            }
-            .orders-notifications-hamburger {
-                span {
-                    color: white;
-                }
-            }
-            div {
-                height: 20px;
-                width: 20px;
-                background-color: rgb(245, 45, 45);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                border: 1px solid white;
-                font-size: 10px;
-            }
-        }
->>>>>>> 729f265f0a9d9dad094e6f832df64e3f466b3d94
         .hamburger-menu {
             position: absolute;
             div{
@@ -124,21 +93,6 @@
                         position: absolute;
                         top: -9px;
                         left: 19px;
-<<<<<<< HEAD
-=======
-                        div {
-                            height: 20px;
-                            width: 20px;
-                            background-color: rgb(245, 45, 45);
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 50%;
-                            border: 1px solid white;
-                            color: white;
-                            font-size: 10px;
-                        }
->>>>>>> 729f265f0a9d9dad094e6f832df64e3f466b3d94
                     }
                 }
                 .floating-menu {
