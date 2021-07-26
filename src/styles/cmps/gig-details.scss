@@ -20,6 +20,9 @@
        color: $clr6;
    }
  }
+ @include for-mobile-layout {
+        display:none       
+}
 }
 
 .gig-info {
@@ -28,6 +31,14 @@
         margin-bottom: 2rem;
         max-width: 750px;
         scroll-margin-top: 60px;
+    }
+    h1 {
+        @include for-mobile-layout {
+            @media (max-width: $break-narrow) {
+                margin: 2rem 0;
+                font-size: 1.2rem;
+            }
+        }
     }
 }
 

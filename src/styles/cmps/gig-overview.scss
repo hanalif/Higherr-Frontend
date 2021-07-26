@@ -34,6 +34,11 @@
     width: 100%;
     background-color: #F5F5F5;
     border: 1px solid #EFEFF0;
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+              height: 200px;    
+        }
+    }    
 }
 
 .img-thumbnails {
@@ -42,6 +47,9 @@
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 5px;
+    @include for-mobile-layout {
+        gap: 5px;
+    }
     & img{
         height: 75px;
         width: 112px;
@@ -51,6 +59,10 @@
         & :focus {
           height: 200px;;  
         }
+        @include for-mobile-layout {
+               height: 50px;
+               width: 63px;       
+        } 
     }
 }
 

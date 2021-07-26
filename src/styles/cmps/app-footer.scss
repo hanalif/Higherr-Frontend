@@ -1,6 +1,7 @@
 .footer {
     border-top: 1px solid $clr4;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 2rem;
@@ -9,12 +10,19 @@
     bottom: 0;
     width: 100%;
     & h4 {
-        color: $clr4;
+        color: $clr1;
+        font-weight: 400;
+        @include for-mobile-layout {
+            font-size: 0.8rem;
+        }
     }
     & h1 {
         color: $clr7;
         font-weight: bolder;
         letter-spacing: 0px;
             font-family: fjalla;
+            @include for-mobile-layout {
+                font-size: 1.5rem;
+            }
     }
 }
