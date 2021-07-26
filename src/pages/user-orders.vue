@@ -31,10 +31,10 @@
                 <td data-label="Created at">{{ order.createdAt }}</td>
                 <td data-label="Price">${{ order.price }}</td>
                 <td data-label="From">{{ order.buyer.fullname }}</td>
-                <td data-label="Contact seller">
+                <td class="table-order-title">
                   <button class="btn">Contact buyer</button>
                 </td>
-                <td data-label="Contact seller">
+                <td class="table-order-title">
                   <button class="manage-order-btn" @click="openOptions(order._id)">
                     Manage order <span :class="isManage(order._id)">></span>
                     <div
@@ -72,17 +72,17 @@
           <template v-if="userAsBuyerOrders">
             <tbody v-for="order in userAsBuyerOrders" :key="order._id">
               <tr>
-                <td scope="row" data-label="Title" class="table-order-title truncate">
+                <td scope="row"  class="table-order-title truncate truncate">
                   {{ order.title }}
                 </td>
                 <td data-label="Status" :class="{done:order.status === 'Done'}">{{ order.status }}</td>
                 <td data-label="Created at">{{ order.createdAt }}</td>
-                <td data-label="Price"><span>$</span>{{ order.price }}</td>
+                <td data-label="Price">${{ order.price }}</td>
                 <td data-label="Seller">{{ order.seller.fullname }}</td>
-                <td data-label="Contact seller">
+                <td class="table-order-title">
                   <button class="btn">Contact seller</button>
                 </td>
-                <td data-label="Remove order">
+                <td class="table-order-title">
                   <button
                     @click="onRemoveOrder(order._id)"
                     class="btn btn-danger"
