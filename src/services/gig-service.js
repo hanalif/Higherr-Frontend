@@ -26,8 +26,8 @@ export const gigService = {
 
 
 function query() {
-    return axios.get('http://localhost:3030/api/gig').then(res => res.data);
-    // return httpService.get(`gig`, filterBy )
+    // return axios.get('http://localhost:3030/api/gig').then(res => res.data);
+    return httpService.get(`gig`)
     // var gigs = storageService.query(GIG_KEY)
     //     .then(gigs => {
     //         if (!gigs || !gigs.length) gigs = gGigs
@@ -38,15 +38,15 @@ function query() {
 }
 
 function getById(id) {
-    return axios.get(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
-    // return httpService.get(`gig/${id}`)
+    // return axios.get(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
+    return httpService.get(`gig/${id}`)
     // return storageService.get(GIG_KEY, id)
     //     .then(gig => gig)
 }
 
 function remove(id) {
-    return axios.delete(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
-    // // return httpService.delete(`gig/${id}`)
+    // return axios.delete(`http://localhost:3030/api/gig/${id}`).then(res => res.data)
+    return httpService.delete(`gig/${id}`)
     // return storageService.remove(GIG_KEY, id)
 }
 
@@ -65,7 +65,7 @@ function setFilter(filter) {
 }
 
 function getFilterdGigs() {
-    return axios.get('http://localhost:3030/api/gig').then(res => {
+    return httpService.get(`gig`).then(res => {
         let gigs = res.data
         if (filterBy.txt === '' && filterBy.tags === 'all' &&
                 !filterBy.delivery && filterBy.price.min <= 0 && filterBy.price.max === Infinity) return gigs;

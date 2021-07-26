@@ -11,6 +11,7 @@
     <div class="gig-layout" v-if="seller">
       <div class="gig-info">
         <gig-overview ref="gig-overview" :gig="gig" :seller="seller" />
+        <order-details class="order-details-mobile" :gig="gig" :seller="seller"/>
         <gig-description ref="gig-description" :gig="gig" />
         <about-seller ref="about-seller" :gig="gig" :seller="seller" />
         <gig-review ref="gig-review" :gig="gig" :seller="seller" />

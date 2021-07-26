@@ -30,4 +30,11 @@
     grid-template-columns: 4rem 2fr 1fr 4rem;
     grid-auto-flow: dense;
     gap: 2rem;
+    @include for-mobile-layout {
+        @media (max-width: $break-narrow) {
+            display: block;
+            width: 100%;
+            padding: 0 20px;       
+        }
+    }    
 }

@@ -11,7 +11,11 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
     gap: 3rem;
+    @include for-mobile-layout {
+        gap: 0.3rem;
+    }
 }
 
 .review-header {
@@ -43,6 +47,9 @@
 .review-li {
     border-top: 1px solid $clr4;
     padding-top: 1rem;
+    & p {
+        color: #7a7d85;
+    }
 }
 
 .el-carousel__item h3 {
