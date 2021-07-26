@@ -1,5 +1,5 @@
 <template>
-  <div class="order-details">
+  <div>
     <div class="order-card">
       <div class="btn-container">
         <button :class="{ 'active-btn': isBasic }" @click="basic">Basic</button>
