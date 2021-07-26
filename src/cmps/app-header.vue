@@ -3,10 +3,13 @@
     :class="{ fixed: isHome, green: isTop }"
     class="app-header main-layout">
     <nav class="nav">
-      <a @click="openSideNav" class="hamburger-menu"><i class="fas fa-bars side-menu-icon"></i>
-      <div v-if="numOfNewOrders !== 0" class="num-of-new-orders-hamburger-container">
-              <div class="orders-notifications-hamburger"><span class="side-nav-span">{{numOfNewOrders}}</span></div>
-            </div>
+      <a @click="openSideNav" class="hamburger-menu">
+          <i class="fas fa-bars side-menu-icon"></i>
+          <div class="position-of-orders-notifications-hamburger-menu">
+          <div v-if="numOfNewOrders !== 0" class="num-of-new-orders-container">
+              <div class="orders-notifications"><span class="order-notifications-span">{{numOfNewOrders}}</span></div>
+          </div>
+          </div>
       </a>
       
       <div class="side-menu-container">
@@ -15,9 +18,6 @@
                 <button
           class="btn btn-primary" @click="signUpOnSideNav" v-if="!loggedInUser"> Join Higherr </button>
            <div v-else class="user-menu-icon">
-            <div v-if="numOfNewOrders !== 0" class="num-of-new-orders-container-side-nav">
-              <div><span class="side-nav-span">{{numOfNewOrders}}</span></div>
-            </div>
             <img
               class="user-menu-img user-img-side-nav"
               @click="onUserMenuClick"
@@ -40,7 +40,13 @@
                 <template v-if="loggedInUser">
                 <router-link class="hide-from-nav sidebar-link" to="/" @click.native="closeSidebar">Home</router-link>
                 <router-link :to="`/user/` + loggedInUser._id" class="sidebar-link" @click.native="closeSidebar">Profile</router-link>
-              <router-link to="/orders" class="sidebar-link" @click.native="closeSidebar">Orders</router-link>
+              <router-link to="/orders" class="sidebar-link" @click.native="closeSidebar">Orders
+                <div class="position-orders-notifications-user-menu">
+            <div v-if="numOfNewOrders !== 0" class="num-of-new-orders-container">
+              <div class="orders-notifications"><span class="order-notifications-span">{{numOfNewOrders}}</span></div>
+            </div>
+             </div>
+              </router-link>
               <a @click="logoutFromSideBar" class="sidebar-link">Logout</a>
                 </template>
              
@@ -76,8 +82,11 @@
         </button>
         <div  v-else class="user-menu hide-from-nav">
           <div class="user-menu-icon">
+            <div class="position-orders-notifications-main-user-nav">
             <div v-if="numOfNewOrders !== 0" class="num-of-new-orders-container">
-              <div><span>{{numOfNewOrders}}</span></div>
+              <div class="orders-notifications"><span class="order-notifications-span">{{numOfNewOrders}}</span></div>
+            </div>
+
             </div>
               
             <img

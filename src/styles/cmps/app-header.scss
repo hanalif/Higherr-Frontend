@@ -26,41 +26,12 @@
         justify-content: space-between;
         align-items: center;
 
-        .num-of-new-orders-hamburger-container{
-            display: none;
-            position: absolute;
-            top: 17px;
-            left: 51px;
-            @include for-mobile-layout {
-                @media (max-width: $break-narrow) {
-                    position: absolute;
-                    display: block;
-                }
-            }
-
-            .orders-notifications-hamburger{
-
-                span{
-                    color: white;
-                }
-                
-            }
-            div{
-                height: 20px;
-                width: 20px;
-                background-color: rgb(245, 45, 45);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                border: 1px solid white;
-                font-size: 10px;
-            }
-
-        }
 
         .hamburger-menu {
             position: absolute;
+            div{
+                display: none;
+            }
         }
 
         .side-menu-container {
@@ -107,6 +78,7 @@
             align-items: center;
             gap: 1.5rem;
             height: 100%;
+            z-index: 5;
             a:hover {
                 color: $clr3;
             }
@@ -128,19 +100,6 @@
                         position: absolute;
                         top: -9px;
                         left: 19px;
-                        
-                        div{
-                            height: 20px;
-                            width: 20px;
-                            background-color: rgb(245, 45, 45);
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 50%;
-                            border: 1px solid white;
-                            color: white;
-                            font-size: 10px;
-                        }
                     }
                 }
                 .floating-menu {
@@ -255,6 +214,9 @@
         .nav{
             .hamburger-menu {
                 position: static;
+                div{
+                    display: flex;
+                }
             }
 
             .side-menu-container {

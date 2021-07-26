@@ -9,6 +9,7 @@
         <table>
           <caption class="user-orders-main-title">
             Incoming orders
+            
           </caption>
           <thead>
             <tr>
@@ -16,7 +17,7 @@
               <th scope="col">Status</th>
               <th scope="col">Date</th>
               <th scope="col">Price</th>
-              <th scope="col">Buyer</th>
+              <th scope="col">From</th>
               <th scope="col">Contact buyer</th>
               <th scope="col"></th>
             </tr>
@@ -30,7 +31,7 @@
                 <td data-label="Status" :class="{done:order.status === 'Done'}">{{ order.status }}</td>
                 <td data-label="Created at">{{ order.createdAt }}</td>
                 <td data-label="Price"><span>$</span>{{ order.price }}</td>
-                <td data-label="Seller">{{ order.buyer.fullname }}</td>
+                <td data-label="From">{{ order.buyer.fullname }}</td>
                 <td data-label="Contact seller">
                   <button class="btn">Contact buyer</button>
                 </td>

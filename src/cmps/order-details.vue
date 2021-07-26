@@ -109,32 +109,32 @@ export default {
       this.isStandard = false;
       this.isPremium = true;
     },
-    // onConfirmOrderClose() {
-    //   this.showConfirmOrderModal = false;
-    // },
-    // createOrder() {
-    //   this.showConfirmOrderModal = true;
-    // },
-     createOrder() {
-      const dateObj = new Date();
-      const month = dateObj.getUTCMonth() + 1;
-      const day = dateObj.getUTCDate();
-      const year = dateObj.getUTCFullYear();  
-      const orderToSave = {
-        title: this.gig.title,
-        status: "pending",
-        createdAt: day + "/" + month + "/" + year,
-        price: this.pkg.price,
-        seller: this.gig.seller,
-        buyer: {
-          _id: this.loggedinUser._id,
-          fullname: this.loggedinUser.fullname,
-          imgUrl: this.loggedinUser.imgUrl,
-        },
-      };
-      this.$store.dispatch({ type: "saveOrder", order: orderToSave });
-      this.$router.push('/')
-     }
+    onConfirmOrderClose() {
+      this.showConfirmOrderModal = false;
+    },
+    createOrder() {
+      this.showConfirmOrderModal = true;
+    },
+    //  createOrder() {
+    //   const dateObj = new Date();
+    //   const month = dateObj.getUTCMonth() + 1;
+    //   const day = dateObj.getUTCDate();
+    //   const year = dateObj.getUTCFullYear();  
+    //   const orderToSave = {
+    //     title: this.gig.title,
+    //     status: "pending",
+    //     createdAt: day + "/" + month + "/" + year,
+    //     price: this.pkg.price,
+    //     seller: this.gig.seller,
+    //     buyer: {
+    //       _id: this.loggedinUser._id,
+    //       fullname: this.loggedinUser.fullname,
+    //       imgUrl: this.loggedinUser.imgUrl,
+    //     },
+    //   };
+    //   this.$store.dispatch({ type: "saveOrder", order: orderToSave });
+    //   this.$router.push('/')
+    //  }
   },
   
   components: {

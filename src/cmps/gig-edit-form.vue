@@ -57,12 +57,12 @@
                 <div class="tag-checkbox-label">
                   <input
                     type="checkbox"
-                    :id="tag"
+                    :id="tagtag"
                     :name="tag"
                     :value="tag"
                     v-model="gig.tags"
                   />
-                  <label :for="tag">{{ tag }}</label>
+                  <label :for="tagtag">{{ tag }}</label>
                 </div>
               </span>
             </div>
