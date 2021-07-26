@@ -39,8 +39,7 @@
                     Manage order <span :class="isManage(order._id)">></span>
                     <div
                       class="manage-order"
-                      :class="isOpen(order._id)"
-                    >
+                      :class="isOpen(order._id)">
                       <h3 @click="acceptOrder(order)">Accept order</h3>
                       <h3 @click="declineOrder(order)">Decline order</h3>
                       <h3 @click="orderDone(order)">Order done</h3>
@@ -85,8 +84,7 @@
                 <td class="table-order-title">
                   <button
                     @click="onRemoveOrder(order._id)"
-                    class="btn btn-danger"
-                  >
+                    class="btn btn-danger">
                     Cancel order
                   </button>
                 </td>
@@ -111,10 +109,36 @@ export default {
   },
   computed: {
     userAsSellerOrders() {
-      return this.$store.getters.userAsSellerOrders;
+      let orders = this.$store.getters.userAsSellerOrders;
+      orders.sort((a,b)=>{
+         return b.createdAt - a.createdAt
+      })
+      let ordersForDisplay = JSON.parse(JSON.stringify(orders))
+      ordersForDisplay.forEach(o => {
+        let date = new Date(o.createdAt)
+        const month = date.getUTCMonth() + 1;
+        const day = date.getUTCDate();
+        const year = date.getUTCFullYear(); 
+        o.createdAt = day + "/" + month + "/" + year 
+      });
+
+      return ordersForDisplay;
     },
     userAsBuyerOrders() {
-      return this.$store.getters.userAsBuyerOrders;
+      let orders =  this.$store.getters.userAsBuyerOrders;
+      orders.sort((a,b)=>{
+         return b.createdAt - a.createdAt
+      })
+      let ordersForDisplay = JSON.parse(JSON.stringify(orders))
+      ordersForDisplay.forEach(o => {
+        let date = new Date(o.createdAt)
+        const month = date.getUTCMonth() + 1;
+        const day = date.getUTCDate();
+        const year = date.getUTCFullYear(); 
+        o.createdAt = day + "/" + month + "/" + year 
+      });
+
+      return ordersForDisplay;
     },
     user() {
       return this.$store.getters.loggedinUser;
